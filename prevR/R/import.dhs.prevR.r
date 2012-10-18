@@ -1,0 +1,284 @@
+##########################################################################################
+import.dhs  = function(file.sav, file.dbf){
+  make.clust.dbf <-function (file, ind) {
+    temp.clust <- read.dbf(file)
+    if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
+    temp.var <- attr(temp.clust, "names")
+    message("A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?",domain="R-prevR")
+    menu(gettext("Yes",domain="R-prevR"))
+    edit(temp.clust)
+    ok <- 0
+    while (ok != 1) {
+      message("Please indicate the following variables:\n",domain="R-prevR")
+      message("* Cluster number:",domain="R-prevR")
+      nb.clust <- menu(temp.var)
+      message("* Longitude (decimal value):",domain="R-prevR")
+      long <- menu(temp.var)
+      message("* Latitude (decimal value):",domain="R-prevR")
+      lat <- menu(temp.var)
+      message("* Type of cluster (optionnal):",domain="R-prevR")
+      c.type <- menu(temp.var)
+      message("\n----------------------------------------------------\n")
+      message("Please check the following informations:\n",domain="R-prevR")
+      message("* Cluster number:",domain="R-prevR")
+      message(temp.var[nb.clust], if (nb.clust == 0)  gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
+      message("* Longitude (decimal value):",domain="R-prevR")
+      message(temp.var[long], if (long == 0) gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
+      message("* Latitude (decimal value):",domain="R-prevR")
+      message(temp.var[lat], if (lat == 0) gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
+      message("* Type of cluster (optionnal, 0 if not):",domain="R-prevR")
+      message(temp.var[c.type], if (c.type == 0) gettext("Not available",domain="R-prevR"))
+      message("\n----------------------------------------------------\n")
+      if (nb.clust == 0) 
+          message("WARNING: cluster number must be specified!",domain="R-prevR")
+      if (long == 0) 
+          message("WARNING: longitude must be specified!",domain="R-prevR")
+      if (lat == 0) 
+          message("WARNING: latitude number must be specified!",domain="R-prevR")
+      if (nb.clust == 0 | long == 0 | lat == 0) {
+          alarm()
+          message("\n----------------------------------------------------\n")
+          message("WARNING: some problems were found (see above). You have to start again. Are you ready?",domain="R-prevR")
+          menu(gettext("Yes",domain="R-prevR"))
+      }
+      else {
+          message("Are these data correct?",domain="R-prevR")
+          ok <- menu(gettext(c("Yes","No"),domain="R-prevR"))
+      }
+    }
+    clust <- data.frame(id = temp.clust[nb.clust], x = temp.clust[long],  y = temp.clust[lat], c.type = temp.clust[c.type])
+    colNames   = c("id","x","y","c.type")[c(T, T , T, c.type!=0)]
+    names(clust) = colNames
+    
+    
+    if (!is.integer(clust$id))
+      clust$cluster <- as.integer(as.character(clust$cluster))
+    if (!is.numeric(clust$x)) 
+      clust$x <- as.numeric(as.character(clust$x))
+    if (!is.numeric(clust$y)) 
+      clust$y <- as.numeric(as.character(clust$y))
+    if (c.type != 0)
+      if (!is.factor(clust$c.type))
+          clust$c.type <- factor(clust$c.type)
+          
+          
+          
+          
+    # Partie merge en clusters et donnees GPS     
+    clust.ind = merge(clust,ind,by="id")
+    clust.ind = na.omit(clust.ind)
+    sp        = split(clust.ind,clust.ind$id)
+    id        = names(sp)
+    n         = sapply(sp,nrow)
+    pos       = sapply(sp, function(df) length(df$case[df$case == "Positive"]))
+    x         = sapply(sp, function(df) unique(df$x))
+    y         = sapply(sp, function(df) unique(df$y))
+    clusters = data.frame(id = id, x =x, y = y, n = n, pos = pos)
+    if(is.element("c.type",names(clust.ind))){
+      c.type    = sapply(sp, function(df) unique(df$c.type))
+      clusters  = cbind(clusters, c.type = c.type)
+    }
+    if(is.element("wcase",names(clust.ind))){
+      wn        = sapply(sp, function(df) sum(df$wcase))
+      wpos      = sapply(sp, function(df) sum(df$wcase[df$case == "Positive"]))
+      clusters  = cbind(clusters, wn = wn, wpos = wpos)
+    }
+    return(clusters)
+  }
+  
+  ################################################################################
+  ################################################################################
+  
+  make.ind.spss <- function (file) {
+    temp.ind <- read.spss2(file, use.value.labels = TRUE, to.data.frame = TRUE)
+    temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
+    ok <- 0
+    while (ok != 1) {
+      message("1.1 VARIABLES SELECTION\n",domain="R-prevR")
+      
+      message("* Cluster number (0 if not, will be calculated from individual identification number):",domain="R-prevR")
+      clust <- menu(temp.var)
+      
+      id = 0
+      if(clust == 0){
+        message("* Individual identification number (0 if not):",domain="R-prevR")
+        id <- menu(temp.var)
+        if(id == 0){
+          message("* Individual identification number or Cluster number must be specified.",domain="R-prevR")
+          next
+        }
+      }
+      
+      message("* Analyzed variable (for example, result of HIV testing):",domain="R-prevR")
+      result <- menu(temp.var)
+      
+      message("* Statistical weight (0 if not. All persons will have the same weight of 1.):",domain="R-prevR")
+      weight <- menu(temp.var)
+      
+      message("\n----------------------------------------------------\n")
+      message("Please check the following informations:\n",domain="R-prevR")
+      message("* Individual identification number:",domain="R-prevR")
+      message(temp.var[id], if (id == 0) gettext("Not available",domain="R-prevR"))
+      message("* Cluster number:",domain="R-prevR")
+      message(temp.var[clust], if (clust == 0) gettext("Not available - It will be calculated with individual identification number.",domain="R-prevR"))
+      message("* Analyzed variable:",domain="R-prevR")
+      message(temp.var[result], if (result == 0) gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
+      message("* Statistical weight:",domain="R-prevR")
+      message(temp.var[weight], if (weight == 0) gettext("Not available - All persons will have a weight of 1.",domain="R-prevR"))
+      message("\n----------------------------------------------------\n")
+      
+      if (id == 0 & clust == 0) 
+        message("WARNING: if cluster number not specified, you need to specify individual identification number!!",domain="R-prevR")
+      
+      if (result == 0) 
+        message("WARNING: you have to specify the analyzed variable!",domain="R-prevR")
+      
+      
+      if ((id == 0 & clust == 0) | result == 0) {
+        alarm()
+        message("\n----------------------------------------------------\n")
+        message("WARNING: some problems were found (see above). You have to start again. Are you ready?",domain="R-prevR")
+        menu(gettext("Yes",domain="R-prevR"))
+      }
+      else {
+        message("Are these data correct?",domain="R-prevR")
+        ok <- menu(c(gettext("Yes",domain="R-prevR"), gettext("No",domain="R-prevR")))
+      }
+    }
+    
+    ind        = data.frame(temp.ind[id], temp.ind[clust], temp.ind[result], temp.ind[weight])  
+    colNames   = c("id","cluster","original.result","weight")[c(id!=0, clust!= 0, result!=0, weight != 0)]
+    names(ind) = colNames
+    
+    ok <- 0
+    message("\n----------------------------------------------------\n")
+    message("Three windows will open in order to re-code the analysed variable.\nYou will have to specify the modalities corresponding to a positive result (the analysed phenomenon occured), \na negative result (not occured) and an undetermined result (considered as a missing value).\nYou can select several modalities with CTRL.\nAre you ready?",domain="R-prevR")
+    menu(gettext("Yes",domain="R-prevR"))
+    modalites <- attr(ind$original.result, "levels")
+    
+    
+    while (ok != 1) {
+      pos <- select.list(modalites, multiple = TRUE, title = "Positive result")
+      neg <- select.list(modalites, multiple = TRUE, title = "Negative result")
+      und <- select.list(modalites, multiple = TRUE, title = "Undetermined result")
+      message("\n----------------------------------------------------\n")
+      if (length(neg) + length(pos) + length(und) != length(modalites)) {
+        alarm()
+        message("WARNING: You specified the same modality two times or you forgot one. Please start again.\nAre you ready?",domain="R-prevR")
+        menu(gettext("Yes",domain="R-prevR"))
+      }
+      else {
+        message("Please check the following informations:\n",domain="R-prevR")
+        message("\n* Positive result:",domain="R-prevR")
+        message("- ", paste(pos, collapse = "\n- "))
+        message("\n* Negative result:",domain="R-prevR")
+        message("- ", paste(neg, collapse = "\n- "))
+        message("\n* Undetermined result:",domain="R-prevR")
+        message("- ", paste(und, collapse = "\n- "))
+        message("\nAre these data correct?",domain="R-prevR")
+        ok <- menu(gettext(c("Yes", "No"),domain="R-prevR"))
+      }
+    }
+    
+    
+    ind$result <- NA
+    for (i in 1:length(neg)) ind$result[ind$original.result == neg[i]] <- 1
+    for (i in 1:length(pos)) ind$result[ind$original.result == pos[i]] <- 2
+    ind$result <- factor(ind$result,levels = c(1,2), labels = c("Negative","Positive"))
+    
+    
+    if (weight!=0) {
+      message("\n----------------------------------------------------\n")
+      message("Often, in DHS, the weight variable have to be divided by a factor, usually 1'000'000.",domain="R-prevR")
+      message(gettextf("The mean value of the weight variable is %.2f.",mean(ind$weight[ind$weight > 0]),domain="R-prevR"))
+      message("\nIf this value is close to 1, the variable does not have to be modified.\nIf it is close to 1'000'000, then it must be divided by this factor.\nElse consult the survey documentation.",domain="R-prevR")
+      message("\nDoes the weight variable have to be divided by a factor?",domain="R-prevR")
+      choix <- menu(gettext(c("No modification", "Divided by 1'000'000","Divided by an other factor"),domain="R-prevR"))
+      if (choix > 1) {
+        if (choix == 2) 
+          division.factor <- 1e+06
+        else {
+          message("Wich factor?",domain="R-prevR")
+          division.factor <- 1
+          division.factor <- as.integer(de(division.factor))
+        }
+        ind$weight <- ind$weight/division.factor
+      }
+    }
+    
+    
+    if (clust != 0) {
+      if (is.character(ind$cluster)) 
+        ind$cluster <- as.integer(ind$cluster)
+      if (is.factor(ind$cluster)) 
+        ind$cluster <- as.integer(as.character(ind$cluster))
+    } else {
+      if (!is.character(ind$id)) 
+        ind$id <- as.character(ind$id)
+      exemple1 <- ind$id[1]
+      exemple2 <- ind$id[length(ind$id)%/%2]
+      exemple3 <- ind$id[length(ind$id)]
+      message("\n----------------------------------------------------\n")
+      message("The cluster variable is not specified. It must be then calculated from the individual identification number. Usually in DHS, the cluster number corresponds to the first three digits of the individual identification number. You can see here three individual identification numbers selected at the beginning, the medium and the end of the file:",domain="R-prevR")
+      message("- Individual identification number 1: ", exemple1,domain="R-prevR")
+      message("- Individual identification number 2: ", exemple2,domain="R-prevR")
+      message("- Individual identification number 3: ", exemple3,domain="R-prevR")
+      message("\nLocate for each of them the cluster number.\nAmong the various proposals below, which extracts the good cluster numbers?\n",domain="R-prevR")
+      choix <- c()
+      for (i in 1:(nchar(exemple1) - 2)) choix <- c(choix, paste(substr(exemple1, i, i + 2),substr(exemple2, i, i + 2),substr(exemple3, i, i + 2),sep=" / "))
+      lim = 0
+      while(lim==0)
+        lim <- menu(choix, graphics = TRUE, title=gettext("Select the correct cluster numbers:",domain="R-prevR"))
+      ind$cluster <- as.integer(substr(ind$id, lim, lim + 2))
+    }
+    df = data.frame(id = ind$cluster, case = ind$result)
+    if (weight!=0) df = cbind(df, wcase = ind$weight) 
+    return(df)
+  }
+  
+  ################################################################################
+  ################################################################################
+  
+read.spss2 <- function (file, use.value.labels = TRUE, to.data.frame = FALSE, max.value.labels = Inf, trim.factor.names = FALSE) 
+{
+  trim <- function(strings) {
+    if (trim.factor.names) 
+    gsub(" +$", "", strings)
+    else strings
+  }
+  rval <- .Call("do_read_SPSS", file, PACKAGE = "foreign")
+  vl <- attr(rval, "label.table")
+  has.vl <- which(!sapply(vl, is.null))
+  for (v in has.vl) {
+    nm <- names(vl)[[v]]
+    nvalues <- length(na.omit(unique(rval[[nm]])))
+    nlabels <- length(vl[[v]])
+    if (use.value.labels && (!is.finite(max.value.labels) || nvalues <= max.value.labels)) 
+    rval[[nm]] <- factor(rval[[nm]], levels = rev(vl[[v]]), 
+    labels = rev(trim(names(vl[[v]]))))
+    else attr(rval[[nm]], "value.labels") <- vl[[v]]
+  }
+  if (to.data.frame) {
+    varlab <- attr(rval, "variable.labels")
+    rval <- as.data.frame(rval)
+    attr(rval, "variable.labels") <- varlab
+  }
+  rval
+}
+  
+  ################################################################################
+  ################################################################################
+
+  message("\n\n\nSTEP 1/3: DEFINE ANALYZED VARIABLE\n\n\n",domain="R-prevR")
+  ind = make.ind.spss(file.sav)
+  message("\n\n\nSTEP 2/3: CLUSTERS INFORMATION\n\n\n",domain="R-prevR")
+  clusters = make.clust.dbf(file.dbf,ind)
+  message("\n\n\nSTEP 3/3: BOUNDARY OF THE COUNTRY\n\n\n",domain="R-prevR")
+  message("Do you want to define a boundary?",domain="R-prevR")
+  bound = menu(gettext("Yes",domain="R-prevR"))
+  boundary = NULL
+  if(bound==1) boundary = create.boundary(multiple = F)
+  col = names(clusters)
+  names(col) = col
+  as.prevR(clusters,col,boundary = boundary,proj = "+proj=longlat")
+}

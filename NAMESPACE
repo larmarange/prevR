@@ -1,0 +1,17 @@
+importFrom("gstat", "idw")
+importFrom("gstat", "krige")
+importFrom("sp", "plot")
+exportPattern("^[[:alpha:]]+")
+export(
+    "as.SpatialGrid",
+    "changeproj",
+    "export",
+    "idw",
+    "kde",
+    "krige",
+    "print",
+    "rings",
+    "summary" 
+    )
+exportMethods(show,plot)
+exportClasses("prevR")

@@ -1,0 +1,14 @@
+Package: prevR
+Type: Package
+Title: Estimation des tendances régionales d'une prévalence à partir d'une EDS
+Version: 2.1
+Date: 2012-06-18
+Author: Joseph Larmarange - CEPED (Université Paris Descartes Ined IRD) IRD, avec l'appui financier de l'ANRS et l'IRD, et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr)
+Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
+Description: Ce package fournit des fonctions pour l'estimation spatiale d'une surface de prévalences ou d'une surface de risques relatifs à partir de données issues d'une Enquête Démographique et de Santé (EDS) ou d'une enquête analogue.
+License: CeCILL
+URL: http://www.ceped.org/prevR, http://joseph.larmarange.net/prevR
+LazyLoad: yes
+LazyData: yes
+Depends: R (>= 2.10), methods, sp, gstat, maptools, fields, GenKern, rgdal (>= 0.7-4), geoR, tcltk
+Encoding: UTF-8

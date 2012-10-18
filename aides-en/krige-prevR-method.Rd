@@ -1,0 +1,96 @@
+\encoding{utf8}
+\name{krige,prevR-method}
+\alias{krige,prevR-method}
+\alias{krige-methods}
+\alias{krige,ANY,prevR-method}
+\alias{krige}
+\alias{idw-methods}
+\alias{idw,ANY,prevR-method}
+\alias{idw,prevR-method}
+\alias{idw}
+\docType{methods}
+\title{Spatial interpolation (kriging and inverse distance weighting) for objects of class prevR.}
+
+\description{These functions execute a spatial interpolation of a variable of the slot \code{rings} of an object of class \code{\link[=prevR-class]{prevR}}. The method \code{krige} implements the ordinary kriging technique. The method \code{idw} executes an inverse distance weighting interpolation.}
+
+\section{Methods}{\describe{\item{\code{signature(formula = "ANY", locations = "prevR")}}{}}}
+
+\usage{
+\S4method{krige}{ANY,prevR}(formula, locations,
+      N = NULL, R = NULL, model = NULL,
+      nb.cells = 100, cell.size = NULL,
+      fit = "auto", keep.variance = FALSE, show.variogram = FALSE,
+      \dots
+     )
+\S4method{idw}{ANY,prevR}(formula, locations,
+    N = NULL, R = NULL,
+    nb.cells = 100, cell.size = NULL, 
+    idp = 2,
+    \dots
+   )
+}
+
+\arguments{
+\item{formula}{variable(s) to interpolate (see details).}
+\item{locations}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{N}{integer or list of integers corresponding to the rings to use.}
+\item{R}{integer or list of integers corresponding to the rings to use.}
+\item{model}{a variogram model returned by the function \code{\link[gstat]{vgm}}\{\pkg{gstat}\}.}
+\item{nb.cells}{number of cells on the longuest side of the studied area (unused if \code{cell.size} is defined).}
+\item{cell.size}{size of each cell (in the unit of the projection).}
+\item{fit}{"auto" for using a variogram automatically fitted from the data, "manual" for using a variogram fitted through a graphic interface (unused if \code{model} is defined).}
+\item{keep.variance}{return variance of estimates?}
+\item{show.variogram}{plot the variogram?}
+\item{idp}{inverse distance weighting power (see \code{\link[gstat]{idw}}\{\pkg{gstat}\}).}
+\item{\dots}{additional arguments transmited to \code{\link[gstat]{krige}}\{\pkg{gstat}\} or \code{\link[gstat]{idw}}\{\pkg{gstat}\}.}
+}
+
+\details{
+\code{formula} specifies the variable(s) to interpolate. Only variables available in the slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character string or a formula (example: \emph{list(r.pos~1,r.prev~1}). Only formula like \emph{variable.name~1} are accepted. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}} and \code{\link[gstat]{idw}} from \pkg{gstat}.
+
+\code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, surfaces will be estimated for each available couples (N,R). Several interpolations could be simultaneously calculated if several variables and/or several values of N and R are defined.
+
+In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, the sample variogram will be plotted and a graphical dialog box (adapted from \code{\link[geoR]{eyefit}}\{\pkg{geoR}\}) will appear for a manual and visual fitting. You can also specify directly the variogram to use with the parameter \code{model}.
+
+Interpolations are calculated on spatial gridd obtained with \code{\link[=as.SpatialGrid,prevR-method]{as.SpatialGrid}}.
+}
+
+\value{
+Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. The name of estimated surfaces depends on the name of the interpolated variable, N and R (for example: \emph{r.radius.N300.RInf}). If you ask the function to return variance (\code{keep.variance=TRUE}), corresponding surfaces names will have the suffix \emph{.var}.
+
+\code{NA} value is applied to points located outside of the studied area \cr(voir \code{\link{NA.outside.SpatialPolygons}}).
+}
+
+\references{
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", \emph{Cybergeo : European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, DOI: 10.4000/cybergeo.24606.
+}
+
+\note{
+Results could be plotted with \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
+\pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}}) compatible with \code{\link[sp]{spplot}}.\cr
+Calculated surfaces could be export using the function \code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
+}
+\seealso{\code{\link[gstat]{krige}}\{\pkg{gstat}\}, \code{\link[gstat]{idw}}\{\pkg{gstat}\}, \code{\link{rings,prevR-method}}.}
+
+\examples{
+\dontrun{
+dhs <- rings(fdhs, N=c(100,200,300,400,500))
+radius.N300 <- krige('r.radius', dhs, N=300, nb.cells=200)
+spplot(radius.N300,
+       cuts=100, col.regions=prevR.colors.blue(101), 
+       main="Radius of circle (N=300)"
+      )
+
+
+prev.krige <- krige('r.wprev', dhs, N=c(100,300,500),R=Inf,
+                    fit="manual",keep.variance=TRUE
+                   )
+str(prev.krige)
+spplot(prev.krige,
+       c('r.wprev.N100.RInf','r.wprev.N300.RInf','r.wprev.N500.RInf'),
+       cuts=100, col.regions=prevR.colors.red(101)
+      )
+}
+}
+\keyword{smooth}
+\keyword{spatial}

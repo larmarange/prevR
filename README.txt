@@ -1,0 +1,1 @@
+prevR documentation and ZIP are available on CRAN: http://cran.r-project.org/web/packages/prevR/
