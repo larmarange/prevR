@@ -4,7 +4,7 @@ options(warn = 1)
 options(pager = "console")
 library('prevR')
 
-assign(".oldSearch", search(), pos = 'CheckExEnv')
+base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 cleanEx()
 nameEx("TMWorldBorders")
 ### * TMWorldBorders
@@ -531,7 +531,7 @@ flush(stderr()); flush(stdout())
 
 ### Name: summary,prevR-method
 ### Title: Detailed summary of the variables of a prevR object
-### Aliases: summary-methods summary,prevR-method summary
+### Aliases: summary-methods summary,prevR-method summary prevRsummary
 
 ### ** Examples
 
@@ -571,7 +571,7 @@ str(op.df)
 
 ### * <FOOTER>
 ###
-cat("Time elapsed: ", proc.time() - get("ptime", pos = 'CheckExEnv'),"\n")
+base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
 grDevices::dev.off()
 ###
 ### Local variables: ***

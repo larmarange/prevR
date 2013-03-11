@@ -2,16 +2,19 @@ importFrom("gstat", "idw")
 importFrom("gstat", "krige")
 importFrom("sp", "plot")
 exportPattern("^[[:alpha:]]+")
-export(
+exportMethods(
     "as.SpatialGrid",
     "changeproj",
     "export",
     "idw",
     "kde",
     "krige",
+    "plot",
     "print",
     "rings",
+    "show",
     "summary" 
-    )
-exportMethods(show,plot)
-exportClasses("prevR")
+)
+exportClasses(
+    "prevR" 
+)

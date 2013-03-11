@@ -11,6 +11,7 @@ setMethod("as.SpatialGrid","prevR",
   # calcul de la taille des cellules et donc du nombre de cellules sur chaque coordonnees
   boundary     = slot(object,"boundary")
   if (!attr(boundary,"valid")) {
+    clusters  = slot(object,"clusters")
     max.x = max(clusters[["x"]])
     min.x = min(clusters[["x"]])
     max.y = max(clusters[["y"]])

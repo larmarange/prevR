@@ -1,5 +1,4 @@
-setMethod("summary","prevR",
-  function(object,probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1)){
+prevRsummary <- function(object,probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1)){
   ##################################################################################################
   # Cette fonction renvoie
   # Un resume de l'element clusters (summary.data.frame)
@@ -34,5 +33,10 @@ setMethod("summary","prevR",
         print(round(out,2)[,c(-1,-2)])
       }
     }
+  }
+
+setMethod("summary","prevR",
+  function(object,probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1)){
+    prevRsummary(object,probs)
   }
 )

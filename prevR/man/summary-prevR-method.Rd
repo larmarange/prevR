@@ -4,13 +4,19 @@
 \alias{summary-methods}
 \alias{summary,prevR-method}
 \alias{summary}
+\alias{prevRsummary}
 \title{Detailed summary of the variables of a prevR object}
 
 \description{Method \code{summary} for objects of class \code{\link[=prevR-class]{prevR}}: shows a summary of the variables of the object.}
 
 \section{Methods}{\describe{\item{\code{signature(object = "prevR")}}{}}}
 
-\usage{\S4method{summary}{prevR}(object, probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1))}
+\usage{
+	\S4method{summary}{prevR}(object, probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1))
+	
+	prevRsummary(object, probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1))
+}
+
 
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}

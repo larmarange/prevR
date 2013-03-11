@@ -4,7 +4,7 @@ RScript skeletonScripts.R
 mkdir prevR\data
 cp TMWorldBorders.rda prevR/data/TMWorldBorders.rda
 cp fdhs.rda prevR/data/fdhs.rda
-xcopy /Y aides\*.* prevR\man
+xcopy /Y aides\*.* prevR\man\
 mkdir prevR\demo
 xcopy /Y demo\*.* prevR\demo
 mkdir prevR\vignettes
@@ -17,5 +17,5 @@ cp CITATION  prevR/inst/CITATION
 R CMD check prevR 
 R CMD build prevR --compact-vignettes
 REM attention remplacer si nécessaire le numero de version dans le nom du fichier tar.gz
-R CMD INSTALL --build  prevR_2.1.tar.gz
-REM R CMD check --as-cran prevR_2.1.tar.gz
+R CMD INSTALL --build  prevR_2.2.tar.gz
+R CMD check --as-cran prevR_2.2.tar.gz

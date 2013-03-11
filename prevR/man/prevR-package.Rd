@@ -8,11 +8,11 @@
 \details{\tabular{ll}{
 Package: \tab prevR\cr
 Type: \tab Package\cr
-Version: \tab 2.0\cr
+Version: \tab 2.2\cr
 Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 Website: \tab \url{http://www.ceped.org/prevR},\cr
  \tab \url{http://joseph.larmarange.net/prevR}\cr
-Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{sp}, \pkg{gstat}, \pkg{maptools}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
+Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{foreign}, \pkg{sp}, \pkg{gstat}, \pkg{maptools}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
 }
 
 This package performs a methodological approach for spatial estimation of regional trends of a prevalence using data from surveys using a stratified two-stage sample design (as Demographic and Health Surveys). In these kind of surveys, positive and control cases are spatially positioned at the centre of their corresponding surveyed cluster.

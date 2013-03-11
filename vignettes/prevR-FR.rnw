@@ -16,8 +16,8 @@
 \inputencoding{utf8}
 \item[Type]\AsIs{Package}
 \item[Title]\AsIs{Estimation des tendances régionales d'une prévalence à partir d'une EDS}
-\item[Version]\AsIs{2.1}
-\item[Date]\AsIs{2012-06-18}
+\item[Version]\AsIs{2.2}
+\item[Date]\AsIs{2013-03-08}
 \item[Author]\AsIs{Joseph Larmarange - CEPED (Université Paris Descartes Ined IRD) IRD, avec l'appui financier de l'ANRS et l'IRD, et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr)}
 \item[Maintainer]\AsIs{Joseph Larmarange }\email{joseph.larmarange@ird.fr}\AsIs{}
 \item[Description]\AsIs{Ce package fournit des fonctions pour l'estimation spatiale d'une surface de prévalences ou d'une surface de risques relatifs à partir de données issues d'une Enquête Démographique et de Santé (EDS) ou d'une enquête analogue.}
@@ -25,7 +25,7 @@
 \item[URL]\AsIs{}\url{http://www.ceped.org/prevR,}\AsIs{ }\url{http://joseph.larmarange.net/prevR}\AsIs{}
 \item[LazyLoad]\AsIs{yes}
 \item[LazyData]\AsIs{yes}
-\item[Depends]\AsIs{R (>= 2.10), methods, sp, gstat, maptools, fields, GenKern, rgdal (>= 0.7-4), geoR, tcltk}
+\item[Depends]\AsIs{R (>= 2.10), foreign, methods, sp, gstat, maptools, fields, GenKern, rgdal (>= 0.7-4), geoR, tcltk}
 \item[Encoding]\AsIs{UTF-8}
 \end{description}
 \Rdcontents{\R{} topics documented:}
@@ -1345,6 +1345,7 @@ dhs
 \HeaderA{summary,prevR-method}{Affiche un résumé des variables contenues dans un objet prevR.}{summary,prevR.Rdash.method}
 \aliasA{summary}{summary,prevR-method}{summary}
 \aliasA{summary-methods}{summary,prevR-method}{summary.Rdash.methods}
+\aliasA{prevRsummary}{summary,prevR-method}{prevRsummary}
 %
 \begin{Description}\relax
 Méthode \code{summary} pour les objets de classe \code{\LinkA{prevR}{prevR.Rdash.class}} : affiche un résumé des variables de l'objet.
@@ -1354,6 +1355,8 @@ Méthode \code{summary} pour les objets de classe \code{\LinkA{prevR}{prevR.Rdas
 \begin{verbatim}
 ## S4 method for signature 'prevR'
 summary(object,probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1))
+
+prevRsummary(object, probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1))
 \end{verbatim}
 \end{Usage}
 %
