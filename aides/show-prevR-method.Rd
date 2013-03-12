@@ -22,6 +22,8 @@ Exactly the same as \code{\link{print,prevR-method}}.
 
 \examples{
 fdhs
-dhs <- rings(fdhs,N=c(100,300,500))
-dhs
+\dontrun{
+	dhs <- rings(fdhs,N=c(100,300,500))
+	dhs
+}
 }

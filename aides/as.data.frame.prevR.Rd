@@ -23,10 +23,14 @@ Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be merged in 
 
 \seealso{\code{\link[base]{as.data.frame}}\{\pkg{base}\}, \code{\link[prevR]{prevR-class}}.}
 \examples{
-r.fdhs <- rings(fdhs, N=c(100,200,300))
-str(r.fdhs)
-str(as.data.frame(r.fdhs, clusters.only=TRUE))
-str(as.data.frame(r.fdhs))
-str(as.data.frame(r.fdhs, N=300))
+str(fdhs)
+str(as.data.frame(fdhs))
+\dontrun{
+	r.fdhs <- rings(fdhs, N=c(100,200,300))
+	str(r.fdhs)
+	str(as.data.frame(r.fdhs, clusters.only=TRUE))
+	str(as.data.frame(r.fdhs))
+	str(as.data.frame(r.fdhs, N=300))
+}
 }
 \keyword{manip}

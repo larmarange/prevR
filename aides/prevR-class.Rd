@@ -75,8 +75,10 @@ dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-dhs <- rings(fdhs,N=c(100,300,500))
-str(dhs)
-print(dhs)
+\dontrun{
+	dhs <- rings(fdhs,N=c(100,300,500))
+	str(dhs)
+	print(dhs)
+}
 }
 \keyword{classes}
