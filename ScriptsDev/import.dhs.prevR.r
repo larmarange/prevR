@@ -90,7 +90,7 @@ import.dhs  = function(file.sav, file.dbf){
   ################################################################################
   
   make.ind.spss <- function (file) {
-    temp.ind <- read.spss2(file, use.value.labels = TRUE, to.data.frame = TRUE)
+    temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
     temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
     ok <- 0
     while (ok != 1) {
@@ -239,36 +239,6 @@ import.dhs  = function(file.sav, file.dbf){
   ################################################################################
   ################################################################################
   
-read.spss2 <- function (file, use.value.labels = TRUE, to.data.frame = FALSE, max.value.labels = Inf, trim.factor.names = FALSE) 
-{
-  trim <- function(strings) {
-    if (trim.factor.names) 
-    gsub(" +$", "", strings)
-    else strings
-  }
-  rval <- .Call("do_read_SPSS", file, PACKAGE = "foreign")
-  vl <- attr(rval, "label.table")
-  has.vl <- which(!sapply(vl, is.null))
-  for (v in has.vl) {
-    nm <- names(vl)[[v]]
-    nvalues <- length(na.omit(unique(rval[[nm]])))
-    nlabels <- length(vl[[v]])
-    if (use.value.labels && (!is.finite(max.value.labels) || nvalues <= max.value.labels)) 
-    rval[[nm]] <- factor(rval[[nm]], levels = rev(vl[[v]]), 
-    labels = rev(trim(names(vl[[v]]))))
-    else attr(rval[[nm]], "value.labels") <- vl[[v]]
-  }
-  if (to.data.frame) {
-    varlab <- attr(rval, "variable.labels")
-    rval <- as.data.frame(rval)
-    attr(rval, "variable.labels") <- varlab
-  }
-  rval
-}
-  
-  ################################################################################
-  ################################################################################
-
   message("\n\n\nSTEP 1/3: DEFINE ANALYZED VARIABLE\n\n\n",domain="R-prevR")
   ind = make.ind.spss(file.sav)
   message("\n\n\nSTEP 2/3: CLUSTERS INFORMATION\n\n\n",domain="R-prevR")
