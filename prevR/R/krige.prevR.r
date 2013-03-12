@@ -116,7 +116,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
         out = NULL
         while(is.null(out)){
           varioGeoR  = variog(data = slot(dataCase,"data")[[one.var]],coords = slot(dataCase,"coords"))
-          assign("varioGeoR",varioGeoR,pos=1)
+          #assign("varioGeoR",varioGeoR,pos=1) inutile
           out        = .eyefit.prevR(varioGeoR)
           one.model   =  try(as.vgm.variomodel(out[[length(out)]]),silent=T)
           if(attr(one.model,"class")[1]=="try-error"){

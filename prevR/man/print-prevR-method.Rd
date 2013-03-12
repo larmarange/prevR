@@ -23,6 +23,8 @@
 
 \examples{
 print(fdhs)
-dhs <- rings(fdhs,N=c(100,300,500))
-print(dhs)
+\dontrun{
+	dhs <- rings(fdhs,N=c(100,300,500))
+	print(dhs)
+}
 }

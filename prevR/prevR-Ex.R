@@ -54,11 +54,15 @@ flush(stderr()); flush(stdout())
 
 ### ** Examples
 
-r.fdhs <- rings(fdhs, N=c(100,200,300))
-str(r.fdhs)
-str(as.data.frame(r.fdhs, clusters.only=TRUE))
-str(as.data.frame(r.fdhs))
-str(as.data.frame(r.fdhs, N=300))
+str(fdhs)
+str(as.data.frame(fdhs))
+## Not run: 
+##D 	r.fdhs <- rings(fdhs, N=c(100,200,300))
+##D 	str(r.fdhs)
+##D 	str(as.data.frame(r.fdhs, clusters.only=TRUE))
+##D 	str(as.data.frame(r.fdhs))
+##D 	str(as.data.frame(r.fdhs, N=300))
+## End(Not run)
 
 
 
@@ -369,9 +373,11 @@ dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-dhs <- rings(fdhs,N=c(100,300,500))
-str(dhs)
-print(dhs)
+## Not run: 
+##D 	dhs <- rings(fdhs,N=c(100,300,500))
+##D 	str(dhs)
+##D 	print(dhs)
+## End(Not run)
 
 
 
@@ -480,8 +486,10 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 print(fdhs)
-dhs <- rings(fdhs,N=c(100,300,500))
-print(dhs)
+## Not run: 
+##D 	dhs <- rings(fdhs,N=c(100,300,500))
+##D 	print(dhs)
+## End(Not run)
 
 
 
@@ -498,11 +506,11 @@ flush(stderr()); flush(stdout())
 ### Keywords: math spatial
 
 ### ** Examples
-
-print(fdhs)
-dhs <- rings(fdhs,N=c(100,200,300,400,500))
-print(dhs)
-
+## Not run: 
+##D print(fdhs)
+##D dhs <- rings(fdhs,N=c(100,200,300,400,500))
+##D print(dhs)
+## End(Not run)
 
 
 cleanEx()
@@ -518,8 +526,10 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 fdhs
-dhs <- rings(fdhs,N=c(100,300,500))
-dhs
+## Not run: 
+##D 	dhs <- rings(fdhs,N=c(100,300,500))
+##D 	dhs
+## End(Not run)
 
 
 
@@ -536,9 +546,11 @@ flush(stderr()); flush(stdout())
 ### ** Examples
 
 summary(fdhs)
-dhs <- rings(fdhs, N=c(100,300,500))
-summary(dhs)
-summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
+## Not run: 
+##D 	dhs <- rings(fdhs, N=c(100,300,500))
+##D 	summary(dhs)
+##D 	summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
+## End(Not run)
 
 
 

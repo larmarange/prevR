@@ -58,10 +58,10 @@ Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une 
 Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda Nicolas and Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé à partir des coordonnées des zones d'enquête", \emph{Chaire Quételet, 29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve, Belgique, \url{http://www.uclouvain.be/13881.html}.
 }
 
-\examples{
+\examples{\dontrun{
 print(fdhs)
 dhs <- rings(fdhs,N=c(100,200,300,400,500))
 print(dhs)
-}
+}}
 \keyword{math}
 \keyword{spatial}
