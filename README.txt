@@ -5,9 +5,9 @@ Execute CreatePackagePrevR.bat to create sources of the package
 Execute CheckAndBuildPrevR.bat to check the package and build the zip files
 
 To update French translation:
-  - execute UpdatePOT.bat,
-  - open R-fr.po with Poedit,
-  - Menu > Catalogue > Update from POT file,
+  - execute UpdatePOT.bat
+  - open R-fr.po with Poedit
+  - Menu > Catalogue > Update from POT file
   - select R-prevR.pot
   - update translation
   - save
