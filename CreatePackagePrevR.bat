@@ -4,10 +4,9 @@ RScript skeletonScripts.R
 rm prevR/Read-and-delete-me
 rmdir prevR\man /S /Q
 mkdir prevR\man
+xcopy /Y man\*.* prevR\man\
 mkdir prevR\data
-cp TMWorldBorders.rda prevR/data/TMWorldBorders.rda
-cp fdhs.rda prevR/data/fdhs.rda
-xcopy /Y help\*.* prevR\man\
+xcopy /Y data\*.* prevR\data
 mkdir prevR\demo
 xcopy /Y demo\*.* prevR\demo
 mkdir prevR\vignettes
