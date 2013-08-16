@@ -1,5 +1,3 @@
-# Path to working directory
-setwd("C:/Users/Joseph/prevR/")
 # Removing previous versions
 remove(list=ls(all=T)) 
 unlink(file.path(Sys.getenv("R_HOME"),"library/prevR"),rec=T)
@@ -15,6 +13,3 @@ package.skeleton("prevR",code_file=c(files[ind],files[-ind]),namespace =TRUE, fo
 # Updating POT file
 library(tools)
 xgettext2pot('./prevR')
-# Removing doc (will be added by prevRS.bat)
-unlink("./prevR/man",rec=T)
-dir.create("./prevR/man",rec=T)

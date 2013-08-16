@@ -2,6 +2,8 @@ rmdir prevR /S /Q
 rmdir prevR.Rcheck /S /Q
 RScript skeletonScripts.R
 rm prevR/Read-and-delete-me
+rmdir prevR\man /S /Q
+mkdir prevR\man
 mkdir prevR\data
 cp TMWorldBorders.rda prevR/data/TMWorldBorders.rda
 cp fdhs.rda prevR/data/fdhs.rda
@@ -23,9 +25,3 @@ cp DESCRIPTION  prevR/DESCRIPTION
 REM cp LICENCE prevR/LICENCE
 cp NAMESPACE prevR/NAMESPACE
 cp CITATION  prevR/inst/CITATION
-R CMD check prevR 
-R CMD build prevR --compact-vignettes
-REM attention remplacer si nécessaire le numero de version dans le nom du fichier tar.gz
-R CMD INSTALL --build  prevR_2.3.tar.gz
-R CMD INSTALL --build  prevR
-R CMD check --as-cran prevR_2.3.tar.gz
