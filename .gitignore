@@ -1,5 +1,6 @@
 prevR/
 prevR.Rcheck/
+.Rhistory
 
 *.zip
 *.tar.gz
