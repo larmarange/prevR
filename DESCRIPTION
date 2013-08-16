@@ -1,8 +1,8 @@
 Package: prevR
 Type: Package
 Title: Estimating regional trends of a prevalence from a DHS
-Version: 2.2
-Date: 2013-03-08
+Version: 2.3
+Date: 2013-08-16
 Author: Joseph Larmarange - CEPED (Universite Paris Descartes Ined IRD) IRD, with fundings from ANRS and IRD, and technical support from LYSIS (info@lysis-consultants.fr)
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Description: This package performs spatial estimation of a prevalence surface or a relative risks surface, using data from a Demographic and Health Survey (DHS) or an analog survey.
