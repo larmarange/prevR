@@ -50,9 +50,10 @@ import.dhs  = function(file.sav, file.dbf){
     colNames   = c("id","x","y","c.type")[c(T, T , T, c.type!=0)]
     names(clust) = colNames
     
-    
+    if (is.numeric(clust$id))
+      clust$id <- as.integer(clust$id)
     if (!is.integer(clust$id))
-      clust$cluster <- as.integer(as.character(clust$cluster))
+      clust$id <- as.integer(as.character(clust$id))
     if (!is.numeric(clust$x)) 
       clust$x <- as.numeric(as.character(clust$x))
     if (!is.numeric(clust$y)) 
