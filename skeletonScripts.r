@@ -6,7 +6,7 @@ library(sp)
 library(gstat)
 library(maptools)
 # Creating all objects
-files=dir("./ScriptsDev",full=T,patt=".r") 
+files=dir("./Rcode",full=T,patt=".r") 
 ind=grep("setClass",files)
 # Creating the skeleton of the package
 package.skeleton("prevR",code_file=c(files[ind],files[-ind]),namespace =TRUE, force =TRUE)

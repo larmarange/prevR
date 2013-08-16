@@ -7,7 +7,7 @@ mkdir prevR\man
 mkdir prevR\data
 cp TMWorldBorders.rda prevR/data/TMWorldBorders.rda
 cp fdhs.rda prevR/data/fdhs.rda
-xcopy /Y aides\*.* prevR\man\
+xcopy /Y help\*.* prevR\man\
 mkdir prevR\demo
 xcopy /Y demo\*.* prevR\demo
 mkdir prevR\vignettes
