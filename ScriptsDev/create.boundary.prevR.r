@@ -26,7 +26,8 @@ create.boundary = function(countries = NULL, multiple = F,proj = "+proj=longlat"
   if(any(ind==0)){
     invalid.names = paste(countries[ind==0],collapse=", ")
     n.invalid = length(countries[ind==0])
-    stop(sprintf(ngettext(n.invalid,"%s is not a valid country name.","%s are not valid country names.",domain="R-prevR"),invalid.names), call.=F)
+    sprintf(ngettext(n.invalid,"%s is not a valid country name.","%s are not valid country names.",domain="R-prevR"),invalid.names) -> stop.mess
+    stop(stop.mess, call.=F)
   } 
 
   boundary = SpatialPolygons(polygons[ind],proj4string =CRS("+proj=longlat"))

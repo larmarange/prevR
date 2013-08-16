@@ -41,7 +41,8 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat"){
   if(any(is.na(ind))) {
     missing.var = paste(col[is.na(ind)],collapse=", ")
     n.missing = length(col[is.na(ind)])
-    stop(sprintf(ngettext(n.missing,"the variable %s, defined in 'col', is not present in 'data'.","the following variables (%s), defined in 'col', are not present in 'data'.",domain="R-prevR"),missing.var), call.=F)
+    sprintf(ngettext(n.missing,"the variable %s, defined in 'col', is not present in 'data'.","the following variables (%s), defined in 'col', are not present in 'data'.",domain="R-prevR"),missing.var) -> stop.mess
+    stop(stop.mess, call.=F)
   }
   col         = col[!is.null(col)]
   data        = data[,col]
@@ -51,7 +52,8 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat"){
   if(any(is.na(ind))) {
     missing.var = paste(necessaryVar[is.na(ind)],collapse=", ")
     n.missing = length(necessaryVar[is.na(ind)])
-    stop(sprintf(ngettext(n.missing,"the variable %s is missing in 'col'.","the following variables (%s) are missing in 'col'.",domain="R-prevR"),missing.var), call.=F)
+    sprintf(ngettext(n.missing,"the variable %s is missing in 'col'.","the following variables (%s) are missing in 'col'.",domain="R-prevR"),missing.var) -> stop.mess
+    stop(stop.mess, call.=F)
   }
   if(!is.element("id",names(data))){
     data = cbind(id = 1:nrow(data) , data)
@@ -61,7 +63,8 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat"){
   if(any(ind==0)) {
     cancelled.var = paste(names(data)[ind==0],collapse=", ")
     n.cancelled = length(names(data)[ind==0])
-    message(sprintf(ngettext(n.cancelled,"The variable %s has been cancelled from 'data'.","The following variables (%s) have been cancelled from 'data'.",domain="R-prevR"),cancelled.var))
+    sprintf(ngettext(n.cancelled,"The variable %s has been cancelled from 'data'.","The following variables (%s) have been cancelled from 'data'.",domain="R-prevR"),cancelled.var) -> mess
+    message(mess)
   }
   # Reduire data apres avoir calcule le message d'information.
   data        = data[,ind!=0]

@@ -50,7 +50,8 @@ validity = function(object){
   if(any(is.na(ind))) {
     missing.var = paste(necessaryVar[is.na(ind)],collapse=", ")
     n.missing = length(necessaryVar[is.na(ind)])
-    stop(sprintf(ngettext(n.missing,"the variable %s is missing.","the following variables (%s) are missing.",domain="R-prevR"),missing.var), call.=F)
+    sprintf(ngettext(n.missing,"the variable %s is missing.","the following variables (%s) are missing.",domain="R-prevR"),missing.var) -> stop.mess
+    stop(stop.mess, call.=F)
   }
   coupledVar = c("wn","wpos")
   ind = match(coupledVar,names(clusters))
