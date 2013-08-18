@@ -11,7 +11,6 @@ mkdir prevR\demo
 xcopy /Y demo\*.* prevR\demo
 mkdir prevR\vignettes
 xcopy /Y vignettes\*.* prevR\vignettes
-cp R-fr.mo prevR/inst/po/fr/LC_MESSAGES/R-prevR.mo
 mkdir prevR\po
 mkdir prevR\inst
 mkdir prevR\inst\po
