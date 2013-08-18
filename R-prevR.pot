@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.0.1\n"
 "Report-Msgid-Bugs-To: bugs.r-project.org\n"
-"POT-Creation-Date: 2013-08-17 01:06\n"
+"POT-Creation-Date: 2013-08-18 19:14\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -68,7 +68,7 @@ msgstr ""
 msgid "no data available for the variable '%s' with N=%s and R=%s."
 msgstr ""
 
-msgid "A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?"
+msgid "A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters with missing coordinates (optional) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?"
 msgstr ""
 
 msgid "Yes"
@@ -77,16 +77,19 @@ msgstr ""
 msgid "Please indicate the following variables:"
 msgstr ""
 
-msgid "* Cluster number:"
+msgid "* Cluster number (usually called DHSCLUST):"
 msgstr ""
 
-msgid "* Longitude (decimal value):"
+msgid "* Longitude (decimal value, usually called LONGNUM):"
 msgstr ""
 
-msgid "* Latitude (decimal value):"
+msgid "* Latitude (decimal value, usually called LATNUM):"
 msgstr ""
 
-msgid "* Type of cluster (optionnal):"
+msgid "* Clusters with missing coordinates (optionnal, usually called SOURCE, type 0 if none):"
+msgstr ""
+
+msgid "* Type of cluster (optionnal, type 0 if none):"
 msgstr ""
 
 msgid "----------------------------------------------------"
@@ -95,13 +98,25 @@ msgstr ""
 msgid "Please check the following informations:"
 msgstr ""
 
+msgid "* Cluster number:"
+msgstr ""
+
 msgid "Not available - WARNING: this variable must be specified!"
 msgstr ""
 
-msgid "* Type of cluster (optionnal, 0 if not):"
+msgid "* Longitude (decimal value):"
+msgstr ""
+
+msgid "* Latitude (decimal value):"
+msgstr ""
+
+msgid "* Clusters with missing coordinates (optionnal):"
 msgstr ""
 
 msgid "Not available"
+msgstr ""
+
+msgid "* Type of cluster (optionnal):"
 msgstr ""
 
 msgid "WARNING: cluster number must be specified!"
@@ -122,6 +137,12 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+msgid "Please select the modality corresponding to missing coordinates (usually coded MIS)."
+msgstr ""
+
+msgid "Missing coordinates"
+msgstr ""
+
 msgid "1.1 VARIABLES SELECTION"
 msgstr ""
 
@@ -134,7 +155,7 @@ msgstr ""
 msgid "* Individual identification number or Cluster number must be specified."
 msgstr ""
 
-msgid "* Analyzed variable (for example, result of HIV testing):"
+msgid "* Analyzed variable:"
 msgstr ""
 
 msgid "* Statistical weight (0 if not. All persons will have the same weight of 1.):"
@@ -144,9 +165,6 @@ msgid "* Individual identification number:"
 msgstr ""
 
 msgid "Not available - It will be calculated with individual identification number."
-msgstr ""
-
-msgid "* Analyzed variable:"
 msgstr ""
 
 msgid "* Statistical weight:"
@@ -161,7 +179,16 @@ msgstr ""
 msgid "WARNING: you have to specify the analyzed variable!"
 msgstr ""
 
-msgid "Three windows will open in order to re-code the analysed variable.\nYou will have to specify the modalities corresponding to a positive result (the analysed phenomenon occured), \na negative result (not occured) and an undetermined result (considered as a missing value).\nYou can select several modalities with CTRL.\nAre you ready?"
+msgid "Please specify the modalities corresponding to a positive result (the analysed phenomenon occured), a negative result (not occured) and an undetermined result (considered as a missing value)."
+msgstr ""
+
+msgid "Positive result"
+msgstr ""
+
+msgid "Negative result"
+msgstr ""
+
+msgid "Undetermined result"
 msgstr ""
 
 msgid "WARNING: You specified the same modality two times or you forgot one. Please start again.\nAre you ready?"
@@ -355,6 +382,16 @@ msgstr[1]    ""
 
 msgid        "%s is not a valid country name."
 msgid_plural "%s are not valid country names."
+msgstr[0]    ""
+msgstr[1]    ""
+
+msgid        "%s cluster was deleted due to missing values."
+msgid_plural "%s clusters were deleted due to missing values."
+msgstr[0]    ""
+msgstr[1]    ""
+
+msgid        "%s cluster has latitude and longitude equal to 0. You should check if there is a variable in the dataset indicating clusters with missing coordinates."
+msgid_plural "%s clusters have latitude and longitude equal to 0. You should check if there is a variable in the dataset indicating clusters with missing coordinates."
 msgstr[0]    ""
 msgstr[1]    ""
 

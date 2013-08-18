@@ -2,7 +2,7 @@ if (!isGeneric("plot"))
       setGeneric("plot", function(x, y, ...) standardGeneric("plot")) 
 setMethod("plot",c("prevR","missing"),
   function(x ,type = "position", add.legend = TRUE, legend.location = "bottomright",
-    factor.size = 0.2, new.window = TRUE, axes = F,...){
+    factor.size = 0.2, new.window = FALSE, axes = F,...){
     ###############################################################################################
     # En fonction de l'argument type cette fonction plot
     #   type = position : la position des clusters (sur fond de carte si la carte existe)

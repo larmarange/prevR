@@ -7,17 +7,17 @@ dhs <- as.prevR(fdhs.clusters, col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-plot(dhs, main="Clusters position", new.window=FALSE)
-plot(dhs, type="c.type", main="Clusters by residence", new.window=FALSE)
-plot(dhs, type="count", main="Observations by cluster", new.window=FALSE)
-plot(dhs, type="flower", main="Positive cases by cluster", new.window=FALSE)
+plot(dhs, main="Clusters position")
+plot(dhs, type="c.type", main="Clusters by residence")
+plot(dhs, type="count", main="Observations by cluster")
+plot(dhs, type="flower", main="Positive cases by cluster")
 
 message("Changing coordinates projection", domain="R-prevR")
 
-plot(dhs, axes=TRUE, new.window=FALSE)
+plot(dhs, axes=TRUE)
 dhs <- changeproj(dhs, "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 print(dhs)
-plot(dhs, axes=TRUE, new.window=FALSE)
+plot(dhs, axes=TRUE)
 
 message("Calculating rings of the same number of observations for different values of N",domain="R-prevR")
 dhs <- rings(dhs, N=c(100,200,300,400,500))

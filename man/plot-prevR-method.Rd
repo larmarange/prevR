@@ -17,7 +17,7 @@
      add.legend = TRUE, 
      legend.location = "bottomright",
      factor.size = 0.2,
-     new.window = TRUE, 
+     new.window = FALSE, 
      axes = F,
      \dots
     )
@@ -47,10 +47,10 @@ Use \code{main} to define a title and \code{sub} for a subtitle (see \code{\link
 
 \examples{
 \dontshow{par(ask = TRUE)}
-plot(fdhs, type = "position", main="position", new.window=FALSE, axes=TRUE)
-plot(fdhs, type = "c.type", main="c.type", new.window=FALSE)
-plot(fdhs, type = "count", main="count", factor.size = 0.1, new.window=FALSE)
-plot(fdhs, type = "flower", main="flower", new.window=FALSE)
+plot(fdhs, type = "position", main="position", axes=TRUE)
+plot(fdhs, type = "c.type", main="c.type")
+plot(fdhs, type = "count", main="count", factor.size = 0.1)
+plot(fdhs, type = "flower", main="flower")
 \dontshow{par(ask = FALSE)}
 }
 \keyword{hplot}

@@ -121,18 +121,18 @@ dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
 str(dhs)
 print(dhs)
 
-plot(dhs, main="Clusters position",new.window=FALSE)
-plot(dhs, type="c.type", main="Clusters by residence",new.window=FALSE)
-plot(dhs, type="count", main="Observations by cluster",new.window=FALSE)
-plot(dhs, type="c.type", main="Positive cases by cluster",new.window=FALSE)
+plot(dhs, main="Clusters position")
+plot(dhs, type="c.type", main="Clusters by residence")
+plot(dhs, type="count", main="Observations by cluster")
+plot(dhs, type="c.type", main="Positive cases by cluster")
 
 
 # Changement de systeme de coordonnees
-plot(dhs,axes=TRUE,new.window=FALSE)
+plot(dhs,axes=TRUE)
 dhs <- changeproj(dhs,
        "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 print(dhs)
-plot(dhs,axes=TRUE,new.window=FALSE)
+plot(dhs,axes=TRUE)
 
 # Calcul des cercles de meme effectif pour differentes valeurs de N
 dhs <- rings(fdhs,N=c(100,200,300,400,500))
@@ -906,7 +906,7 @@ plot(x,
      add.legend = TRUE, 
      legend.location = "bottomright",
      factor.size = 0.2,
-     new.window = TRUE, 
+     new.window = FALSE, 
      axes = F,
      ...
     )
@@ -953,10 +953,10 @@ Utilisez, entre autres, l'argument \code{main} pour définir un titre et \code{s
 \begin{Examples}
 \begin{ExampleCode}
 
-plot(fdhs,type = "position",main="position",new.window=FALSE,axes=TRUE)
-plot(fdhs,type = "c.type",main="c.type",new.window=FALSE)
-plot(fdhs,type = "count",main="count",factor.size = 0.1,new.window=FALSE)
-plot(fdhs,type = "flower",main="flower",new.window=FALSE)
+plot(fdhs,type = "position",main="position",axes=TRUE)
+plot(fdhs,type = "c.type",main="c.type")
+plot(fdhs,type = "count",main="count",factor.size = 0.1)
+plot(fdhs,type = "flower",main="flower")
 
 \end{ExampleCode}
 \end{Examples}

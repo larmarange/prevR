@@ -4,19 +4,21 @@ import.dhs  = function(file.sav, file.dbf){
     temp.clust <- read.dbf(file)
     if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
     temp.var <- attr(temp.clust, "names")
-    message("A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?",domain="R-prevR")
+    message("A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters with missing coordinates (optional) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?",domain="R-prevR")
     menu(gettext("Yes",domain="R-prevR"))
     edit(temp.clust)
     ok <- 0
     while (ok != 1) {
       message("Please indicate the following variables:\n",domain="R-prevR")
-      message("* Cluster number:",domain="R-prevR")
+      message("* Cluster number (usually called DHSCLUST):",domain="R-prevR")
       nb.clust <- menu(temp.var)
-      message("* Longitude (decimal value):",domain="R-prevR")
+      message("* Longitude (decimal value, usually called LONGNUM):",domain="R-prevR")
       long <- menu(temp.var)
-      message("* Latitude (decimal value):",domain="R-prevR")
+      message("* Latitude (decimal value, usually called LATNUM):",domain="R-prevR")
       lat <- menu(temp.var)
-      message("* Type of cluster (optionnal):",domain="R-prevR")
+      message("* Clusters with missing coordinates (optionnal, usually called SOURCE, type 0 if none):",domain="R-prevR")
+      c.source <- menu(temp.var)
+      message("* Type of cluster (optionnal, type 0 if none):",domain="R-prevR")
       c.type <- menu(temp.var)
       message("\n----------------------------------------------------\n")
       message("Please check the following informations:\n",domain="R-prevR")
@@ -26,7 +28,9 @@ import.dhs  = function(file.sav, file.dbf){
       message(temp.var[long], if (long == 0) gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
       message("* Latitude (decimal value):",domain="R-prevR")
       message(temp.var[lat], if (lat == 0) gettext("Not available - WARNING: this variable must be specified!",domain="R-prevR"))
-      message("* Type of cluster (optionnal, 0 if not):",domain="R-prevR")
+      message("* Clusters with missing coordinates (optionnal):",domain="R-prevR")
+      message(temp.var[c.source], if (c.source == 0) gettext("Not available",domain="R-prevR"))
+      message("* Type of cluster (optionnal):",domain="R-prevR")
       message(temp.var[c.type], if (c.type == 0) gettext("Not available",domain="R-prevR"))
       message("\n----------------------------------------------------\n")
       if (nb.clust == 0) 
@@ -46,8 +50,8 @@ import.dhs  = function(file.sav, file.dbf){
           ok <- menu(gettext(c("Yes","No"),domain="R-prevR"))
       }
     }
-    clust <- data.frame(id = temp.clust[nb.clust], x = temp.clust[long],  y = temp.clust[lat], c.type = temp.clust[c.type])
-    colNames   = c("id","x","y","c.type")[c(T, T , T, c.type!=0)]
+    clust <- data.frame(id = temp.clust[nb.clust], x = temp.clust[long],  y = temp.clust[lat], c.type = temp.clust[c.type], c.source = temp.clust[c.source])
+    colNames   = c("id","x","y","c.type","c.source")[c(T, T , T, c.type!=0, c.source!=0)]
     names(clust) = colNames
     
     if (is.numeric(clust$id))
@@ -61,10 +65,37 @@ import.dhs  = function(file.sav, file.dbf){
     if (c.type != 0)
       if (!is.factor(clust$c.type))
           clust$c.type <- factor(clust$c.type)
+    if (c.source != 0)
+      if (!is.factor(clust$c.source))
+          clust$c.type <- factor(clust$c.source)
           
-          
-          
-          
+    #Deleting clusters with missing coordinates
+    if (c.source != 0) {
+      message("\n----------------------------------------------------\n")
+      message("Please select the modality corresponding to missing coordinates (usually coded MIS).",domain="R-prevR")
+      modalites <- attr(clust$c.source, "levels")
+      c.mis <- select.list(modalites, multiple = TRUE, title = gettext("Missing coordinates",domain="R-prevR"))
+      for (i in 1:length(c.mis)) {
+        clust$x[clust$c.source == c.mis[i]] <- NA
+        clust$y[clust$c.source == c.mis[i]] <- NA
+      }
+      n.missing <- length(clust[is.na(clust$x)|is.na(clust$y),'id'])
+      sprintf(ngettext(n.missing,"%s cluster was deleted due to missing values.","%s clusters were deleted due to missing values.",domain="R-prevR"),n.missing) -> warning.mess
+      warning(warning.mess, call.=F)
+      clust <- clust[!is.na(clust$x)&!is.na(clust$y),]
+      # Deleting c.source, not needed anymore
+      if (c.type != 0) clust <- clust[c("id","x","y","c.type")] else clust <- clust[c("id","x","y")]
+    }
+    
+    # Checking clusters with x==0 and y==0
+    if (c.source==0) {
+      n.missing <- length(clust[clust$x==0 & clust$y==0,'id'])
+      sprintf(ngettext(n.missing,"%s cluster has latitude and longitude equal to 0. You should check if there is a variable in the dataset indicating clusters with missing coordinates.","%s clusters have latitude and longitude equal to 0. You should check if there is a variable in the dataset indicating clusters with missing coordinates.",domain="R-prevR"),n.missing) -> warning.mess
+      warning(warning.mess, call.=F)
+    }
+    
+    # Deleting individuals from a cluster who was deleted
+    ind = ind[ind$id %in% clust$id,]
     # Partie merge en clusters et donnees GPS     
     clust.ind = merge(clust,ind,by="id")
     clust.ind = na.omit(clust.ind)
@@ -110,7 +141,7 @@ import.dhs  = function(file.sav, file.dbf){
         }
       }
       
-      message("* Analyzed variable (for example, result of HIV testing):",domain="R-prevR")
+      message("* Analyzed variable:",domain="R-prevR")
       result <- menu(temp.var)
       
       message("* Statistical weight (0 if not. All persons will have the same weight of 1.):",domain="R-prevR")
@@ -153,15 +184,14 @@ import.dhs  = function(file.sav, file.dbf){
     
     ok <- 0
     message("\n----------------------------------------------------\n")
-    message("Three windows will open in order to re-code the analysed variable.\nYou will have to specify the modalities corresponding to a positive result (the analysed phenomenon occured), \na negative result (not occured) and an undetermined result (considered as a missing value).\nYou can select several modalities with CTRL.\nAre you ready?",domain="R-prevR")
-    menu(gettext("Yes",domain="R-prevR"))
+    message("Please specify the modalities corresponding to a positive result (the analysed phenomenon occured), a negative result (not occured) and an undetermined result (considered as a missing value).",domain="R-prevR")
     modalites <- attr(ind$original.result, "levels")
     
     
     while (ok != 1) {
-      pos <- select.list(modalites, multiple = TRUE, title = "Positive result")
-      neg <- select.list(modalites, multiple = TRUE, title = "Negative result")
-      und <- select.list(modalites, multiple = TRUE, title = "Undetermined result")
+      pos <- select.list(modalites, multiple = TRUE, title = gettext("Positive result",domain="R-prevR"))
+      neg <- select.list(modalites, multiple = TRUE, title = gettext("Negative result",domain="R-prevR"))
+      und <- select.list(modalites, multiple = TRUE, title = gettext("Undetermined result",domain="R-prevR"))
       message("\n----------------------------------------------------\n")
       if (length(neg) + length(pos) + length(und) != length(modalites)) {
         alarm()
@@ -246,7 +276,7 @@ import.dhs  = function(file.sav, file.dbf){
   clusters = make.clust.dbf(file.dbf,ind)
   message("\n\n\nSTEP 3/3: BOUNDARY OF THE COUNTRY\n\n\n",domain="R-prevR")
   message("Do you want to define a boundary?",domain="R-prevR")
-  bound = menu(gettext("Yes",domain="R-prevR"))
+  bound = menu(gettext(c("Yes","No"),domain="R-prevR"))
   boundary = NULL
   if(bound==1) boundary = create.boundary(multiple = F)
   col = names(clusters)
