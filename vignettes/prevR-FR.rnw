@@ -16,8 +16,8 @@
 \inputencoding{utf8}
 \item[Type]\AsIs{Package}
 \item[Title]\AsIs{Estimation des tendances régionales d'une prévalence à partir d'une EDS}
-\item[Version]\AsIs{2.2}
-\item[Date]\AsIs{2013-03-08}
+\item[Version]\AsIs{2.4}
+\item[Date]\AsIs{2013-08-19}
 \item[Author]\AsIs{Joseph Larmarange - CEPED (Université Paris Descartes Ined IRD) IRD, avec l'appui financier de l'ANRS et l'IRD, et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr)}
 \item[Maintainer]\AsIs{Joseph Larmarange }\email{joseph.larmarange@ird.fr}\AsIs{}
 \item[Description]\AsIs{Ce package fournit des fonctions pour l'estimation spatiale d'une surface de prévalences ou d'une surface de risques relatifs à partir de données issues d'une Enquête Démographique et de Santé (EDS) ou d'une enquête analogue.}
