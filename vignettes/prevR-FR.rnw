@@ -15,18 +15,20 @@
 \raggedright{}
 \inputencoding{utf8}
 \item[Type]\AsIs{Package}
-\item[Title]\AsIs{Estimation des tendances régionales d'une prévalence à partir d'une EDS}
-\item[Version]\AsIs{2.4}
+\item[Titre]\AsIs{Estimation des tendances régionales d'une prévalence à partir d'une EDS}
+\item[Version]\AsIs{2.6}
 \item[Date]\AsIs{2013-08-19}
-\item[Author]\AsIs{Joseph Larmarange - CEPED (Université Paris Descartes Ined IRD) IRD, avec l'appui financier de l'ANRS et l'IRD, et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr)}
-\item[Maintainer]\AsIs{Joseph Larmarange }\email{joseph.larmarange@ird.fr}\AsIs{}
+\item[Auteur]\AsIs{Joseph Larmarange - IRD CEPED}
+\item[Maintenance]\AsIs{Joseph Larmarange }\email{joseph.larmarange@ird.fr}\AsIs{}
 \item[Description]\AsIs{Ce package fournit des fonctions pour l'estimation spatiale d'une surface de prévalences ou d'une surface de risques relatifs à partir de données issues d'une Enquête Démographique et de Santé (EDS) ou d'une enquête analogue.}
-\item[License]\AsIs{CeCILL}
+\item[Remerciements]\AsIs{avec l'appui financier de l'ANRS et l'IRD, et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr)}
+\item[Licence]\AsIs{CeCILL}
 \item[URL]\AsIs{}\url{http://www.ceped.org/prevR,}\AsIs{ }\url{http://joseph.larmarange.net/prevR}\AsIs{}
 \item[LazyLoad]\AsIs{yes}
 \item[LazyData]\AsIs{yes}
-\item[Depends]\AsIs{R (>= 2.10), foreign, methods, sp, gstat, maptools, fields, GenKern, rgdal (>= 0.7-4), geoR, tcltk}
-\item[Encoding]\AsIs{UTF-8}
+\item[Dépendances]\AsIs{R (>= 2.10), methods, sp, gstat, fields, GenKern, rgdal (>= 0.7-4)}
+\item[Package recommandés]\AsIs{foreign, maptools, geoR, tcltk}
+\item[Encodage]\AsIs{UTF-8}
 \end{description}
 \Rdcontents{\R{} topics documented:}
 \inputencoding{utf8}
@@ -81,7 +83,7 @@ Ces derniers peuvent être représentés graphiquement à l’aide de la fonctio
 Les surfaces calculées peuvent être exportées avec la fonction \code{\LinkA{writeAsciiGrid}{writeAsciiGrid}}\{\pkg{maptools}\}.
 \end{Details}
 %
-\begin{Section}{Acknowledgement}
+\begin{Section}{Remerciements}
 \pkg{prevR} a été développé avec l'appui financier de l'Agence Nationale de Recherches sur le Sida et les hépatites virales (ANRS - \url{http://www.anrs.fr}) et de l'Institut de Recherche pour le Développement (IRD - \url{http://www.ird.fr}), et le soutien technique de la SARL LYSIS (info@lysis-consultants.fr).
 \end{Section}
 %
@@ -465,8 +467,8 @@ Sinon, c'est l'élément \code{clusters}, fusionné avec \code{rings}, qui sera 
 \code{format} permet de spécifier le format d'export du tableau de données obtenu\\{} avec \code{\LinkA{as.data.frame.prevR}{as.data.frame.prevR}} :
 
 \Tabular{ll}{
-"shp" & Shape File\\{}
-"dbf" & DBASE format (extension: .dbf)\\{}
+"shp" & Shape File (les packages \pkg{maptools} et \pkg{foreign} sont requis)\\{}
+"dbf" & DBASE format (extension: .dbf, le package \pkg{foreign} est requis)\\{}
 "txt" & texte tabulé (extension: .txt)\\{}
 "csv" & 'comma separated values' (extension : .csv)\\{}
 "csv2" & Variante de CSV utilisant un point-virgule (extension: .csv)
@@ -474,6 +476,8 @@ Sinon, c'est l'élément \code{clusters}, fusionné avec \code{rings}, qui sera 
 \code{ext} permet de forcer l'extension du fichier produit, excepté pour les exports en \emph{shapefile} qui produisent systématiquement trois fichiers (.shp, .shx et .dbf).
 
 Le format "txt" utilise par défaut une tabulation comme séparateur et un point pour indiquer les décimales. Le format "csv" utilise une virgule comme séparateur et un point pour les décimales. Le format "csv2" est une variante utilisant le point-virgule comme séparateur et la virgule pour les décimales, convention utilisée par certaines versions d'Excel (notamment la version française). \code{sep} et \code{dec} permettent de forcer le séparateur et le point décimal à utiliser (en conjonction avec le format "txt").
+
+Les packages \pkg{maptools} et \pkg{foreign} sont requis pour exporter au format DBF et/ou Shape File.
 \end{Details}
 %
 \begin{Section}{Methods}
@@ -561,6 +565,8 @@ import.dhs(file.sav, file.dbf)
 Si vous ne précisez pas le chemin des fichiers, \R{} inspectera le dossier de travail (voir \code{\LinkA{setwd}{setwd}}). Pour spécifier le chemin des fichiers, voir \code{\LinkA{file.path}{file.path}}.
 
 Cette fonction est destinée spécifiquement à l'importation des Enquêtes Démograhiques et de Santé. Pour créer un objet de classe \code{\LinkA{prevR}{prevR.Rdash.class}} de manière plus générique, voir \code{\LinkA{as.prevR}{as.prevR}}.
+
+Le package \pkg{foreign} est requis pour utiliser cette fonction.
 \end{Note}
 %
 \begin{SeeAlso}\relax
@@ -805,7 +811,7 @@ idw(formula, locations,
 
 \code{N} et \code{R} permettent de sélectionner les cercles à utiliser pour récupérer la variable à interpoler. S'ils ne sont pas définis, la variable \code{formula} sera interpolée pour chacun des coupes (N,R) disponibles. Plusieurs interpolations peuvent être réalisées simultanément en transmettant une liste de plusieurs variables et/ou plusieurs valeurs de N et R.
 
-Dans le cas d'un krigeage ordinaire, la méthode \code{krige} de \pkg{prevR} ajustera automatiquement un modèle (exponentiel) de semi-variogramme au semi-variogramme expérimental (\code{fit="auto"}). Si vous choisissez \code{fit="manual"}, la fonction affichera une fenêtre graphique (adaptée de \code{\LinkA{eyefit}{eyefit}}\{\pkg{geoR}\}) vous permettant d'ajuster visuellement le modèle de semi-variogramme au semi-variogramme expérimental. Vous pouvez également définir explicitement le modèle de semi-variogramme à utiliser avec le paramètre \code{model}.
+Dans le cas d'un krigeage ordinaire, la méthode \code{krige} de \pkg{prevR} ajustera automatiquement un modèle (exponentiel) de semi-variogramme au semi-variogramme expérimental (\code{fit="auto"}). Si vous choisissez \code{fit="manual"}, la fonction affichera une fenêtre graphique (adaptée de \code{\LinkA{eyefit}{eyefit}}\{\pkg{geoR}\}) vous permettant d'ajuster visuellement le modèle de semi-variogramme au semi-variogramme expérimental. Vous pouvez également définir explicitement le modèle de semi-variogramme à utiliser avec le paramètre \code{model}. Les packages \pkg{geoR} et \pkg{tcltk} sont requis pour un ajustement manuel.
 
 Les interpolations sont effectuées sur une grille de points uniformément répartis, obtenue avec \code{\LinkA{as.SpatialGrid}{as.SpatialGrid,prevR.Rdash.method}}.
 \end{Details}

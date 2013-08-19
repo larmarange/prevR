@@ -8,7 +8,7 @@
   #     comme valeurs initiales du programme d'ajustement fit.variogram appele par la fonction krige quand on est en mode manual
   # Elle renvoie un objt contenant le modele et les parametres d'ajustement 
   ###############################################################################################
-    require(tcltk) || stop("the package tcltk is required.", call.=F)
+    require(tcltk) || stop("The package tcltk is required to use manual fit. Please install it.", domain="R-prevR")
     geterrmessage()
     done <- tclVar(0)
     eyefit.env <- new.env()

@@ -1,5 +1,6 @@
 ##########################################################################################
 import.dhs  = function(file.sav, file.dbf){
+  if (!require(foreign)) stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
     temp.clust <- read.dbf(file)
     if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf

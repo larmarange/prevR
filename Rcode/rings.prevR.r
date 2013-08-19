@@ -26,7 +26,8 @@ setMethod("rings","prevR",
   #       r.wn : l'effectif pondere du cercle
   #       r.wprev : la prevalence ponderee du cercle (100*r.wpos/r.wn)
   # Remarque la list rings est nommee. Le nom de chacun de ses elements est de la forme  
-  #  N(valeur de n ).R(valeur de R) : exemple N500.RInf    
+  #  N(valeur de n ).R(valeur de R) : exemple N500.RInf 
+  # Besoin du package fields pour rdist et rdist.earth   
   #
   ###############################################################################################
 
@@ -40,7 +41,7 @@ setMethod("rings","prevR",
     proj    = slot(projCRS,"projargs")
 # Si les donnees georeferencees sont exprimees en longitude latitude les distances entre clusters sont calculees en Km
 # par la fonction rdist.earth du package fields
-# Autrement les distances sont calculees par la fonction rdist en unite des donnees de depart
+# Autrement les distances sont calculees par la fonction rdist (fields) en unite des donnees de depart
     if(regexpr("longlat",proj)==-1 && regexpr("latlong",proj)==-1){
       distances = rdist(coord.clust)
     } else {

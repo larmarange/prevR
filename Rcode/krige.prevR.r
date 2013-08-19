@@ -115,6 +115,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
         # Seuls les modeles suivants sont valides c("matern", "exponential", "gaussian", "spherical",   "power")
         out = NULL
         while(is.null(out)){
+          if (!require(geoR) || !require(tcltk)) stop("The packages geoR and tcltk are required to use manual fit. Please install it.", domain="R-prevR")
           varioGeoR  = variog(data = slot(dataCase,"data")[[one.var]],coords = slot(dataCase,"coords"))
           #assign("varioGeoR",varioGeoR,pos=1) inutile
           out        = .eyefit.prevR(varioGeoR)

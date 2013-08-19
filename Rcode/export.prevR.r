@@ -31,7 +31,7 @@ setMethod("export","prevR",
   #      writePolyShape pour l'ecriture de l'element boundary (package maptools)
   #      writePointsShape pour l'ecriture de l'element cluster (package maptools)
   #      write.table
-  #      write.dbf
+  #      write.dbf (package foreign)
   # 
   # 
   # Exemples
@@ -45,6 +45,7 @@ setMethod("export","prevR",
       stop("the 'element' argument must be 'clusters' or 'boundary'.", call.=F) 
     }
     if(element=="boundary"){
+      if (!require(maptools)) stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
       boundary = slot(object,"boundary")
       if(attr(boundary,"valid")){
         IDs <- sapply(slot(boundary, "polygons"), function(x) slot(x, "ID"))
@@ -63,6 +64,7 @@ setMethod("export","prevR",
       }
       clusters = as.data.frame(object, N = N , R = R, clusters.only = clusters.only)
       if(format=="shp") {
+        if (!require(maptools)) stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
         PS = clusters
         coordinates(PS)= ~x+y
         PS@proj4string = object@proj
@@ -86,7 +88,10 @@ setMethod("export","prevR",
         if (is.null(dec)) dec=","
         write.table(clusters, file = file,row.names = F,sep = sep, dec = dec, ...)
       }
-      if(format=="dbf")  write.dbf(clusters, file, ...)
+      if(format=="dbf")  {
+        if (!require(foreign)) stop("The package foreign is required to export to DBF. Please install it.", domain="R-prevR")
+        write.dbf(clusters, file, ...)
+      }
     }
   }
 )

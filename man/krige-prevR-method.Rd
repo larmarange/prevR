@@ -50,7 +50,7 @@
 
 \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, surfaces will be estimated for each available couples (N,R). Several interpolations could be simultaneously calculated if several variables and/or several values of N and R are defined.
 
-In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, the sample variogram will be plotted and a graphical dialog box (adapted from \code{\link[geoR]{eyefit}}\{\pkg{geoR}\}) will appear for a manual and visual fitting. You can also specify directly the variogram to use with the parameter \code{model}.
+In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, the sample variogram will be plotted and a graphical dialog box (adapted from \code{\link[geoR]{eyefit}}\{\pkg{geoR}\}) will appear for a manual and visual fitting. You can also specify directly the variogram to use with the parameter \code{model}. Packages \pkg{geoR} and \pkg{tcltk} are required for manual fit.
 
 Interpolations are calculated on spatial gridd obtained with \code{\link[=as.SpatialGrid,prevR-method]{as.SpatialGrid}}.
 }
