@@ -38,8 +38,8 @@ See \code{\link{as.data.frame.prevR}} for details on the use of the parameters o
 
 \code{format} specifies the export format of the data frame returned by \code{\link{as.data.frame.prevR}}:
 \tabular{ll}{
-  "shp" \tab Shape File\cr
-  "dbf" \tab DBASE format (extension: .dbf)\cr
+  "shp" \tab Shape File (require packages \pkg{maptools} and \pkg{foreign})\cr
+  "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
   "txt" \tab tabulated text (extension: .txt)\cr
   "csv" \tab 'comma separated values' (extension: .csv)\cr
   "csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
@@ -48,7 +48,8 @@ See \code{\link{as.data.frame.prevR}} for details on the use of the parameters o
 
 The "txt" format uses by default a tabulation as field separator and a point "." for decimal point. The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
 The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point, the Excel convention for CSV files in some Western European locales. \cr
-\code{sep} and \code{dec} could be used to coerce the field separator and the decimal point (together with the "txt" format).
+\code{sep} and \code{dec} could be used to coerce the field separator and the decimal point (together with the "txt" format).\cr
+Packages \pkg{maptools} and \pkg{foreign} are required for DBF and Shape File export.
 }
 
 \section{Methods}{\describe{\item{\code{signature(object = "prevR")}}{}}}
