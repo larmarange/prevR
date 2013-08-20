@@ -148,7 +148,6 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
     if (show.variogram) {
       n1 = 1
       n2 = 1
-      dev.new()
       more = T
       for (k in 1:length(list.variogram)) {
         nn = ceiling(sqrt(length(list.variogram)))

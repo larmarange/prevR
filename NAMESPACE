@@ -1,6 +1,9 @@
-importFrom("gstat", "idw")
-importFrom("gstat", "krige")
-importFrom("sp", "plot")
+import("sp")
+import("rgdal")
+importFrom("gstat", "idw", "krige", "vgm", "as.vgm.variomodel", "fit.variogram")
+importFrom("fields", "rdist", "rdist.earth")
+importFrom("GenKern", "KernSur")
+importFrom("methods", "setClass", "setGeneric", "setMethod")
 exportPattern("^[[:alpha:]]+")
 exportMethods(
     "as.SpatialGrid",
