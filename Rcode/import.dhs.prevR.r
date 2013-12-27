@@ -2,8 +2,12 @@
 import.dhs  = function(file.sav, file.dbf){
   if (!require(foreign)) stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
-    temp.clust <- read.dbf(file)
-    if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
+    if(is.data.frame(file))
+      temp.clust <- file
+    else {
+      temp.clust <- read.dbf(file)
+      if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
+    }
     temp.var <- attr(temp.clust, "names")
     message("A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters with missing coordinates (optional) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?",domain="R-prevR")
     menu(gettext("Yes",domain="R-prevR"))
@@ -123,7 +127,10 @@ import.dhs  = function(file.sav, file.dbf){
   ################################################################################
   
   make.ind.spss <- function (file) {
-    temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
+    if (is.data.frame(file))
+      temp.ind <- file
+    else
+      temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
     temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
     ok <- 0
     while (ok != 1) {

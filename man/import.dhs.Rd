@@ -8,8 +8,8 @@
 \usage{import.dhs(file.sav, file.dbf)}
 
 \arguments{
-\item{file.sav}{DHS data (one individual per line) in SPSS format (.sav), downloaded from \url{http://www.measuredhs.com}.}
-\item{file.dbf}{GPS position of clusters in DATABASE format (.dbf), downloaded from \url{http://www.measuredhs.com}.}
+\item{file.sav}{DHS data (one individual per line) in SPSS format (.sav), downloaded from \url{http://www.measuredhs.com}. Could also be directly a data.frame.}
+\item{file.dbf}{GPS position of clusters in DATABASE format (.dbf), downloaded from \url{http://www.measuredhs.com}.  Could also be directly a data.frame.}
 }
 
 \note{

@@ -556,8 +556,8 @@ import.dhs(file.sav, file.dbf)
 %
 \begin{Arguments}
 \begin{ldescription}
-\item[\code{file.sav}] fichier contenant les données individuelles d'une Enquête Démographique et de Santé (EDS), téléchargé au format SPSS (.sav) sur \url{http://www.measuredhs.com}.
-\item[\code{file.dbf}] fichier contenant les données GPS d'une Enquête Démographique et de Santé (EDS), téléchargé au format DATABASE (.dbf) sur \url{http://www.measuredhs.com}.
+\item[\code{file.sav}] fichier contenant les données individuelles d'une Enquête Démographique et de Santé (EDS), téléchargé au format SPSS (.sav) sur \url{http://www.measuredhs.com}. Peut-être aussi directement un fichier de données.
+\item[\code{file.dbf}] fichier contenant les données GPS d'une Enquête Démographique et de Santé (EDS), téléchargé au format DATABASE (.dbf) sur \url{http://www.measuredhs.com}.  Peut-être aussi directement un fichier de données.
 \end{ldescription}
 \end{Arguments}
 %
