@@ -2,8 +2,12 @@
 import.dhs  = function(file.sav, file.dbf){
   if (!require(foreign)) stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
-    temp.clust <- read.dbf(file)
-    if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
+    if(is.data.frame(file))
+      temp.clust <- file
+    else {
+      temp.clust <- read.dbf(file)
+      if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
+    }
     temp.var <- attr(temp.clust, "names")
     message("A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters with missing coordinates (optional) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?",domain="R-prevR")
     menu(gettext("Yes",domain="R-prevR"))
@@ -35,20 +39,20 @@ import.dhs  = function(file.sav, file.dbf){
       message(temp.var[c.type], if (c.type == 0) gettext("Not available",domain="R-prevR"))
       message("\n----------------------------------------------------\n")
       if (nb.clust == 0) 
-          message("WARNING: cluster number must be specified!",domain="R-prevR")
+        message("WARNING: cluster number must be specified!",domain="R-prevR")
       if (long == 0) 
-          message("WARNING: longitude must be specified!",domain="R-prevR")
+        message("WARNING: longitude must be specified!",domain="R-prevR")
       if (lat == 0) 
-          message("WARNING: latitude number must be specified!",domain="R-prevR")
+        message("WARNING: latitude number must be specified!",domain="R-prevR")
       if (nb.clust == 0 | long == 0 | lat == 0) {
-          alarm()
-          message("\n----------------------------------------------------\n")
-          message("WARNING: some problems were found (see above). You have to start again. Are you ready?",domain="R-prevR")
-          menu(gettext("Yes",domain="R-prevR"))
+        alarm()
+        message("\n----------------------------------------------------\n")
+        message("WARNING: some problems were found (see above). You have to start again. Are you ready?",domain="R-prevR")
+        menu(gettext("Yes",domain="R-prevR"))
       }
       else {
-          message("Are these data correct?",domain="R-prevR")
-          ok <- menu(gettext(c("Yes","No"),domain="R-prevR"))
+        message("Are these data correct?",domain="R-prevR")
+        ok <- menu(gettext(c("Yes","No"),domain="R-prevR"))
       }
     }
     clust <- data.frame(id = temp.clust[nb.clust], x = temp.clust[long],  y = temp.clust[lat], c.type = temp.clust[c.type], c.source = temp.clust[c.source])
@@ -65,11 +69,11 @@ import.dhs  = function(file.sav, file.dbf){
       clust$y <- as.numeric(as.character(clust$y))
     if (c.type != 0)
       if (!is.factor(clust$c.type))
-          clust$c.type <- factor(clust$c.type)
+        clust$c.type <- factor(clust$c.type)
     if (c.source != 0)
       if (!is.factor(clust$c.source))
-          clust$c.type <- factor(clust$c.source)
-          
+        clust$c.type <- factor(clust$c.source)
+    
     #Deleting clusters with missing coordinates
     if (c.source != 0) {
       message("\n----------------------------------------------------\n")
@@ -123,7 +127,10 @@ import.dhs  = function(file.sav, file.dbf){
   ################################################################################
   
   make.ind.spss <- function (file) {
-    temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
+    if (is.data.frame(file))
+      temp.ind <- file
+    else
+      temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
     temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
     ok <- 0
     while (ok != 1) {
