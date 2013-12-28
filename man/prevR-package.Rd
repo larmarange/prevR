@@ -8,7 +8,7 @@
 \details{\tabular{ll}{
 Package: \tab prevR\cr
 Type: \tab Package\cr
-Version: \tab 2.8\cr
+Version: \tab 2.9\cr
 Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 Website: \tab \url{http://www.ceped.org/prevR},\cr
  \tab \url{http://joseph.larmarange.net/prevR}\cr
