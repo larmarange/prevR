@@ -185,7 +185,7 @@ setMethod("kde","prevR",
       setTxtProgressBar(barre,value=barre.cur)
     }
     # puis en SpatialPixelsDataFrame
-    result = SpatialPixelsDataFrame(points=result[,c('x','y')], data=result[,c(-1,-2)])
+    result = SpatialPixelsDataFrame(points=result[,c('x','y')], data=result[,c(-1,-2), drop = FALSE])
     result@proj4string = object@proj
     
     # Suppression des points hors de la zone d'etude
