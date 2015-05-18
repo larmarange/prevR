@@ -31,7 +31,7 @@ setGeneric("as.SpatialGrid",
 #'  str(as.SpatialGrid(fdhs, nb.cells=200))
 #'
 #'  @rdname as.SpatialGrid
-#'  @aliases as.SpatialGrid-methods as.SpatialGrid,prevR-method
+#'  @aliases as.SpatialGrid-methods as.SpatialGrid,prevR-method as.SpatialGrid
 #'  @keywords manip spatial
 
 setMethod("as.SpatialGrid","prevR",
