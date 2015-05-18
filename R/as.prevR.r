@@ -168,6 +168,7 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +ellps=WG
     attr(boundary,"valid") = F
     slot(boundary,"proj4string") = projCRS
   } else {
+    if (class(boundary) == "SpatialPolygonsDataFrame") class(boundary) = "SpatialPolygons"
     if(class(boundary) != "SpatialPolygons") {
       stop("the class of 'boundary' must be SpatialPolygons.", call.=F)
     }
