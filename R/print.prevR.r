@@ -3,7 +3,7 @@
 #' Method \code{print} for objects of class \code{\link[=prevR-class]{prevR}}: 
 #' shows a summary of the object's characteristics.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param x object of class \code{\link[=prevR-class]{prevR}}.
 #' 
 #' @note Exactly the same as \code{\link{show,prevR-method}}.
 #' @seealso \code{\link{summary,prevR-method}}.
