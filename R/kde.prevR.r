@@ -1,7 +1,7 @@
 #' @exportMethod kde
 
 setGeneric("kde",
-    function(object,  N = NULL, R = NULL, weighted = TRUE, risk.ratio = FALSE, keep.details = FALSE, nb.cells = 100, cell.size = NULL, progression=TRUE){
+    function(object,  N = NULL, R = NULL, weighted = TRUE, risk.ratio = FALSE, keep.details = FALSE, nb.cells = 100, cell.size = NULL, progression = TRUE, short.names = FALSE){
         standardGeneric("kde")
     }
 )
@@ -22,6 +22,7 @@ setGeneric("kde",
 #'    (unused if \code{cell.size} is defined).
 #'  @param cell.size size of each cell (in the unit of the projection).
 #'  @param progression show a progress bar?
+#'  @param short.names should names of the output be short?
 #'  
 #'  @details This function calculates a prevalence surface as the ratio of the intensity surface 
 #'  (expressed in cases per surface unit) of positive cases on the intensity surface of observed cases 
@@ -42,7 +43,10 @@ setGeneric("kde",
 #'  
 #'  @return Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. 
 #'  Surfaces are named according to the name of the corresponding variable, N and R 
-#'  (for example: \emph{k.prev.N300.RInf}).
+#'  (for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
+#'  only one combination of couples (N, R), variable names will not be suffixed by the value of
+#'  N and R.
+#'  
 #'  Estimated variables are (depending on the function parameters) :\itemize{
 #'      \item "k.pos" unweighted intensity surface of positive cases.
 #'      \item "k.obs" unweighted intensity surface of observed cases.
@@ -101,7 +105,7 @@ setGeneric("kde",
 #'  @aliases kde-methods kde,prevR-method kde
 
 setMethod("kde","prevR",
-  function(object,  N = NULL, R = NULL, weighted = TRUE, risk.ratio = FALSE, keep.details = FALSE, nb.cells = 100, cell.size = NULL, progression=TRUE) {  
+  function(object,  N = NULL, R = NULL, weighted = TRUE, risk.ratio = FALSE, keep.details = FALSE, nb.cells = 100, cell.size = NULL, progression = TRUE, short.names = FALSE) {  
   ###############################################################################################
   # Cette fonction calcule une surface de prevalence a partir du ratio de  2 surfaces de densites
   #   calculees par la methode  des estimateurs a noyaux ( noyaux Gaussiens)
@@ -148,8 +152,22 @@ setMethod("kde","prevR",
   #
   #
   ###############################################################################################
-    if(!is.prevR(object,"rings")) {
-      stop("the slot 'rings' is empty: you have to run the rings function first.", call.=F)
+    
+    if(is.null(N) & !is.null(R)) N = Inf
+    if(is.null(R) & !is.null(N)) R = Inf
+    
+    # If both are null, we take all combinaisons from the slot rings
+    if (is.null(R) & is.null(R)) {
+      if (!is.prevR(object, "rings"))
+        stop("the slot 'rings' is empty: you have to run the rings function first.", call. = F)
+      rings  = slot(object,"rings")
+      N = sapply(rings,function(x) x$N)
+      R = sapply(rings,function(x) x$R)
+    } 
+    
+    if (!is.prevR(object, "rings") & any(N!=Inf)) { # If only R, no need of rings
+      stop("the slot 'rings' is empty: you have to run the rings function first.", 
+           call. = F)
     }
 
     clusters  = slot(object,"clusters")
@@ -159,8 +177,7 @@ setMethod("kde","prevR",
        weighted = F
      }
     rings  = slot(object,"rings")
-    if(is.null(N)) N = sapply(rings,function(x) x$N)
-    if(is.null(R)) R = sapply(rings,function(x) x$R)
+    
     .isInputOk.prevR(N = N, R = R)
     couples  = unique(data.frame(N = N, R = R, stringsAsFactors=F))
     # couples contient les triples N R var qu'il faut lisser
@@ -192,14 +209,20 @@ setMethod("kde","prevR",
     for(ic in 1:nrow(couples)){
       one.N = couples[ic,"N"]
       one.R = couples[ic,"R"]
-      ringName = paste("N",one.N,".R",one.R,sep="")
-      ring = rings[[ringName]]
-      if(is.null(ring)) {
-        warning(gettextf("no data available for the variable '%s' with N=%s and R=%s.",one.var,one.N,one.R,domain="R-prevR"))
-        next
+      if (any(N!=Inf)) {
+        ringName = paste("N", one.N, ".R", one.R, sep = "")
+        ring = rings[[ringName]]
+        if (is.null(ring)) {
+          warning(gettextf("no data available for the variable '%s' with N=%s and R=%s.", 
+                           one.var, one.N, one.R, domain = "R-prevR"))
+          next
+        }
+        dataCase = merge(clusters, ring[["estimates"]], by = "id")
+      } else { # If only R, we can take directly the value of R
+        dataCase = clusters
+        dataCase$r.radius = one.R
       }
-
-      dataCase = merge(clusters,ring[["estimates"]],by="id")
+      
       if(nrow(dataCase)==0) next
       bw   = dataCase[["r.radius"]]
       bwx  = bw
@@ -264,7 +287,9 @@ setMethod("kde","prevR",
         result.one = result.one[ind]
       }
       
-      names(result.one) = c(paste(names(result.one),".N",one.N,".R",one.R, sep = ""))
+      if (!short.names | nrow(couples)>1)
+        names(result.one) = c(paste(names(result.one), ".N", one.N, ".R", one.R, sep = ""))
+      
       if(is.null(result)) {
         result = result.one
       } else {
