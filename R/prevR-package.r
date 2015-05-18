@@ -169,6 +169,12 @@
 #' @docType package
 #' @name prevR-package
 #' @keywords package
+#' @import sp
+#' @import rgdal
+#' @importFrom gstat idw krige vgm as.vgm.variomodel fit.variogram
+#' @importFrom fields rdist rdist.earth
+#' @importFrom GenKern KernSur
+#' @importFrom methods setClass setGeneric setMethod
 NULL
 
 
