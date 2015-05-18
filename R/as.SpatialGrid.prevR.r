@@ -1,8 +1,39 @@
+#' @exportMethod as.SpatialGrid
 setGeneric("as.SpatialGrid",
     function(object, nb.cells = 100, cell.size = NULL){ 
         standardGeneric("as.SpatialGrid") 
     }
 )
+
+#'  Create a spatial grid from an object of class prevR.
+#'  
+#'  This function generates a spatial rectangular grid from the slot \code{boundary} 
+#'  of an object of class \code{\link[=prevR-class]{prevR}}; function used in particular 
+#'  by the methods \code{\link[=kde,prevR-method]{kde}}, \code{\link[=krige,prevR-method]{krige}} 
+#'  and \code{\link[=idw,prevR-method]{idw}}.
+#'  
+#'  @param object object of class \code{\link[=prevR-class]{prevR}}.
+#'  @param nb.cells number of cells on the longuest side of the studied area 
+#'    (unused if \code{cell.size} is defined).
+#'  @param cell.size size of each cell (in the unit of the projection).
+#'  
+#'  @details This function generates a spatial rectangular grid, each cell being a square 
+#'  of side \code{cell.size}. If \code{cell.size} is not defined, side of cells will be 
+#'  calculated as the longuest side of the slot \code{boundary} of \code{object} divided 
+#'  by \code{nb.cells}.
+#'  
+#'  @return Object of class \code{\link[sp:SpatialGrid-class]{SpatialGrid}}\{\pkg{sp}\}.
+#'  
+#'  @seealso \code{\link[sp]{GridTopology}}\{\pkg{sp}\}, \code{\link[sp]{SpatialGrid-class}}\{\pkg{sp}\}.
+#'  
+#'  @examples 
+#'  str(as.SpatialGrid(fdhs))
+#'  str(as.SpatialGrid(fdhs, nb.cells=200))
+#'
+#'  @rdname as.SpatialGrid
+#'  @aliases as.SpatialGrid-methods as.SpatialGrid,prevR-method as.SpatialGrid
+#'  @keywords manip spatial
+
 setMethod("as.SpatialGrid","prevR",
   # nb.cells : Un entier qui contient le nombre de cellules sur la plus grande des dimensions (x ou y de clusters)
   #      On deduit facilement la taille d'une cellule donc le nombre de cellules sur la plus petite des dimensions

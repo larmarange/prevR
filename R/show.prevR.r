@@ -1,3 +1,21 @@
+#' Summary of a prevR object.
+#' 
+#' Method \code{show} for objects of class \code{\link[=prevR-class]{prevR}}: 
+#' shows a summary of the object's characteristics.
+#' 
+#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' 
+#' @note Exactly the same as \code{\link{print,prevR-method}}.
+#' @seealso \code{\link{summary,prevR-method}}.
+#' @examples 
+#' fdhs
+#' \dontrun{
+#'   dhs <- rings(fdhs,N=c(100,300,500))
+#'   dhs
+#' }
+#'
+#' @aliases show show-methods show,prevR-method
+
 setMethod("show","prevR",
 function(object){
   ###############################################################################################

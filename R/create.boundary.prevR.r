@@ -1,4 +1,40 @@
-create.boundary = function(countries = NULL, multiple = F,proj = "+proj=longlat"){
+#'  Provide national boundaries of a country.
+#'  
+#'  This function uses the data set \code{\link{TMWorldBorders}}. One or several countries
+#'  can be selected and will be returned as an object of class 
+#'  \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+#'  
+#'  @param countries a vector of character string corresponding to the name of the countries 
+#'  you want to extract from the dataset. If \code{NULL}, a dialog box will be appear in order to select
+#'  the desired country.
+#'  @param multiple should the dialog box allow multiple selection (unused if \code{countries} is specified)?
+#'  @param proj map projection to use for the result (longitude and latitude in decimal degrees by default).
+#'  
+#'  @details \code{proj} could be a character string corresponding to a \emph{PROJ.4} 
+#'  projection (see \url{http://trac.osgeo.org/proj/} for more details) 
+#'  or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
+#'  
+#'  @return Object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}\{\pkg{sp}\}.
+#'  
+#'  @note The result will be automatically plotted.
+#'  
+#'  @seealso \code{\link{TMWorldBorders}}.
+#'  
+#'  @examples 
+#'  \dontrun{
+#'  boundary <- create.boundary()
+#'  }
+#'  \dontshow{par(ask = TRUE)}
+#'  boundary <- create.boundary("Burkina Faso")
+#'  boundary <- create.boundary("Burkina Faso",
+#'    proj="+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+#'  boundary <- create.boundary(countries = c("Burkina Faso", "Ghana", "Benin"))
+#'  \dontshow{par(ask = FALSE)}
+#'  
+#'  @export
+#'  @keywords manip spatial
+
+create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat +ellps=WGS84"){
   ##################################################################################################
   # Cette fonction extrait de la base de donnees TM_WORLD_BORDERS-0.3 le contour des pays
   # Elle renvoie un object (boundary) de classe spatialPolygons contenant les frontieres des pays selectionnees
@@ -15,8 +51,8 @@ create.boundary = function(countries = NULL, multiple = F,proj = "+proj=longlat"
   # boundary      = create.boundary(countries = c("France","Italy","Belgium","Switzerland","Luxembourg","Germany","Austria","Slovakia","Czech Republic"))
   #
   ##################################################################################################
-  data     = slot(TMWorldBorders,"data") 
-  polygons = slot(TMWorldBorders,"polygons")
+  data     = slot(prevR::TMWorldBorders,"data") 
+  polygons = slot(prevR::TMWorldBorders,"polygons")
   if(is.null(countries)) {
       title = c(gettext("Select one country:",domain="R-prevR"),gettext("Select countries (use CTRL):",domain="R-prevR"))[c(!multiple,multiple)]
       countries = select.list(sort(as.character(data[["NAME"]])), multiple = multiple, title =  title)
@@ -30,7 +66,7 @@ create.boundary = function(countries = NULL, multiple = F,proj = "+proj=longlat"
     stop(stop.mess, call.=F)
   } 
 
-  boundary = SpatialPolygons(polygons[ind],proj4string =CRS("+proj=longlat"))
+  boundary = SpatialPolygons(polygons[ind],proj4string =CRS("+proj=longlat +ellps=WGS84"))
   if(!is.null(proj)){
     if(!is(proj,"CRS")){
       isOk = try(CRS(proj),silent=T)

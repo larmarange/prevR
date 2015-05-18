@@ -1,11 +1,40 @@
-##########################################################################################
+#'  Import DHS data.
+#'  
+#'  This step by step function guides users to import data from a Demographic and Health Survey (DHS) 
+#'  and create an object of class \code{\link[=prevR-class]{prevR}}.
+#'  
+#'  @param file.sav DHS data (one individual per line) in SPSS format (.sav), 
+#'  downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.frame.
+#'  @param file.dbf GPS position of clusters in DATABASE format (.dbf), downloaded from 
+#'  \url{http://www.dhsprogram.com/}.  Could also be directly a data.frame.
+#'  
+#'  @note If you don't provide the precise path of files, \R will check the working directory 
+#'  (see \code{\link[base]{setwd}}). To specify the file path, see \code{\link[base]{file.path}}.
+#'  
+#'  This function was developed specifically for importing DHS. 
+#'  For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}}, 
+#'  see \code{\link{as.prevR}}.
+#'  
+#'  The package \pkg{foreign} is required to use this function.
+#'  
+#'  @seealso \code{\link{as.prevR}}, \code{\link{prevR-class}}.
+#'  
+#'  @examples 
+#'  \dontrun{
+#'  import.dhs("data.sav", "gps.dbf")
+#'  }
+#'  
+#'  @keywords manip
+#'  @export
+
 import.dhs  = function(file.sav, file.dbf){
-  if (!require(foreign)) stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
+  if (requireNamespace("foreign", quietly = TRUE)) 
+    stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
     if(is.data.frame(file))
       temp.clust <- file
     else {
-      temp.clust <- read.dbf(file)
+      temp.clust <- foreign::read.dbf(file)
       if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
     }
     temp.var <- attr(temp.clust, "names")
@@ -130,7 +159,7 @@ import.dhs  = function(file.sav, file.dbf){
     if (is.data.frame(file))
       temp.ind <- file
     else
-      temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
+      temp.ind <- foreign::read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
     temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
     ok <- 0
     while (ok != 1) {
@@ -289,5 +318,5 @@ import.dhs  = function(file.sav, file.dbf){
   if(bound==1) boundary = create.boundary(multiple = F)
   col = names(clusters)
   names(col) = col
-  as.prevR(clusters,col,boundary = boundary,proj = "+proj=longlat")
+  as.prevR(clusters,col,boundary = boundary,proj = "+proj=longlat +ellps=WGS84")
 }
