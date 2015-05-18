@@ -1,3 +1,40 @@
+#' Convert an object of class prevR into a data.frame.
+#' 
+#' This function merges the slots \code{clusters} et \code{rings} of 
+#' a object of class \code{\link[=prevR-class]{prevR}}.
+#' 
+#' @param x object of class \code{\link[=prevR-class]{prevR}}.
+#' @param ... not used, for compatibility with the generic method \code{\link[base]{as.data.frame}}.
+#' @param N integer or list of integers setting elements of \code{rings} to extract.
+#' @param R integer or list of integers setting elements of \code{rings} to extract.
+#' @param clusters.only return only the slot \code{clusters} of \code{x}?
+#' 
+#' @return 
+#' If \code{clusters.only = TRUE}, the function will return only the slot \code{clusters} of \code{x}.
+#' 
+#' Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be merged in a unique data frame. 
+#' The columns of \code{rings} will be renamed adding a suffix like \emph{.N300.RInf}.
+#' 
+#' \code{N} and \code{R} define the elements of \code{rings} to extract. If not specified (\code{NULL}), 
+#' all the elements of \code{rings} will be included.
+#' 
+#' @seealso \code{\link[base]{as.data.frame}}\{\pkg{base}\}, \code{\link[prevR]{prevR-class}}.
+#'
+#' @examples 
+#' str(fdhs)
+#' str(as.data.frame(fdhs))
+#' \dontrun{
+#'   r.fdhs <- rings(fdhs, N=c(100,200,300))
+#'   str(r.fdhs)
+#'   str(as.data.frame(r.fdhs, clusters.only=TRUE))
+#'   str(as.data.frame(r.fdhs))
+#'   str(as.data.frame(r.fdhs, N=300))
+#' }
+#' 
+#' @export
+#' @aliases as.data.frame
+#' @keywords manip
+
 as.data.frame.prevR = function(x,..., N=NULL, R=NULL, clusters.only=FALSE){
   ###############################################################################################
   # Cette fonction renvoie un data frame qui est soit 

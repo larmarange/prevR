@@ -1,3 +1,6 @@
+#'  @rdname krige,prevR-method
+#'  @aliases idw-methods idw,ANY,prevR-method idw,prevR-method idw
+
 setMethod("idw",c(formula="ANY", locations="prevR"),
   function (formula, locations, N = NULL, R = NULL, nb.cells = 100, cell.size = NULL, idp = 2,  ...)
 {

@@ -1,5 +1,49 @@
+#' @exportMethod plot
+
 if (!isGeneric("plot"))
       setGeneric("plot", function(x, y, ...) standardGeneric("plot")) 
+
+#' Plot object of class prevR.
+#' 
+#' Method \code{plot} for object of class \code{\link[=prevR-class]{prevR}}. 
+#' Plot clusters, number of observations per cluster or number of positive cases per cluster.
+#' 
+#' @param x object of class \code{\link[=prevR-class]{prevR}}.
+#' @param type graph to plot:\itemize{
+#'    \item "position" clusters position.
+#'    \item "c.type" clusters per \code{c.type}.
+#'    \item "count" number of observatios per cluster.
+#'    \item "flower" number of positive cases per cluster.
+#'  }
+#' @param add.legend add a legend?
+#' @param legend.location legend location.
+#' @param factor.size scale factor of rings (for \code{type="count"}).
+#' @param new.window plot in a new window?
+#' @param axes show axes?
+#' @param ... additional arguments transmitted to \code{\link[graphics]{title}}.
+#' 
+#' @details 
+#' Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bottom"}, 
+#' \emph{"bottomleft"}, \emph{"left"}, \emph{"topleft"}, \emph{"top"}, \emph{"topright"}, 
+#' \emph{"right"} use \emph{"center"}.
+#' 
+#' Use \code{main} to define a title and \code{sub} for a subtitle 
+#' (see \code{\link[graphics]{title}}\{\pkg{graphics}\}).
+#' 
+#' @seealso \code{\link[graphics]{title}}\{\pkg{graphics}\}, 
+#' \code{\link[graphics]{legend}}\{\pkg{graphics}\}.
+#' 
+#' @examples 
+#' \dontshow{par(ask = TRUE)}
+#' plot(fdhs, type = "position", main="position", axes=TRUE)
+#' plot(fdhs, type = "c.type", main="c.type")
+#' plot(fdhs, type = "count", main="count", factor.size = 0.1)
+#' plot(fdhs, type = "flower", main="flower")
+#' \dontshow{par(ask = FALSE)}
+#'
+#' @aliases plot plot-methods plot,prevR-method plot,prevR,missing-method
+#' @keywords hplot
+
 setMethod("plot",c("prevR","missing"),
   function(x ,type = "position", add.legend = TRUE, legend.location = "bottomright",
     factor.size = 0.2, new.window = FALSE, axes = F,...){
