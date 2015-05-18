@@ -318,5 +318,5 @@ import.dhs  = function(file.sav, file.dbf){
   if(bound==1) boundary = create.boundary(multiple = F)
   col = names(clusters)
   names(col) = col
-  as.prevR(clusters,col,boundary = boundary,proj = "+proj=longlat")
+  as.prevR(clusters,col,boundary = boundary,proj = "+proj=longlat +ellps=WGS84")
 }

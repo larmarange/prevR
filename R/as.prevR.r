@@ -61,7 +61,7 @@
 #' }
 #' @keywords manip
 #' @export
-as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat"){
+as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +ellps=WGS84"){
 
 ##################################################################################################
 # Cette fonction renvoie un objet de la classe prevR
