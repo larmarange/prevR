@@ -9,7 +9,7 @@
 \usage{
 \S4method{kde}{prevR}(object, N = NULL, R = NULL, weighted = TRUE,
   risk.ratio = FALSE, keep.details = FALSE, nb.cells = 100,
-  cell.size = NULL, progression = TRUE)
+  cell.size = NULL, progression = TRUE, short.names = FALSE)
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -30,11 +30,16 @@
 \item{cell.size}{size of each cell (in the unit of the projection).}
 
 \item{progression}{show a progress bar?}
+
+\item{short.names}{should names of the output be short?}
 }
 \value{
 Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.
  Surfaces are named according to the name of the corresponding variable, N and R
- (for example: \emph{k.prev.N300.RInf}).
+ (for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
+ only one combination of couples (N, R), variable names will not be suffixed by the value of
+ N and R.
+
  Estimated variables are (depending on the function parameters) :\itemize{
      \item "k.pos" unweighted intensity surface of positive cases.
      \item "k.obs" unweighted intensity surface of observed cases.

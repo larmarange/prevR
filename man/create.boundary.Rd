@@ -4,7 +4,8 @@
 \alias{create.boundary}
 \title{Provide national boundaries of a country.}
 \usage{
-create.boundary(countries = NULL, multiple = F, proj = "+proj=longlat")
+create.boundary(countries = NULL, multiple = F,
+  proj = "+proj=longlat +ellps=WGS84")
 }
 \arguments{
 \item{countries}{a vector of character string corresponding to the name of the countries
