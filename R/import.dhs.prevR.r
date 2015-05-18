@@ -28,12 +28,13 @@
 #'  @export
 
 import.dhs  = function(file.sav, file.dbf){
-  if (!require(foreign)) stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
+  if (requireNamespace("foreign", quietly = TRUE)) 
+    stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
     if(is.data.frame(file))
       temp.clust <- file
     else {
-      temp.clust <- read.dbf(file)
+      temp.clust <- foreign::read.dbf(file)
       if(is.data.frame(temp.clust$dbf)) temp.clust  = temp.clust$dbf
     }
     temp.var <- attr(temp.clust, "names")
@@ -158,7 +159,7 @@ import.dhs  = function(file.sav, file.dbf){
     if (is.data.frame(file))
       temp.ind <- file
     else
-      temp.ind <- read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
+      temp.ind <- foreign::read.spss(file, use.value.labels = TRUE, to.data.frame = TRUE)
     temp.var <- paste(attr(temp.ind, "names"), attr(temp.ind, "variable.labels"), sep = " - ")
     ok <- 0
     while (ok != 1) {

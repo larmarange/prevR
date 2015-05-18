@@ -113,14 +113,15 @@ setMethod("export","prevR",
       stop("the 'element' argument must be 'clusters' or 'boundary'.", call.=F) 
     }
     if(element=="boundary"){
-      if (!require(maptools)) stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
+      if (!requireNamespace("maptools", quietly = TRUE)) 
+        stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
       boundary = slot(object,"boundary")
       if(attr(boundary,"valid")){
         IDs <- sapply(slot(boundary, "polygons"), function(x) slot(x, "ID"))
         data <- data.frame(1, IDs,row.names=IDs)
         names(data) <- c("id", "name")
         SPDF <- SpatialPolygonsDataFrame(boundary, data)
-        writePolyShape(SPDF, file, ...)
+        maptools::writePolyShape(SPDF, file, ...)
       }
       return(NULL)
     }
@@ -132,11 +133,12 @@ setMethod("export","prevR",
       }
       clusters = as.data.frame(object, N = N , R = R, clusters.only = clusters.only)
       if(format=="shp") {
-        if (!require(maptools)) stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
+        if (!requireNamespace("maptools", quietly = TRUE)) 
+          stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
         PS = clusters
         coordinates(PS)= ~x+y
         PS@proj4string = object@proj
-        writePointsShape(PS,file, ...)
+        maptools::writePointsShape(PS,file, ...)
       }
       if (is.null(ext) && format!='csv2') ext = format
       if (is.null(ext) && format=='csv2') ext = 'csv'
@@ -157,8 +159,9 @@ setMethod("export","prevR",
         write.table(clusters, file = file,row.names = F,sep = sep, dec = dec, ...)
       }
       if(format=="dbf")  {
-        if (!require(foreign)) stop("The package foreign is required to export to DBF. Please install it.", domain="R-prevR")
-        write.dbf(clusters, file, ...)
+        if (!requireNamespace("foreign", quietly = TRUE)) 
+          stop("The package foreign is required to export to DBF. Please install it.", domain="R-prevR")
+        foreign::write.dbf(clusters, file, ...)
       }
     }
   }
