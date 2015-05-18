@@ -2,6 +2,7 @@
 % Please edit documentation in R/as.SpatialGrid.prevR.r
 \docType{methods}
 \name{as.SpatialGrid,prevR-method}
+\alias{as.SpatialGrid}
 \alias{as.SpatialGrid,prevR-method}
 \alias{as.SpatialGrid-methods}
 \title{Create a spatial grid from an object of class prevR.}

@@ -10,7 +10,7 @@
 \S4method{print}{prevR}(x)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
 }
 \description{
 Method \code{print} for objects of class \code{\link[=prevR-class]{prevR}}:

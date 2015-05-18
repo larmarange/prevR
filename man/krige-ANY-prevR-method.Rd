@@ -2,6 +2,10 @@
 % Please edit documentation in R/krige.prevR.r
 \docType{methods}
 \name{krige,ANY,prevR-method}
+\alias{idw}
+\alias{idw,ANY,prevR-method}
+\alias{idw,prevR-method}
+\alias{idw-methods}
 \alias{krige}
 \alias{krige,ANY,prevR-method}
 \alias{krige,prevR-method}
@@ -11,6 +15,9 @@
 \S4method{krige}{ANY,prevR}(formula, locations, N = NULL, R = NULL,
   model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto",
   keep.variance = FALSE, show.variogram = FALSE, ...)
+
+\S4method{idw}{ANY,prevR}(formula, locations, N = NULL, R = NULL,
+  nb.cells = 100, cell.size = NULL, idp = 2, ...)
 }
 \arguments{
 \item{formula}{variable(s) to interpolate (see details).}
@@ -55,6 +62,8 @@ These functions execute a spatial interpolation of a variable of the slot \code{
  an object of class \code{\link[=prevR-class]{prevR}}. The method \code{krige} implements
  the ordinary kriging technique. The method \code{idw} executes an inverse distance weighting
  interpolation.
+
+
 }
 \details{
 \code{formula} specifies the variable(s) to interpolate. Only variables available in the
