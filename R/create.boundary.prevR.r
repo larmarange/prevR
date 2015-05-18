@@ -51,8 +51,8 @@ create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat
   # boundary      = create.boundary(countries = c("France","Italy","Belgium","Switzerland","Luxembourg","Germany","Austria","Slovakia","Czech Republic"))
   #
   ##################################################################################################
-  data     = slot(TMWorldBorders,"data") 
-  polygons = slot(TMWorldBorders,"polygons")
+  data     = slot(prevR::TMWorldBorders,"data") 
+  polygons = slot(prevR::TMWorldBorders,"polygons")
   if(is.null(countries)) {
       title = c(gettext("Select one country:",domain="R-prevR"),gettext("Select countries (use CTRL):",domain="R-prevR"))[c(!multiple,multiple)]
       countries = select.list(sort(as.character(data[["NAME"]])), multiple = multiple, title =  title)
