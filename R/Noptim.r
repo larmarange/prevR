@@ -7,7 +7,7 @@
 #'  
 #'  @param object object of class \code{\link[=prevR-class]{prevR}}.
 #'  
-#'  @retun an integer.
+#'  @return an integer.
 #'  
 #'  @references
 #'  Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
