@@ -15,10 +15,9 @@
 #' 
 #' @export
 
-direct.label.prevR <- function (p, method = NULL, debug = FALSE) 
+direct.label_prevR <- function (p, method = NULL, debug = FALSE) 
 # based on http://www.rdocumentation.org/packages/directlabels/functions/direct.label.ggplot
 {
-  requireNamespace("ggplot2", quietly = TRUE)
   getData <- function(colour.or.fill) {
     for (L in p$layers) {
       m <- p$mapping
@@ -40,16 +39,16 @@ direct.label.prevR <- function (p, method = NULL, debug = FALSE)
   colvar <- dl.info$colvar
   geom <- L$geom$objname
   if (is.null(method)) 
-    method <- directlabels::default.picker("ggplot")
+    method <- default.picker("ggplot")
   data <- if ((!is.null(L$data)) && (length(L$data) > 0)) {
     L$data
   }
   else {
     NULL
   }
-  a <- ggplot2::aes_string(label = colvar, colour = colvar)
+  a <- aes_string(label = colvar, colour = colvar)
   a2 <- structure(c(L$mapping, a), class = "uneval")
-  dlgeom <- directlabels::geom_dl(a2, method, stat = L$stat, debug = debug, 
+  dlgeom <- geom_dl(a2, method, stat = L$stat, debug = debug, 
                     data = data)
   dlgeom$stat_params <- L$stat_params
   # leg.info <- legends2hide(p)
@@ -57,6 +56,6 @@ direct.label.prevR <- function (p, method = NULL, debug = FALSE)
   guide.args <- as.list(rep("none", length(leg.info$hide)))
   names(guide.args) <- leg.info$hide
   guide.args$colour <- "none"
-  guide <- do.call(ggplot2::guides, guide.args)
+  guide <- do.call(guides, guide.args)
   p + dlgeom + guide
 }

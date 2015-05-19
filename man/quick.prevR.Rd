@@ -25,15 +25,13 @@ quick.prevR(object, N = Noptim(object), nb.cells = 100, cell.size = NULL,
 
 \item{return.results}{return the results?}
 
+\item{return.plot}{return the plot within the results?}
+
 \item{legend.title}{title of the legend}
 
 \item{cex}{to control the text size on the graph}
 
 \item{progression}{show a progress bar?}
-
-\item{R}{integer or list of integers corresponding to the rings to use.}
-
-\item{return}{the plot within the results?}
 }
 \value{
 A list of one or several elements, depending on the arguments:
@@ -42,16 +40,15 @@ A list of one or several elements, depending on the arguments:
  kriged surface of the rings radii; (iii) \code{plot} a \code{ggplot} graph.
 }
 \description{
-This function performs several analysis in one go: (i) apply \code{\link[dest=rings,prevR-method]{rings}};
- (ii) compute prevalence surface with \code{\link[dest=kde,prevR-method]{kde}}; (iii) compute the surface
- of rings radii with \code{\link[dest=krige,ANY,prevR-method]{krige}}; (iv) plot prevalence surface using
- \code{\link{prevR.colors.red}} and add rings radii as a contour plot.
+This function performs several analysis in one go:
+ (i) apply \code{\link{rings,prevR-method}};
+ (ii) compute prevalence surface with \code{\link{kde,prevR-method}};
+ (iii) compute the surface of rings radii with \code{\link{krige,ANY,prevR-method}};
+ (iv) plot prevalence surface using \code{\link{prevR.colors.red}} and add rings radii as a contour plot.
 }
 \details{
-\code{N} and \code{R} determine the rings to use for the estimation.
+\code{N} determine the rings to use for the estimation.
  By default, a suggested value of N will be computed with \code{\link{Noptim}}.
-
- Packages \pkg{ggplot2}, \pkg{grid} and \pkg{directlabels} are required for plotting.
 }
 \examples{
 \dontrun{
