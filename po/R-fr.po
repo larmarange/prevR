@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 2.15.0\n"
 "Report-Msgid-Bugs-To: bugs.r-project.org\n"
-"POT-Creation-Date: 2013-12-28 14:37\n"
-"PO-Revision-Date: 2013-12-28 15:27+0100\n"
+"POT-Creation-Date: 2015-05-19 10:51\n"
+"PO-Revision-Date: 2015-05-19 10:57+0200\n"
 "Last-Translator: Joseph Larmarange <joseph@larmarange.net>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.6.3\n"
+"X-Generator: Poedit 1.7.7\n"
 
 msgid "the 'data' argument must be a dataframe."
 msgstr "l'argument 'data' doit être un dataframe."
@@ -62,6 +62,10 @@ msgstr ""
 "Les frontières et désignations employées n'impliquent l'expression d'aucune "
 "opinion ni acceptation de la part des auteurs."
 
+msgid "Need colour or fill aesthetic to infer default direct labels."
+msgstr ""
+"Les esthétiques colour ou fill sont nécessaires pour estimer les étiquettes"
+
 msgid "the 'element' argument must be 'clusters' or 'boundary'."
 msgstr "l'argument 'element' doit être 'clusters' ou 'boundary'."
 
@@ -99,20 +103,6 @@ msgstr "Fonction"
 
 msgid "Choose this variogram"
 msgstr "Choisissez le variogramme"
-
-msgid "the slot 'rings' is empty: you have to run the rings function first."
-msgstr ""
-"l'élément 'rings' est vide : vous devez d'abord exécuter la fonction rings()."
-
-msgid ""
-"%s is not a valid formula: idw.prevR only accept formula with only one "
-"variable and no predictor like 'var~1'."
-msgstr ""
-"%s n'est pas une formmule valable : idw.prev n'accepte que les formules "
-"contenant une seule variable et aucun prédicteur du type 'var~1'."
-
-msgid "no data available for the variable '%s' with N=%s and R=%s."
-msgstr "pas de données disponibles pour la variable '%s' avec N=%s et R=%s."
 
 msgid "The package foreign is required to use import.dhs(). Please install it."
 msgstr ""
@@ -409,6 +399,10 @@ msgstr ""
 "les paramètres d'entrée ne sont pas valides : %s doivent être de même "
 "longueur ou de longueur égale à 1"
 
+msgid "the slot 'rings' is empty: you have to run the rings function first."
+msgstr ""
+"l'élément 'rings' est vide : vous devez d'abord exécuter la fonction rings()."
+
 msgid ""
 "'wpos' and 'wn' are not present: the 'weighted' argument has been put at "
 "FALSE."
@@ -417,6 +411,9 @@ msgstr ""
 
 msgid "Progress of calculations:"
 msgstr "Progression des calculs"
+
+msgid "no data available for the variable '%s' with N=%s and R=%s."
+msgstr "pas de données disponibles pour la variable '%s' avec N=%s et R=%s."
 
 msgid ""
 "%s is not a valid formula: idw.prevR only implement simple or ordinary "
@@ -447,6 +444,13 @@ msgstr ""
 msgid "Error: select an other model."
 msgstr "Erreur : choisissez un autre modèle."
 
+msgid ""
+"%s is not a valid formula: idw.prevR only accept formula with only one "
+"variable and no predictor like 'var~1'."
+msgstr ""
+"%s n'est pas une formmule valable : idw.prev n'accepte que les formules "
+"contenant une seule variable et aucun prédicteur du type 'var~1'."
+
 msgid "Welcome to 'prevR': estimate regional trends of a prevalence."
 msgstr ""
 "Bienvenue dans 'prevR' : Estimation des tendances régionales d'une prévalence"
@@ -473,6 +477,21 @@ msgstr "Un seul cas positif"
 
 msgid "One positive case by 'petal'"
 msgstr "Un cas positif par 'petal'"
+
+msgid "object must be of class prevR."
+msgstr "objet doit être de classe 'prevR'"
+
+msgid "Package ggplot2 is required for plotting."
+msgstr "Le package ggplot2 est requis pour afficher le graphique"
+
+msgid "Package directlabels is required for plotting."
+msgstr "Le package directlabels est requis pour afficher le graphique"
+
+msgid "Package grid is required for plotting."
+msgstr "Le package grid est requis pour afficher le graphique"
+
+msgid "No weighted data found in object."
+msgstr "Aucune donnée pondérée trouvée dans object"
 
 msgid "the wn and wpos variables are coupled and you have only defined %s."
 msgstr ""
@@ -580,9 +599,6 @@ msgid "the variable %s is missing."
 msgid_plural "the following variables (%s) are missing."
 msgstr[0] "la variables %s est manquante"
 msgstr[1] "les variables suivantes %s sont manquantes"
-
-#~ msgid "the package tcltk is required."
-#~ msgstr "le package tcltk est nécessaire"
 
 #~ msgid "* Analyzed variable (for example, result of HIV testing):"
 #~ msgstr "* Variable analysée (par exemple, résultat du test VIH) : "

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: prevR 2.8\n"
-"POT-Creation-Date: 2013-12-28 14:37\n"
+"Project-Id-Version: prevR 3.1\n"
+"POT-Creation-Date: 2015-05-19 10:51\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,6 +34,9 @@ msgstr ""
 msgid "Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttp://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors."
 msgstr ""
 
+msgid "Need colour or fill aesthetic to infer default direct labels."
+msgstr ""
+
 msgid "the 'element' argument must be 'clusters' or 'boundary'."
 msgstr ""
 
@@ -62,15 +65,6 @@ msgid "Function"
 msgstr ""
 
 msgid "Choose this variogram"
-msgstr ""
-
-msgid "the slot 'rings' is empty: you have to run the rings function first."
-msgstr ""
-
-msgid "%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'."
-msgstr ""
-
-msgid "no data available for the variable '%s' with N=%s and R=%s."
 msgstr ""
 
 msgid "The package foreign is required to use import.dhs(). Please install it."
@@ -280,10 +274,16 @@ msgstr ""
 msgid "the input parameters are not valid: %s must have the same length or a length equal to 1."
 msgstr ""
 
+msgid "the slot 'rings' is empty: you have to run the rings function first."
+msgstr ""
+
 msgid "'wpos' and 'wn' are not present: the 'weighted' argument has been put at FALSE."
 msgstr ""
 
 msgid "Progress of calculations:"
+msgstr ""
+
+msgid "no data available for the variable '%s' with N=%s and R=%s."
 msgstr ""
 
 msgid "%s is not a valid formula: idw.prevR only implement simple or ordinary kriging, so formula must have only one variable and no predictor (like 'var~1')."
@@ -299,6 +299,9 @@ msgid "The packages geoR and tcltk are required to use manual fit. Please instal
 msgstr ""
 
 msgid "Error: select an other model."
+msgstr ""
+
+msgid "%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'."
 msgstr ""
 
 msgid "Welcome to 'prevR': estimate regional trends of a prevalence."
@@ -317,6 +320,21 @@ msgid "Only one positive case"
 msgstr ""
 
 msgid "One positive case by 'petal'"
+msgstr ""
+
+msgid "object must be of class prevR."
+msgstr ""
+
+msgid "Package ggplot2 is required for plotting."
+msgstr ""
+
+msgid "Package directlabels is required for plotting."
+msgstr ""
+
+msgid "Package grid is required for plotting."
+msgstr ""
+
+msgid "No weighted data found in object."
 msgstr ""
 
 msgid "the wn and wpos variables are coupled and you have only defined %s."
