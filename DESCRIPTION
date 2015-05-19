@@ -26,7 +26,10 @@ Suggests:
     foreign,
     tcltk,
     geoR,
-    maptools
+    maptools,
+    ggplot2,
+    grid,
+    directlabels
 Encoding: UTF-8
 Collate:
     'prevR-package.r'
@@ -55,3 +58,6 @@ Collate:
     'krige.prevR.r'
     'kde.prevR.r'
     'Noptim.r'
+    'theme_prevR.r'
+    'direct.label.prevR.r'
+    'quick.prevR.r'

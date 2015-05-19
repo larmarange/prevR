@@ -19,6 +19,10 @@ dhs <- changeproj(dhs, "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +n
 print(dhs)
 plot(dhs, axes=TRUE)
 
+message("Quick analysis", domain="R-prevR")
+
+quick.prevR(fdhs)
+
 message("Calculating rings of the same number of observations for different values of N",domain="R-prevR")
 dhs <- rings(dhs, N=c(100,200,300,400,500))
 print(dhs)

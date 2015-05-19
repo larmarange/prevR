@@ -10,7 +10,8 @@
 #'  Website: \tab \url{http://www.ceped.org/prevR},\cr
 #'  \tab \url{http://joseph.larmarange.net/prevR}\cr
 #'  Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{sp}, \pkg{gstat}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal} \cr
-#'  Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
+#'  Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}},
+#'  \pkg{ggplot2}, \pkg{grid}, \pkg{directlabels}\cr
 #'  }
 #'  
 #'  This package performs a methodological approach for spatial estimation of regional trends 
@@ -96,12 +97,11 @@
 #' European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
 #' DOI: 10.4000/cybergeo.24606.
 #' 
-#' @references 
-#'  Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level from 
-#'  national population-based surveys", \emph{AIDS}, n°28, p.S469‑S476,
-#'  url{http://dx.doi.org/10.1097/QAD.0000000000000480},
-#'  DOI: 10.1097/QAD.0000000000000480. 
-#' 
+#' @references
+#'  Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level 
+#'  from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476, 
+#'  \url{http://dx.doi.org/10.1097/QAD.0000000000000480}, DOI: 10.1097/QAD.0000000000000480.
+#'  
 #'  Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
 #'  "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
 #'  \emph{Cybergeo: European Journal of Geography}, n° 558, \url{http://cybergeo.revues.org/24606}, 
