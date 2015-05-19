@@ -69,12 +69,15 @@ These functions execute a spatial interpolation of a variable of the slot \code{
 \code{formula} specifies the variable(s) to interpolate. Only variables available in the
  slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev",
  "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character
- string or a formula. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}}
- and \code{\link[gstat]{idw}} from \pkg{gstat}.
+ string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1}
+ are accepted. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}} and
+ \code{\link[gstat]{idw}} from \pkg{gstat}.
 
  \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined,
  surfaces will be estimated for each available couples (N,R). Several interpolations could be
  simultaneously calculated if several variables and/or several values of N and R are defined.
+
+ A suggested value of N could be computed with \code{\link{Noptim}}.
 
  In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically
  a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"},
@@ -120,7 +123,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
 }
 \seealso{
 \code{\link[gstat]{krige}}\{\pkg{gstat}\}, \code{\link[gstat]{idw}}\{\pkg{gstat}\},
- \code{\link{rings,prevR-method}}.
+ \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
 }
 \keyword{smooth}
 \keyword{spatial}

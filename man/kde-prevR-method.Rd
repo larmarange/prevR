@@ -79,6 +79,8 @@ This function calculates a prevalence surface as the ratio of the intensity surf
  \code{N} and \code{R} determine the rings to use for the estimation. If they are not defined,
  surfaces will be estimated for each available couples (N,R). Several estimations could be
  simultaneously calculated if several values of N and R are defined.
+
+ A suggested value of N could be computed with \code{\link{Noptim}}.
 }
 \note{
 Results could be plotted with \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
@@ -118,7 +120,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
  DOI: 10.4000/cybergeo.24606.
 }
 \seealso{
-\code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}, \code{\link{rings,prevR-method}}.
+\code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}, \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
 }
 \keyword{smooth}
 \keyword{spatial}

@@ -16,7 +16,8 @@ using data from a Demographic and Health Survey (DHS) or an analog survey.
  Website: \tab \url{http://www.ceped.org/prevR},\cr
  \tab \url{http://joseph.larmarange.net/prevR}\cr
  Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{sp}, \pkg{gstat}, \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal} \cr
- Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}}\cr
+ Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}},
+ \pkg{ggplot2}, \pkg{grid}, \pkg{directlabels}\cr
  }
 
  This package performs a methodological approach for spatial estimation of regional trends
