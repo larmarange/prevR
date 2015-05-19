@@ -157,10 +157,9 @@ Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr
 IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)
 }
 \references{
-Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level from
- national population-based surveys", \emph{AIDS}, n°28, p.S469‑S476,
- url{http://dx.doi.org/10.1097/QAD.0000000000000480},
- DOI: 10.1097/QAD.0000000000000480.
+Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level
+ from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476,
+ \url{http://dx.doi.org/10.1097/QAD.0000000000000480}, DOI: 10.1097/QAD.0000000000000480.
 
  Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
  "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
