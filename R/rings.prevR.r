@@ -124,7 +124,7 @@ setMethod("rings","prevR",
     couples = cbind(N=N,R=R)
 # Barre de progression
     if (progression) {
-      message("Progress of calculations:",domain="R-prevR")
+      message("Progress of calculations:", domain="R-prevR")
       barre = txtProgressBar(min=0, max=nrow(couples)*nrow(clusters), initial=0, style=3)
     }
 # boucle sur les couples  N R 
