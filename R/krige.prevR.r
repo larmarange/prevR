@@ -33,6 +33,8 @@
 #'  surfaces will be estimated for each available couples (N,R). Several interpolations could be 
 #'  simultaneously calculated if several variables and/or several values of N and R are defined.
 #'  
+#'  A suggested value of N could be computed with \code{\link{Noptim}}.
+#'  
 #'  In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically
 #'  a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, 
 #'  the sample variogram will be plotted and a graphical dialog box (adapted from 
@@ -64,7 +66,7 @@
 #'  \code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
 #'  
 #'  @seealso \code{\link[gstat]{krige}}\{\pkg{gstat}\}, \code{\link[gstat]{idw}}\{\pkg{gstat}\}, 
-#'  \code{\link{rings,prevR-method}}.
+#'  \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
 #'  
 #'  @examples 
 #'  \dontrun{

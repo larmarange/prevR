@@ -41,6 +41,8 @@ setGeneric("kde",
 #'  surfaces will be estimated for each available couples (N,R). Several estimations could be 
 #'  simultaneously calculated if several values of N and R are defined.
 #'  
+#'  A suggested value of N could be computed with \code{\link{Noptim}}.
+#'  
 #'  @return Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. 
 #'  Surfaces are named according to the name of the corresponding variable, N and R 
 #'  (for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
@@ -78,7 +80,7 @@ setGeneric("kde",
 #'  See the package \pkg{\link[sparr:sparr-package]{sparr}} for another methodology to estimate relative 
 #'  risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
 #'  
-#'  @seealso \code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}, \code{\link{rings,prevR-method}}.
+#'  @seealso \code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}, \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
 #'  
 #'  @examples 
 #'  \dontrun{
