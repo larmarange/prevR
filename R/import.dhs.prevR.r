@@ -15,8 +15,6 @@
 #'  For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}}, 
 #'  see \code{\link{as.prevR}}.
 #'  
-#'  The package \pkg{foreign} is required to use this function.
-#'  
 #'  @seealso \code{\link{as.prevR}}, \code{\link{prevR-class}}.
 #'  
 #'  @examples 
@@ -28,8 +26,6 @@
 #'  @export
 
 import.dhs  = function(file.sav, file.dbf){
-  if (requireNamespace("foreign", quietly = TRUE)) 
-    stop("The package foreign is required to use import.dhs(). Please install it.", domain="R-prevR")
   make.clust.dbf <-function (file, ind) {
     if(is.data.frame(file))
       temp.clust <- file

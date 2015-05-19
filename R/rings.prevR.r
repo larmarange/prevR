@@ -114,9 +114,9 @@ setMethod("rings","prevR",
 # par la fonction rdist.earth du package fields
 # Autrement les distances sont calculees par la fonction rdist (fields) en unite des donnees de depart
     if(regexpr("longlat",proj)==-1 && regexpr("latlong",proj)==-1){
-      distances = rdist(coord.clust)
+      distances = fields::rdist(coord.clust)
     } else {
-      distances = rdist.earth(coord.clust,miles=F)
+      distances = fields::rdist.earth(coord.clust,miles=F)
     }
     rings   = slot(object,"rings")
 # On cree les couple N-R a partir desquels seront calclules les rayons des cercles

@@ -245,7 +245,7 @@ setMethod("kde","prevR",
       k.wpos = 0
       k.wobs = 0
       for (i in 1:length(bw)) {
-        temp   = KernSur(x=x[i],y=y[i],xbandwidth=bwx[i]/2,ybandwidth=bwy[i]/2,range.x=range.x,range.y=range.y)
+        temp   = GenKern::KernSur(x=x[i],y=y[i],xbandwidth=bwx[i]/2,ybandwidth=bwy[i]/2,range.x=range.x,range.y=range.y)
         k.pos  = k.pos + temp$zden * dataCase[["pos"]][i]
         k.obs  = k.obs + temp$zden * dataCase[["n"]][i]
         if(weighted == T || weighted == 2){

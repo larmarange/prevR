@@ -190,7 +190,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
       if(nrow(dataCase)==0) next
       if(length(model)!=0) one.model = model[[ic]]
       if(is.null(model) && fit == "auto"){
-         sample.vario   = variogram(formule, dataCase)
+         sample.vario   = gstat::variogram(formule, dataCase)
          param1Vgm      = max(sample.vario[,"gamma"])*0.66
          param2Vgm      = max(sample.vario[,"dist"])*0.5
          param          = .init.exp.model.variogram(sample.vario[,"dist"],sample.vario[,"gamma"])
@@ -198,12 +198,12 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
             warning(gettextf("problem to fit the variogram: the variable '%s' width N=%s and R=%s has not been treated.",one.var,one.N,one.R,domain="R-prevR"))
             next
          }
-         one.model      = try(fit.variogram(sample.vario, model = vgm(param[1],'Exp',param[2])),silent =T ) 
-         if(attr(one.model,"class")=="try-error" || attr(one.model,"singular")) one.model = vgm(param[1],'Exp',param[2])
+         one.model      = try(gstat::fit.variogram(sample.vario, model = gstat::vgm(param[1],'Exp',param[2])),silent =T ) 
+         if(attr(one.model,"class")=="try-error" || attr(one.model,"singular")) one.model = gstat::vgm(param[1],'Exp',param[2])
       }
 
       if(is.null(model) && fit == "manual") {
-        sample.vario   = variogram(formule, dataCase)
+        sample.vario   = gstat::variogram(formule, dataCase)
         # Seuls les modeles suivants sont valides c("matern", "exponential", "gaussian", "spherical",   "power")
         out = NULL
         while(is.null(out)){
@@ -212,7 +212,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
           varioGeoR  = geoR::variog(data = slot(dataCase,"data")[[one.var]],coords = slot(dataCase,"coords"))
           #assign("varioGeoR",varioGeoR,pos=1) inutile
           out        = .eyefit.prevR(varioGeoR)
-          one.model   =  try(as.vgm.variomodel(out[[length(out)]]),silent=T)
+          one.model   =  try(gstat::as.vgm.variomodel(out[[length(out)]]),silent=T)
           if(attr(one.model,"class")[1]=="try-error"){
              message("Error: select an other model.\n",domain="R-prevR")
              out = NULL
@@ -358,7 +358,7 @@ setMethod("idw",c(formula="ANY", locations="prevR"),
               dataCase@proj4string = object@proj
               if(nrow(dataCase)==0) next
               
-              result.one            = idw(formule, dataCase, locations.data, idp, ...)
+              result.one            = gstat::idw(formule, dataCase, locations.data, idp, ...)
               gridded(result.one)   = TRUE
               temp                  = slot(result.one, "data")
               # On normalise le nom des variables resultats 

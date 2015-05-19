@@ -69,8 +69,7 @@ If \code{element="boundary"}, the slot \code{boundary} of \code{object}
  The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point,
  the Excel convention for CSV files in some Western European locales. \cr
  \code{sep} and \code{dec} could be used to coerce the field separator and the decimal point
- (together with the "txt" format).\cr
- Packages \pkg{maptools} and \pkg{foreign} are required for DBF and Shape File export.
+ (together with the "txt" format).
 }
 \examples{
 \dontrun{

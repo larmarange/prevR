@@ -9,7 +9,6 @@
 #'  @export
 
 theme_prevR <- function (base_size = 12) {
-  requireNamespace("grid")
   '%+replace%'(theme_grey(base_size),
     theme(
       axis.title        = element_blank(),
@@ -26,7 +25,6 @@ theme_prevR <- function (base_size = 12) {
 #' @rdname theme_prevR
 
 theme_prevR_light <- function (base_size = 12) {
-  requireNamespace("grid")
   '%+replace%'(theme_grey(base_size),
     theme(
       axis.title        = element_blank(),

@@ -24,8 +24,6 @@ If you don't provide the precise path of files, \R will check the working direct
  This function was developed specifically for importing DHS.
  For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}},
  see \code{\link{as.prevR}}.
-
- The package \pkg{foreign} is required to use this function.
 }
 \examples{
 \dontrun{

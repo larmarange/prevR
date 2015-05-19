@@ -53,8 +53,7 @@ setGeneric("export",
 #'  The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point, 
 #'  the Excel convention for CSV files in some Western European locales. \cr
 #'  \code{sep} and \code{dec} could be used to coerce the field separator and the decimal point 
-#'  (together with the "txt" format).\cr
-#'  Packages \pkg{maptools} and \pkg{foreign} are required for DBF and Shape File export.
+#'  (together with the "txt" format).
 #'  
 #'  @seealso \code{\link[maptools]{writePolyShape}} \{\pkg{maptools}\}, \code{\link[maptools]{writePointsShape}}
 #'  \{\pkg{maptools}\}, \code{\link[foreign]{write.dbf}} \{\pkg{foreign}\}, \code{\link[utils]{write.table}}
@@ -113,8 +112,6 @@ setMethod("export","prevR",
       stop("the 'element' argument must be 'clusters' or 'boundary'.", call.=F) 
     }
     if(element=="boundary"){
-      if (!requireNamespace("maptools", quietly = TRUE)) 
-        stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
       boundary = slot(object,"boundary")
       if(attr(boundary,"valid")){
         IDs <- sapply(slot(boundary, "polygons"), function(x) slot(x, "ID"))
@@ -133,8 +130,6 @@ setMethod("export","prevR",
       }
       clusters = as.data.frame(object, N = N , R = R, clusters.only = clusters.only)
       if(format=="shp") {
-        if (!requireNamespace("maptools", quietly = TRUE)) 
-          stop("The package maptools is required to export boundary or clusters as shapefile. Please install it.", domain="R-prevR")
         PS = clusters
         coordinates(PS)= ~x+y
         PS@proj4string = object@proj
@@ -159,8 +154,6 @@ setMethod("export","prevR",
         write.table(clusters, file = file,row.names = F,sep = sep, dec = dec, ...)
       }
       if(format=="dbf")  {
-        if (!requireNamespace("foreign", quietly = TRUE)) 
-          stop("The package foreign is required to export to DBF. Please install it.", domain="R-prevR")
         foreign::write.dbf(clusters, file, ...)
       }
     }

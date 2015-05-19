@@ -18,18 +18,19 @@ Depends:
     R (>= 2.10),
     methods,
     sp,
-    gstat,
-    GenKern,
     rgdal (>= 0.7-4),
-    fields,
     ggplot2,
     directlabels
-Suggests:
+Imports:
+    GenKern,
+    fields,
+    grid,
+    gstat,
     foreign,
+    maptools
+Suggests:
     tcltk,
-    geoR,
-    maptools,
-    grid
+    geoR
 Encoding: UTF-8
 Collate:
     'prevR-package.r'

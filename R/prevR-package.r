@@ -9,10 +9,6 @@
 #'  Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 #'  Website: \tab \url{http://www.ceped.org/prevR},\cr
 #'  \tab \url{http://joseph.larmarange.net/prevR}\cr
-#'  Depends: \tab \pkg{\link[methods:methods-package]{methods}}, \pkg{sp}, \pkg{gstat}, 
-#'  \pkg{\link[fields:fields-package]{fields}}, \pkg{GenKern}, \pkg{rgdal}, \pkg{ggplot2}, \pkg{directlabels} \cr
-#'  Suggests: \tab \pkg{foreign}, \pkg{maptools}, \pkg{geoR}, \pkg{\link[tcltk:tcltk-package]{tcltk}},
-#'   \pkg{grid}, \cr
 #'  }
 #'  
 #'  This package performs a methodological approach for spatial estimation of regional trends 
@@ -176,10 +172,13 @@
 #' @import rgdal
 #' @import ggplot2
 #' @import directlabels
-#' @importFrom gstat idw krige vgm as.vgm.variomodel fit.variogram
+#' @importFrom gstat idw krige vgm as.vgm.variomodel fit.variogram variogram
 #' @importFrom fields rdist rdist.earth
 #' @importFrom GenKern KernSur
 #' @importFrom methods setClass setGeneric setMethod
+#' @importFrom grid unit
+#' @importFrom maptools writePointsShape writePolyShape
+#' @importFrom foreign write.dbf read.dbf read.spss
 NULL
 
 
