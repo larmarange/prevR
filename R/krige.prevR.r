@@ -25,8 +25,9 @@
 #'  @details \code{formula} specifies the variable(s) to interpolate. Only variables available in the 
 #'  slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", 
 #'  "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character 
-#'  string or a formula. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}} 
-#'  and \code{\link[gstat]{idw}} from \pkg{gstat}.
+#'  string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1} 
+#'  are accepted. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}} and
+#'  \code{\link[gstat]{idw}} from \pkg{gstat}.
 #'  
 #'  \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, 
 #'  surfaces will be estimated for each available couples (N,R). Several interpolations could be 
