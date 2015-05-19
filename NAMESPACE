@@ -2,6 +2,7 @@
 
 S3method(as.data.frame,prevR)
 export(NA.outside.SpatialPolygons)
+export(Noptim)
 export(as.prevR)
 export(create.boundary)
 export(import.dhs)
