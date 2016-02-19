@@ -176,7 +176,6 @@
 #' @importFrom fields rdist rdist.earth
 #' @importFrom GenKern KernSur
 #' @importFrom methods setClass setGeneric setMethod
-#' @importFrom grid unit
 #' @importFrom maptools writePointsShape writePolyShape
 #' @importFrom foreign write.dbf read.dbf read.spss
 NULL

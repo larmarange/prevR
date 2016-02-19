@@ -13,9 +13,9 @@ theme_prevR <- function (base_size = 12) {
     theme(
       axis.title        = element_blank(),
       axis.text         = element_blank(),
-      axis.ticks.length = grid::unit(0, "cm"),
-      axis.ticks.margin = grid::unit(0, "lines"),
-      plot.margin       = grid::unit(c(0, 0, 0, 0), "lines"),
+      axis.ticks.length = unit(0, "cm"),
+      axis.ticks.margin = unit(0, "lines"),
+      plot.margin       = unit(c(0, 0, 0, 0), "lines"),
       complete          = TRUE
     )
   )
@@ -31,9 +31,9 @@ theme_prevR_light <- function (base_size = 12) {
       axis.text         = element_blank(),
       panel.background  = element_blank(),
       panel.grid        = element_blank(),
-      axis.ticks.length = grid::unit(0, "cm"),
-      axis.ticks.margin = grid::unit(0, "lines"),
-      plot.margin       = grid::unit(c(0, 0, 0, 0), "lines"),
+      axis.ticks.length = unit(0, "cm"),
+      axis.ticks.margin = unit(0, "lines"),
+      plot.margin       = unit(c(0, 0, 0, 0), "lines"),
       complete          = TRUE
     )
   )
