@@ -13,46 +13,46 @@ setGeneric("rings",
 #' @param object object of class \code{\link[=prevR-class]{prevR}}.
 #' @param N minimum number of observations.
 #' @param R maximum rings radius (in kilometers if coordinates in decimal degrees, 
-#'    in the unit of the projection otherwise).
+#'   in the unit of the projection otherwise).
 #' @param progression show a progress bar?
 #' 
 #' @details For each ligne of the data frame \code{clusters} of \code{object}, \code{rings} determines 
 #' a ring, centred on the cluster. It could be:\itemize{
-#'    \item rings of eaqul number of observations if \code{N} is finite and \code{R=Inf};
-#'    \item rings of equal radius if \code{N=Inf} and \code{R} is finite;
-#'    \item a combination of both (see below) if \code{N} and \code{R} are finite.
+#'   \item rings of eaqul number of observations if \code{N} is finite and \code{R=Inf};
+#'   \item rings of equal radius if \code{N=Inf} and \code{R} is finite;
+#'   \item a combination of both (see below) if \code{N} and \code{R} are finite.
 #' }
 #' For \emph{rings of equal number of observations}, \code{rings} selects the smallest 
 #' ring containing at least \code{N} valid observations.\cr
 #' For \emph{rings of equal radius}, \code{rings} selects all clusters located at a lower
-#'  distance than \code{R} from the central cluster.\cr For \emph{combination of both}, \code{rings} 
-#'  calculates firts the ring with the minimum number of observations and test if its radius is lower 
-#'  than \code{R} or not. If so, the ring is kept, otherwise the ring of maximum radius is calculated.
-#'  
-#'  Different series of rings could be simultaneoulsy calculated by providing different values for \code{N} 
-#'  and \code{R}. \code{rings} will calculate rings corresponding to each couple (N,R).
-#'  
-#'  @return Return \code{object} with the slot \code{rings} completed for each couple (N,R).
-#'  
-#'  Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring; \code{R}, 
-#'  maximum radius of rings and \code{estimates}, a data frame with the following variables:\itemize{
-#'    \item "id" cluster ID.
-#'    \item "r.pos" number of positive cases inside the ring.
-#'    \item "r.n" number of valid observations inside the ring.
-#'    \item "r.prev" observed prevalence (in \%) inside the ring (r.pos/r.n).
-#'    \item "r.radius" ring radius (in kilometers if coordinates in decimal degrees, 
-#'        in the unit of the projection otherwise).
-#'    \item "r.clusters" number of clusters located inside the ring.
-#'    \item "r.wpos" (optional) sum of weights of positive cases inside the ring.
-#'    \item "r.wn" (optional) sum of weights of valid observations inside the ring.
-#'    \item "r.wprev" (optional) weighted observed prevalence (in \%) inside the ring (r.wpos/r.wn).
-#'  }
-#'  Note: the list \code{rings} is named, the name of each element is N\emph{N_value}.R\emph{R_value}, 
-#'  for example \emph{N300.RInf}. 
-#'  
-#'  Note 2: \emph{r.wpos}, \emph{r.wn} and \emph{r.wprev} are calculated only if the slot \code{clusters} 
-#'  of \code{object} contains weighted data.
-#'  
+#' distance than \code{R} from the central cluster.\cr For \emph{combination of both}, \code{rings} 
+#' calculates firts the ring with the minimum number of observations and test if its radius is lower 
+#' than \code{R} or not. If so, the ring is kept, otherwise the ring of maximum radius is calculated.
+#' 
+#' Different series of rings could be simultaneoulsy calculated by providing different values for \code{N} 
+#' and \code{R}. \code{rings} will calculate rings corresponding to each couple (N,R).
+#' 
+#' @return Return \code{object} with the slot \code{rings} completed for each couple (N,R).
+#' 
+#' Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring; \code{R}, 
+#' maximum radius of rings and \code{estimates}, a data frame with the following variables:\itemize{
+#'   \item "id" cluster ID.
+#'   \item "r.pos" number of positive cases inside the ring.
+#'   \item "r.n" number of valid observations inside the ring.
+#'   \item "r.prev" observed prevalence (in \%) inside the ring (r.pos/r.n).
+#'   \item "r.radius" ring radius (in kilometers if coordinates in decimal degrees, 
+#'       in the unit of the projection otherwise).
+#'   \item "r.clusters" number of clusters located inside the ring.
+#'   \item "r.wpos" (optional) sum of weights of positive cases inside the ring.
+#'   \item "r.wn" (optional) sum of weights of valid observations inside the ring.
+#'   \item "r.wprev" (optional) weighted observed prevalence (in \%) inside the ring (r.wpos/r.wn).
+#' }
+#' Note: the list \code{rings} is named, the name of each element is N\emph{N_value}.R\emph{R_value}, 
+#' for example \emph{N300.RInf}. 
+#' 
+#' Note 2: \emph{r.wpos}, \emph{r.wn} and \emph{r.wprev} are calculated only if the slot \code{clusters} 
+#' of \code{object} contains weighted data.
+#' 
 #' @seealso \code{\link{prevR-class}}.
 #' 
 #' @references 

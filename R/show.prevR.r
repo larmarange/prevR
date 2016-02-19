@@ -10,8 +10,8 @@
 #' @examples 
 #' fdhs
 #' \dontrun{
-#'   dhs <- rings(fdhs,N=c(100,300,500))
-#'   dhs
+#'  dhs <- rings(fdhs,N=c(100,300,500))
+#'  dhs
 #' }
 #'
 #' @aliases show show-methods show,prevR-method

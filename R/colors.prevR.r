@@ -37,7 +37,7 @@
 #' col2rgb(prevR.colors.red(5))
 #' 
 #' \dontrun{
-#'   prevR.colors.qgis.pal('palette.txt', seq(0,25,length.out=100), 'red')
+#'  prevR.colors.qgis.pal('palette.txt', seq(0,25,length.out=100), 'red')
 #' }
 #'
 #' @name prevR.colors

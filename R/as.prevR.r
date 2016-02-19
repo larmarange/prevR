@@ -4,21 +4,21 @@
 #' 
 #' @param data data frame, each line corresponding to an observed cluster.
 #' @param col vector identifying the columns of \code{data} to use.\cr
-#'   \code{clusters} columns names are fixed:\itemize{
-#'     \item "id" (optional) cluster's identifier.
-#'     \item "x" cluster's longitude.
-#'     \item "y" cluster's latitude.
-#'     \item "n" number of valid observations in the cluster.
-#'     \item "pos" number of positive cases in the cluster.
-#'     \item "wn" (optional) sum of observations weight.
-#'     \item "wpos" (optional) sum of positive cases weight.
-#'     \item "c.type" (optional) type of cluster (used only by \code{\link[=show,prevR-method]{plot}}).
-#'   }
-#'   See examples.
+#'  \code{clusters} columns names are fixed:\itemize{
+#'    \item "id" (optional) cluster's identifier.
+#'    \item "x" cluster's longitude.
+#'    \item "y" cluster's latitude.
+#'    \item "n" number of valid observations in the cluster.
+#'    \item "pos" number of positive cases in the cluster.
+#'    \item "wn" (optional) sum of observations weight.
+#'    \item "wpos" (optional) sum of positive cases weight.
+#'    \item "c.type" (optional) type of cluster (used only by \code{\link[=show,prevR-method]{plot}}).
+#'  }
+#'  See examples.
 #' @param boundary object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
-#'  defining the studied area.
+#' defining the studied area.
 #' @param proj projection of clusters coordinates used in \code{data} 
-#'  (longitude and latitude in decimal degrees by default).
+#' (longitude and latitude in decimal degrees by default).
 #' @details 
 #' Only "x", "y" "n" and "pos" are required in \code{col}. 
 #' If "id" is not specified, a numzrical identifier will be automatically created.
@@ -45,19 +45,19 @@
 #' 
 #' @examples 
 #' \dontrun{
-#'   col <- c(id = "cluster",
-#'            x = "x",
-#'            y = "y",
-#'            n = "n",
-#'            pos = "pos",
-#'            c.type = "residence",
-#'            wn = "weighted.n",
-#'            wpos = "weighted.pos"
-#'   )
-#'   dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
-#'   
-#'   str(dhs)
-#'   print(dhs)
+#'  col <- c(id = "cluster",
+#'           x = "x",
+#'           y = "y",
+#'           n = "n",
+#'           pos = "pos",
+#'           c.type = "residence",
+#'           wn = "weighted.n",
+#'           wpos = "weighted.pos"
+#'  )
+#'  dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
+#'  
+#'  str(dhs)
+#'  print(dhs)
 #' }
 #' @keywords manip
 #' @export

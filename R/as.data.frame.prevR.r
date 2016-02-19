@@ -24,11 +24,11 @@
 #' str(fdhs)
 #' str(as.data.frame(fdhs))
 #' \dontrun{
-#'   r.fdhs <- rings(fdhs, N=c(100,200,300))
-#'   str(r.fdhs)
-#'   str(as.data.frame(r.fdhs, clusters.only=TRUE))
-#'   str(as.data.frame(r.fdhs))
-#'   str(as.data.frame(r.fdhs, N=300))
+#'  r.fdhs <- rings(fdhs, N=c(100,200,300))
+#'  str(r.fdhs)
+#'  str(as.data.frame(r.fdhs, clusters.only=TRUE))
+#'  str(as.data.frame(r.fdhs))
+#'  str(as.data.frame(r.fdhs, N=300))
 #' }
 #' 
 #' @export

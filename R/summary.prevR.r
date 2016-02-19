@@ -5,15 +5,15 @@
 #' 
 #' @param object object of class \code{\link[=prevR-class]{prevR}}.
 #' @param probs vector of probabilities with values in [0,1] for computing 
-#'    quantiles of the rings radii (see examples).
-#'    
+#'   quantiles of the rings radii (see examples).
+#'   
 #' @seealso \code{\link{print,prevR-method}}.
 #' @examples 
 #' summary(fdhs)
 #' \dontrun{
-#'   dhs <- rings(fdhs, N=c(100,300,500))
-#'   summary(dhs)
-#'   summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
+#'  dhs <- rings(fdhs, N=c(100,300,500))
+#'  summary(dhs)
+#'  summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
 #' }
 #'
 #' @aliases summary-methods summary,prevR-method summary prevRsummary

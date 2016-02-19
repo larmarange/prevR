@@ -1,12 +1,12 @@
-#'  prevR themes for ggplot2
-#'  
-#'  Two custom themes for ggplot2 graphs, hidding axis.
-#'  
-#'  @param base_size base font size
-#'  
-#'  @seealso \code{\link[ggplot2]{ggtheme}}\{\pkg{ggplot2}\}
-#'  
-#'  @export
+#' prevR themes for ggplot2
+#' 
+#' Two custom themes for ggplot2 graphs, hidding axis.
+#' 
+#' @param base_size base font size
+#' 
+#' @seealso \code{\link[ggplot2]{ggtheme}}\{\pkg{ggplot2}\}
+#' 
+#' @export
 
 theme_prevR <- function (base_size = 12) {
   '%+replace%'(theme_grey(base_size),

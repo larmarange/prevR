@@ -5,71 +5,71 @@ setGeneric("export",
     }
 )
 
-#'  Export an object of class prevR.
-#'  
-#'  This method could be used to export an object of class \code{\link[=prevR-class]{prevR}} 
-#'  in different formats (text, shapefile, dbase...)
-#'  
-#'  @param object object of class \code{\link[=prevR-class]{prevR}}.
-#'  @param element element to export: "clusters" or "boundary".
-#'  @param format format: "dbf", "txt", csv", "csv2" or "shp" (unused if \code{element="boundary"}).
-#'  @param file file name without extension.
-#'  @param N integer or list of integers setting elements of \code{rings} to export 
-#'    (unused if \code{element="boundary"}).
-#'  @param R integer or list of integers setting elements of \code{rings} to export 
-#'    (unused if \code{element="boundary"}).
-#'  @param clusters.only export only the slot \code{clusters} of \code{object} 
-#'    (unused if \code{element="boundary"})?
-#'  @param ext coerce the extension of the export file 
-#'    (unused if \code{element="boundary"} or if \code{format="shp"}).
-#'  @param sep coerce the field separator string (unused if \code{element="boundary"} 
-#'    or if \code{format="shp"} or if \code{format="dbf"}).
-#'  @param dec coerce the string to use for decimal point 
-#'    (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).
-#'  @param \dots additional arguments transmitted to \code{\link[maptools]{writePolyShape}}, 
-#'    \code{\link[maptools]{writePointsShape}}, \code{\link[foreign]{write.dbf}} or 
-#'    \code{\link[utils]{write.table}}.
-#'  
-#'  @details If \code{element="boundary"}, the slot \code{boundary} of \code{object} 
-#'  will be exported as a \emph{shapefile}.
-#'  
-#'  Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
-#'  See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N}, 
-#'  \code{R} et \code{clusters.only}.
-#'  
-#'  \code{format} specifies the export format of the data frame returned by 
-#'  \code{\link{as.data.frame.prevR}}: \tabular{ll}{
-#'      "shp" \tab Shape File (require packages \pkg{maptools} and \pkg{foreign})\cr
-#'      "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
-#'      "txt" \tab tabulated text (extension: .txt)\cr
-#'      "csv" \tab 'comma separated values' (extension: .csv)\cr
-#'      "csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
-#'  }
-#'  \code{ext} could be used to coerce the extension of the output filen except for 
-#'  \emph{shapefile} export, which will write three different files (.shp, .shx et .dbf).
-#'  
-#'  The "txt" format uses by default a tabulation as field separator and a point "." for decimal point. 
-#'  The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
-#'  The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point, 
-#'  the Excel convention for CSV files in some Western European locales. \cr
-#'  \code{sep} and \code{dec} could be used to coerce the field separator and the decimal point 
-#'  (together with the "txt" format).
-#'  
-#'  @seealso \code{\link[maptools]{writePolyShape}} \{\pkg{maptools}\}, \code{\link[maptools]{writePointsShape}}
-#'  \{\pkg{maptools}\}, \code{\link[foreign]{write.dbf}} \{\pkg{foreign}\}, \code{\link[utils]{write.table}}
-#'  \{\pkg{utils}\}.
-#'  
-#'  @examples 
-#'    \dontrun{
-#'      export(fdhs, element="boundary", file="area")
-#'      export(fdhs, element="clusters", format="shp", file="points")
-#'      
-#'      dhs <- rings(fdhs,N=c(100,300,500))
-#'      export(dhs, element="clusters", format="csv", N=300, file="points")
-#'    }
-#'  
-#'  @aliases export-methods export,prevR-method export
-#'  @keywords manip spatial
+#' Export an object of class prevR.
+#' 
+#' This method could be used to export an object of class \code{\link[=prevR-class]{prevR}} 
+#' in different formats (text, shapefile, dbase...)
+#' 
+#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param element element to export: "clusters" or "boundary".
+#' @param format format: "dbf", "txt", csv", "csv2" or "shp" (unused if \code{element="boundary"}).
+#' @param file file name without extension.
+#' @param N integer or list of integers setting elements of \code{rings} to export 
+#'   (unused if \code{element="boundary"}).
+#' @param R integer or list of integers setting elements of \code{rings} to export 
+#'   (unused if \code{element="boundary"}).
+#' @param clusters.only export only the slot \code{clusters} of \code{object} 
+#'   (unused if \code{element="boundary"})?
+#' @param ext coerce the extension of the export file 
+#'   (unused if \code{element="boundary"} or if \code{format="shp"}).
+#' @param sep coerce the field separator string (unused if \code{element="boundary"} 
+#'   or if \code{format="shp"} or if \code{format="dbf"}).
+#' @param dec coerce the string to use for decimal point 
+#'   (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).
+#' @param \dots additional arguments transmitted to \code{\link[maptools]{writePolyShape}}, 
+#'   \code{\link[maptools]{writePointsShape}}, \code{\link[foreign]{write.dbf}} or 
+#'   \code{\link[utils]{write.table}}.
+#' 
+#' @details If \code{element="boundary"}, the slot \code{boundary} of \code{object} 
+#' will be exported as a \emph{shapefile}.
+#' 
+#' Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
+#' See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N}, 
+#' \code{R} et \code{clusters.only}.
+#' 
+#' \code{format} specifies the export format of the data frame returned by 
+#' \code{\link{as.data.frame.prevR}}: \tabular{ll}{
+#'     "shp" \tab Shape File (require packages \pkg{maptools} and \pkg{foreign})\cr
+#'     "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
+#'     "txt" \tab tabulated text (extension: .txt)\cr
+#'     "csv" \tab 'comma separated values' (extension: .csv)\cr
+#'     "csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
+#' }
+#' \code{ext} could be used to coerce the extension of the output filen except for 
+#' \emph{shapefile} export, which will write three different files (.shp, .shx et .dbf).
+#' 
+#' The "txt" format uses by default a tabulation as field separator and a point "." for decimal point. 
+#' The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
+#' The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point, 
+#' the Excel convention for CSV files in some Western European locales. \cr
+#' \code{sep} and \code{dec} could be used to coerce the field separator and the decimal point 
+#' (together with the "txt" format).
+#' 
+#' @seealso \code{\link[maptools]{writePolyShape}} \{\pkg{maptools}\}, \code{\link[maptools]{writePointsShape}}
+#' \{\pkg{maptools}\}, \code{\link[foreign]{write.dbf}} \{\pkg{foreign}\}, \code{\link[utils]{write.table}}
+#' \{\pkg{utils}\}.
+#' 
+#' @examples 
+#'   \dontrun{
+#'     export(fdhs, element="boundary", file="area")
+#'     export(fdhs, element="clusters", format="shp", file="points")
+#'     
+#'     dhs <- rings(fdhs,N=c(100,300,500))
+#'     export(dhs, element="clusters", format="csv", N=300, file="points")
+#'   }
+#' 
+#' @aliases export-methods export,prevR-method export
+#' @keywords manip spatial
 
 setMethod("export","prevR",
   function(object, element, format, file, N= NULL, R = NULL, clusters.only = FALSE, ext=NULL, sep=NULL, dec=NULL, ...){

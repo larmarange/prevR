@@ -10,11 +10,11 @@ if (!isGeneric("plot"))
 #' 
 #' @param x object of class \code{\link[=prevR-class]{prevR}}.
 #' @param type graph to plot:\itemize{
-#'    \item "position" clusters position.
-#'    \item "c.type" clusters per \code{c.type}.
-#'    \item "count" number of observatios per cluster.
-#'    \item "flower" number of positive cases per cluster.
-#'  }
+#'   \item "position" clusters position.
+#'   \item "c.type" clusters per \code{c.type}.
+#'   \item "count" number of observatios per cluster.
+#'   \item "flower" number of positive cases per cluster.
+#' }
 #' @param add.legend add a legend?
 #' @param legend.location legend location.
 #' @param factor.size scale factor of rings (for \code{type="count"}).

@@ -11,22 +11,22 @@
 #' attribute named \code{valid} with the value \code{FALSE} (when boundaries of the studied 
 #' area have not been specified explicitly).
 #' \itemize{
-#'   \item If \code{rings} is \code{NULL}, \code{is.prevR(object,"rings")} will return \code{FALSE}.
-#'   \item If \code{boundary} has an attribute \code{valid} equal to \code{FALSE}, 
-#'    \code{is.prevR(object,"boundary")} will return \code{FALSE}.
+#'  \item If \code{rings} is \code{NULL}, \code{is.prevR(object,"rings")} will return \code{FALSE}.
+#'  \item If \code{boundary} has an attribute \code{valid} equal to \code{FALSE}, 
+#'   \code{is.prevR(object,"boundary")} will return \code{FALSE}.
 #' } 
 #'
 #' @return  \code{TRUE} or \code{FALSE}.
 #' @seealso \code{\link{prevR-class}}.
 #' @examples 
 #' col <- c(id = "cluster", 
-#'    x = "x",
-#'    y = "y",
-#'    n = "n",
-#'    pos = "pos",
-#'    c.type = "residence",
-#'    wn = "weighted.n",
-#'    wpos = "weighted.pos"
+#'   x = "x",
+#'   y = "y",
+#'   n = "n",
+#'   pos = "pos",
+#'   c.type = "residence",
+#'   wn = "weighted.n",
+#'   wpos = "weighted.pos"
 #' )
 #' dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
 #' 

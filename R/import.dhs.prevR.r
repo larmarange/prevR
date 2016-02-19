@@ -1,29 +1,29 @@
-#'  Import DHS data.
-#'  
-#'  This step by step function guides users to import data from a Demographic and Health Survey (DHS) 
-#'  and create an object of class \code{\link[=prevR-class]{prevR}}.
-#'  
-#'  @param file.sav DHS data (one individual per line) in SPSS format (.sav), 
-#'  downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.frame.
-#'  @param file.dbf GPS position of clusters in DATABASE format (.dbf), downloaded from 
-#'  \url{http://www.dhsprogram.com/}.  Could also be directly a data.frame.
-#'  
-#'  @note If you don't provide the precise path of files, \R will check the working directory 
-#'  (see \code{\link[base]{setwd}}). To specify the file path, see \code{\link[base]{file.path}}.
-#'  
-#'  This function was developed specifically for importing DHS. 
-#'  For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}}, 
-#'  see \code{\link{as.prevR}}.
-#'  
-#'  @seealso \code{\link{as.prevR}}, \code{\link{prevR-class}}.
-#'  
-#'  @examples 
-#'  \dontrun{
-#'  import.dhs("data.sav", "gps.dbf")
-#'  }
-#'  
-#'  @keywords manip
-#'  @export
+#' Import DHS data.
+#' 
+#' This step by step function guides users to import data from a Demographic and Health Survey (DHS) 
+#' and create an object of class \code{\link[=prevR-class]{prevR}}.
+#' 
+#' @param file.sav DHS data (one individual per line) in SPSS format (.sav), 
+#' downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.frame.
+#' @param file.dbf GPS position of clusters in DATABASE format (.dbf), downloaded from 
+#' \url{http://www.dhsprogram.com/}.  Could also be directly a data.frame.
+#' 
+#' @note If you don't provide the precise path of files, \R will check the working directory 
+#' (see \code{\link[base]{setwd}}). To specify the file path, see \code{\link[base]{file.path}}.
+#' 
+#' This function was developed specifically for importing DHS. 
+#' For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}}, 
+#' see \code{\link{as.prevR}}.
+#' 
+#' @seealso \code{\link{as.prevR}}, \code{\link{prevR-class}}.
+#' 
+#' @examples 
+#' \dontrun{
+#' import.dhs("data.sav", "gps.dbf")
+#' }
+#' 
+#' @keywords manip
+#' @export
 
 import.dhs  = function(file.sav, file.dbf){
   make.clust.dbf <-function (file, ind) {

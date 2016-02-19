@@ -1,19 +1,19 @@
-#'  Affect NA value to points located outside a polygon.
-#'  
-#'  This function forces points of an object of class 
-#'  \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}} located outside 
-#'  the limits defined by an object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
-#'  to \code{NA}.
-#'  
-#'  @param sp.data object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.
-#'  @param sp.poly object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
-#'  
-#'  @return Return \code{sp.data} modified.
-#'  
-#'  @seealso \code{\link{point.in.SpatialPolygons}}.
-#'  
-#'  @keywords manip spatial
-#'  @export
+#' Affect NA value to points located outside a polygon.
+#' 
+#' This function forces points of an object of class 
+#' \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}} located outside 
+#' the limits defined by an object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
+#' to \code{NA}.
+#' 
+#' @param sp.data object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.
+#' @param sp.poly object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+#' 
+#' @return Return \code{sp.data} modified.
+#' 
+#' @seealso \code{\link{point.in.SpatialPolygons}}.
+#' 
+#' @keywords manip spatial
+#' @export
 
 NA.outside.SpatialPolygons = function(sp.data, sp.poly){
   ###############################################################################################
