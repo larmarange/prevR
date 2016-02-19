@@ -1,8 +1,8 @@
 Package: prevR
 Type: Package
 Title: Estimating Regional Trends of a Prevalence from a DHS
-Version: 3.1
-Date: 2015-05-19
+Version: 3.2
+Date: 2016-02-19
 Author: Joseph Larmarange - IRD CEPED
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Acknowledgements: funding from ANRS and IRD, and technical support from LYSIS
