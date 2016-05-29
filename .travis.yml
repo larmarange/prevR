@@ -13,3 +13,4 @@ r_binary_packages:
   - fields
   - gstat
   - maptools
+  - sparr
