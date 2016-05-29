@@ -3,6 +3,14 @@
 language: R
 sudo: false
 cache: packages
-r_packages:
+r_binary_packages:
   - rgdal
   - geoR
+  - rgdal
+  - ggplot2
+  - directlabels
+  - GenKern
+  - fields
+  - gstat
+  - maptools
+  - tcltk
