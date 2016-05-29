@@ -1,3 +1,8 @@
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active) 
+[![Travis-CI Build Status](https://travis-ci.org/larmarange/prevR.svg?branch=master)](https://travis-ci.org/larmarange/prevR)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/prevR)](http://cran.r-project.org/web/packages/prevR) 
+![downloads](http://cranlogs.r-pkg.org/badges/grand-total/prevR)
+
 # prevR package
 
 This package performs spatial estimation of a prevalence surface
