@@ -80,7 +80,7 @@
 #' @aliases krige,prevR-method krige-methods krige,ANY,prevR-method krige
 
 setMethod("krige",c(formula="ANY", locations="prevR"),
-  function (formula , locations, N = NULL, R = NULL, model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto", keep.variance = FALSE,  show.variogram = FALSE,   ...)
+  function (formula , locations, N = NULL, R = Inf, model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto", keep.variance = FALSE,  show.variogram = FALSE,   ...)
   {
  ###############################################################################################
   # Cette fonction realise un krigeage des variables contenues dans l'element rings de objects
@@ -264,7 +264,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
 #' @aliases idw-methods idw,ANY,prevR-method idw,prevR-method idw
 
 setMethod("idw",c(formula="ANY", locations="prevR"),
-          function (formula, locations, N = NULL, R = NULL, nb.cells = 100, cell.size = NULL, idp = 2,  ...)
+          function (formula, locations, N = NULL, R = Inf, nb.cells = 100, cell.size = NULL, idp = 2,  ...)
           {
             ############################################################################################### 
             # Cette fonction realise une interpolation spatiale selon l'inverse de la distance a la puissance n (argument idp) 
