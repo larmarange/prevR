@@ -2,8 +2,8 @@
 % Please edit documentation in R/show.prevR.r
 \docType{methods}
 \name{show,prevR-method}
-\alias{show}
 \alias{show,prevR-method}
+\alias{show}
 \alias{show-methods}
 \title{Summary of a prevR object.}
 \usage{
@@ -30,4 +30,3 @@ fdhs
 \seealso{
 \code{\link{summary,prevR-method}}.
 }
-

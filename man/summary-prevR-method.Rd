@@ -2,14 +2,14 @@
 % Please edit documentation in R/summary.prevR.r
 \docType{methods}
 \name{summary,prevR-method}
-\alias{prevRsummary}
-\alias{summary}
 \alias{summary,prevR-method}
 \alias{summary-methods}
+\alias{summary}
+\alias{prevRsummary}
 \title{Detailed summary of the variables of a prevR object}
 \usage{
-\S4method{summary}{prevR}(object, probs = c(0, 0.1, 0.25, 0.5, 0.75, 0.8, 0.9,
-  0.95, 0.99, 1))
+\S4method{summary}{prevR}(object, probs = c(0, 0.1, 0.25, 0.5, 0.75, 0.8,
+  0.9, 0.95, 0.99, 1))
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -33,4 +33,3 @@ summary(fdhs)
 \seealso{
 \code{\link{print,prevR-method}}.
 }
-

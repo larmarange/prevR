@@ -25,4 +25,3 @@ to \code{NA}.
 }
 \keyword{manip}
 \keyword{spatial}
-

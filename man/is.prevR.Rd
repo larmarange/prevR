@@ -57,4 +57,3 @@ is.prevR(dhs,"rings")
 \code{\link{prevR-class}}.
 }
 \keyword{class}
-

@@ -4,10 +4,10 @@
 \alias{quick.prevR}
 \title{Quick prevR analysis and plot}
 \usage{
-quick.prevR(object, N = Noptim(object), nb.cells = 100, cell.size = NULL,
-  weighted = NULL, plot.results = TRUE, return.results = FALSE,
-  return.plot = FALSE, legend.title = "\%", cex = 0.7,
-  progression = TRUE)
+quick.prevR(object, N = Noptim(object), nb.cells = 100,
+  cell.size = NULL, weighted = NULL, plot.results = TRUE,
+  return.results = FALSE, return.plot = FALSE, legend.title = "\%",
+  cex = 0.7, progression = TRUE)
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -63,4 +63,3 @@ By default, a suggested value of N will be computed with \code{\link{Noptim}}.
 \keyword{plot}
 \keyword{smooth}
 \keyword{spatial}
-

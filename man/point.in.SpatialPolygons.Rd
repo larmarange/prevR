@@ -25,4 +25,3 @@ class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
 }
 \keyword{manip}
 \keyword{spatial}
-

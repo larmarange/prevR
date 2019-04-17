@@ -29,4 +29,3 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
 DOI: 10.4000/cybergeo.24606.
 }
 \keyword{stat}
-

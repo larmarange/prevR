@@ -8,10 +8,10 @@
 \alias{prevR.colors.gray.inverse}
 \alias{prevR.colors.green}
 \alias{prevR.colors.green.inverse}
-\alias{prevR.colors.qgis.pal}
 \alias{prevR.colors.red}
 \alias{prevR.colors.red.inverse}
 \alias{prevR.demo.pal}
+\alias{prevR.colors.qgis.pal}
 \title{Continuous color palettes.}
 \usage{
 prevR.colors.blue(n)
@@ -30,7 +30,8 @@ prevR.colors.red(n)
 
 prevR.colors.red.inverse(n)
 
-prevR.demo.pal(n, border = if (n < 32) "light gray" else NA, main = NULL)
+prevR.demo.pal(n, border = if (n < 32) "light gray" else NA,
+  main = NULL)
 
 prevR.colors.qgis.pal(file, at, pal = "red", inverse = FALSE)
 }
@@ -92,4 +93,3 @@ Other color palettes are available in  \R. See for example
 \code{\link[grDevices]{rainbow}}\{\pkg{grDevices}\} or the package \pkg{RColorBrewer}.
 }
 \keyword{color}
-

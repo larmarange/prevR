@@ -2,9 +2,9 @@
 % Please edit documentation in R/kde.prevR.r
 \docType{methods}
 \name{kde,prevR-method}
-\alias{kde}
 \alias{kde,prevR-method}
 \alias{kde-methods}
+\alias{kde}
 \title{Kernel density estimation for prevR object.}
 \usage{
 \S4method{kde}{prevR}(object, N = NULL, R = NULL, weighted = TRUE,
@@ -125,4 +125,3 @@ DOI: 10.4000/cybergeo.24606.
 }
 \keyword{smooth}
 \keyword{spatial}
-

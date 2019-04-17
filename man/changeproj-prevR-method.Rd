@@ -2,8 +2,8 @@
 % Please edit documentation in R/changeproj.prevR.r
 \docType{methods}
 \name{changeproj,prevR-method}
-\alias{changeproj}
 \alias{changeproj,prevR-method}
+\alias{changeproj}
 \alias{changeproj-methods}
 \title{Convert map projection of a object of class prevR.}
 \usage{
@@ -46,4 +46,3 @@ plot(fdhs2, axes=TRUE, main="Projection: UTM Zone 30")
 }
 \keyword{manip}
 \keyword{spatial}
-

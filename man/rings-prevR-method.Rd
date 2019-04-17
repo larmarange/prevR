@@ -2,8 +2,8 @@
 % Please edit documentation in R/rings.prevR.r
 \docType{methods}
 \name{rings,prevR-method}
-\alias{rings}
 \alias{rings,prevR-method}
+\alias{rings}
 \alias{rings-methods}
 \title{Calculation of rings of equal number of observation and/or equal radius.}
 \usage{
@@ -85,4 +85,3 @@ PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes
 }
 \keyword{math}
 \keyword{spatial}
-

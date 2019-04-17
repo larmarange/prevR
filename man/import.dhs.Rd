@@ -35,4 +35,3 @@ import.dhs("data.sav", "gps.dbf")
 \code{\link{as.prevR}}, \code{\link{prevR-class}}.
 }
 \keyword{manip}
-

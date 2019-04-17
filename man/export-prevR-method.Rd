@@ -2,13 +2,14 @@
 % Please edit documentation in R/export.prevR.r
 \docType{methods}
 \name{export,prevR-method}
-\alias{export}
 \alias{export,prevR-method}
 \alias{export-methods}
+\alias{export}
 \title{Export an object of class prevR.}
 \usage{
-\S4method{export}{prevR}(object, element, format, file, N = NULL, R = NULL,
-  clusters.only = FALSE, ext = NULL, sep = NULL, dec = NULL, ...)
+\S4method{export}{prevR}(object, element, format, file, N = NULL,
+  R = NULL, clusters.only = FALSE, ext = NULL, sep = NULL,
+  dec = NULL, ...)
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -88,4 +89,3 @@ the Excel convention for CSV files in some Western European locales. \cr
 }
 \keyword{manip}
 \keyword{spatial}
-

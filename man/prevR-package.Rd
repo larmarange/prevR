@@ -101,6 +101,7 @@ mapping regional trends of HIV prevalence from Demographic and Health Surveys (D
 European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
 DOI: 10.4000/cybergeo.24606.
 }
+
 \examples{
 \dontrun{
 par(ask = TRUE)
@@ -152,10 +153,6 @@ spplot(radius.N300,
 par(ask = FALSE)
 }
 }
-\author{
-Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr
-IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)
-}
 \references{
 Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level 
 from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476, 
@@ -176,5 +173,8 @@ Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques 
 29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve, 
 Belgique, \url{http://www.uclouvain.be/13881.html}.
 }
+\author{
+Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr
+IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)
+}
 \keyword{package}
-
