@@ -78,7 +78,7 @@ create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat
     }
     boundary = spTransform(boundary,proj)
   }
-  get("plot",pos="package:sp")(boundary,col = 1 + (1:length(boundary)),asp =1,pbg = "white",axes=T)
+  sp::plot(boundary,col = 1 + (1:length(boundary)),asp =1,pbg = "white",axes=T)
   if(length(countries)==1) title(main = countries)
     message("Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttp://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors.",domain="R-prevR")
   boundary
