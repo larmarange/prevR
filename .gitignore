@@ -8,3 +8,6 @@ Desktop.ini
 .Rproj.user
 .Rdata
 .Rhistory
+# Examples files
+data.sav
+gps.dbf
