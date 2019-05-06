@@ -96,7 +96,7 @@ qa$plot
 Several values of **N** could be specified, and several options allows you to return detailed results.
 
 ```{r, fig.width=8, fig.height=4}
-res <- quick.prevR(fdhs, N = c(150, 300, 450), return.results = TRUE, return.plot = TRUE, plot.results = FALSE, progression = FALSE, nb.cells = 50)
+res <- quick.prevR(fdhs, N = c(100, 200, 300), return.results = TRUE, return.plot = TRUE, plot.results = FALSE, progression = FALSE, nb.cells = 50)
 res$plot
 ```
 
