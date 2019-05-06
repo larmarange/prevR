@@ -113,7 +113,7 @@
 #' Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé 
 #' à partir des coordonnées des zones d'enquête", \emph{Chaire Quételet, 
 #' 29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve, 
-#' Belgique, \url{http://www.uclouvain.be/13881.html}.
+#' Belgique.
 #' @examples 
 #' \dontrun{
 #' par(ask = TRUE)
