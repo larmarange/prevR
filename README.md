@@ -1,9 +1,10 @@
+# prevR
+
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/0.1.0/active.svg)](http://www.repostatus.org/#active) 
 [![Travis-CI Build Status](https://travis-ci.org/larmarange/prevR.svg?branch=master)](https://travis-ci.org/larmarange/prevR)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/prevR)](http://cran.r-project.org/web/packages/prevR) 
-![downloads](http://cranlogs.r-pkg.org/badges/grand-total/prevR)
-
-# prevR package
+[![Rdoc](http://www.rdocumentation.org/badges/version/prevR)](http://www.rdocumentation.org/packages/prevR)
+[![Downloads](https://cranlogs.r-pkg.org/badges/prevR)](https://cran.r-project.org/package=prevR)
 
 This package performs spatial estimation of a prevalence surface
 or a relative risks surface, using data from a Demographic and Health
