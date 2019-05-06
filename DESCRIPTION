@@ -1,26 +1,28 @@
 Package: prevR
 Type: Package
 Title: Estimating Regional Trends of a Prevalence from a DHS
-Version: 3.3
-Date: 2016-02-23
-Author: Joseph Larmarange - IRD CEPED
+Version: 3.3.0.9000
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
+Authors@R: c(
+  person("Joseph", "Larmarange", email = "joseph.larmarange@ird.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7097-700X"))
+  )
 Acknowledgements: funding from ANRS and IRD, and technical support from LYSIS
     (info@lysis-consultants.fr)
 Description: Spatial estimation of a prevalence surface
     or a relative risks surface, using data from a Demographic and Health
     Survey (DHS) or an analog survey.
 License: CeCILL
-URL: http://www.ceped.org/prevR, http://joseph.larmarange.net/prevR
+URL: http://larmarange.github.io/prevR/
+BugReports: https://github.com/larmarange/prevR/issues
 LazyLoad: yes
 LazyData: yes
 Depends:
-    R (>= 2.10),
+    R (>= 2.10)
+Imports:
     sp,
     rgdal (>= 0.7),
     ggplot2,
-    directlabels
-Imports:
+    directlabels,
     GenKern,
     fields,
     gstat,
@@ -61,4 +63,5 @@ Collate:
     'theme_prevR.r'
     'direct.label_prevR.r'
     'quick.prevR.r'
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1

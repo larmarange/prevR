@@ -23,6 +23,8 @@ setGeneric("kde",
 #' @param cell.size size of each cell (in the unit of the projection).
 #' @param progression show a progress bar?
 #' @param short.names should names of the output be short?
+#' @import sp
+#' @importFrom GenKern KernSur
 #' 
 #' @details This function calculates a prevalence surface as the ratio of the intensity surface 
 #' (expressed in cases per surface unit) of positive cases on the intensity surface of observed cases 
@@ -87,6 +89,8 @@ setGeneric("kde",
 #'   dhs <- rings(fdhs, N=c(100,200,300,400,500))
 #'   
 #'   prev.N300 <- kde(dhs, N=300, nb.cells=200)
+#'   
+#'   library(sp)
 #'   spplot(prev.N300, 'k.wprev.N300.RInf',
 #'          cuts=100, col.regions=prevR.colors.red(101),
 #'          main="Regional trends of prevalence (N=300)"
@@ -96,7 +100,6 @@ setGeneric("kde",
 #'                     nb.cells=200, risk.ratio=2, keep.details=FALSE
 #'   )
 #'   str(prev.krige)
-#'   dev.new()
 #'   spplot(prev.krige,
 #'          c('k.wprev.N100.RInf','k.wprev.N300.RInf','k.wprev.N500.RInf'),
 #'          cuts=100, col.regions=prevR.colors.red(101)

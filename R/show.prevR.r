@@ -15,6 +15,7 @@
 #' }
 #'
 #' @aliases show show-methods show,prevR-method
+#' @exportMethod show
 
 setMethod("show","prevR",
 function(object){

@@ -55,7 +55,6 @@ It's not possible to change projection of \code{data} with \code{as.prevR}.
 Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
 }
 \examples{
-\dontrun{
  col <- c(id = "cluster",
           x = "x",
           y = "y",
@@ -69,7 +68,6 @@ Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
  
  str(dhs)
  print(dhs)
-}
 }
 \seealso{
 \code{\link{prevR-class}}, \code{\link{create.boundary}}, 

@@ -169,9 +169,6 @@
 #' @name prevR-package
 #' @keywords package
 #' @import sp
-#' @import rgdal
-#' @import ggplot2
-#' @import directlabels
 #' @importFrom gstat idw krige vgm as.vgm.variomodel fit.variogram variogram
 #' @importFrom fields rdist rdist.earth
 #' @importFrom GenKern KernSur

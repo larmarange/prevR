@@ -99,6 +99,7 @@ Calculated surfaces could be export using the function
     dhs <- rings(fdhs, N = c(100,200,300,400,500))
     radius.N300 <- krige('r.radius', dhs, N = 300, nb.cells = 200)
     prev.krige <- krige(r.wprev ~ 1, dhs, N = c(100, 300, 500))
+    library(sp)
     spplot(prev.krige, c('r.wprev.N100.RInf', 'r.wprev.N300.RInf', 'r.wprev.N500.RInf'))
   }
 

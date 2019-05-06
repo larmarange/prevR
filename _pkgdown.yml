@@ -1,0 +1,44 @@
+destination: docs
+reference:
+- title: Data imort
+  desc:  Functions to create a prevR object and to import data
+  contents:
+  - '`as.prevR`'
+  - '`prevR-class`'
+  - '`import.dhs`'
+  - '`create.boundary`'
+  - '`prevR-package`'
+- title: Description
+  contents:
+  - '`print,prevR-method`'
+  - '`show,prevR-method`'
+  - '`plot,prevR,missing-method`'
+  - '`summary,prevR-method`'
+  - '`is.prevR`'
+- title: Manipulation
+  contents:
+  - '`as.data.frame.prevR`'
+  - '`changeproj,prevR-method`'
+- title: Spatial interpolation
+  contents:
+  - '`quick.prevR`'
+  - '`rings,prevR-method`'
+  - '`kde,prevR-method`'
+  - '`krige,ANY,prevR-method`'
+  - '`Noptim`'
+- title: Export
+  contents:
+  - '`export,prevR-method`'
+- title: Dataset for examples
+  contents:
+  - '`fdhs`'
+- title: Helpers
+  contents:
+  - '`prevR.colors`'
+  - '`theme_prevR`'
+  - '`as.SpatialGrid,prevR-method`'
+  - '`NA.outside.SpatialPolygons`'
+  - '`direct.label_prevR`'
+  - '`point.in.SpatialPolygons`'
+  - '`TMWorldBorders`'
+  - '`xyz2dataframe`'

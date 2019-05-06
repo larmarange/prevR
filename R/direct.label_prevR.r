@@ -13,6 +13,8 @@
 #' 
 #' @seealso \code{\link[directlabels]{direct.label.ggplot}}\{\pkg{directlabels}\}
 #' 
+#' @importFrom directlabels geom_dl
+#' @importFrom directlabels default.picker
 #' @export
 
 direct.label_prevR <- function (p, method = NULL, debug = FALSE) 
@@ -36,19 +38,18 @@ direct.label_prevR <- function (p, method = NULL, debug = FALSE)
     stop("Need colour or fill aesthetic to infer default direct labels.")
   }
   L <- dl.info$layer
-  colvar <- dl.info$colvar
+  colvar <- dl.info$colvar[2]
   geom <- L$geom$objname
   if (is.null(method)) 
-    method <- default.picker("ggplot")
+    method <- directlabels::default.picker("ggplot")
   data <- if ((!is.null(L$data)) && (length(L$data) > 0)) {
     L$data
-  }
-  else {
+  } else {
     NULL
   }
-  a <- aes_string(label = colvar, colour = colvar)
+  a <- ggplot2::aes_string(label = colvar, colour = colvar)
   a2 <- structure(c(L$mapping, a), class = "uneval")
-  dlgeom <- geom_dl(a2, method, stat = L$stat, debug = debug, 
+  dlgeom <- directlabels::geom_dl(a2, method = method, stat = L$stat, debug = debug, 
                     data = data)
   dlgeom$stat_params <- L$stat_params
   # leg.info <- legends2hide(p)
@@ -56,6 +57,6 @@ direct.label_prevR <- function (p, method = NULL, debug = FALSE)
   guide.args <- as.list(rep("none", length(leg.info$hide)))
   names(guide.args) <- leg.info$hide
   guide.args$colour <- "none"
-  guide <- do.call(guides, guide.args)
+  guide <- do.call(ggplot2::guides, guide.args)
   p + dlgeom + guide
 }

@@ -9,6 +9,7 @@
   # Elle renvoie un objt contenant le modele et les parametres d'ajustement 
   ###############################################################################################
   requireNamespace("tcltk", quietly = TRUE) || stop("The package tcltk is required to use manual fit. Please install it.", domain="R-prevR")
+  dev.new() # better when working on RStudio
     geterrmessage()
     done <- tcltk::tclVar(0)
     eyefit.env <- new.env()

@@ -16,10 +16,12 @@
 #' see \code{\link{as.prevR}}.
 #' 
 #' @seealso \code{\link{as.prevR}}, \code{\link{prevR-class}}.
+#' @importFrom foreign read.dbf
+#' @importFrom foreign read.spss
 #' 
 #' @examples 
 #' \dontrun{
-#' import.dhs("data.sav", "gps.dbf")
+#' imported_data <- import.dhs("data.sav", "gps.dbf")
 #' }
 #' 
 #' @keywords manip

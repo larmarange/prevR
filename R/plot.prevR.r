@@ -1,4 +1,5 @@
 #' @exportMethod plot
+#' @importFrom sp plot
 
 if (!isGeneric("plot"))
       setGeneric("plot", function(x, y, ...) standardGeneric("plot")) 
@@ -21,6 +22,7 @@ if (!isGeneric("plot"))
 #' @param new.window plot in a new window?
 #' @param axes show axes?
 #' @param ... additional arguments transmitted to \code{\link[graphics]{title}}.
+#' @import sp
 #' 
 #' @details 
 #' Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bottom"}, 
@@ -64,7 +66,7 @@ setMethod("plot",c("prevR","missing"),
     if (new.window) dev.new()
     lty = 1
     if(!attr(boundary,"valid")) lty=0
-    get("plot",pos="package:sp")(boundary, asp = 1,  axes = axes, xlab = NA, ylab = NA, lty=lty)
+    sp::plot(boundary, asp = 1,  axes = axes, xlab = NA, ylab = NA, lty=lty)
     
     if (type == "position") {
       points(x = clusters[["x"]], y = clusters[["y"]], pch = 21, bg = "green")

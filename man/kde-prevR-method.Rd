@@ -97,6 +97,8 @@ risks surfaces, adapted for other kind of data than Demographic and Helath Surve
   dhs <- rings(fdhs, N=c(100,200,300,400,500))
   
   prev.N300 <- kde(dhs, N=300, nb.cells=200)
+  
+  library(sp)
   spplot(prev.N300, 'k.wprev.N300.RInf',
          cuts=100, col.regions=prevR.colors.red(101),
          main="Regional trends of prevalence (N=300)"
@@ -106,7 +108,6 @@ risks surfaces, adapted for other kind of data than Demographic and Helath Surve
                     nb.cells=200, risk.ratio=2, keep.details=FALSE
   )
   str(prev.krige)
-  dev.new()
   spplot(prev.krige,
          c('k.wprev.N100.RInf','k.wprev.N300.RInf','k.wprev.N500.RInf'),
          cuts=100, col.regions=prevR.colors.red(101)

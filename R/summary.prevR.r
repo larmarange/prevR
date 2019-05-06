@@ -17,6 +17,7 @@
 #' }
 #'
 #' @aliases summary-methods summary,prevR-method summary prevRsummary
+#' @exportMethod summary
 
 setMethod("summary","prevR",
   function(object, probs = c(0,.10,.25,.50,.75,.80,.90,.95,.99,1)){

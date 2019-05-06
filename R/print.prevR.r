@@ -15,6 +15,7 @@
 #' }
 #'
 #' @aliases print print-methods print,prevR-method
+#' @exportMethod print
 
 setMethod("print","prevR",
 function(x){
