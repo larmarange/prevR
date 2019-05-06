@@ -196,7 +196,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
             next
          }
          one.model      = try(gstat::fit.variogram(sample.vario, model = gstat::vgm(param[1],'Exp',param[2])),silent =T ) 
-         if(attr(one.model,"class")=="try-error" || attr(one.model,"singular")) one.model = gstat::vgm(param[1],'Exp',param[2])
+         if(inherits(one.model, "try-error") || attr(one.model,"singular")) one.model = gstat::vgm(param[1],'Exp',param[2])
       }
 
       if(is.null(model) && fit == "manual") {
@@ -210,7 +210,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
           #assign("varioGeoR",varioGeoR,pos=1) inutile
           out        = .eyefit.prevR(varioGeoR)
           one.model   =  try(gstat::as.vgm.variomodel(out[[length(out)]]),silent=T)
-          if(attr(one.model,"class")[1]=="try-error"){
+          if(inherits(one.model, "try-error")){
              message("Error: select an other model.\n",domain="R-prevR")
              out = NULL
           }

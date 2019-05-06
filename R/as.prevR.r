@@ -148,7 +148,7 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +ellps=WG
     proj = proj@projargs
   }
   isOk = try(CRS(proj),silent=T)
-  if(attr(isOk,"class") == "try-error"){
+  if(inherits(isOk,"try-error")){
     stop(gettextf("the projection %s, defined in the 'proj' argument, is incorect.",proj,domain="R-prevR"), call.=F)
   }
   projCRS = CRS(proj)

@@ -151,7 +151,7 @@ validity = function(object){
   }
   proj =  slot(object,"proj")
   isOk = try(CRS(proj@projargs),silent=T)
-  if(attr(isOk,"class") == "try-error"){
+  if(inherits(isOk,"try-error")){
     stop(gettextf("the projection %s, defined in the 'proj' argument, is incorect.",proj,domain="R-prevR"), call.=F)
   }
   boundary = slot(object,"boundary")

@@ -71,7 +71,7 @@ create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat
   if(!is.null(proj)){
     if(!is(proj,"CRS")){
       isOk = try(CRS(proj),silent=T)
-      if(attr(isOk,"class") == "try-error"){
+      if(inherits(isOk,"try-error")){
         stop(gettextf("the projection %s, defined in the 'proj' argument, is incorect.",proj,domain="R-prevR"), call.=F)
       }
       proj = CRS(proj)
