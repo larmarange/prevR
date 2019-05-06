@@ -89,7 +89,7 @@ compatible with \code{\link[sp]{spplot}}.\cr
 Calculated surfaces could be export using the function 
 \code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
 
-See the package \pkg{\link[sparr:sparr-package]{sparr}} for another methodology to estimate relative 
+See the package \pkg{sparr} for another methodology to estimate relative 
 risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
 }
 \examples{
