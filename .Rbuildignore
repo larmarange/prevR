@@ -8,3 +8,4 @@ gps.dbf
 ^docs$
 ^pkgdown$
 ^cran-comments\.md$
+^CRAN-RELEASE$
