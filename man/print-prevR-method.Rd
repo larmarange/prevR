@@ -2,8 +2,8 @@
 % Please edit documentation in R/print.prevR.r
 \docType{methods}
 \name{print,prevR-method}
-\alias{print}
 \alias{print,prevR-method}
+\alias{print}
 \alias{print-methods}
 \title{Summary of a prevR object.}
 \usage{
@@ -30,4 +30,3 @@ print(fdhs)
 \seealso{
 \code{\link{summary,prevR-method}}.
 }
-

@@ -37,4 +37,3 @@ plot(TMWorldBorders)
 }
 \keyword{datasets}
 \keyword{spatial}
-

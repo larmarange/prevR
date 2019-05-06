@@ -2,12 +2,13 @@
 % Please edit documentation in R/as.SpatialGrid.prevR.r
 \docType{methods}
 \name{as.SpatialGrid,prevR-method}
-\alias{as.SpatialGrid}
 \alias{as.SpatialGrid,prevR-method}
 \alias{as.SpatialGrid-methods}
+\alias{as.SpatialGrid}
 \title{Create a spatial grid from an object of class prevR.}
 \usage{
-\S4method{as.SpatialGrid}{prevR}(object, nb.cells = 100, cell.size = NULL)
+\S4method{as.SpatialGrid}{prevR}(object, nb.cells = 100,
+  cell.size = NULL)
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -42,4 +43,3 @@ str(as.SpatialGrid(fdhs, nb.cells=200))
 }
 \keyword{manip}
 \keyword{spatial}
-

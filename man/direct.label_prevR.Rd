@@ -26,4 +26,3 @@ except that legend is not hidden.
 \seealso{
 \code{\link[directlabels]{direct.label.ggplot}}\{\pkg{directlabels}\}
 }
-

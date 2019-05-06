@@ -47,6 +47,7 @@ variables:\itemize{
 Note: the list \code{rings} is named, the name of each element is 
 N\emph{N_value}.R\emph{R_value}, for example \emph{N300.RInf}.}
 }}
+
 \section{Objects from the Class}{
 
 Objects of this class could be created by the function \code{\link{as.prevR}}.
@@ -75,6 +76,7 @@ Objects of this class could be created by the function \code{\link{as.prevR}}.
   \item{changeproj}{\code{signature(object = "prevR")} changes the map projection used.}
 }
 }
+
 \examples{
 showClass("prevR")
 
@@ -105,4 +107,3 @@ print(dhs)
 \code{\link{idw,prevR-method}}, \code{\link{export,prevR-method}}.
 }
 \keyword{classes}
-

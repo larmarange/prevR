@@ -2,13 +2,14 @@
 % Please edit documentation in R/export.prevR.r
 \docType{methods}
 \name{export,prevR-method}
-\alias{export}
 \alias{export,prevR-method}
 \alias{export-methods}
+\alias{export}
 \title{Export an object of class prevR.}
 \usage{
-\S4method{export}{prevR}(object, element, format, file, N = NULL, R = NULL,
-  clusters.only = FALSE, ext = NULL, sep = NULL, dec = NULL, ...)
+\S4method{export}{prevR}(object, element, format, file, N = NULL,
+  R = NULL, clusters.only = FALSE, ext = NULL, sep = NULL,
+  dec = NULL, ...)
 }
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -37,8 +38,8 @@ or if \code{format="shp"} or if \code{format="dbf"}).}
 \item{dec}{coerce the string to use for decimal point 
 (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).}
 
-\item{\dots}{additional arguments transmitted to \code{\link[maptools]{writePolyShape}}, 
-\code{\link[maptools]{writePointsShape}}, \code{\link[foreign]{write.dbf}} or 
+\item{\dots}{additional arguments transmitted to
+\code{\link[rgdal]{writeOGR}}, \code{\link[foreign]{write.dbf}} or 
 \code{\link[utils]{write.table}}.}
 }
 \description{
@@ -55,14 +56,14 @@ See \code{\link{as.data.frame.prevR}} for details on the use of the parameters o
 
 \code{format} specifies the export format of the data frame returned by 
 \code{\link{as.data.frame.prevR}}: \tabular{ll}{
-    "shp" \tab Shape File (require packages \pkg{maptools} and \pkg{foreign})\cr
+    "shp" \tab Shape File (require the package \pkg{rgdal})\cr
     "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
     "txt" \tab tabulated text (extension: .txt)\cr
     "csv" \tab 'comma separated values' (extension: .csv)\cr
     "csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
 }
-\code{ext} could be used to coerce the extension of the output filen except for 
-\emph{shapefile} export, which will write three different files (.shp, .shx et .dbf).
+\code{ext} could be used to coerce the extension of the output file, except for 
+\emph{shapefile} export, which will write four different files (.shp, .shx, .dbf and .prj).
 
 The "txt" format uses by default a tabulation as field separator and a point "." for decimal point. 
 The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
@@ -88,4 +89,3 @@ the Excel convention for CSV files in some Western European locales. \cr
 }
 \keyword{manip}
 \keyword{spatial}
-

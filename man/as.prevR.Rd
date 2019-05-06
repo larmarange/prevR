@@ -4,7 +4,8 @@
 \alias{as.prevR}
 \title{Create an object of class prevR.}
 \usage{
-as.prevR(data, col, boundary = NULL, proj = "+proj=longlat +ellps=WGS84")
+as.prevR(data, col, boundary = NULL,
+  proj = "+proj=longlat +ellps=WGS84")
 }
 \arguments{
 \item{data}{data frame, each line corresponding to an observed cluster.}
@@ -54,7 +55,6 @@ It's not possible to change projection of \code{data} with \code{as.prevR}.
 Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
 }
 \examples{
-\dontrun{
  col <- c(id = "cluster",
           x = "x",
           y = "y",
@@ -69,10 +69,8 @@ Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
  str(dhs)
  print(dhs)
 }
-}
 \seealso{
 \code{\link{prevR-class}}, \code{\link{create.boundary}}, 
 \code{\link[=changeproj,prevR-method]{changeproj}}, \code{\link{import.dhs}}.
 }
 \keyword{manip}
-

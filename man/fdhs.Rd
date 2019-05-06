@@ -26,4 +26,3 @@ This dataset is composed of 3 objects:\itemize{
 } 
 }
 \keyword{datasets}
-

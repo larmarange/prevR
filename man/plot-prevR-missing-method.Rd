@@ -2,15 +2,15 @@
 % Please edit documentation in R/plot.prevR.r
 \docType{methods}
 \name{plot,prevR,missing-method}
-\alias{plot}
 \alias{plot,prevR,missing-method}
-\alias{plot,prevR-method}
+\alias{plot}
 \alias{plot-methods}
+\alias{plot,prevR-method}
 \title{Plot object of class prevR.}
 \usage{
 \S4method{plot}{prevR,missing}(x, type = "position", add.legend = TRUE,
-  legend.location = "bottomright", factor.size = 0.2, new.window = FALSE,
-  axes = F, ...)
+  legend.location = "bottomright", factor.size = 0.2,
+  new.window = FALSE, axes = F, ...)
 }
 \arguments{
 \item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
@@ -60,4 +60,3 @@ plot(fdhs, type = "flower", main="flower")
 \code{\link[graphics]{legend}}\{\pkg{graphics}\}.
 }
 \keyword{hplot}
-

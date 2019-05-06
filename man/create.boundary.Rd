@@ -49,4 +49,3 @@ boundary <- create.boundary(countries = c("Burkina Faso", "Ghana", "Benin"))
 }
 \keyword{manip}
 \keyword{spatial}
-

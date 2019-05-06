@@ -2,21 +2,21 @@
 % Please edit documentation in R/krige.prevR.r
 \docType{methods}
 \name{krige,ANY,prevR-method}
-\alias{idw}
-\alias{idw,ANY,prevR-method}
-\alias{idw,prevR-method}
-\alias{idw-methods}
-\alias{krige}
 \alias{krige,ANY,prevR-method}
 \alias{krige,prevR-method}
 \alias{krige-methods}
+\alias{krige}
+\alias{idw,ANY,prevR-method}
+\alias{idw-methods}
+\alias{idw,prevR-method}
+\alias{idw}
 \title{Spatial interpolation (kriging and inverse distance weighting) for objects of class prevR.}
 \usage{
-\S4method{krige}{ANY,prevR}(formula, locations, N = NULL, R = NULL,
+\S4method{krige}{ANY,prevR}(formula, locations, N = NULL, R = Inf,
   model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto",
   keep.variance = FALSE, show.variogram = FALSE, ...)
 
-\S4method{idw}{ANY,prevR}(formula, locations, N = NULL, R = NULL,
+\S4method{idw}{ANY,prevR}(formula, locations, N = NULL, R = Inf,
   nb.cells = 100, cell.size = NULL, idp = 2, ...)
 }
 \arguments{
@@ -43,10 +43,10 @@
 
 \item{show.variogram}{plot the variogram?}
 
-\item{idp}{inverse distance weighting power (see \code{\link[gstat]{idw}}\{\pkg{gstat}\}).}
-
 \item{\dots}{additional arguments transmited to \code{\link[gstat]{krige}}\{\pkg{gstat}\} 
 or \code{\link[gstat]{idw}}\{\pkg{gstat}\}.}
+
+\item{idp}{inverse distance weighting power (see \code{\link[gstat]{idw}}\{\pkg{gstat}\}).}
 }
 \value{
 Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. 
@@ -99,6 +99,7 @@ Calculated surfaces could be export using the function
     dhs <- rings(fdhs, N = c(100,200,300,400,500))
     radius.N300 <- krige('r.radius', dhs, N = 300, nb.cells = 200)
     prev.krige <- krige(r.wprev ~ 1, dhs, N = c(100, 300, 500))
+    library(sp)
     spplot(prev.krige, c('r.wprev.N100.RInf', 'r.wprev.N300.RInf', 'r.wprev.N500.RInf'))
   }
 
@@ -115,4 +116,3 @@ DOI: 10.4000/cybergeo.24606.
 }
 \keyword{smooth}
 \keyword{spatial}
-

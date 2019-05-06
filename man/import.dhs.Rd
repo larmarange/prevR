@@ -27,7 +27,7 @@ see \code{\link{as.prevR}}.
 }
 \examples{
 \dontrun{
-import.dhs("data.sav", "gps.dbf")
+imported_data <- import.dhs("data.sav", "gps.dbf")
 }
 
 }
@@ -35,4 +35,3 @@ import.dhs("data.sav", "gps.dbf")
 \code{\link{as.prevR}}, \code{\link{prevR-class}}.
 }
 \keyword{manip}
-

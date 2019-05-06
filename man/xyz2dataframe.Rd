@@ -45,4 +45,3 @@ to \code{c("z1","z2","z3")} or \code{c(3,4,5)}.
 }
 \keyword{manip}
 \keyword{spatial}
-
