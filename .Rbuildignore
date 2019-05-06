@@ -9,3 +9,4 @@ gps.dbf
 ^pkgdown$
 ^cran-comments\.md$
 ^CRAN-RELEASE$
+^revdep$
