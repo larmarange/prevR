@@ -108,7 +108,85 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
+          <h2 id="section-data-imort" class="hasAnchor"><a href="#section-data-imort" class="anchor"></a>Data imort</h2>
+          <p class="section-desc"><p>Functions to create a prevR object and to import data</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="as.prevR.html">as.prevR()</a></code> </p>
+        </td>
+        <td><p>Create an object of class prevR.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="prevR-class.html">prevR-class</a></code> </p>
+        </td>
+        <td><p>Objects of class prevR.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="import.dhs.html">import.dhs()</a></code> </p>
+        </td>
+        <td><p>Import DHS data.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="create.boundary.html">create.boundary()</a></code> </p>
+        </td>
+        <td><p>Provide national boundaries of a country.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="prevR-package.html">prevR-package</a></code> </p>
+        </td>
+        <td><p>Estimating regional trends of a prevalence from a DHS.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-description" class="hasAnchor"><a href="#section-description" class="anchor"></a>Description</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="print-prevR-method.html">print(<i>&lt;prevR&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Summary of a prevR object.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="show-prevR-method.html">show(<i>&lt;prevR&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Summary of a prevR object.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot-prevR-missing-method.html">plot(<i>&lt;prevR&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Plot object of class prevR.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="summary-prevR-method.html">summary(<i>&lt;prevR&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Detailed summary of the variables of a prevR object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="is.prevR.html">is.prevR()</a></code> </p>
+        </td>
+        <td><p>Test if an object is of class prevR.
+This function test if the class of an object is <code>prevR</code>. 
+It could be used to test the slot <code>rings</code> or the slot <code>boundary</code>.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-manipulation" class="hasAnchor"><a href="#section-manipulation" class="anchor"></a>Manipulation</h2>
           <p class="section-desc"></p>
         </th>
       </tr>
@@ -121,59 +199,29 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="as.prevR.html">as.prevR()</a></code> </p>
-        </td>
-        <td><p>Create an object of class prevR.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="as.SpatialGrid.html">as.SpatialGrid(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Create a spatial grid from an object of class prevR.</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="changeproj-prevR-method.html">changeproj(<i>&lt;prevR&gt;</i>)</a></code> </p>
         </td>
         <td><p>Convert map projection of a object of class prevR.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-spatial-interpolation" class="hasAnchor"><a href="#section-spatial-interpolation" class="anchor"></a>Spatial interpolation</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="quick.prevR.html">quick.prevR()</a></code> </p>
+        </td>
+        <td><p>Quick prevR analysis and plot</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="create.boundary.html">create.boundary()</a></code> </p>
+          <p><code><a href="rings-prevR-method.html">rings(<i>&lt;prevR&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Provide national boundaries of a country.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="direct.label_prevR.html">direct.label_prevR()</a></code> </p>
-        </td>
-        <td><p>Direct label on a ggplot object</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="export-prevR-method.html">export(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Export an object of class prevR.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="fdhs.html">fdhs</a></code> </p>
-        </td>
-        <td><p>Fictitious data generated by a DHS simulation.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="import.dhs.html">import.dhs()</a></code> </p>
-        </td>
-        <td><p>Import DHS data.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="is.prevR.html">is.prevR()</a></code> </p>
-        </td>
-        <td><p>Test if an object is of class prevR.
-This function test if the class of an object is <code>prevR</code>. 
-It could be used to test the slot <code>rings</code> or the slot <code>boundary</code>.</p></td>
+        <td><p>Calculation of rings of equal number of observation and/or equal radius.</p></td>
       </tr><tr>
         
         <td>
@@ -189,40 +237,46 @@ It could be used to test the slot <code>rings</code> or the slot <code>boundary<
       </tr><tr>
         
         <td>
-          <p><code><a href="NA.outside.SpatialPolygons.html">NA.outside.SpatialPolygons()</a></code> </p>
-        </td>
-        <td><p>Affect NA value to points located outside a polygon.</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="Noptim.html">Noptim()</a></code> </p>
         </td>
         <td><p>Suggested optimal value for N</p></td>
-      </tr><tr>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-export" class="hasAnchor"><a href="#section-export" class="anchor"></a>Export</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
-          <p><code><a href="plot-prevR-missing-method.html">plot(<i>&lt;prevR&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
+          <p><code><a href="export-prevR-method.html">export(<i>&lt;prevR&gt;</i>)</a></code> </p>
         </td>
-        <td><p>Plot object of class prevR.</p></td>
-      </tr><tr>
+        <td><p>Export an object of class prevR.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-dataset-for-examples" class="hasAnchor"><a href="#section-dataset-for-examples" class="anchor"></a>Dataset for examples</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
-          <p><code><a href="point.in.SpatialPolygons.html">point.in.SpatialPolygons()</a></code> </p>
+          <p><code><a href="fdhs.html">fdhs</a></code> </p>
         </td>
-        <td><p>Test if a point falls within a given polygon.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prevR-class.html">prevR-class</a></code> </p>
-        </td>
-        <td><p>Objects of class prevR.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="prevR-package.html">prevR-package</a></code> </p>
-        </td>
-        <td><p>Estimating regional trends of a prevalence from a DHS.</p></td>
-      </tr><tr>
+        <td><p>Fictitious data generated by a DHS simulation.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-helpers" class="hasAnchor"><a href="#section-helpers" class="anchor"></a>Helpers</h2>
+          <p class="section-desc"></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
           <p><code><a href="prevR.colors.html">prevR.colors.blue()</a></code> <code><a href="prevR.colors.html">prevR.colors.blue.inverse()</a></code> <code><a href="prevR.colors.html">prevR.colors.gray()</a></code> <code><a href="prevR.colors.html">prevR.colors.gray.inverse()</a></code> <code><a href="prevR.colors.html">prevR.colors.green()</a></code> <code><a href="prevR.colors.html">prevR.colors.green.inverse()</a></code> <code><a href="prevR.colors.html">prevR.colors.red()</a></code> <code><a href="prevR.colors.html">prevR.colors.red.inverse()</a></code> <code><a href="prevR.colors.html">prevR.demo.pal()</a></code> <code><a href="prevR.colors.html">prevR.colors.qgis.pal()</a></code> </p>
@@ -231,39 +285,33 @@ It could be used to test the slot <code>rings</code> or the slot <code>boundary<
       </tr><tr>
         
         <td>
-          <p><code><a href="print-prevR-method.html">print(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summary of a prevR object.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="quick.prevR.html">quick.prevR()</a></code> </p>
-        </td>
-        <td><p>Quick prevR analysis and plot</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="rings-prevR-method.html">rings(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Calculation of rings of equal number of observation and/or equal radius.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="show-prevR-method.html">show(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summary of a prevR object.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary-prevR-method.html">summary(<i>&lt;prevR&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Detailed summary of the variables of a prevR object</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="theme_prevR.html">theme_prevR()</a></code> <code><a href="theme_prevR.html">theme_prevR_light()</a></code> </p>
         </td>
         <td><p>prevR themes for ggplot2</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="as.SpatialGrid.html">as.SpatialGrid(<i>&lt;prevR&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Create a spatial grid from an object of class prevR.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="NA.outside.SpatialPolygons.html">NA.outside.SpatialPolygons()</a></code> </p>
+        </td>
+        <td><p>Affect NA value to points located outside a polygon.</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="direct.label_prevR.html">direct.label_prevR()</a></code> </p>
+        </td>
+        <td><p>Direct label on a ggplot object</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="point.in.SpatialPolygons.html">point.in.SpatialPolygons()</a></code> </p>
+        </td>
+        <td><p>Test if a point falls within a given polygon.</p></td>
       </tr><tr>
         
         <td>
@@ -284,7 +332,13 @@ It could be used to test the slot <code>rings</code> or the slot <code>boundary<
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-data-imort">Data imort</a></li>
+      <li><a href="#section-description">Description</a></li>
+      <li><a href="#section-manipulation">Manipulation</a></li>
+      <li><a href="#section-spatial-interpolation">Spatial interpolation</a></li>
+      <li><a href="#section-export">Export</a></li>
+      <li><a href="#section-dataset-for-examples">Dataset for examples</a></li>
+      <li><a href="#section-helpers">Helpers</a></li>
     </ul>
   </div>
 </div>

@@ -68,32 +68,34 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#prevr-package" class="anchor"></a>prevR package</h1></div>
 <p>This package performs spatial estimation of a prevalence surface or a relative risks surface, using data from a Demographic and Health Survey (DHS) or an analog survey.</p>
-<div id="web-site" class="section level2">
+<div id="methodological-paper" class="section level2">
 <h2 class="hasAnchor">
-<a href="#web-site" class="anchor"></a>Web site</h2>
+<a href="#methodological-paper" class="anchor"></a>Methodological paper</h2>
 <ul>
-<li><a href="http://www.ceped.org/prevR" class="uri">http://www.ceped.org/prevR</a></li>
-<li><a href="http://joseph.larmarange.net/prevR" class="uri">http://joseph.larmarange.net/prevR</a></li>
+<li><a href="https://journals.openedition.org/cybergeo/24606" class="uri">https://journals.openedition.org/cybergeo/24606</a></li>
 </ul>
 </div>
-<div id="download-and-install" class="section level2">
+<div id="installation" class="section level2">
 <h2 class="hasAnchor">
-<a href="#download-and-install" class="anchor"></a>Download and install</h2>
-<p>prevR is available on CRAN: <a href="http://cran.r-project.org/web/packages/prevR/" class="uri">http://cran.r-project.org/web/packages/prevR/</a></p>
-</div>
-<div id="updating-po-files" class="section level2">
-<h2 class="hasAnchor">
-<a href="#updating-po-files" class="anchor"></a>Updating PO files</h2>
-<p>Run the folowing command:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tools)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">update_pkg_po</span>(<span class="st">'.'</span>)</a></code></pre></div>
-<p>Note: you need to have <code>gettext-tools</code> on your computer.</p>
-<p>See <a href="http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html" class="uri">http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html</a></p>
+<a href="#installation" class="anchor"></a>Installation</h2>
+<p>From CRAN:</p>
+<pre><code><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages("prevR")</a></code></pre>
+<p>Latest version from GitHub:</p>
+<pre><code><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">devtools::install_github("larmarange/prevR")</a></code></pre>
 </div>
 <div id="some-additional-code--functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#some-additional-code--functions" class="anchor"></a>Some additional code / functions</h2>
 <p><a href="https://github.com/larmarange/prevR-extra" class="uri">https://github.com/larmarange/prevR-extra</a></p>
+</div>
+<div id="updating-po-files" class="section level2">
+<h2 class="hasAnchor">
+<a href="#updating-po-files" class="anchor"></a>Updating PO files</h2>
+<p>Run the folowing command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tools)</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="kw">update_pkg_po</span>(<span class="st">'.'</span>)</a></code></pre></div>
+<p>Note: you need to have <code>gettext-tools</code> on your computer.</p>
+<p>See <a href="http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html" class="uri">http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html</a></p>
 </div>
 </div>
 
