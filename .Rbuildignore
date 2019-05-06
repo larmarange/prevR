@@ -4,3 +4,6 @@ README.md
 ^\.travis\.yml$
 data.sav
 gps.dbf
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
