@@ -100,8 +100,7 @@
 </ul>
 <p>Application to generate HIV prevalence surfaces can be found at:</p>
 <ul>
-<li>Larmarange Joseph and Bendaud Victoria (2014) “HIV estimates at second subnational level from national population-based survey”, AIDS, n° 28, p. S469-S476, DOI: <a href="http://dx.doi.org/10.1097/QAD.0000000000000480">10.1097/QAD.0000000000000480</a>
-</li>
+<li>Larmarange Joseph and Bendaud Victoria (2014) “HIV estimates at second subnational level from national population-based survey”, AIDS, n° 28, p. S469-S476, DOI: 10.1097/QAD.0000000000000480</li>
 </ul>
 <p>Other papers using <strong>prevR</strong> could be found on <a href="https://scholar.google.fr/scholar?oi=bibs&amp;hl=fr&amp;cites=1938663060375810997,6018660907435103505">Google Scholar</a>.</p>
 <div id="importing-data" class="section level2">
@@ -113,7 +112,7 @@
 <li>a vector identifying the columns of the data.frame containing the correspondant variables</li>
 <li>an optional <code>SpatialPolygons</code> defining the studied area</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(prevR, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(prevR, <span class="dt">quietly =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## Registered S3 methods overwritten by 'ggplot2':
 ##   method         from 
 ##   [.quosures     rlang
@@ -124,16 +123,15 @@
 ##   as.zoo.xts zoo</code></pre>
 <pre><code>## 
 ## 
-## Bienvenue dans 'prevR' : Estimation des tendances régionales d'une prévalence</code></pre>
-<pre><code>##  - tapez help('prevR') pour les détails
-##  - tapez demo(prevR) pour une démonstration
-##  - tapez vignette('prevR-FR') pour la documentation en français
-##  - tapez citation('prevR') pour savoir comment citer prevR dans une publication.
+## Welcome to 'prevR': estimate regional trends of a prevalence.</code></pre>
+<pre><code>##  - type help('prevR') for details
+##  - type demo(prevR) for a demonstration
+##  - type citation('prevR') to cite prevR in a publication.
 ## 
 ## </code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">col &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">id =</span> <span class="st">"cluster"</span>, <span class="dt">x =</span> <span class="st">"x"</span>, <span class="dt">y =</span> <span class="st">"y"</span>, <span class="dt">n =</span> <span class="st">"n"</span>, <span class="dt">pos =</span> <span class="st">"pos"</span>, <span class="dt">c.type =</span> <span class="st">"residence"</span>, <span class="dt">wn =</span> <span class="st">"weighted.n"</span>, <span class="dt">wpos =</span> <span class="st">"weighted.pos"</span>)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/as.prevR.html">as.prevR</a></span>(fdhs.clusters, col, fdhs.boundary)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(dhs)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">col &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dt">id =</span> <span class="st">"cluster"</span>, <span class="dt">x =</span> <span class="st">"x"</span>, <span class="dt">y =</span> <span class="st">"y"</span>, <span class="dt">n =</span> <span class="st">"n"</span>, <span class="dt">pos =</span> <span class="st">"pos"</span>, <span class="dt">c.type =</span> <span class="st">"residence"</span>, <span class="dt">wn =</span> <span class="st">"weighted.n"</span>, <span class="dt">wpos =</span> <span class="st">"weighted.pos"</span>)</a>
+<a class="sourceLine" id="cb6-2" title="2">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/as.prevR.html">as.prevR</a></span>(fdhs.clusters, col, fdhs.boundary)</a>
+<a class="sourceLine" id="cb6-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(dhs)</a></code></pre></div>
 <pre><code>## Formal class 'prevR' [package "prevR"] with 4 slots
 ##   ..@ clusters:'data.frame': 401 obs. of  10 variables:
 ##   .. ..$ id    : int [1:401] 1 10 100 101 102 103 104 105 106 107 ...
@@ -170,71 +168,71 @@
 ##   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot
 ##   .. .. ..@ projargs: chr "+proj=longlat +ellps=WGS84"
 ##   ..@ rings   : list()</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
-<pre><code>## Objet de classe 'prevR'</code></pre>
-<pre><code>## Nombre de clusters : 401</code></pre>
-<pre><code>## Nombre d'observations : 8000</code></pre>
-<pre><code>## Nombre de cas positifs : 810</code></pre>
-<pre><code>## Le jeu de données est pondéré.</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
+<pre><code>## Object of class 'prevR'</code></pre>
+<pre><code>## Number of clusters: 401</code></pre>
+<pre><code>## Number of observations: 8000</code></pre>
+<pre><code>## Number of positive cases: 810</code></pre>
+<pre><code>## The dataset is weighted.</code></pre>
 <pre><code>## 
-## Prévalence nationale : 10.12%</code></pre>
-<pre><code>## Prévalence nationale pondérée : 10.16%</code></pre>
+## National prevalence: 10.12%</code></pre>
+<pre><code>## National weighted prevalence: 10.16%</code></pre>
 <pre><code>## 
-## Projection utilisée : +proj=longlat +ellps=WGS84</code></pre>
+## Projection used: +proj=longlat +ellps=WGS84</code></pre>
 <pre><code>## 
-## Domaine des cordonnées</code></pre>
+## Coordinate range</code></pre>
 <pre><code>##        min     max
 ## x -5.37750  3.6850
 ## y  4.80326 14.1225</code></pre>
 <pre><code>## 
-## Domaine des coordonnées des frontières</code></pre>
+## Boundary coordinate range</code></pre>
 <pre><code>##         min       max
 ## x -5.518916  3.851701
 ## y  4.736723 15.082593</code></pre>
 <p>An interactive helper function <code><a href="../reference/import.dhs.html">import.dhs()</a></code> could be used to compute statistics per cluster and to generate the <strong>prevR</strong> object for those who downloaded individual files (SPSS format) and location of clusters (dbf format) from DHS website (<a href="https://dhsprogram.com/" class="uri">https://dhsprogram.com/</a>).</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">imported_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/import.dhs.html">import.dhs</a></span>(<span class="st">"data.sav"</span>, <span class="st">"gps.dbf"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">imported_data &lt;-<span class="st"> </span><span class="kw"><a href="../reference/import.dhs.html">import.dhs</a></span>(<span class="st">"data.sav"</span>, <span class="st">"gps.dbf"</span>)</a></code></pre></div>
 <p>Boudaries of a specific country could be obtained with <code><a href="../reference/create.boundary.html">create.boundary()</a></code>.</p>
 </div>
 <div id="plotting-a-prevr-object" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plotting-a-prevr-object" class="anchor"></a>Plotting a prevR object</h2>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">main =</span> <span class="st">"Clusters position"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">main =</span> <span class="st">"Clusters position"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-4-1.png" width="576"></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"c.type"</span>, <span class="dt">main =</span> <span class="st">"Clusters by residence"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"c.type"</span>, <span class="dt">main =</span> <span class="st">"Clusters by residence"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-4-2.png" width="576"></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"count"</span>, <span class="dt">main =</span> <span class="st">"Observations by cluster"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"count"</span>, <span class="dt">main =</span> <span class="st">"Observations by cluster"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-4-3.png" width="576"></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"flower"</span>, <span class="dt">main =</span> <span class="st">"Positive cases by cluster"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">type =</span> <span class="st">"flower"</span>, <span class="dt">main =</span> <span class="st">"Positive cases by cluster"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-4-4.png" width="576"></p>
 </div>
 <div id="changing-coordinates-projection" class="section level2">
 <h2 class="hasAnchor">
 <a href="#changing-coordinates-projection" class="anchor"></a>Changing coordinates projection</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-5-1.png" width="576"></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/changeproj-prevR-method.html">changeproj</a></span>(dhs, <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span>)</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
-<pre><code>## Objet de classe 'prevR'</code></pre>
-<pre><code>## Nombre de clusters : 401</code></pre>
-<pre><code>## Nombre d'observations : 8000</code></pre>
-<pre><code>## Nombre de cas positifs : 810</code></pre>
-<pre><code>## Le jeu de données est pondéré.</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/changeproj-prevR-method.html">changeproj</a></span>(dhs, <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span>)</a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
+<pre><code>## Object of class 'prevR'</code></pre>
+<pre><code>## Number of clusters: 401</code></pre>
+<pre><code>## Number of observations: 8000</code></pre>
+<pre><code>## Number of positive cases: 810</code></pre>
+<pre><code>## The dataset is weighted.</code></pre>
 <pre><code>## 
-## Prévalence nationale : 10.12%</code></pre>
-<pre><code>## Prévalence nationale pondérée : 10.16%</code></pre>
+## National prevalence: 10.12%</code></pre>
+<pre><code>## National weighted prevalence: 10.16%</code></pre>
 <pre><code>## 
-## Projection utilisée : +proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +towgs84=0,0,0</code></pre>
+## Projection used: +proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs +towgs84=0,0,0</code></pre>
 <pre><code>## 
-## Domaine des cordonnées</code></pre>
+## Coordinate range</code></pre>
 <pre><code>##        min     max
 ## x 240094.2 1231995
 ## y 531003.3 1562155</code></pre>
 <pre><code>## 
-## Domaine des coordonnées des frontières</code></pre>
+## Boundary coordinate range</code></pre>
 <pre><code>##        min     max
 ## x 224228.1 1251165
 ## y 523628.1 1669034</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb40-1" title="1"><span class="kw"><a href="../reference/plot-prevR-missing-method.html">plot</a></span>(dhs, <span class="dt">axes =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-5-2.png" width="576"></p>
 </div>
 <div id="quick-analysis" class="section level2">
@@ -252,49 +250,49 @@
 </li>
 <li>a <strong>ggplot2</strong> of the prevalence surface will be generated and rings radii will be added as a contour plot</li>
 </ul>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="kw"><a href="../reference/quick.prevR.html">quick.prevR</a></span>(fdhs)</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw"><a href="../reference/quick.prevR.html">quick.prevR</a></span>(fdhs)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-8-1.png" width="576"></p>
 <p>Several values of <strong>N</strong> could be specified, and several options allows you to return detailed results.</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" data-line-number="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/quick.prevR.html">quick.prevR</a></span>(fdhs, <span class="dt">N =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>), <span class="dt">return.results =</span> <span class="ot">TRUE</span>, <span class="dt">return.plot =</span> <span class="ot">TRUE</span>, <span class="dt">plot.results =</span> <span class="ot">FALSE</span>, <span class="dt">progression =</span> <span class="ot">FALSE</span>, <span class="dt">nb.cells =</span> <span class="dv">50</span>)</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2">res<span class="op">$</span>plot</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/quick.prevR.html">quick.prevR</a></span>(fdhs, <span class="dt">N =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>), <span class="dt">return.results =</span> <span class="ot">TRUE</span>, <span class="dt">return.plot =</span> <span class="ot">TRUE</span>, <span class="dt">plot.results =</span> <span class="ot">FALSE</span>, <span class="dt">progression =</span> <span class="ot">FALSE</span>, <span class="dt">nb.cells =</span> <span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb42-2" title="2">res<span class="op">$</span>plot</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-9-1.png" width="768"></p>
 </div>
 <div id="step-by-step-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#step-by-step-analysis" class="anchor"></a>Step by step analysis</h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="co"># Calculating rings of the same number of observations for different values of N</span></a>
-<a class="sourceLine" id="cb43-2" data-line-number="2">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rings-prevR-method.html">rings</a></span>(fdhs, <span class="dt">N =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">500</span>), <span class="dt">progression =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb43-3" data-line-number="3"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
-<pre><code>## Objet de classe 'prevR'</code></pre>
-<pre><code>## Nombre de clusters : 401</code></pre>
-<pre><code>## Nombre d'observations : 8000</code></pre>
-<pre><code>## Nombre de cas positifs : 810</code></pre>
-<pre><code>## Le jeu de données est pondéré.</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="co"># Calculating rings of the same number of observations for different values of N</span></a>
+<a class="sourceLine" id="cb43-2" title="2">dhs &lt;-<span class="st"> </span><span class="kw"><a href="../reference/rings-prevR-method.html">rings</a></span>(fdhs, <span class="dt">N =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>, <span class="dv">500</span>), <span class="dt">progression =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb43-3" title="3"><span class="kw"><a href="../reference/print-prevR-method.html">print</a></span>(dhs)</a></code></pre></div>
+<pre><code>## Object of class 'prevR'</code></pre>
+<pre><code>## Number of clusters: 401</code></pre>
+<pre><code>## Number of observations: 8000</code></pre>
+<pre><code>## Number of positive cases: 810</code></pre>
+<pre><code>## The dataset is weighted.</code></pre>
 <pre><code>## 
-## Prévalence nationale : 10.12%</code></pre>
-<pre><code>## Prévalence nationale pondérée : 10.16%</code></pre>
+## National prevalence: 10.12%</code></pre>
+<pre><code>## National weighted prevalence: 10.16%</code></pre>
 <pre><code>## 
-## Projection utilisée :  +proj=longlat +ellps=WGS84</code></pre>
+## Projection used:  +proj=longlat +ellps=WGS84</code></pre>
 <pre><code>## 
-## Domaine des cordonnées</code></pre>
+## Coordinate range</code></pre>
 <pre><code>##        min     max
 ## x -5.37750  3.6850
 ## y  4.80326 14.1225</code></pre>
 <pre><code>## 
-## Domaine des coordonnées des frontières</code></pre>
+## Boundary coordinate range</code></pre>
 <pre><code>##         min       max
 ## x -5.518916  3.851701
 ## y  4.736723 15.082593</code></pre>
 <pre><code>## 
-## Couples (N,R) disponibles dans le slot 'rings' :</code></pre>
+## Available (N,R) couples in the slot 'rings':</code></pre>
 <pre><code>##    N   R
 ##  100 Inf
 ##  200 Inf
 ##  300 Inf
 ##  400 Inf
 ##  500 Inf</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" data-line-number="1"><span class="kw"><a href="../reference/summary-prevR-method.html">summary</a></span>(dhs)</a></code></pre></div>
-<pre><code>## Objet de classe 'prevR'</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw"><a href="../reference/summary-prevR-method.html">summary</a></span>(dhs)</a></code></pre></div>
+<pre><code>## Object of class 'prevR'</code></pre>
 <pre><code>## SLOT CLUSTERS</code></pre>
 <pre><code>##        x                 y                n              pos      
 ##  Min.   :-5.3775   Min.   : 4.803   Min.   : 8.00   Min.   :0.00  
@@ -318,7 +316,7 @@
 ##  3rd Qu.:15.789  
 ##  Max.   :43.750</code></pre>
 <pre><code>## 
-## SLOT RINGS POUR N=100 ET R=Inf</code></pre>
+## SLOT RINGS FOR N=100 AND R=Inf</code></pre>
 <pre><code>##      r.pos            r.n            r.prev          r.radius      
 ##  Min.   : 0.00   Min.   :100.0   Min.   : 0.000   Min.   :  4.155  
 ##  1st Qu.: 4.00   1st Qu.:105.0   1st Qu.: 4.000   1st Qu.: 23.046  
@@ -334,7 +332,7 @@
 ##  3rd Qu.:6.000   3rd Qu.:17.256   3rd Qu.:120.13   3rd Qu.:15.735  
 ##  Max.   :7.000   Max.   :33.937   Max.   :140.88   Max.   :28.210</code></pre>
 <pre><code>## 
-## SLOT RINGS POUR N=200 ET R=Inf</code></pre>
+## SLOT RINGS FOR N=200 AND R=Inf</code></pre>
 <pre><code>##      r.pos            r.n            r.prev           r.radius      
 ##  Min.   : 2.00   Min.   :200.0   Min.   : 0.8929   Min.   :  7.171  
 ##  1st Qu.: 9.00   1st Qu.:206.0   1st Qu.: 4.3902   1st Qu.: 37.579  
@@ -350,7 +348,7 @@
 ##  3rd Qu.:11.00   3rd Qu.:31.98   3rd Qu.:220.0   3rd Qu.:15.797  
 ##  Max.   :12.00   Max.   :53.47   Max.   :241.0   Max.   :26.666</code></pre>
 <pre><code>## 
-## SLOT RINGS POUR N=300 ET R=Inf</code></pre>
+## SLOT RINGS FOR N=300 AND R=Inf</code></pre>
 <pre><code>##      r.pos            r.n            r.prev          r.radius      
 ##  Min.   : 5.00   Min.   :300.0   Min.   : 1.587   Min.   :  9.971  
 ##  1st Qu.:15.00   1st Qu.:304.0   1st Qu.: 4.983   1st Qu.: 45.750  
@@ -366,7 +364,7 @@
 ##  3rd Qu.:16.00   3rd Qu.:46.856   3rd Qu.:320.0   3rd Qu.:15.429  
 ##  Max.   :17.00   Max.   :76.990   Max.   :341.4   Max.   :25.273</code></pre>
 <pre><code>## 
-## SLOT RINGS POUR N=400 ET R=Inf</code></pre>
+## SLOT RINGS FOR N=400 AND R=Inf</code></pre>
 <pre><code>##      r.pos            r.n            r.prev          r.radius     
 ##  Min.   : 8.00   Min.   :400.0   Min.   : 2.000   Min.   : 12.70  
 ##  1st Qu.:22.00   1st Qu.:405.0   1st Qu.: 5.327   1st Qu.: 54.42  
@@ -382,7 +380,7 @@
 ##  3rd Qu.:21.00   3rd Qu.:58.963   3rd Qu.:421.0   3rd Qu.:14.341  
 ##  Max.   :22.00   Max.   :95.591   Max.   :443.4   Max.   :23.452</code></pre>
 <pre><code>## 
-## SLOT RINGS POUR N=500 ET R=Inf</code></pre>
+## SLOT RINGS FOR N=500 AND R=Inf</code></pre>
 <pre><code>##      r.pos             r.n            r.prev          r.radius     
 ##  Min.   : 14.00   Min.   :500.0   Min.   : 2.783   Min.   : 16.38  
 ##  1st Qu.: 31.00   1st Qu.:505.0   1st Qu.: 6.163   1st Qu.: 67.01  
@@ -398,7 +396,7 @@
 ##  3rd Qu.:26.00   3rd Qu.: 70.17   3rd Qu.:520.8   3rd Qu.:13.929  
 ##  Max.   :28.00   Max.   :110.78   Max.   :555.8   Max.   :22.822</code></pre>
 <pre><code>## 
-## QUANTILES DE r.radius (en kilomètres) :</code></pre>
+## QUANTILES OF r.radius (in kilometers):</code></pre>
 <pre><code>##              0%   10%   25%   50%    75%    80%    90%    95%    99%
 ## N100.RInf  4.15  7.84 23.05 37.85  57.86  62.99  79.63  93.12 121.77
 ## N200.RInf  7.17 14.58 37.58 58.66  89.38  94.40 114.97 134.81 173.37
@@ -411,27 +409,27 @@
 ## N300.RInf 268.17
 ## N400.RInf 293.64
 ## N500.RInf 347.09</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" data-line-number="1"><span class="co"># Prevalence surface for N=300</span></a>
-<a class="sourceLine" id="cb74-2" data-line-number="2">prev.N300 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kde-prevR-method.html">kde</a></span>(dhs, <span class="dt">N =</span> <span class="dv">300</span>, <span class="dt">nb.cells =</span> <span class="dv">200</span>, <span class="dt">progression =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb74-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sp)</a>
-<a class="sourceLine" id="cb74-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/sp/topics/spplot">spplot</a></span>(prev.N300, <span class="st">"k.wprev.N300.RInf"</span>, <span class="dt">cuts =</span> <span class="dv">100</span>, <span class="dt">col.regions =</span> <span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span>(<span class="dv">101</span>), <span class="dt">main =</span> <span class="st">"Regional trends of prevalence (N=300)"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1"><span class="co"># Prevalence surface for N=300</span></a>
+<a class="sourceLine" id="cb74-2" title="2">prev.N300 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/kde-prevR-method.html">kde</a></span>(dhs, <span class="dt">N =</span> <span class="dv">300</span>, <span class="dt">nb.cells =</span> <span class="dv">200</span>, <span class="dt">progression =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb74-3" title="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sp)</a>
+<a class="sourceLine" id="cb74-4" title="4"><span class="kw">spplot</span>(prev.N300, <span class="st">"k.wprev.N300.RInf"</span>, <span class="dt">cuts =</span> <span class="dv">100</span>, <span class="dt">col.regions =</span> <span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span>(<span class="dv">101</span>), <span class="dt">main =</span> <span class="st">"Regional trends of prevalence (N=300)"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-1.png" width="576"></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" data-line-number="1"><span class="co"># Surface of rings' radius</span></a>
-<a class="sourceLine" id="cb75-2" data-line-number="2">radius.N300 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/krige-ANY-prevR-method.html">krige</a></span>(<span class="st">"r.radius"</span>, dhs, <span class="dt">N =</span> <span class="dv">300</span>, <span class="dt">nb.cells =</span> <span class="dv">200</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1"><span class="co"># Surface of rings' radius</span></a>
+<a class="sourceLine" id="cb75-2" title="2">radius.N300 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/krige-ANY-prevR-method.html">krige</a></span>(<span class="st">"r.radius"</span>, dhs, <span class="dt">N =</span> <span class="dv">300</span>, <span class="dt">nb.cells =</span> <span class="dv">200</span>)</a></code></pre></div>
 <pre><code>## [using ordinary kriging]</code></pre>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/sp/topics/spplot">spplot</a></span>(radius.N300, <span class="dt">cuts =</span> <span class="dv">100</span>, <span class="dt">col.regions =</span> <span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.blue</a></span>(<span class="dv">101</span>), <span class="dt">main =</span> <span class="st">"Radius of circle (N=300)"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1"><span class="kw">spplot</span>(radius.N300, <span class="dt">cuts =</span> <span class="dv">100</span>, <span class="dt">col.regions =</span> <span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.blue</a></span>(<span class="dv">101</span>), <span class="dt">main =</span> <span class="st">"Radius of circle (N=300)"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-2.png" width="576"></p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" data-line-number="1"><span class="co"># ggplot2 graph</span></a>
-<a class="sourceLine" id="cb78-2" data-line-number="2">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/as.data.frame.prevR.html">as.data.frame</a></span>(prev.N300)</a>
-<a class="sourceLine" id="cb78-3" data-line-number="3">res &lt;-<span class="st"> </span>res[<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(res<span class="op">$</span>k.wprev.N300.RInf), ]</a>
-<a class="sourceLine" id="cb78-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
-<a class="sourceLine" id="cb78-5" data-line-number="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(<span class="dt">data =</span> res) <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">fill =</span> k.wprev.N300.RInf) <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-7" data-line-number="7"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_raster</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-8" data-line-number="8"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradientn</a></span>(<span class="dt">colours=</span><span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span>(<span class="dv">20</span>)) <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-9" data-line-number="9"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/coord_fixed">coord_fixed</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-10" data-line-number="10"><span class="st">  </span><span class="kw"><a href="../reference/theme_prevR.html">theme_prevR_light</a></span>() <span class="op">+</span></a>
-<a class="sourceLine" id="cb78-11" data-line-number="11"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/ggplot2/topics/labs">labs</a></span>(<span class="dt">fill =</span> <span class="st">"Prevalence (%)"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1"><span class="co"># ggplot2 graph</span></a>
+<a class="sourceLine" id="cb78-2" title="2">res &lt;-<span class="st"> </span><span class="kw"><a href="../reference/as.data.frame.prevR.html">as.data.frame</a></span>(prev.N300)</a>
+<a class="sourceLine" id="cb78-3" title="3">res &lt;-<span class="st"> </span>res[<span class="op">!</span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/NA">is.na</a></span>(res<span class="op">$</span>k.wprev.N300.RInf), ]</a>
+<a class="sourceLine" id="cb78-4" title="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(ggplot2)</a>
+<a class="sourceLine" id="cb78-5" title="5"><span class="kw">ggplot</span>(<span class="dt">data =</span> res) <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-6" title="6"><span class="st">  </span><span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">fill =</span> k.wprev.N300.RInf) <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-7" title="7"><span class="st">  </span><span class="kw">geom_raster</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-8" title="8"><span class="st">  </span><span class="kw">scale_fill_gradientn</span>(<span class="dt">colours=</span><span class="kw"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span>(<span class="dv">20</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-9" title="9"><span class="st">  </span><span class="kw">coord_fixed</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-10" title="10"><span class="st">  </span><span class="kw"><a href="../reference/theme_prevR.html">theme_prevR_light</a></span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb78-11" title="11"><span class="st">  </span><span class="kw">labs</span>(<span class="dt">fill =</span> <span class="st">"Prevalence (%)"</span>)</a></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-3.png" width="576"></p>
 </div>
 <div id="functions-and-methods-provided-by-prevr" class="section level2">
@@ -497,8 +495,8 @@
 <a href="#results-visualisation-and-export" class="anchor"></a>Results visualisation and export</h3>
 <ul>
 <li>Outputs of <code><a href="../reference/kde-prevR-method.html">kde()</a></code>, <code><a href="../reference/krige-ANY-prevR-method.html">krige()</a></code> and <code><a href="../reference/krige-ANY-prevR-method.html">idw()</a></code> are objects of class <code>SpatialPixelsDataFrame</code> (<strong>sp</strong> package).</li>
-<li>Results could be plotted using the function <code><a href="https://www.rdocumentation.org/packages/sp/topics/spplot">spplot()</a></code> from <strong>sp</strong>.</li>
-<li>prevR provides several continuous color palettes (see <code>prevR.colors</code>) compatible with <code><a href="https://www.rdocumentation.org/packages/sp/topics/spplot">spplot()</a></code>.</li>
+<li>Results could be plotted using the function <code>spplot()</code> from <strong>sp</strong>.</li>
+<li>prevR provides several continuous color palettes (see <code>prevR.colors</code>) compatible with <code>spplot()</code>.</li>
 <li>Calculated surfaces could be export using the function <code>writeAsciiGrid()</code> from <strong>maptools</strong>.</li>
 </ul>
 </div>
