@@ -13,8 +13,7 @@ using data from a Demographic and Health Survey (DHS) or an analog survey.
 Package: \tab prevR\cr
 Type: \tab Package\cr
 Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
-Website: \tab \url{http://www.ceped.org/prevR},\cr
-\tab \url{http://joseph.larmarange.net/prevR}\cr
+Website: \tab \url{https://larmarange.github.io/prevR/}\cr
 }
 
 This package performs a methodological approach for spatial estimation of regional trends 
@@ -90,7 +89,7 @@ Calculated surfaces could be export using the function
 \section{Acknowledgement}{
  \pkg{prevR} has been developed with funding from the French National Agency
 for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research
-Institute for Development (IRD - \url{http://www.ird.fr}), and technical support from  LYSIS 
+Institute for Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS 
 (info@lysis-consultants.fr).
 }
 
