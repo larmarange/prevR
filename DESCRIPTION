@@ -31,7 +31,8 @@ Imports:
     methods
 Suggests:
     tcltk,
-    geoR
+    geoR,
+    knitr
 Encoding: UTF-8
 Collate:
     'prevR-package.r'
