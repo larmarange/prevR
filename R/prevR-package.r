@@ -86,7 +86,7 @@
 #' 
 #' @section Acknowledgement: \pkg{prevR} has been developed with funding from the French National Agency
 #' for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research
-#' Institute for Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS 
+#' Institute for Sustainable Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS 
 #' (info@@lysis-consultants.fr).
 #' 
 #' @section Citation: To cite \pkg{prevR}:\cr
