@@ -9,14 +9,28 @@ This package performs spatial estimation of a prevalence surface
 or a relative risks surface, using data from a Demographic and Health
 Survey (DHS) or an analog survey.
 
-## Web site
+## Methodological paper
 
-* <http://www.ceped.org/prevR>
-* <http://joseph.larmarange.net/prevR>
+* <https://journals.openedition.org/cybergeo/24606>
 
-## Download and install
+## Installation
 
-prevR is available on CRAN: <http://cran.r-project.org/web/packages/prevR/>
+From CRAN:
+
+```
+install.packages("prevR")
+```
+
+Latest version from GitHub:
+
+```
+devtools::install_github("larmarange/prevR")
+```
+
+## Some additional code / functions
+
+<https://github.com/larmarange/prevR-extra>
+
 
 ## Updating PO files
 
@@ -30,7 +44,3 @@ update_pkg_po('.')
 Note: you need to have `gettext-tools` on your computer. 
 
 See <http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html>
-
-## Some additional code / functions
-
-<https://github.com/larmarange/prevR-extra>
