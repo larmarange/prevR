@@ -98,12 +98,12 @@
 #' @references
 #' Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level 
 #' from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476, 
-#' DOI: 10.1097/QAD.0000000000000480.
+#' DOI: 10.1097/QAD.0000000000000480
 #' 
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
 #' "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
 #' \emph{Cybergeo: European Journal of Geography}, n° 558, \url{http://cybergeo.revues.org/24606}, 
-#' DOI: 10.4000/cybergeo.24606.
+#' DOI: 10.4000/cybergeo.24606
 #' 
 #' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure}, 
 #' PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes, 
