@@ -104,7 +104,7 @@ res$plot
 
 ```{r, fig.width=6, fig.height=6}
 # Calculating rings of the same number of observations for different values of N
-dhs <- rings(dhs, N = c(100, 200, 300, 400, 500), progression = FALSE)
+dhs <- rings(fdhs, N = c(100, 200, 300, 400, 500), progression = FALSE)
 print(dhs)
 summary(dhs)
 
@@ -116,6 +116,18 @@ spplot(prev.N300, "k.wprev.N300.RInf", cuts = 100, col.regions = prevR.colors.re
 # Surface of rings' radius
 radius.N300 <- krige("r.radius", dhs, N = 300, nb.cells = 200)
 spplot(radius.N300, cuts = 100, col.regions = prevR.colors.blue(101), main = "Radius of circle (N=300)")
+
+# ggplot2 graph
+res <- as.data.frame(prev.N300)
+res <- res[!is.na(res$k.wprev.N300.RInf), ]
+library(ggplot2)
+ggplot(data = res) +
+  aes(x = x, y = y, fill = k.wprev.N300.RInf) +
+  geom_raster() +
+  scale_fill_gradientn(colours=prevR.colors.red(20)) +
+  coord_fixed() +
+  theme_prevR_light() +
+  labs(fill = "Prevalence (%)")
 ```
 
 ## Functions and methods provided by prevR
