@@ -22,6 +22,12 @@
 #' @param \dots additional arguments transmited to \code{\link[gstat]{krige}}\{\pkg{gstat}\} 
 #'   or \code{\link[gstat]{idw}}\{\pkg{gstat}\}.
 #'   
+#' @import sp
+#' @importMethodsFrom gstat krige
+#' @importFrom gstat variogram
+#' @importFrom gstat vgm
+#' @importFrom gstat fit.variogram
+#'   
 #' @details \code{formula} specifies the variable(s) to interpolate. Only variables available in the 
 #' slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", 
 #' "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character 
@@ -73,14 +79,16 @@
 #'     dhs <- rings(fdhs, N = c(100,200,300,400,500))
 #'     radius.N300 <- krige('r.radius', dhs, N = 300, nb.cells = 200)
 #'     prev.krige <- krige(r.wprev ~ 1, dhs, N = c(100, 300, 500))
+#'     library(sp)
 #'     spplot(prev.krige, c('r.wprev.N100.RInf', 'r.wprev.N300.RInf', 'r.wprev.N500.RInf'))
 #'   }
 #' 
 #' @keywords smooth spatial
+#' @exportMethod krige
 #' @aliases krige,prevR-method krige-methods krige,ANY,prevR-method krige
 
 setMethod("krige",c(formula="ANY", locations="prevR"),
-  function (formula , locations, N = NULL, R = NULL, model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto", keep.variance = FALSE,  show.variogram = FALSE,   ...)
+  function (formula , locations, N = NULL, R = Inf, model = NULL, nb.cells = 100, cell.size = NULL, fit = "auto", keep.variance = FALSE,  show.variogram = FALSE,   ...)
   {
  ###############################################################################################
   # Cette fonction realise un krigeage des variables contenues dans l'element rings de objects
@@ -262,9 +270,11 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
 
 #' @rdname krige-ANY-prevR-method
 #' @aliases idw-methods idw,ANY,prevR-method idw,prevR-method idw
+#' @importFrom gstat idw
+#' @exportMethod idw
 
 setMethod("idw",c(formula="ANY", locations="prevR"),
-          function (formula, locations, N = NULL, R = NULL, nb.cells = 100, cell.size = NULL, idp = 2,  ...)
+          function (formula, locations, N = NULL, R = Inf, nb.cells = 100, cell.size = NULL, idp = 2,  ...)
           {
             ############################################################################################### 
             # Cette fonction realise une interpolation spatiale selon l'inverse de la distance a la puissance n (argument idp) 

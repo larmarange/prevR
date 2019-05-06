@@ -1,4 +1,5 @@
 #' @exportMethod plot
+#' @importFrom sp plot
 
 if (!isGeneric("plot"))
       setGeneric("plot", function(x, y, ...) standardGeneric("plot")) 

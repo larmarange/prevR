@@ -44,7 +44,6 @@
 #' \code{\link[=changeproj,prevR-method]{changeproj}}, \code{\link{import.dhs}}.
 #' 
 #' @examples 
-#' \dontrun{
 #'  col <- c(id = "cluster",
 #'           x = "x",
 #'           y = "y",
@@ -58,7 +57,6 @@
 #'  
 #'  str(dhs)
 #'  print(dhs)
-#' }
 #' @keywords manip
 #' @export
 as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +ellps=WGS84"){

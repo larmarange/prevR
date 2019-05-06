@@ -17,12 +17,12 @@ BugReports: https://github.com/larmarange/prevR/issues
 LazyLoad: yes
 LazyData: yes
 Depends:
-    R (>= 2.10),
+    R (>= 2.10)
+Imports:
     sp,
     rgdal (>= 0.7),
     ggplot2,
-    directlabels
-Imports:
+    directlabels,
     GenKern,
     fields,
     gstat,
@@ -63,4 +63,4 @@ Collate:
     'theme_prevR.r'
     'direct.label_prevR.r'
     'quick.prevR.r'
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
