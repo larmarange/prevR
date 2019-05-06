@@ -12,7 +12,7 @@ Description: Spatial estimation of a prevalence surface
     or a relative risks surface, using data from a Demographic and Health
     Survey (DHS) or an analog survey.
 License: CeCILL
-URL: http://larmarange.github.io/prevR/
+URL: https://github.com/larmarange/prevR/
 BugReports: https://github.com/larmarange/prevR/issues
 LazyLoad: yes
 LazyData: yes
