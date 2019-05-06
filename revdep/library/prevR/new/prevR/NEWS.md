@@ -1,5 +1,3 @@
-# prevR 3.4.0
-
 # prevR (development version)
 
 * Added a `NEWS.md` file to track changes to the package (#11)

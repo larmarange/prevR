@@ -1,0 +1,14 @@
+citHeader("To cite prevR package:")
+
+citEntry(entry="Article",
+	title = "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
+	author = personList(as.person("Joseph Larmarange [aut]"), as.person("Roselyne Vallo [aut]"), as.person("Seydou Yaro [aut]"), as.person("Philippe Msellati [aut]"), as.person("Nicolas Meda [aut]")),
+	journal = "Cybergeo: European Journal of Geography",
+	year = "2011",
+	number = "558",
+	url = "http://cybergeo.revues.org/24606",
+	doi = "10.4000/cybergeo.24606",
+	 
+	textVersion = "Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 'Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)', Cybergeo : European Journal of Geography, no 558, http://cybergeo.revues.org/24606, DOI: 10.4000/cybergeo.24606."
+)
+

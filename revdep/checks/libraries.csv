@@ -1,0 +1,5 @@
+package,old,new,delta
+prevR,3.3,3.3.0.9000,*
+directlabels,2018.05.22,2018.05.22,
+GenKern,1.2-60,1.2-60,
+quadprog,1.5-6,1.5-6,

@@ -1,0 +1,8 @@
+bandwidthselect	GenKern.internal
+correlationselect	GenKern.internal
+getlims	GenKern.internal
+KernSec	KernSec
+KernSur	KernSur
+nearest	nearest
+per	per
+rangeselect	GenKern.internal

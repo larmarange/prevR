@@ -1,0 +1,37 @@
+Package: prevR
+Type: Package
+Title: Estimating Regional Trends of a Prevalence from a DHS
+Version: 3.3
+Date: 2016-02-23
+Author: Joseph Larmarange - IRD CEPED
+Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
+Acknowledgements: funding from ANRS and IRD, and technical support from
+        LYSIS (info@lysis-consultants.fr)
+Description: Spatial estimation of a prevalence surface
+    or a relative risks surface, using data from a Demographic and Health
+    Survey (DHS) or an analog survey.
+License: CeCILL
+URL: http://www.ceped.org/prevR, http://joseph.larmarange.net/prevR
+LazyLoad: yes
+LazyData: yes
+Depends: R (>= 2.10), sp, rgdal (>= 0.7-4), ggplot2, directlabels
+Imports: GenKern, fields, gstat, foreign, maptools, methods
+Suggests: tcltk, geoR
+Encoding: UTF-8
+Collate: 'prevR-package.r' 'setClass.prevR.r' 'is.prevR.r' 'as.prevR.r'
+        'onAttach.r' 'isInputOk.prevR.r' 'changeproj.prevR.r'
+        'colors.prevR.r' 'as.data.frame.prevR.r' 'plot.prevR.r'
+        'show.prevR.r' 'print.prevR.r' 'summary.prevR.r'
+        'rings.prevR.r' 'as.SpatialGrid.prevR.r'
+        'create.boundary.prevR.r' 'export.prevR.r' 'import.dhs.prevR.r'
+        'point.in.SpatialPolygons.prevR.r'
+        'NA.outside.SpatialPolygons.prevR.r' 'xyz2dataframe.prevR.r'
+        'init.exp.model.variogram.r' 'eyefit.prevR.r' 'krige.prevR.r'
+        'kde.prevR.r' 'Noptim.r' 'theme_prevR.r' 'direct.label_prevR.r'
+        'quick.prevR.r'
+RoxygenNote: 5.0.1
+NeedsCompilation: no
+Packaged: 2016-02-23 18:10:11 UTC; LARMARANGE Joseph
+Repository: CRAN
+Date/Publication: 2016-02-23 23:05:51
+Built: R 3.6.0; ; 2019-05-06 14:52:57 UTC; unix
