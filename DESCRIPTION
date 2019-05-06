@@ -10,7 +10,8 @@ Acknowledgements: funding from ANRS and IRD, and technical support from LYSIS
     (info@lysis-consultants.fr)
 Description: Spatial estimation of a prevalence surface
     or a relative risks surface, using data from a Demographic and Health
-    Survey (DHS) or an analog survey.
+    Survey (DHS) or an analog survey, see Larmarange et al. (2011)
+    <doi:10.4000/cybergeo.24606>.
 License: CeCILL
 URL: https://github.com/larmarange/prevR/
 BugReports: https://github.com/larmarange/prevR/issues
