@@ -89,7 +89,7 @@ Calculated surfaces could be export using the function
 \section{Acknowledgement}{
  \pkg{prevR} has been developed with funding from the French National Agency
 for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research
-Institute for Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS 
+Institute for Sustainable Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS 
 (info@lysis-consultants.fr).
 }
 
@@ -170,7 +170,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda Nicolas a
 Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé 
 à partir des coordonnées des zones d'enquête", \emph{Chaire Quételet, 
 29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve, 
-Belgique, \url{http://www.uclouvain.be/13881.html}.
+Belgique.
 }
 \author{
 Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr
