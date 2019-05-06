@@ -24,7 +24,7 @@ The methodological approach has been described in:
 
 Application to generate HIV prevalence surfaces can be found at:
 
-- Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level from national population-based survey", AIDS, n° 28, p. S469-S476, DOI: [10.1097/QAD.0000000000000480](http://dx.doi.org/10.1097/QAD.0000000000000480)
+- Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level from national population-based survey", AIDS, n° 28, p. S469-S476, DOI: 10.1097/QAD.0000000000000480
 
 Other papers using **prevR** could be found on [Google Scholar](https://scholar.google.fr/scholar?oi=bibs&hl=fr&cites=1938663060375810997,6018660907435103505).
 
