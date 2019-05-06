@@ -63,4 +63,5 @@ Collate:
     'theme_prevR.r'
     'direct.label_prevR.r'
     'quick.prevR.r'
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
