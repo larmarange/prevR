@@ -5,6 +5,7 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/prevR)](http://cran.r-project.org/web/packages/prevR) 
 [![Rdoc](http://www.rdocumentation.org/badges/version/prevR)](http://www.rdocumentation.org/packages/prevR)
 [![Downloads](https://cranlogs.r-pkg.org/badges/prevR)](https://cran.r-project.org/package=prevR)
+[![DOI](https://www.zenodo.org/badge/6281387.svg)](https://www.zenodo.org/badge/latestdoi/6281387)
 
 This package performs spatial estimation of a prevalence surface
 or a relative risks surface, using data from a Demographic and Health
