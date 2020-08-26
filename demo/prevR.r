@@ -30,10 +30,10 @@ summary(dhs)
 
 message("Prevalence surface for N=300", domain="R-prevR")
 prev.N300 <- kde(dhs, N=300, nb.cells=200)
-spplot(prev.N300, 'k.wprev.N300.RInf', cuts=100, col.regions=prevR.colors.red(101), main="Regional trends of prevalence (N=300)")
+sp::spplot(prev.N300, 'k.wprev.N300.RInf', cuts=100, col.regions=prevR.colors.red(101), main="Regional trends of prevalence (N=300)")
 
 message("Surface of rings' radius", domain="R-prevR")
 radius.N300 <- krige('r.radius', dhs, N=300, nb.cells=200)
-spplot(radius.N300, cuts=100, col.regions=prevR.colors.blue(101), main="Radius of circle (N=300)")
+sp::spplot(radius.N300, cuts=100, col.regions=prevR.colors.blue(101), main="Radius of circle (N=300)")
 
 par(ask = FALSE)
