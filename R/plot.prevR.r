@@ -32,7 +32,7 @@ if (!isGeneric("plot"))
 #' Use \code{main} to define a title and \code{sub} for a subtitle 
 #' (see [graphics::title()]).
 #' 
-#' @seealso [graphics::title()}}, [graphics::legend()].
+#' @seealso [graphics::title()], [graphics::legend()].
 #' 
 #' @examples 
 #' \dontshow{par(ask = TRUE)}

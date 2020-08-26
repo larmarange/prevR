@@ -62,6 +62,6 @@ plot(fdhs, type = "flower", main="flower")
 
 }
 \seealso{
-[graphics::title()}}, \code{\link[graphics:legend]{graphics::legend()}}.
+\code{\link[graphics:title]{graphics::title()}}, \code{\link[graphics:legend]{graphics::legend()}}.
 }
 \keyword{hplot}
