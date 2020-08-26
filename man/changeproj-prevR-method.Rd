@@ -17,15 +17,15 @@
 Return \code{object} expressed in the projection \code{proj}.
 }
 \description{
-This function converts map projection (and/or datum) used by an object of 
+This function converts map projection (and/or datum) used by an object of
 class \code{\link[=prevR-class]{prevR}} into another one.
 }
 \details{
-\code{proj} could be a character string corresponding to a 
-\emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} for more details) 
+\code{proj} could be a character string corresponding to a
+\emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} for more details)
 or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
 
-\code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of 
+\code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of
 \code{object} and convert \code{boundary} using the new map projection defined by \code{proj}.\cr
 If applicable, the slot \code{rings} will be recalculated.
 }

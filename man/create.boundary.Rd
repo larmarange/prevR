@@ -11,7 +11,7 @@ create.boundary(
 )
 }
 \arguments{
-\item{countries}{a vector of character string corresponding to the name of the countries 
+\item{countries}{a vector of character string corresponding to the name of the countries
 you want to extract from the dataset. If \code{NULL}, a dialog box will be appear in order to select
 the desired country.}
 
@@ -24,12 +24,12 @@ Object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}\{\pkg{sp
 }
 \description{
 This function uses the data set \code{\link{TMWorldBorders}}. One or several countries
-can be selected and will be returned as an object of class 
+can be selected and will be returned as an object of class
 \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
 }
 \details{
-\code{proj} could be a character string corresponding to a \emph{PROJ.4} 
-projection (see \url{http://trac.osgeo.org/proj/} for more details) 
+\code{proj} could be a character string corresponding to a \emph{PROJ.4}
+projection (see \url{http://trac.osgeo.org/proj/} for more details)
 or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
 }
 \note{

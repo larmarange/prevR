@@ -10,41 +10,41 @@ Class used by the package \pkg{prevR}
 \section{Slots}{
 
 \describe{
-\item{\code{clusters}}{\code{data.frame} with observed data (one line per cluster). 
+\item{\code{clusters}}{\code{data.frame} with observed data (one line per cluster).
 Columns names are:\itemize{
-  \item "id" cluster ID.
-  \item "x" longitude.
-  \item "y" latitude.
-  \item "n" number of valid observations per cluster.
-  \item "pos" number of positive cases per cluster.
-  \item "prev" observed prevalence (in \%) in the cluster (pos/n).
-  \item "wn" (optional) sum of weights of observations per cluster.
-  \item "wpos" (optional) sum of weights of positive cases per cluster.
-  \item "wprev" (optional) weighted observed prevalence (in \%) in the cluster (wpos/wn).
-  \item "c.type" (optional) cluster type.
+\item "id" cluster ID.
+\item "x" longitude.
+\item "y" latitude.
+\item "n" number of valid observations per cluster.
+\item "pos" number of positive cases per cluster.
+\item "prev" observed prevalence (in \\%) in the cluster (pos/n).
+\item "wn" (optional) sum of weights of observations per cluster.
+\item "wpos" (optional) sum of weights of positive cases per cluster.
+\item "wprev" (optional) weighted observed prevalence (in \\%) in the cluster (wpos/wn).
+\item "c.type" (optional) cluster type.
 }}
 
-\item{\code{boundary}}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}, 
+\item{\code{boundary}}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}},
 borders of the studied area.}
 
 \item{\code{proj}}{object of class \code{\link[sp:CRS-class]{CRS}}, map projection used.}
 
-\item{\code{rings}}{list of results returned by \code{\link[=rings,prevR-method]{rings}}. 
-Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring; 
-\code{R}, maximum radius of rings and \code{estimates}, a data frame with the following 
+\item{\code{rings}}{list of results returned by \code{\link[=rings,prevR-method]{rings}}.
+Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring;
+\code{R}, maximum radius of rings and \code{estimates}, a data frame with the following
 variables:\itemize{
-  \item "id" cluster ID.
-  \item "r.pos" number of positive cases inside the ring.
-  \item "r.n" number of valid observations inside the ring.
-  \item "r.prev" observed prevalence (in \%) inside the ring (r.pos/r.n).
-  \item "r.radius" ring radius (in kilometers if coordinates in decimal degrees, 
-    in the unit of the projection otherwise).
-  \item "r.clusters" number of clusters located inside the ring.
-  \item "r.wpos" (optional) sum of weights of positive cases inside the ring.
-  \item "r.wn" (optional) sum of weights of valid observations inside the ring.
-  \item "r.wprev" (optional) weighted observed prevalence (in \%) inside the ring (r.wpos/r.wn).
+\item "id" cluster ID.
+\item "r.pos" number of positive cases inside the ring.
+\item "r.n" number of valid observations inside the ring.
+\item "r.prev" observed prevalence (in \\%) inside the ring (r.pos/r.n).
+\item "r.radius" ring radius (in kilometers if coordinates in decimal degrees,
+in the unit of the projection otherwise).
+\item "r.clusters" number of clusters located inside the ring.
+\item "r.wpos" (optional) sum of weights of positive cases inside the ring.
+\item "r.wn" (optional) sum of weights of valid observations inside the ring.
+\item "r.wprev" (optional) weighted observed prevalence (in \\%) inside the ring (r.wpos/r.wn).
 }
-Note: the list \code{rings} is named, the name of each element is 
+Note: the list \code{rings} is named, the name of each element is
 N\emph{N_value}.R\emph{R_value}, for example \emph{N300.RInf}.}
 }}
 
@@ -55,25 +55,25 @@ Objects of this class could be created by the function \code{\link{as.prevR}}.
 
 \section{Methods}{
  \describe{
-  \item{as.data.frame}{\code{signature(x = "prevR")} converts an object of class prevR 
-    into a data frame.}
-  \item{as.SpatialGrid}{\code{signature(object = "prevR")} generates a spatial grid.}
-  \item{export}{\code{signature(object = "prevR")} exports a prevR object as a shapefile, 
-    a dbase file or a text file.}
-  \item{idw}{\code{signature(formula = "ANY", locations = "prevR")} calculates a spatial 
-    interpolation using an inverse distance weighting.}
-  \item{kde}{\code{signature(object = "prevR")} estimates a prevalence surface using 
-    kernel density estimators.}
-  \item{krige}{\code{signature(formula = "ANY", locations = "prevR")} calculates a 
-    spatial interpolation by kriging.}
-  \item{plot}{\code{signature(x = "prevR", y = "ANY")} plots data of a prevR object.}
-  \item{print}{\code{signature(x = "prevR")} shows a summary of a prevR object.}
-  \item{rings}{\code{signature(object = "prevR")} calculates rings of equal number of 
-    observations and/or equal radius.}
-  \item{show}{\code{signature(object = "prevR")} shows a summary of a prevR object.}
-  \item{summary}{\code{signature(object = "prevR")} shows a summary of the variables 
-    of a prevR object.}
-  \item{changeproj}{\code{signature(object = "prevR")} changes the map projection used.}
+\item{as.data.frame}{\code{signature(x = "prevR")} converts an object of class prevR
+into a data frame.}
+\item{as.SpatialGrid}{\code{signature(object = "prevR")} generates a spatial grid.}
+\item{export}{\code{signature(object = "prevR")} exports a prevR object as a shapefile,
+a dbase file or a text file.}
+\item{idw}{\code{signature(formula = "ANY", locations = "prevR")} calculates a spatial
+interpolation using an inverse distance weighting.}
+\item{kde}{\code{signature(object = "prevR")} estimates a prevalence surface using
+kernel density estimators.}
+\item{krige}{\code{signature(formula = "ANY", locations = "prevR")} calculates a
+spatial interpolation by kriging.}
+\item{plot}{\code{signature(x = "prevR", y = "ANY")} plots data of a prevR object.}
+\item{print}{\code{signature(x = "prevR")} shows a summary of a prevR object.}
+\item{rings}{\code{signature(object = "prevR")} calculates rings of equal number of
+observations and/or equal radius.}
+\item{show}{\code{signature(object = "prevR")} shows a summary of a prevR object.}
+\item{summary}{\code{signature(object = "prevR")} shows a summary of the variables
+of a prevR object.}
+\item{changeproj}{\code{signature(object = "prevR")} changes the map projection used.}
 }
 }
 
@@ -100,10 +100,10 @@ print(dhs)
 }
 }
 \seealso{
-\code{\link{as.prevR}}, \code{\link{is.prevR}}, \code{\link{changeproj,prevR-method}}, 
-\code{\link{rings,prevR-method}}, \code{\link{print,prevR-method}}, 
-\code{\link{plot,prevR-method}}, \code{\link{summary,prevR-method}}, 
-\code{\link{kde,prevR-method}}, \code{\link{krige,prevR-method}}, 
+\code{\link{as.prevR}}, \code{\link{is.prevR}}, \code{\link{changeproj,prevR-method}},
+\code{\link{rings,prevR-method}}, \code{\link{print,prevR-method}},
+\code{\link{plot,prevR-method}}, \code{\link{summary,prevR-method}},
+\code{\link{kde,prevR-method}}, \code{\link{krige,prevR-method}},
 \code{\link{idw,prevR-method}}, \code{\link{export,prevR-method}}.
 }
 \keyword{classes}

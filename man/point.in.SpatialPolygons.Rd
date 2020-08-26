@@ -17,7 +17,7 @@ point.in.SpatialPolygons(point.x, point.y, SpP)
 Boolean array.
 }
 \description{
-This function tests if one or more points are located inside an object of 
+This function tests if one or more points are located inside an object of
 class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
 }
 \seealso{

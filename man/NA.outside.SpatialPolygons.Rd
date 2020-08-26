@@ -15,9 +15,9 @@ NA.outside.SpatialPolygons(sp.data, sp.poly)
 Return \code{sp.data} modified.
 }
 \description{
-This function forces points of an object of class 
-\code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}} located outside 
-the limits defined by an object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
+This function forces points of an object of class
+\code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}} located outside
+the limits defined by an object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}
 to \code{NA}.
 }
 \seealso{

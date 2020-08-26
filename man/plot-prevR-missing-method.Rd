@@ -22,10 +22,10 @@
 \item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
 
 \item{type}{graph to plot:\itemize{
-  \item "position" clusters position.
-  \item "c.type" clusters per \code{c.type}.
-  \item "count" number of observatios per cluster.
-  \item "flower" number of positive cases per cluster.
+\item "position" clusters position.
+\item "c.type" clusters per \code{c.type}.
+\item "count" number of observatios per cluster.
+\item "flower" number of positive cases per cluster.
 }}
 
 \item{add.legend}{add a legend?}
@@ -41,15 +41,15 @@
 \item{...}{additional arguments transmitted to \code{\link[graphics]{title}}.}
 }
 \description{
-Method \code{plot} for object of class \code{\link[=prevR-class]{prevR}}. 
+Method \code{plot} for object of class \code{\link[=prevR-class]{prevR}}.
 Plot clusters, number of observations per cluster or number of positive cases per cluster.
 }
 \details{
-Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bottom"}, 
-\emph{"bottomleft"}, \emph{"left"}, \emph{"topleft"}, \emph{"top"}, \emph{"topright"}, 
+Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bottom"},
+\emph{"bottomleft"}, \emph{"left"}, \emph{"topleft"}, \emph{"top"}, \emph{"topright"},
 \emph{"right"} use \emph{"center"}.
 
-Use \code{main} to define a title and \code{sub} for a subtitle 
+Use \code{main} to define a title and \code{sub} for a subtitle
 (see \code{\link[graphics]{title}}\{\pkg{graphics}\}).
 }
 \examples{
@@ -62,7 +62,7 @@ plot(fdhs, type = "flower", main="flower")
 
 }
 \seealso{
-\code{\link[graphics]{title}}\{\pkg{graphics}\}, 
+\code{\link[graphics]{title}}\{\pkg{graphics}\},
 \code{\link[graphics]{legend}}\{\pkg{graphics}\}.
 }
 \keyword{hplot}

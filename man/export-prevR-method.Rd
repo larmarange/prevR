@@ -29,56 +29,56 @@
 
 \item{file}{file name without extension.}
 
-\item{N}{integer or list of integers setting elements of \code{rings} to export 
+\item{N}{integer or list of integers setting elements of \code{rings} to export
 (unused if \code{element="boundary"}).}
 
-\item{R}{integer or list of integers setting elements of \code{rings} to export 
+\item{R}{integer or list of integers setting elements of \code{rings} to export
 (unused if \code{element="boundary"}).}
 
-\item{clusters.only}{export only the slot \code{clusters} of \code{object} 
+\item{clusters.only}{export only the slot \code{clusters} of \code{object}
 (unused if \code{element="boundary"})?}
 
-\item{ext}{coerce the extension of the export file 
+\item{ext}{coerce the extension of the export file
 (unused if \code{element="boundary"} or if \code{format="shp"}).}
 
-\item{sep}{coerce the field separator string (unused if \code{element="boundary"} 
+\item{sep}{coerce the field separator string (unused if \code{element="boundary"}
 or if \code{format="shp"} or if \code{format="dbf"}).}
 
-\item{dec}{coerce the string to use for decimal point 
+\item{dec}{coerce the string to use for decimal point
 (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).}
 
 \item{\dots}{additional arguments transmitted to
-\code{\link[rgdal]{writeOGR}}, \code{\link[foreign]{write.dbf}} or 
+\code{\link[rgdal]{writeOGR}}, \code{\link[foreign]{write.dbf}} or
 \code{\link[utils]{write.table}}.}
 }
 \description{
-This method could be used to export an object of class \code{\link[=prevR-class]{prevR}} 
+This method could be used to export an object of class \code{\link[=prevR-class]{prevR}}
 in different formats (text, shapefile, dbase...)
 }
 \details{
-If \code{element="boundary"}, the slot \code{boundary} of \code{object} 
+If \code{element="boundary"}, the slot \code{boundary} of \code{object}
 will be exported as a \emph{shapefile}.
 
 Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
-See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N}, 
+See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N},
 \code{R} et \code{clusters.only}.
 
-\code{format} specifies the export format of the data frame returned by 
+\code{format} specifies the export format of the data frame returned by
 \code{\link{as.data.frame.prevR}}: \tabular{ll}{
-    "shp" \tab Shape File (require the package \pkg{rgdal})\cr
-    "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
-    "txt" \tab tabulated text (extension: .txt)\cr
-    "csv" \tab 'comma separated values' (extension: .csv)\cr
-    "csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
+"shp" \tab Shape File (require the package \pkg{rgdal})\cr
+"dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
+"txt" \tab tabulated text (extension: .txt)\cr
+"csv" \tab 'comma separated values' (extension: .csv)\cr
+"csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
 }
-\code{ext} could be used to coerce the extension of the output file, except for 
+\code{ext} could be used to coerce the extension of the output file, except for
 \emph{shapefile} export, which will write four different files (.shp, .shx, .dbf and .prj).
 
-The "txt" format uses by default a tabulation as field separator and a point "." for decimal point. 
+The "txt" format uses by default a tabulation as field separator and a point "." for decimal point.
 The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
-The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point, 
+The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point,
 the Excel convention for CSV files in some Western European locales. \cr
-\code{sep} and \code{dec} could be used to coerce the field separator and the decimal point 
+\code{sep} and \code{dec} could be used to coerce the field separator and the decimal point
 (together with the "txt" format).
 }
 \examples{

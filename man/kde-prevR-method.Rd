@@ -32,7 +32,7 @@
 
 \item{keep.details}{return surface of positive cases and surface of observed cases?}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area 
+\item{nb.cells}{number of cells on the longuest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
@@ -42,62 +42,62 @@
 \item{short.names}{should names of the output be short?}
 }
 \value{
-Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. 
-Surfaces are named according to the name of the corresponding variable, N and R 
+Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.
+Surfaces are named according to the name of the corresponding variable, N and R
 (for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
 only one combination of couples (N, R), variable names will not be suffixed by the value of
 N and R.
 
 Estimated variables are (depending on the function parameters) :\itemize{
-    \item "k.pos" unweighted intensity surface of positive cases.
-    \item "k.obs" unweighted intensity surface of observed cases.
-    \item "k.prev" unweighted surface of prevalence (k.pos/k.obs).
-    \item "k.case" unweighted density surface of positive cases.
-    \item "k.control" unweighted density surface of observed cases.
-    \item "k.rr" unweighted surface of relative risks (k.case/k.control).
-    \item "k.wpos" weighted intensity surface of positive cases.
-    \item "k.wobs" weighted intensity surface of observed cases.
-    \item "k.wprev" weighted surface of prevalence (k.wpos/k.wobs).
-    \item "k.wcase" weighted density surface of positive cases.
-    \item "k.wcontrol" weighted density surface of observed cases.
-    \item "k.wrr" weighted surface of relative risks (k.wcase/k.wcontrol).
+\item "k.pos" unweighted intensity surface of positive cases.
+\item "k.obs" unweighted intensity surface of observed cases.
+\item "k.prev" unweighted surface of prevalence (k.pos/k.obs).
+\item "k.case" unweighted density surface of positive cases.
+\item "k.control" unweighted density surface of observed cases.
+\item "k.rr" unweighted surface of relative risks (k.case/k.control).
+\item "k.wpos" weighted intensity surface of positive cases.
+\item "k.wobs" weighted intensity surface of observed cases.
+\item "k.wprev" weighted surface of prevalence (k.wpos/k.wobs).
+\item "k.wcase" weighted density surface of positive cases.
+\item "k.wcontrol" weighted density surface of observed cases.
+\item "k.wrr" weighted surface of relative risks (k.wcase/k.wcontrol).
 }
-\code{NA} value is applied to cells of the grid located outside of the studied area\cr 
+\code{NA} value is applied to cells of the grid located outside of the studied area\cr
 (see \code{\link{NA.outside.SpatialPolygons}}).
 }
 \description{
-This function allows to calculate a prevalence surface (ratio of two intensity surfaces) 
-and/or a relative risks surface (ratio of two density surfaces) using gaussian kernel estimators 
+This function allows to calculate a prevalence surface (ratio of two intensity surfaces)
+and/or a relative risks surface (ratio of two density surfaces) using gaussian kernel estimators
 with adaptative bandwiths of equal number of observations or equal radius.
 }
 \details{
-This function calculates a prevalence surface as the ratio of the intensity surface 
-(expressed in cases per surface unit) of positive cases on the intensity surface of observed cases 
-and could also calculate a relative risks surface corresponding to the ratio of the density surface 
+This function calculates a prevalence surface as the ratio of the intensity surface
+(expressed in cases per surface unit) of positive cases on the intensity surface of observed cases
+and could also calculate a relative risks surface corresponding to the ratio of the density surface
 (whose integral has been normalized to one) of positive cas on density surface of observed cases.
 
-This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian 
-kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of 
-observations in the neighbourhood (see \code{\link[=rings,prevR-method]{rings}} for more details). 
-Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of 
-equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the 
+This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian
+kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of
+observations in the neighbourhood (see \code{\link[=rings,prevR-method]{rings}} for more details).
+Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of
+equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the
 function \code{\link[=rings,prevR-method]{rings}}.\cr
 See referenes for a detailed explanation of the implemented methodology.
 
-\code{N} and \code{R} determine the rings to use for the estimation. If they are not defined, 
-surfaces will be estimated for each available couples (N,R). Several estimations could be 
+\code{N} and \code{R} determine the rings to use for the estimation. If they are not defined,
+surfaces will be estimated for each available couples (N,R). Several estimations could be
 simultaneously calculated if several values of N and R are defined.
 
 A suggested value of N could be computed with \code{\link{Noptim}}.
 }
 \note{
 Results could be plotted with \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
-\pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}}) 
+\pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}})
 compatible with \code{\link[sp]{spplot}}.\cr
-Calculated surfaces could be export using the function 
+Calculated surfaces could be export using the function
 \code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
 
-See the package \pkg{sparr} for another methodology to estimate relative 
+See the package \pkg{sparr} for another methodology to estimate relative
 risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
 }
 \examples{
@@ -124,9 +124,9 @@ risks surfaces, adapted for other kind of data than Demographic and Helath Surve
 
 }
 \references{
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
-"Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", 
-\emph{Cybergeo: European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
+"Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
+\emph{Cybergeo: European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606},
 DOI: 10.4000/cybergeo.24606.
 }
 \seealso{

@@ -11,7 +11,7 @@
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area 
+\item{nb.cells}{number of cells on the longuest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
@@ -20,15 +20,15 @@
 Object of class \code{\link[sp:SpatialGrid-class]{SpatialGrid}}\{\pkg{sp}\}.
 }
 \description{
-This function generates a spatial rectangular grid from the slot \code{boundary} 
-of an object of class \code{\link[=prevR-class]{prevR}}; function used in particular 
-by the methods \code{\link[=kde,prevR-method]{kde}}, \code{\link[=krige,prevR-method]{krige}} 
+This function generates a spatial rectangular grid from the slot \code{boundary}
+of an object of class \code{\link[=prevR-class]{prevR}}; function used in particular
+by the methods \code{\link[=kde,prevR-method]{kde}}, \code{\link[=krige,prevR-method]{krige}}
 and \code{\link[=idw,prevR-method]{idw}}.
 }
 \details{
-This function generates a spatial rectangular grid, each cell being a square 
-of side \code{cell.size}. If \code{cell.size} is not defined, side of cells will be 
-calculated as the longuest side of the slot \code{boundary} of \code{object} divided 
+This function generates a spatial rectangular grid, each cell being a square
+of side \code{cell.size}. If \code{cell.size} is not defined, side of cells will be
+calculated as the longuest side of the slot \code{boundary} of \code{object} divided
 by \code{nb.cells}.
 }
 \examples{

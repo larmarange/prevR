@@ -12,7 +12,7 @@
 \item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
 }
 \description{
-Method \code{print} for objects of class \code{\link[=prevR-class]{prevR}}: 
+Method \code{print} for objects of class \code{\link[=prevR-class]{prevR}}:
 shows a summary of the object's characteristics.
 }
 \note{

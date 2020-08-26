@@ -12,11 +12,11 @@
 \arguments{
 \item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
 
-\item{probs}{vector of probabilities with values in [0,1] for computing 
+\item{probs}{vector of probabilities with values in \link{0,1} for computing
 quantiles of the rings radii (see examples).}
 }
 \description{
-Method \code{summary} for objects of class \code{\link[=prevR-class]{prevR}}: 
+Method \code{summary} for objects of class \code{\link[=prevR-class]{prevR}}:
 shows a summary of the variables of the object.
 }
 \examples{
