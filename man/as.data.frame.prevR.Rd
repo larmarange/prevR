@@ -5,8 +5,7 @@
 \alias{as.data.frame}
 \title{Convert an object of class prevR into a data.frame.}
 \usage{
-\method{as.data.frame}{prevR}(x, ..., N = NULL, R = NULL,
-  clusters.only = FALSE)
+\method{as.data.frame}{prevR}(x, ..., N = NULL, R = NULL, clusters.only = FALSE)
 }
 \arguments{
 \item{x}{object of class \code{\link[=prevR-class]{prevR}}.}

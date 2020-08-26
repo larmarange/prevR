@@ -1,6 +1,6 @@
 Package: prevR
 Type: Package
-Title: Estimating Regional Trends of a Prevalence from a DHS
+Title: Estimating Regional Trends of a Prevalence from a DHS and similar surveys
 Version: 3.4.0.9000
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Authors@R: c(
@@ -67,4 +67,4 @@ Collate:
     'direct.label_prevR.r'
     'quick.prevR.r'
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1

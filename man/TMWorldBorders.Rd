@@ -4,7 +4,9 @@
 \name{TMWorldBorders}
 \alias{TMWorldBorders}
 \title{Dataset "TM World Borders Dataset 0.3".}
-\format{Object of class \code{\link[sp:SpatialPolygonsDataFrame-class]{SpatialPolygonsDataFrame}}.}
+\format{
+Object of class \code{\link[sp:SpatialPolygonsDataFrame-class]{SpatialPolygonsDataFrame}}.
+}
 \source{
 Provided by Bjorn Sandvik on \url{http://thematicmapping.org/downloads/world_borders.php}.
 The dataset was derived by Schuyler Erle from public domain sources. Sean Gilles did some clean up 

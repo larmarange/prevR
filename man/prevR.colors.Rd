@@ -30,8 +30,7 @@ prevR.colors.red(n)
 
 prevR.colors.red.inverse(n)
 
-prevR.demo.pal(n, border = if (n < 32) "light gray" else NA,
-  main = NULL)
+prevR.demo.pal(n, border = if (n < 32) "light gray" else NA, main = NULL)
 
 prevR.colors.qgis.pal(file, at, pal = "red", inverse = FALSE)
 }
