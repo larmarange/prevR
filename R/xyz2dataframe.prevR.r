@@ -6,7 +6,7 @@
 #' This function transforms a list "xyz" into a data frame.
 #' 
 #' @param xyz a list with 3 elements: a vector with x-coordinates, a vector with y-coordinates and 
-#'   and matrix with value for each point of coordinates x[i],y[j].
+#'   and matrix with value for each point of coordinates `x[i], y[j]`.
 #' @param xcol x index.
 #' @param ycol y index.
 #' @param zcol z index.

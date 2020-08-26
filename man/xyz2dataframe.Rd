@@ -8,7 +8,7 @@ xyz2dataframe(xyz, xcol = 1, ycol = 2, zcol = 3)
 }
 \arguments{
 \item{xyz}{a list with 3 elements: a vector with x-coordinates, a vector with y-coordinates and
-and matrix with value for each point of coordinates x\link{i},y\link{j}.}
+and matrix with value for each point of coordinates \verb{x[i], y[j]}.}
 
 \item{xcol}{x index.}
 

@@ -4,7 +4,7 @@
 #' shows a summary of the variables of the object.
 #' 
 #' @param object object of class \code{\link[=prevR-class]{prevR}}.
-#' @param probs vector of probabilities with values in [0,1] for computing 
+#' @param probs vector of probabilities with values in `[0,1]` for computing 
 #'   quantiles of the rings radii (see examples).
 #'   
 #' @seealso \code{\link{print,prevR-method}}.
