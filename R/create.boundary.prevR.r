@@ -35,7 +35,7 @@
 #' @export
 #' @keywords manip spatial
 
-create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat +ellps=WGS84"){
+create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat +datum=WGS84"){
   ##################################################################################################
   # Cette fonction extrait de la base de donnees TM_WORLD_BORDERS-0.3 le contour des pays
   # Elle renvoie un object (boundary) de classe spatialPolygons contenant les frontieres des pays selectionnees
@@ -67,7 +67,7 @@ create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat
     stop(stop.mess, call.=F)
   } 
 
-  boundary = SpatialPolygons(polygons[ind],proj4string =CRS("+proj=longlat +ellps=WGS84"))
+  boundary = SpatialPolygons(polygons[ind],proj4string =CRS("+proj=longlat +datum=WGS84"))
   if(!is.null(proj)){
     if(!is(proj,"CRS")){
       isOk = try(CRS(proj),silent=T)

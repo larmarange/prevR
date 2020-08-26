@@ -15,7 +15,7 @@ plot(dhs, type="flower", main="Positive cases by cluster")
 message("Changing coordinates projection", domain="R-prevR")
 
 plot(dhs, axes=TRUE)
-dhs <- changeproj(dhs, "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+dhs <- changeproj(dhs, "+proj=utm +zone=30 +datum=WGS84 +units=m +no_defs")
 print(dhs)
 plot(dhs, axes=TRUE)
 
