@@ -4,7 +4,7 @@
 \alias{as.prevR}
 \title{Create an object of class prevR.}
 \usage{
-as.prevR(data, col, boundary = NULL, proj = "+proj=longlat +ellps=WGS84")
+as.prevR(data, col, boundary = NULL, proj = "+proj=longlat +datum=WGS84")
 }
 \arguments{
 \item{data}{data frame, each line corresponding to an observed cluster.}

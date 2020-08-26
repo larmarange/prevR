@@ -7,7 +7,7 @@
 create.boundary(
   countries = NULL,
   multiple = F,
-  proj = "+proj=longlat +ellps=WGS84"
+  proj = "+proj=longlat +datum=WGS84"
 )
 }
 \arguments{
