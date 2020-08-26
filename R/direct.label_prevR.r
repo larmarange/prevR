@@ -3,15 +3,15 @@
 #' Direct label a ggplot2 grouped plot
 #' 
 #' @param p The ggplot object.
-#' @param method Method for direct labeling as described in ?label.positions.
+#' @param method Method for direct labelling (see [directlabels::direct.label()]).
 #' @param debug Show debug output?
 #' 
 #' @return The ggplot object with direct labels added.
 #' 
-#' @note This function is based on and similar to \code{\link[directlabels]{direct.label.ggplot}}
+#' @note This function is based on and similar to [directlabels::direct.label()]
 #' except that legend is not hidden.
 #' 
-#' @seealso \code{\link[directlabels]{direct.label.ggplot}}\{\pkg{directlabels}\}
+#' @seealso [directlabels::direct.label()]
 #' 
 #' @importFrom directlabels geom_dl
 #' @importFrom directlabels default.picker

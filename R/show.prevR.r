@@ -1,12 +1,12 @@
 #' Summary of a prevR object.
 #' 
-#' Method \code{show} for objects of class \code{\link[=prevR-class]{prevR}}: 
+#' Method \code{show} for objects of class [prevR-class]: 
 #' shows a summary of the object's characteristics.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' 
-#' @note Exactly the same as \code{\link{print,prevR-method}}.
-#' @seealso \code{\link{summary,prevR-method}}.
+#' @note Exactly the same as [print()].
+#' @seealso [summary()].
 #' @examples 
 #' fdhs
 #' \dontrun{

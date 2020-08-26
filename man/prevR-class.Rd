@@ -24,12 +24,12 @@ Columns names are:\itemize{
 \item "c.type" (optional) cluster type.
 }}
 
-\item{\code{boundary}}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}},
+\item{\code{boundary}}{object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons},
 borders of the studied area.}
 
-\item{\code{proj}}{object of class \code{\link[sp:CRS-class]{CRS}}, map projection used.}
+\item{\code{proj}}{object of class \link[sp:CRS-class]{sp::CRS}, map projection used.}
 
-\item{\code{rings}}{list of results returned by \code{\link[=rings,prevR-method]{rings}}.
+\item{\code{rings}}{list of results returned by \code{\link[=rings]{rings()}}.
 Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring;
 \code{R}, maximum radius of rings and \code{estimates}, a data frame with the following
 variables:\itemize{
@@ -50,7 +50,7 @@ N\emph{N_value}.R\emph{R_value}, for example \emph{N300.RInf}.}
 
 \section{Objects from the Class}{
 
-Objects of this class could be created by the function \code{\link{as.prevR}}.
+Objects of this class could be created by the function \code{\link[=as.prevR]{as.prevR()}}.
 }
 
 \section{Methods}{
@@ -100,10 +100,7 @@ print(dhs)
 }
 }
 \seealso{
-\code{\link{as.prevR}}, \code{\link{is.prevR}}, \code{\link{changeproj,prevR-method}},
-\code{\link{rings,prevR-method}}, \code{\link{print,prevR-method}},
-\code{\link{plot,prevR-method}}, \code{\link{summary,prevR-method}},
-\code{\link{kde,prevR-method}}, \code{\link{krige,prevR-method}},
-\code{\link{idw,prevR-method}}, \code{\link{export,prevR-method}}.
+\code{\link[=as.prevR]{as.prevR()}}, \code{\link[=is.prevR]{is.prevR()}}, \code{\link[=changeproj]{changeproj()}}, \code{\link[=rings]{rings()}}, \code{\link[=print]{print()}}, \code{\link[=plot]{plot()}},
+\code{\link[=summary]{summary()}}, \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}}, \code{\link[=idw]{idw()}}, \code{\link[=export]{export()}}.
 }
 \keyword{classes}

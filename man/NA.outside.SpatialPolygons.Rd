@@ -7,21 +7,21 @@
 NA.outside.SpatialPolygons(sp.data, sp.poly)
 }
 \arguments{
-\item{sp.data}{object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.}
+\item{sp.data}{object of class \link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.}
 
-\item{sp.poly}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.}
+\item{sp.poly}{object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.}
 }
 \value{
 Return \code{sp.data} modified.
 }
 \description{
 This function forces points of an object of class
-\code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}} located outside
-the limits defined by an object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}
+\link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame} located outside
+the limits defined by an object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}
 to \code{NA}.
 }
 \seealso{
-\code{\link{point.in.SpatialPolygons}}.
+\code{\link[=point.in.SpatialPolygons]{point.in.SpatialPolygons()}}.
 }
 \keyword{manip}
 \keyword{spatial}

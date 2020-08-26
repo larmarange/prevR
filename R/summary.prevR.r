@@ -1,13 +1,13 @@
 #' Detailed summary of the variables of a prevR object
 #' 
-#' Method \code{summary} for objects of class \code{\link[=prevR-class]{prevR}}: 
+#' Method \code{summary} for objects of class [prevR-class]: 
 #' shows a summary of the variables of the object.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' @param probs vector of probabilities with values in `[0,1]` for computing 
 #'   quantiles of the rings radii (see examples).
 #'   
-#' @seealso \code{\link{print,prevR-method}}.
+#' @seealso [print()].
 #' @examples 
 #' summary(fdhs)
 #' \dontrun{

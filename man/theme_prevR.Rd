@@ -15,6 +15,3 @@ theme_prevR_light(base_size = 12)
 \description{
 Two custom themes for ggplot2 graphs, hidding axis.
 }
-\seealso{
-\code{\link[ggplot2]{ggtheme}}\{\pkg{ggplot2}\}
-}

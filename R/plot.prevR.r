@@ -6,14 +6,14 @@ if (!isGeneric("plot"))
 
 #' Plot object of class prevR.
 #' 
-#' Method \code{plot} for object of class \code{\link[=prevR-class]{prevR}}. 
+#' Method \code{plot} for object of class [prevR-class]. 
 #' Plot clusters, number of observations per cluster or number of positive cases per cluster.
 #' 
-#' @param x object of class \code{\link[=prevR-class]{prevR}}.
+#' @param x object of class [prevR-class].
 #' @param type graph to plot:\itemize{
 #'   \item "position" clusters position.
 #'   \item "c.type" clusters per \code{c.type}.
-#'   \item "count" number of observatios per cluster.
+#'   \item "count" number of observations per cluster.
 #'   \item "flower" number of positive cases per cluster.
 #' }
 #' @param add.legend add a legend?
@@ -21,7 +21,7 @@ if (!isGeneric("plot"))
 #' @param factor.size scale factor of rings (for \code{type="count"}).
 #' @param new.window plot in a new window?
 #' @param axes show axes?
-#' @param ... additional arguments transmitted to \code{\link[graphics]{title}}.
+#' @param ... additional arguments transmitted to [graphics::title()].
 #' @import sp
 #' 
 #' @details 
@@ -30,10 +30,9 @@ if (!isGeneric("plot"))
 #' \emph{"right"} use \emph{"center"}.
 #' 
 #' Use \code{main} to define a title and \code{sub} for a subtitle 
-#' (see \code{\link[graphics]{title}}\{\pkg{graphics}\}).
+#' (see [graphics::title()]).
 #' 
-#' @seealso \code{\link[graphics]{title}}\{\pkg{graphics}\}, 
-#' \code{\link[graphics]{legend}}\{\pkg{graphics}\}.
+#' @seealso [graphics::title()}}, [graphics::legend()].
 #' 
 #' @examples 
 #' \dontshow{par(ask = TRUE)}

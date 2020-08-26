@@ -20,7 +20,7 @@
 )
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{N}{integer or list of integers corresponding to the rings to use.}
 
@@ -42,7 +42,7 @@
 \item{short.names}{should names of the output be short?}
 }
 \value{
-Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}.
+Object of class \link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.
 Surfaces are named according to the name of the corresponding variable, N and R
 (for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
 only one combination of couples (N, R), variable names will not be suffixed by the value of
@@ -63,7 +63,7 @@ Estimated variables are (depending on the function parameters) :\itemize{
 \item "k.wrr" weighted surface of relative risks (k.wcase/k.wcontrol).
 }
 \code{NA} value is applied to cells of the grid located outside of the studied area\cr
-(see \code{\link{NA.outside.SpatialPolygons}}).
+(see \code{\link[=NA.outside.SpatialPolygons]{NA.outside.SpatialPolygons()}}).
 }
 \description{
 This function allows to calculate a prevalence surface (ratio of two intensity surfaces)
@@ -78,24 +78,24 @@ and could also calculate a relative risks surface corresponding to the ratio of 
 
 This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian
 kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of
-observations in the neighbourhood (see \code{\link[=rings,prevR-method]{rings}} for more details).
+observations in the neighbourhood (see \code{\link[=rings]{rings()}} for more details).
 Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of
 equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the
-function \code{\link[=rings,prevR-method]{rings}}.\cr
+function \code{\link[=rings]{rings()}}.\cr
 See referenes for a detailed explanation of the implemented methodology.
 
 \code{N} and \code{R} determine the rings to use for the estimation. If they are not defined,
 surfaces will be estimated for each available couples (N,R). Several estimations could be
 simultaneously calculated if several values of N and R are defined.
 
-A suggested value of N could be computed with \code{\link{Noptim}}.
+A suggested value of N could be computed with \code{\link[=Noptim]{Noptim()}}.
 }
 \note{
-Results could be plotted with \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
-\pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}})
-compatible with \code{\link[sp]{spplot}}.\cr
+Results could be plotted with \code{\link[sp:spplot]{sp::spplot()}}.\cr
+\pkg{prevR} provides several continuous color palettes (see \link{prevR.colors})
+compatible with \code{\link[sp:spplot]{sp::spplot()}}.\cr
 Calculated surfaces could be export using the function
-\code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
+\code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 
 See the package \pkg{sparr} for another methodology to estimate relative
 risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
@@ -130,7 +130,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
 DOI: 10.4000/cybergeo.24606.
 }
 \seealso{
-\code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\}, \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
+\code{\link[GenKern:KernSur]{GenKern::KernSur()}}, \code{\link[=rings]{rings()}}, \code{\link[=Noptim]{Noptim()}}.
 }
 \keyword{smooth}
 \keyword{spatial}

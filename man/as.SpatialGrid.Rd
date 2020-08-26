@@ -9,7 +9,7 @@
 \S4method{as.SpatialGrid}{prevR}(object, nb.cells = 100, cell.size = NULL)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{nb.cells}{number of cells on the longuest side of the studied area
 (unused if \code{cell.size} is defined).}
@@ -17,13 +17,12 @@
 \item{cell.size}{size of each cell (in the unit of the projection).}
 }
 \value{
-Object of class \code{\link[sp:SpatialGrid-class]{SpatialGrid}}\{\pkg{sp}\}.
+Object of class \link[sp:SpatialGrid-class]{sp::SpatialGrid}.
 }
 \description{
 This function generates a spatial rectangular grid from the slot \code{boundary}
-of an object of class \code{\link[=prevR-class]{prevR}}; function used in particular
-by the methods \code{\link[=kde,prevR-method]{kde}}, \code{\link[=krige,prevR-method]{krige}}
-and \code{\link[=idw,prevR-method]{idw}}.
+of an object of class \code{\linkS4class{prevR}}; function used in particular
+by the methods \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}} and \code{\link[=idw]{idw()}}.
 }
 \details{
 This function generates a spatial rectangular grid, each cell being a square
@@ -37,7 +36,7 @@ str(as.SpatialGrid(fdhs, nb.cells=200))
 
 }
 \seealso{
-\code{\link[sp]{GridTopology}}\{\pkg{sp}\}, \code{\link[sp]{SpatialGrid-class}}\{\pkg{sp}\}.
+\code{\link[sp:SpatialGrid]{sp::GridTopology()}}, \link[sp:SpatialGrid-class]{sp::SpatialGrid}.
 }
 \keyword{manip}
 \keyword{spatial}

@@ -11,17 +11,19 @@ point.in.SpatialPolygons(point.x, point.y, SpP)
 
 \item{point.y}{numerical array of y-coordinates of points.}
 
-\item{SpP}{object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}}
+\item{SpP}{object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}}
 }
 \value{
 Boolean array.
 }
 \description{
 This function tests if one or more points are located inside an object of
-class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.
 }
 \seealso{
-\code{\link[sp]{point.in.polygon}}\{\pkg{sp}\}, \code{\link{NA.outside.SpatialPolygons}}.
+\code{\link[sp:point.in.polygon]{sp::point.in.polygon()}}, [NA.outside.SpatialPolygons())].
+
+[NA.outside.SpatialPolygons())]: R:NA.outside.SpatialPolygons())
 }
 \keyword{manip}
 \keyword{spatial}

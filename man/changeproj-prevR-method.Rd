@@ -9,7 +9,7 @@
 \S4method{changeproj}{prevR}(object, proj)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{proj}{new map projection.}
 }
@@ -18,12 +18,12 @@ Return \code{object} expressed in the projection \code{proj}.
 }
 \description{
 This function converts map projection (and/or datum) used by an object of
-class \code{\link[=prevR-class]{prevR}} into another one.
+class \linkS4class{prevR} into another one.
 }
 \details{
 \code{proj} could be a character string corresponding to a
 \emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} for more details)
-or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
+or an object of class \link[sp:CRS-class]{sp::CRS}.
 
 \code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of
 \code{object} and convert \code{boundary} using the new map projection defined by \code{proj}.\cr
@@ -40,7 +40,7 @@ plot(fdhs2, axes=TRUE, main="Projection: UTM Zone 30")
 
 }
 \seealso{
-\code{\link[rgdal]{spTransform}}\{\pkg{rgdal}\}, \code{\link{prevR-class}}.
+\code{\link[rgdal:spTransform-methods]{rgdal::spTransform()}}, \linkS4class{prevR}.
 }
 \keyword{manip}
 \keyword{spatial}

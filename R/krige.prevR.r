@@ -1,15 +1,15 @@
 #' Spatial interpolation (kriging and inverse distance weighting) for objects of class prevR.
 #' 
 #' These functions execute a spatial interpolation of a variable of the slot \code{rings} of 
-#' an object of class \code{\link[=prevR-class]{prevR}}. The method \code{krige} implements 
+#' an object of class [prevR-class]. The method \code{krige} implements 
 #' the ordinary kriging technique. The method \code{idw} executes an inverse distance weighting 
 #' interpolation.
 #' 
 #' @param formula variable(s) to interpolate (see details).
-#' @param locations object of class \code{\link[=prevR-class]{prevR}}.
+#' @param locations object of class [prevR-class].
 #' @param N integer or list of integers corresponding to the rings to use.
 #' @param R integer or list of integers corresponding to the rings to use.
-#' @param model a variogram model returned by the function \code{\link[gstat]{vgm}}\{\pkg{gstat}\}.
+#' @param model a variogram model returned by the function [gstat::vgm()].
 #' @param nb.cells number of cells on the longuest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
@@ -18,9 +18,9 @@
 #'   (unused if \code{model} is defined).
 #' @param keep.variance return variance of estimates?
 #' @param show.variogram plot the variogram?
-#' @param  idp inverse distance weighting power (see \code{\link[gstat]{idw}}\{\pkg{gstat}\}).
-#' @param \dots additional arguments transmited to \code{\link[gstat]{krige}}\{\pkg{gstat}\} 
-#'   or \code{\link[gstat]{idw}}\{\pkg{gstat}\}.
+#' @param  idp inverse distance weighting power (see [gstat::idw()]).
+#' @param \dots additional arguments transmited to [gstat::krige()]
+#'   or [gstat::idw()].
 #'   
 #' @import sp
 #' @importMethodsFrom gstat krige
@@ -32,32 +32,32 @@
 #' slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", 
 #' "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character 
 #' string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1} 
-#' are accepted. For more complexe interpolations, use directly functions \code{\link[gstat]{krige}} and
-#' \code{\link[gstat]{idw}} from \pkg{gstat}.
+#' are accepted. For more complexe interpolations, use directly functions [gstat::krige()] and
+#' [gstat::idw()] from \pkg{gstat}.
 #' 
 #' \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, 
 #' surfaces will be estimated for each available couples (N,R). Several interpolations could be 
 #' simultaneously calculated if several variables and/or several values of N and R are defined.
 #' 
-#' A suggested value of N could be computed with \code{\link{Noptim}}.
+#' A suggested value of N could be computed with [Noptim()].
 #' 
-#' In the case of an ordinary kriging, the method \code{krige} from \pkg{prevR} will try to fit automatically
+#' In the case of an ordinary kriging, the method [krige()] from \pkg{prevR} will try to fit automatically
 #' a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, 
 #' the sample variogram will be plotted and a graphical dialog box (adapted from 
-#' \code{\link[geoR]{eyefit}}\{\pkg{geoR}\}) will appear for a manual and visual fitting. You can also specify
+#' [geoR::eyefit()] will appear for a manual and visual fitting. You can also specify
 #' directly the variogram to use with the parameter \code{model}. Packages \pkg{geoR} and \pkg{tcltk} 
 #' are required for manual fit.
 #' 
-#' Interpolations are calculated on spatial gridd obtained with 
-#' \code{\link[=as.SpatialGrid,prevR-method]{as.SpatialGrid}}.
+#' Interpolations are calculated on a spatial grid obtained with 
+#' [as.SpatialGrid()].
 #' 
-#' @return Object of class \code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}. 
+#' @return Object of class [sp::SpatialPixelsDataFrame-class]. 
 #' The name of estimated surfaces depends on the name of the interpolated variable, N and R 
 #' (for example: \emph{r.radius.N300.RInf}). If you ask the function to return variance 
 #' (\code{keep.variance=TRUE}), corresponding surfaces names will have the suffix \emph{.var}.
 #' 
 #' \code{NA} value is applied to points located outside of the studied area \cr
-#' (voir \code{\link{NA.outside.SpatialPolygons}}).
+#' (voir [NA.outside.SpatialPolygons()]).
 #' 
 #' @references
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
@@ -65,14 +65,14 @@
 #' \emph{Cybergeo: European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
 #' DOI: 10.4000/cybergeo.24606.
 #' 
-#' @note Results could be plotted with \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
-#' \pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}}) compatible 
-#' with \code{\link[sp]{spplot}}.\cr
+#' @note Results could be plotted with [sp::spplot()].\cr
+#' \pkg{prevR} provides several continuous color palettes (see [prevR.colors]) compatible 
+#' with [sp::spplot()].\cr
 #' Calculated surfaces could be export using the function 
-#' \code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
+#' [maptools::writeAsciiGrid()].
 #' 
-#' @seealso \code{\link[gstat]{krige}}\{\pkg{gstat}\}, \code{\link[gstat]{idw}}\{\pkg{gstat}\}, 
-#' \code{\link{rings,prevR-method}}, \code{\link{Noptim}}.
+#' @seealso [gstat::krige()], [gstat::idw()], 
+#' [rings()], [Noptim()].
 #' 
 #' @examples 
 #'   \dontrun{

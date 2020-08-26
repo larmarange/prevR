@@ -7,7 +7,7 @@
 Noptim(object)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 }
 \value{
 an integer.

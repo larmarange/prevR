@@ -12,9 +12,9 @@ country with a national prevalence of 10\\%, 8000 having been surveyed, distribu
 This dataset is composed of 3 objects:\itemize{
 \item \code{fdhs.clusters}: data frame (one line per cluster).
 \item \code{fdhs.boundary}: object of class
-\code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} corresponding to the borders of the fictitious country.
-\item \code{fdhs}: object of class \code{\link[=prevR-class]{prevR}}
-returned by \code{\link{as.prevR}} using the two previous objects.
+\link[sp:SpatialPolygons-class]{sp::SpatialPolygons} corresponding to the borders of the fictitious country.
+\item \code{fdhs}: object of class \linkS4class{prevR}
+returned by \code{\link[=as.prevR]{as.prevR()}} using the two previous objects.
 }
 }
 \examples{

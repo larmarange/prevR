@@ -9,7 +9,7 @@ direct.label_prevR(p, method = NULL, debug = FALSE)
 \arguments{
 \item{p}{The ggplot object.}
 
-\item{method}{Method for direct labeling as described in ?label.positions.}
+\item{method}{Method for direct labelling (see \code{\link[directlabels:direct.label]{directlabels::direct.label()}}).}
 
 \item{debug}{Show debug output?}
 }
@@ -20,9 +20,9 @@ The ggplot object with direct labels added.
 Direct label a ggplot2 grouped plot
 }
 \note{
-This function is based on and similar to \code{\link[directlabels]{direct.label.ggplot}}
+This function is based on and similar to \code{\link[directlabels:direct.label]{directlabels::direct.label()}}
 except that legend is not hidden.
 }
 \seealso{
-\code{\link[directlabels]{direct.label.ggplot}}\{\pkg{directlabels}\}
+\code{\link[directlabels:direct.label]{directlabels::direct.label()}}
 }

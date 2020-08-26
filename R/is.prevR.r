@@ -1,13 +1,13 @@
 #' Test if an object is of class prevR.
-#' This function test if the class of an object is \code{\link[=prevR-class]{prevR}}. 
+#' This function test if the class of an object is [prevR-class]. 
 #' It could be used to test the slot \code{rings} or the slot \code{boundary}.
 #' 
 #' @param object object to test.
 #' @param slot "clusters", "rings","boundary" or "proj".
 #' @details 
 #' Slots \code{rings} and \code{boundary} are always present in an object of class 
-#' \code{\link[=prevR-class]{prevR}}, but \code{rings} could be \code{NULL} and 
-#' \code{boundary} a \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} with an 
+#' [prevR-class], but \code{rings} could be \code{NULL} and 
+#' \code{boundary} a [sp::SpatialPolygons-class] with an 
 #' attribute named \code{valid} with the value \code{FALSE} (when boundaries of the studied 
 #' area have not been specified explicitly).
 #' \itemize{
@@ -17,7 +17,7 @@
 #' } 
 #'
 #' @return  \code{TRUE} or \code{FALSE}.
-#' @seealso \code{\link{prevR-class}}.
+#' @seealso [prevR-class].
 #' @examples 
 #' col <- c(id = "cluster", 
 #'   x = "x",

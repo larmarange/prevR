@@ -1,12 +1,12 @@
 #' Quick prevR analysis and plot
 #' 
 #' This function performs several analysis in one go: 
-#' (i) apply \code{\link{rings,prevR-method}}; 
-#' (ii) compute prevalence surface with \code{\link{kde,prevR-method}}; 
-#' (iii) compute the surface of rings radii with \code{\link{krige,ANY,prevR-method}}; 
-#' (iv) plot prevalence surface using \code{\link{prevR.colors.red}} and add rings radii as a contour plot.
+#' (i) apply [rings()]; 
+#' (ii) compute prevalence surface with [kde()]; 
+#' (iii) compute the surface of rings radii with [krige()]; 
+#' (iv) plot prevalence surface using [prevR.colors.red()] and add rings radii as a contour plot.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' @param N integer or list of integers corresponding to the rings to use.
 #' @param nb.cells number of cells on the longuest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
@@ -23,15 +23,14 @@
 #' 
 #' @details 
 #' \code{N} determine the rings to use for the estimation.
-#' By default, a suggested value of N will be computed with \code{\link{Noptim}}.
+#' By default, a suggested value of N will be computed with [Noptim()].
 #' 
 #' @return A list of one or several elements, depending on the arguments: 
 #' (i) \code{prev} is a \code{SpatialPixelsDataFrame} containing the prevalence
 #' surface; (ii) \code{radius} a \code{SpatialPixelsDataFrame} containing the
 #' kriged surface of the rings radii; (iii) \code{plot} a \code{ggplot} graph.
 #' 
-#' @seealso \code{\link{Noptim}}, \code{\link{rings,prevR-method}}, 
-#' \code{\link{kde,prevR-method}}, \code{\link{krige,ANY,prevR-method}}.
+#' @seealso [Noptim()], [rings()], [kde()] and [krige()].
 #' 
 #' @examples 
 #' \dontrun{

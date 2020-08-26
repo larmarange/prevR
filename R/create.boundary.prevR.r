@@ -1,25 +1,25 @@
 #' Provide national boundaries of a country.
 #' 
 #' 
-#' This function uses the data set \code{\link{TMWorldBorders}}. One or several countries
+#' This function uses the data set [TMWorldBorders]. One or several countries
 #' can be selected and will be returned as an object of class 
-#' \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+#' [sp::SpatialPolygons-class].
 #' 
 #' @param countries a vector of character string corresponding to the name of the countries 
-#' you want to extract from the dataset. If \code{NULL}, a dialog box will be appear in order to select
+#' you want to extract from the dataset. If \code{NULL}, a dialogue box will be appear in order to select
 #' the desired country.
 #' @param multiple should the dialog box allow multiple selection (unused if \code{countries} is specified)?
 #' @param proj map projection to use for the result (longitude and latitude in decimal degrees by default).
 #' 
 #' @details \code{proj} could be a character string corresponding to a \emph{PROJ.4} 
 #' projection (see \url{http://trac.osgeo.org/proj/} for more details) 
-#' or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.
+#' or an object of class [sp::CRS-class].
 #' 
-#' @return Object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}\{\pkg{sp}\}.
+#' @return Object of class [sp::SpatialPolygons-class].
 #' 
 #' @note The result will be automatically plotted.
 #' 
-#' @seealso \code{\link{TMWorldBorders}}.
+#' @seealso [TMWorldBorders].
 #' 
 #' @examples 
 #' \dontrun{

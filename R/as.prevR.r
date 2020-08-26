@@ -1,6 +1,6 @@
 #' Create an object of class prevR.
 #' 
-#' This function creates an object of class \code{\link[=prevR-class]{prevR}} from a data frame.
+#' This function creates an object of class [`prevR-class`] from a data frame.
 #' 
 #' @param data data frame, each line corresponding to an observed cluster.
 #' @param col vector identifying the columns of \code{data} to use.\cr
@@ -12,36 +12,35 @@
 #'    \item "pos" number of positive cases in the cluster.
 #'    \item "wn" (optional) sum of observations weight.
 #'    \item "wpos" (optional) sum of positive cases weight.
-#'    \item "c.type" (optional) type of cluster (used only by \code{\link[=show,prevR-method]{plot}}).
+#'    \item "c.type" (optional) type of cluster (used only by [plot()]).
 #'  }
 #'  See examples.
-#' @param boundary object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} 
+#' @param boundary object of class [`sp::SpatialPolygons-class`] 
 #' defining the studied area.
 #' @param proj projection of clusters coordinates used in \code{data} 
 #' (longitude and latitude in decimal degrees by default).
 #' @details 
 #' Only "x", "y" "n" and "pos" are required in \code{col}. 
-#' If "id" is not specified, a numzrical identifier will be automatically created.
+#' If "id" is not specified, a numerical identifier will be automatically created.
 #' 
 #' \code{proj} defines projection used by \code{data}. It could be a character string 
 #' corresponding to a \emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} 
-#' for more details) or an object of class \code{\link[sp:CRS-class]{CRS}}\{\pkg{sp}\}.\cr
+#' for more details) or an object of class [`sp::CRS-class`].\cr
 #' If the projection of \code{boundary} is defined in  a slot called \code{proj4string}, 
 #' \code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string} 
 #' is missing, \code{boundary} will be considered to be already in the same projection as \code{proj}.
 #' 
 #' If \code{boundary} is not defined (\code{NULL}), a considered  corresponding to minimal 
 #' and maximal coordinates of \code{data} will be used.\cr
-#' \code{boundary} could be the result of the function \code{\link{create.boundary}}.
+#' \code{boundary} could be the result of the function [create.boundary()].
 #' 
-#' It's not possible to change projection of \code{data} with \code{as.prevR}. 
-#' Use \code{\link[=changeproj,prevR-method]{changeproj}} instead.
+#' It's not possible to change projection of \code{data} with `as.prevR()`. 
+#' Use [changeproj()] instead.
 #' 
-#' @return Object of class \code{\link[=prevR-class]{prevR}} 
-#' (see \code{\link{prevR-class}} for more details)
+#' @return Object of class [`prevR-class`] 
 #' 
-#' @seealso \code{\link{prevR-class}}, \code{\link{create.boundary}}, 
-#' \code{\link[=changeproj,prevR-method]{changeproj}}, \code{\link{import.dhs}}.
+#' @seealso [`prevR-class`] class, [create.boundary()], 
+#' [changeproj()], [import.dhs()].
 #' 
 #' @examples 
 #'  col <- c(id = "cluster",

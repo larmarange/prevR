@@ -19,7 +19,7 @@ quick.prevR(
 )
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{N}{integer or list of integers corresponding to the rings to use.}
 
@@ -50,14 +50,14 @@ kriged surface of the rings radii; (iii) \code{plot} a \code{ggplot} graph.
 }
 \description{
 This function performs several analysis in one go:
-(i) apply \code{\link{rings,prevR-method}};
-(ii) compute prevalence surface with \code{\link{kde,prevR-method}};
-(iii) compute the surface of rings radii with \code{\link{krige,ANY,prevR-method}};
-(iv) plot prevalence surface using \code{\link{prevR.colors.red}} and add rings radii as a contour plot.
+(i) apply \code{\link[=rings]{rings()}};
+(ii) compute prevalence surface with \code{\link[=kde]{kde()}};
+(iii) compute the surface of rings radii with \code{\link[=krige]{krige()}};
+(iv) plot prevalence surface using \code{\link[=prevR.colors.red]{prevR.colors.red()}} and add rings radii as a contour plot.
 }
 \details{
 \code{N} determine the rings to use for the estimation.
-By default, a suggested value of N will be computed with \code{\link{Noptim}}.
+By default, a suggested value of N will be computed with \code{\link[=Noptim]{Noptim()}}.
 }
 \examples{
 \dontrun{
@@ -66,8 +66,7 @@ By default, a suggested value of N will be computed with \code{\link{Noptim}}.
 
 }
 \seealso{
-\code{\link{Noptim}}, \code{\link{rings,prevR-method}},
-\code{\link{kde,prevR-method}}, \code{\link{krige,ANY,prevR-method}}.
+\code{\link[=Noptim]{Noptim()}}, \code{\link[=rings]{rings()}}, \code{\link[=kde]{kde()}} and \code{\link[=krige]{krige()}}.
 }
 \keyword{plot}
 \keyword{smooth}

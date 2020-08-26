@@ -21,7 +21,7 @@
 )
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{element}{element to export: "clusters" or "boundary".}
 
@@ -48,11 +48,11 @@ or if \code{format="shp"} or if \code{format="dbf"}).}
 (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).}
 
 \item{\dots}{additional arguments transmitted to
-\code{\link[rgdal]{writeOGR}}, \code{\link[foreign]{write.dbf}} or
-\code{\link[utils]{write.table}}.}
+\code{\link[rgdal:writeOGR]{rgdal::writeOGR()}}, \code{\link[foreign:write.dbf]{foreign::write.dbf()}} or
+\code{\link[utils:write.table]{utils::write.table()}}.}
 }
 \description{
-This method could be used to export an object of class \code{\link[=prevR-class]{prevR}}
+This method could be used to export an object of class \linkS4class{prevR}
 in different formats (text, shapefile, dbase...)
 }
 \details{
@@ -60,11 +60,11 @@ If \code{element="boundary"}, the slot \code{boundary} of \code{object}
 will be exported as a \emph{shapefile}.
 
 Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
-See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N},
+See \code{\link[=as.data.frame]{as.data.frame()}} for details on the use of the parameters of \code{N},
 \code{R} et \code{clusters.only}.
 
 \code{format} specifies the export format of the data frame returned by
-\code{\link{as.data.frame.prevR}}: \tabular{ll}{
+\code{\link[=as.data.frame]{as.data.frame()}}: \tabular{ll}{
 "shp" \tab Shape File (require the package \pkg{rgdal})\cr
 "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
 "txt" \tab tabulated text (extension: .txt)\cr
@@ -92,9 +92,8 @@ the Excel convention for CSV files in some Western European locales. \cr
 
 }
 \seealso{
-\code{\link[maptools]{writePolyShape}} \{\pkg{maptools}\}, \code{\link[maptools]{writePointsShape}}
-\{\pkg{maptools}\}, \code{\link[foreign]{write.dbf}} \{\pkg{foreign}\}, \code{\link[utils]{write.table}}
-\{\pkg{utils}\}.
+\link[maptools:readShapePoly]{maptools::writePolyShape}, \code{\link[maptools:readShapePoints]{maptools::writePointsShape()}},
+\code{\link[foreign:write.dbf]{foreign::write.dbf()}}, \code{\link[utils:write.table]{utils::write.table()}}.
 }
 \keyword{manip}
 \keyword{spatial}

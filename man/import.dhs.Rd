@@ -15,15 +15,15 @@ downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.
 }
 \description{
 This step by step function guides users to import data from a Demographic and Health Survey (DHS)
-and create an object of class \code{\link[=prevR-class]{prevR}}.
+and create an object of class \linkS4class{prevR}.
 }
 \note{
 If you don't provide the precise path of files, \R will check the working directory
-(see \code{\link[base]{setwd}}). To specify the file path, see \code{\link[base]{file.path}}.
+(see \code{\link[base:getwd]{base::setwd()}}). To specify the file path, see \code{\link[base:file.path]{base::file.path()}}.
 
 This function was developed specifically for importing DHS.
-For a generic function for creating an object of class \code{\link[=prevR-class]{prevR}},
-see \code{\link{as.prevR}}.
+For a generic function for creating an object of class \linkS4class{prevR},
+see \code{\link[=as.prevR]{as.prevR()}}.
 }
 \examples{
 \dontrun{
@@ -32,6 +32,6 @@ imported_data <- import.dhs("data.sav", "gps.dbf")
 
 }
 \seealso{
-\code{\link{as.prevR}}, \code{\link{prevR-class}}.
+\code{\link[=as.prevR]{as.prevR()}}, \linkS4class{prevR} class.
 }
 \keyword{manip}

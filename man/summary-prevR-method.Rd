@@ -10,13 +10,13 @@
 \S4method{summary}{prevR}(object, probs = c(0, 0.1, 0.25, 0.5, 0.75, 0.8, 0.9, 0.95, 0.99, 1))
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{probs}{vector of probabilities with values in \verb{[0,1]} for computing
 quantiles of the rings radii (see examples).}
 }
 \description{
-Method \code{summary} for objects of class \code{\link[=prevR-class]{prevR}}:
+Method \code{summary} for objects of class \linkS4class{prevR}:
 shows a summary of the variables of the object.
 }
 \examples{
@@ -29,5 +29,5 @@ summary(fdhs)
 
 }
 \seealso{
-\code{\link{print,prevR-method}}.
+\code{\link[=print]{print()}}.
 }

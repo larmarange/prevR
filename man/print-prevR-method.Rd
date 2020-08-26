@@ -9,14 +9,14 @@
 \S4method{print}{prevR}(x)
 }
 \arguments{
-\item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{x}{object of class \linkS4class{prevR}.}
 }
 \description{
-Method \code{print} for objects of class \code{\link[=prevR-class]{prevR}}:
+Method \code{print} for objects of class \linkS4class{prevR}:
 shows a summary of the object's characteristics.
 }
 \note{
-Exactly the same as \code{\link{show,prevR-method}}.
+Exactly the same as \code{\link[=show]{show()}}.
 }
 \examples{
 print(fdhs)
@@ -27,5 +27,5 @@ print(fdhs)
 
 }
 \seealso{
-\code{\link{summary,prevR-method}}.
+\code{\link[=summary]{summary()}}.
 }

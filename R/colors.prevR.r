@@ -1,35 +1,35 @@
 #' Continuous color palettes.
 #' 
 #' Functions generating color palettes useable with \R graphical functions, in particular with 
-#' \code{\link[sp]{spplot}}. These palettes are continuous, contrast being accentuated by darkening 
+#' [sp::spplot()]. These palettes are continuous, contrast being accentuated by darkening 
 #' and lightening extrem values. \code{prevR.demo.pal} plot the available palettes. 
 #' \code{prevR.colors.qgis.pal} export a palette in a text file readable by Quantum GIS, 
 #' an open-source mapping software.
 #' 
 #' @param n number of different colors in the palette.
 #' 
-#' @details \code{\link{prevR.colors.red}} produces a color gradation from white/yellow to red/dark red.\cr
-#' \code{\link{prevR.colors.blue}} produces a color gradation from light blue to dark blue.\cr
-#' \code{\link{prevR.colors.green}} produces a color gradation from light green to dark green.\cr
-#' \code{\link{prevR.colors.gray}} produces a color gradation from white/light gray to dark gray/black.\cr
+#' @details [prevR.colors.red()] produces a color gradation from white/yellow to red/dark red.\cr
+#' [prevR.colors.blue()] produces a color gradation from light blue to dark blue.\cr
+#' [prevR.colors.green()] produces a color gradation from light green to dark green.\cr
+#' [prevR.colors.gray()] produces a color gradation from white/light gray to dark gray/black.\cr
 #' 
 #' Functions with a suffix \emph{.inverse} produce the same color gradation, but from dark colors to light ones.
 #' 
 #' @return 
-#' \code{\link{prevR.demo.pal}} plot the color palettes.
+#' [prevR.demo.pal()] plot the color palettes.
 #' 
-#' \code{\link{prevR.colors.qgis.pal}} export a color palette in a texte file readable by Quantum GIS.
+#' [prevR.colors.qgis.pal()] export a color palette in a text file readable by Quantum GIS.
 #' 
 #' The other functions return a list of colors coded in hexadecimal.
 #' 
 #' @note 
 #' To obtain the liste of colors in RGB (Red/Green/Blue), use the function 
-#' \code{\link[grDevices]{col2rgb}}\{\pkg{grDevices}\}. 
-#' The code of \code{\link{prevR.demo.pal}} was adapted from the function \code{demo.pal} 
-#' presented in the examples of \code{\link[grDevices]{rainbow}}.
+#' [grDevices::col2rgb()]. 
+#' The code of [prevR.demo.pal()] was adapted from the function \code{demo.pal} 
+#' presented in the examples of [grDevices::rainbow()].
 #' 
 #' @seealso Other color palettes are available in  \R. See for example 
-#' \code{\link[grDevices]{rainbow}}\{\pkg{grDevices}\} or the package \pkg{RColorBrewer}.
+#' [grDevices::rainbow()] or the package \pkg{RColorBrewer}.
 #' 
 #' @examples 
 #' prevR.demo.pal(25)

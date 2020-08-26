@@ -9,7 +9,7 @@
 \S4method{rings}{prevR}(object, N = seq(100, 500, 50), R = Inf, progression = TRUE)
 }
 \arguments{
-\item{object}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{object}{object of class \linkS4class{prevR}.}
 
 \item{N}{minimum number of observations.}
 
@@ -79,7 +79,7 @@ PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes
 \url{http://tel.archives-ouvertes.fr/tel-00320283}.
 }
 \seealso{
-\code{\link{prevR-class}}.
+\linkS4class{prevR}.
 }
 \keyword{math}
 \keyword{spatial}

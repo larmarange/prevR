@@ -20,7 +20,7 @@ and matrix with value for each point of coordinates \verb{x[i], y[j]}.}
 A \code{data.frame}.
 }
 \description{
-Several functions (for example \code{\link[GenKern]{KernSur}}\{\pkg{GenKern}\})
+Several functions (for example \code{\link[GenKern:KernSur]{GenKern::KernSur()}})
 return a surface as a list "xyz" composed of three elements: vector of ordinates in the x dimension,
 vector of ordinates in the y dimension and a matrix with the values of the surface in x and y.
 This function transforms a list "xyz" into a data frame.

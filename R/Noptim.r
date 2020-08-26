@@ -5,7 +5,7 @@
 #' of observations and the number of clusters. See Larmarange et al. 2011
 #' for more details.
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' 
 #' @return an integer.
 #' 

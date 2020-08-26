@@ -3,7 +3,7 @@
 #' Class used by the package \pkg{prevR}
 #' 
 #' @section Objects from the Class:
-#' Objects of this class could be created by the function \code{\link{as.prevR}}.
+#' Objects of this class could be created by the function [as.prevR()].
 #' @slot clusters \code{data.frame} with observed data (one line per cluster). 
 #' Columns names are:\itemize{
 #'   \item "id" cluster ID.
@@ -17,10 +17,10 @@
 #'   \item "wprev" (optional) weighted observed prevalence (in \%) in the cluster (wpos/wn).
 #'   \item "c.type" (optional) cluster type.
 #' }
-#' @slot boundary object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}, 
+#' @slot boundary object of class [sp::SpatialPolygons-class], 
 #' borders of the studied area.
-#' @slot proj object of class \code{\link[sp:CRS-class]{CRS}}, map projection used.
-#' @slot rings list of results returned by \code{\link[=rings,prevR-method]{rings}}. 
+#' @slot proj object of class [sp::CRS-class], map projection used.
+#' @slot rings list of results returned by [rings()]. 
 #' Each entry is composed of 3 elements: \code{N}, minimum number of observations per ring; 
 #' \code{R}, maximum radius of rings and \code{estimates}, a data frame with the following 
 #' variables:\itemize{
@@ -59,11 +59,8 @@
 #'   \item{changeproj}{\code{signature(object = "prevR")} changes the map projection used.}
 #' }
 #' @seealso 
-#' \code{\link{as.prevR}}, \code{\link{is.prevR}}, \code{\link{changeproj,prevR-method}}, 
-#' \code{\link{rings,prevR-method}}, \code{\link{print,prevR-method}}, 
-#' \code{\link{plot,prevR-method}}, \code{\link{summary,prevR-method}}, 
-#' \code{\link{kde,prevR-method}}, \code{\link{krige,prevR-method}}, 
-#' \code{\link{idw,prevR-method}}, \code{\link{export,prevR-method}}.
+#' [as.prevR()], [is.prevR()], [changeproj()], [rings()], [print()], [plot()],
+#' [summary()], [kde()], [krige()], [idw()], [export()].
 #' @examples 
 #' showClass("prevR")
 #' 

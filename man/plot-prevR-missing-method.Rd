@@ -19,12 +19,12 @@
 )
 }
 \arguments{
-\item{x}{object of class \code{\link[=prevR-class]{prevR}}.}
+\item{x}{object of class \linkS4class{prevR}.}
 
 \item{type}{graph to plot:\itemize{
 \item "position" clusters position.
 \item "c.type" clusters per \code{c.type}.
-\item "count" number of observatios per cluster.
+\item "count" number of observations per cluster.
 \item "flower" number of positive cases per cluster.
 }}
 
@@ -38,10 +38,10 @@
 
 \item{axes}{show axes?}
 
-\item{...}{additional arguments transmitted to \code{\link[graphics]{title}}.}
+\item{...}{additional arguments transmitted to \code{\link[graphics:title]{graphics::title()}}.}
 }
 \description{
-Method \code{plot} for object of class \code{\link[=prevR-class]{prevR}}.
+Method \code{plot} for object of class \linkS4class{prevR}.
 Plot clusters, number of observations per cluster or number of positive cases per cluster.
 }
 \details{
@@ -50,7 +50,7 @@ Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bo
 \emph{"right"} use \emph{"center"}.
 
 Use \code{main} to define a title and \code{sub} for a subtitle
-(see \code{\link[graphics]{title}}\{\pkg{graphics}\}).
+(see \code{\link[graphics:title]{graphics::title()}}).
 }
 \examples{
 \dontshow{par(ask = TRUE)}
@@ -62,7 +62,6 @@ plot(fdhs, type = "flower", main="flower")
 
 }
 \seealso{
-\code{\link[graphics]{title}}\{\pkg{graphics}\},
-\code{\link[graphics]{legend}}\{\pkg{graphics}\}.
+[graphics::title()}}, \code{\link[graphics:legend]{graphics::legend()}}.
 }
 \keyword{hplot}

@@ -1,10 +1,10 @@
 #' Convert an object of class prevR into a data.frame.
 #' 
 #' This function merges the slots \code{clusters} et \code{rings} of 
-#' a object of class \code{\link[=prevR-class]{prevR}}.
+#' a object of class [`prevR-class`].
 #' 
-#' @param x object of class \code{\link[=prevR-class]{prevR}}.
-#' @param ... not used, for compatibility with the generic method \code{\link[base]{as.data.frame}}.
+#' @param x object of class [`prevR-class`].
+#' @param ... not used, for compatibility with the generic method [base::as.data.frame()].
 #' @param N integer or list of integers setting elements of \code{rings} to extract.
 #' @param R integer or list of integers setting elements of \code{rings} to extract.
 #' @param clusters.only return only the slot \code{clusters} of \code{x}?
@@ -18,7 +18,7 @@
 #' \code{N} and \code{R} define the elements of \code{rings} to extract. If not specified (\code{NULL}), 
 #' all the elements of \code{rings} will be included.
 #' 
-#' @seealso \code{\link[base]{as.data.frame}}\{\pkg{base}\}, \code{\link[prevR]{prevR-class}}.
+#' @seealso [base::as.data.frame()], [`prevR-class`].
 #'
 #' @examples 
 #' str(fdhs)

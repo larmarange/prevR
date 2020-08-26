@@ -1,15 +1,15 @@
 #' Test if a point falls within a given polygon.
 #' 
 #' This function tests if one or more points are located inside an object of 
-#' class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}.
+#' class [sp::SpatialPolygons-class].
 #' 
 #' @param point.x numerical array of x-coordinates of points.
 #' @param point.y numerical array of y-coordinates of points.
-#' @param SpP object of class \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}}
+#' @param SpP object of class [sp::SpatialPolygons-class]
 #' 
 #' @return Boolean array.
 #' 
-#' @seealso \code{\link[sp]{point.in.polygon}}\{\pkg{sp}\}, \code{\link{NA.outside.SpatialPolygons}}.
+#' @seealso [sp::point.in.polygon()], [NA.outside.SpatialPolygons())].
 #' 
 #' @keywords manip spatial
 #' @export

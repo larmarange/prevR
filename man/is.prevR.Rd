@@ -3,7 +3,7 @@
 \name{is.prevR}
 \alias{is.prevR}
 \title{Test if an object is of class prevR.
-This function test if the class of an object is \code{\link[=prevR-class]{prevR}}.
+This function test if the class of an object is \linkS4class{prevR}.
 It could be used to test the slot \code{rings} or the slot \code{boundary}.}
 \usage{
 is.prevR(object, slot = NULL)
@@ -18,13 +18,13 @@ is.prevR(object, slot = NULL)
 }
 \description{
 Test if an object is of class prevR.
-This function test if the class of an object is \code{\link[=prevR-class]{prevR}}.
+This function test if the class of an object is \linkS4class{prevR}.
 It could be used to test the slot \code{rings} or the slot \code{boundary}.
 }
 \details{
 Slots \code{rings} and \code{boundary} are always present in an object of class
-\code{\link[=prevR-class]{prevR}}, but \code{rings} could be \code{NULL} and
-\code{boundary} a \code{\link[sp:SpatialPolygons-class]{SpatialPolygons}} with an
+\linkS4class{prevR}, but \code{rings} could be \code{NULL} and
+\code{boundary} a \link[sp:SpatialPolygons-class]{sp::SpatialPolygons} with an
 attribute named \code{valid} with the value \code{FALSE} (when boundaries of the studied
 area have not been specified explicitly).
 \itemize{
@@ -54,6 +54,6 @@ is.prevR(dhs,"rings")
 
 }
 \seealso{
-\code{\link{prevR-class}}.
+\linkS4class{prevR}.
 }
 \keyword{class}

@@ -5,8 +5,6 @@
 #' @param base_size base font size
 #' @importFrom ggplot2 '%+replace%'
 #' 
-#' @seealso \code{\link[ggplot2]{ggtheme}}\{\pkg{ggplot2}\}
-#' 
 #' @export
 
 theme_prevR <- function (base_size = 12) {

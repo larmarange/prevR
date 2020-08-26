@@ -36,55 +36,54 @@ For a full demo, enter \code{demo(prevR)}.
 The content of \pkg{prevR} can be broken up as follows:
 
 \emph{Datasets}\cr
-\code{\link{fdhs}} is a fictive dataset used for testing the package.\cr
-\code{\link{TMWorldBorders}} provides national borders of every countries in the World and
+\link{fdhs} is a fictive dataset used for testing the package.\cr
+\link{TMWorldBorders} provides national borders of every countries in the World and
 could be used to define the limits of the studied area.
 
 \emph{Creating objects}\cr
-\pkg{prevR} functions takes as input ojects of class \code{\link[=prevR-class]{prevR}}.\cr
-\code{\link{import.dhs}} allows to import easily, through a step by step procedure,
+\pkg{prevR} functions takes as input ojects of class \linkS4class{prevR}.\cr
+\code{\link[=import.dhs]{import.dhs()}} allows to import easily, through a step by step procedure,
 data from a DHS (Demographic and Health Surveys) downloaded from
 \url{http://www.measuredhs.com}.\cr
-\code{\link{as.prevR}} is a generic function to create an object of class
-\code{\link[=prevR-class]{prevR}}.\cr
-\code{\link{create.boundary}} could be used to select borders of a country and
-transfer them to \code{\link{as.prevR}} in order to define the studied area.
+\code{\link[=as.prevR]{as.prevR()}} is a generic function to create an object of class
+\linkS4class{prevR}.\cr
+\code{\link[=create.boundary]{create.boundary()}} could be used to select borders of a country and
+transfer them to \code{\link[=as.prevR]{as.prevR()}} in order to define the studied area.
 
 \emph{Data visualisation}\cr
-Methods \code{\link[=show,prevR-method]{show}}, \code{\link[=print,prevR-method]{print}}
-and \code{\link[=summary,prevR-method]{summary}} display a summary of a object of class
-\code{\link[=prevR-class]{prevR}}.\cr
-The method \code{\link[=plot,prevR-method]{plot}} could be used on a object of class
-\code{\link[=prevR-class]{prevR}} for visualising the studied area, spatial position
+Methods \code{\link[=show]{show()}}, \code{\link[=print]{print()}}
+and \code{\link[=summary]{summary()}} display a summary of a object of class
+\linkS4class{prevR}.\cr
+The method \code{\link[=plot]{plot()}} could be used on a object of class
+\linkS4class{prevR} for visualising the studied area, spatial position
 of clusters, number of observations or number of positive cases by cluster.
 
 \emph{Data manipulation}\cr
-The method \code{\link[=changeproj,prevR-method]{changeproj}} changes the projection
+The method \code{\link[=changeproj]{changeproj()}} changes the projection
 of the spatial coordinates.\cr
-The method \code{\link[=as.data.frame.prevR]{as.data.frame}} converts an object of
-class \code{\link[=prevR-class]{prevR}} into a data frame.\cr
-The method \code{\link[=export,prevR-method]{export}} export data and/or the studied
+The method \code{\link[=as.data.frame]{as.data.frame()}} converts an object of
+class \linkS4class{prevR} into a data frame.\cr
+The method \code{\link[=export]{export()}} export data and/or the studied
 area in a text file, a dbf file or a shapefile.
 
 \emph{Data analysis}\cr
-\code{\link[=rings,prevR-method]{rings}} calculates rings of equal number of
+\code{\link[=rings]{rings()}} calculates rings of equal number of
 observations and/or equal radius.\cr
-\code{\link[=kde,prevR-method]{kde}} calculates a prevalence surface or a relative
+\code{\link[=kde]{kde()}} calculates a prevalence surface or a relative
 risks surface using gaussian kernel density estimators (kde) with adaptative bandwiths.\cr
-\code{\link[=krige,prevR-method]{krige}} executes a spatial interpolation using an
+\code{\link[=krige]{krige()}} executes a spatial interpolation using an
 ordinary kriging.\cr
-\code{\link[=idw,prevR-method]{idw}} executes a spatial interpolation using an inverse
+\code{\link[=idw]{idw()}} executes a spatial interpolation using an inverse
 distance weighting (idw) technique.
 
 \emph{Results visualisation and export}\cr
-Outputs of \code{\link[=kde,prevR-method]{kde}}, \code{\link[=krige,prevR-method]{krige}}
-and \code{\link[=idw,prevR-method]{idw}} are objects of class
-\code{\link[sp:SpatialPixelsDataFrame-class]{SpatialPixelsDataFrame}}\{\pkg{sp}\}.\cr
-Results could be plotted using the function  \code{\link[sp]{spplot}}\{\pkg{sp}\}.\cr
-\pkg{prevR} provides several continuous color palettes (see \code{\link{prevR.colors}})
-compatible with \code{\link[sp]{spplot}}.\cr
+Outputs of \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}} and \code{\link[=idw]{idw()}} are objects of class
+\link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.\cr
+Results could be plotted using the function \code{\link[sp:spplot]{sp::spplot()}}.\cr
+\pkg{prevR} provides several continuous color palettes (see \link{prevR.colors})
+compatible with \code{\link[sp:spplot]{sp::spplot()}}.\cr
 Calculated surfaces could be export using the function
-\code{\link[maptools]{writeAsciiGrid}}\{\pkg{maptools}\}.
+\code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 }
 \section{Acknowledgement}{
  \pkg{prevR} has been developed with funding from the French National Agency

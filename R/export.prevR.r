@@ -7,10 +7,10 @@ setGeneric("export",
 
 #' Export an object of class prevR.
 #' 
-#' This method could be used to export an object of class \code{\link[=prevR-class]{prevR}} 
+#' This method could be used to export an object of class [prevR-class]
 #' in different formats (text, shapefile, dbase...)
 #' 
-#' @param object object of class \code{\link[=prevR-class]{prevR}}.
+#' @param object object of class [prevR-class].
 #' @param element element to export: "clusters" or "boundary".
 #' @param format format: "dbf", "txt", csv", "csv2" or "shp" (unused if \code{element="boundary"}).
 #' @param file file name without extension.
@@ -27,19 +27,19 @@ setGeneric("export",
 #' @param dec coerce the string to use for decimal point 
 #'   (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).
 #' @param \dots additional arguments transmitted to  
-#'   \code{\link[rgdal]{writeOGR}}, \code{\link[foreign]{write.dbf}} or 
-#'   \code{\link[utils]{write.table}}.
+#'   [rgdal::writeOGR()], [foreign::write.dbf()] or 
+#'   [utils::write.table()].
 #' @importFrom foreign write.dbf
 #' @importFrom rgdal writeOGR
 #' @details If \code{element="boundary"}, the slot \code{boundary} of \code{object} 
 #' will be exported as a \emph{shapefile}.
 #' 
 #' Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
-#' See \code{\link{as.data.frame.prevR}} for details on the use of the parameters of \code{N}, 
+#' See [as.data.frame()] for details on the use of the parameters of \code{N}, 
 #' \code{R} et \code{clusters.only}.
 #' 
 #' \code{format} specifies the export format of the data frame returned by 
-#' \code{\link{as.data.frame.prevR}}: \tabular{ll}{
+#' [as.data.frame()]: \tabular{ll}{
 #'     "shp" \tab Shape File (require the package \pkg{rgdal})\cr
 #'     "dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
 #'     "txt" \tab tabulated text (extension: .txt)\cr
@@ -56,9 +56,8 @@ setGeneric("export",
 #' \code{sep} and \code{dec} could be used to coerce the field separator and the decimal point 
 #' (together with the "txt" format).
 #' 
-#' @seealso \code{\link[maptools]{writePolyShape}} \{\pkg{maptools}\}, \code{\link[maptools]{writePointsShape}}
-#' \{\pkg{maptools}\}, \code{\link[foreign]{write.dbf}} \{\pkg{foreign}\}, \code{\link[utils]{write.table}}
-#' \{\pkg{utils}\}.
+#' @seealso [maptools::writePolyShape], [maptools::writePointsShape()],
+#' [foreign::write.dbf()], [utils::write.table()].
 #' 
 #' @examples 
 #'   \dontrun{
