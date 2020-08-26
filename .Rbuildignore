@@ -10,3 +10,4 @@ gps.dbf
 ^cran-comments\.md$
 ^CRAN-RELEASE$
 ^revdep$
+^\.github$
