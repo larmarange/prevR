@@ -1,4 +1,4 @@
-# prevR (development version)
+# prevR 3.4.1
 
 * DOI added (#12)
 * example data (`fdhs`) has been updated using new `CRS` representation
