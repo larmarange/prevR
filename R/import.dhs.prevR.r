@@ -4,9 +4,9 @@
 #' and create an object of class [prevR-class].
 #' 
 #' @param file.sav DHS data (one individual per line) in SPSS format (.sav), 
-#' downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.frame.
+#' downloaded from \url{https://www.dhsprogram.com/}. Could also be directly a data.frame.
 #' @param file.dbf GPS position of clusters in DATABASE format (.dbf), downloaded from 
-#' \url{http://www.dhsprogram.com/}.  Could also be directly a data.frame.
+#' \url{https://www.dhsprogram.com/}.  Could also be directly a data.frame.
 #' 
 #' @note If you don't provide the precise path of files, \R will check the working directory 
 #' (see [base::setwd()]). To specify the file path, see [base::file.path()].

@@ -6,7 +6,7 @@
 #' @details \tabular{ll}{
 #' Package: \tab prevR\cr
 #' Type: \tab Package\cr
-#' Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
+#' Licence: \tab CeCILL-C - \url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 #' Website: \tab \url{https://larmarange.github.io/prevR/}\cr
 #' }
 #' 
@@ -91,7 +91,7 @@
 #' @section Citation: To cite \pkg{prevR}:\cr
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for
 #' mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", \emph{Cybergeo:
-#' European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606}, 
+#' European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606}, 
 #' DOI: 10.4000/cybergeo.24606.
 #' 
 #' @references
@@ -101,7 +101,7 @@
 #' 
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
 #' "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
-#' \emph{Cybergeo: European Journal of Geography}, n° 558, \url{http://cybergeo.revues.org/24606}, 
+#' \emph{Cybergeo: European Journal of Geography}, n° 558, \url{https://journals.openedition.org/cybergeo/24606}, 
 #' DOI: 10.4000/cybergeo.24606
 #' 
 #' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure}, 
@@ -226,7 +226,7 @@ NULL
 #' The dataset was derived by Schuyler Erle from public domain sources. Sean Gilles did some clean up 
 #' and made some enhancements. The dataset is available under a 
 #' \emph{Creative Commons Attribution-Share Alike License} 
-#' (\url{http://creativecommons.org/licenses/by-sa/3.0/}).
+#' (\url{https://creativecommons.org/licenses/by-sa/3.0/}).
 #' @note The boundaries, names designations used do not imply official endorsement or acceptance 
 #' by the authors. Use this dataset with care, as several of the borders are disputed
 #' @examples 

@@ -24,7 +24,7 @@
 #' If "id" is not specified, a numerical identifier will be automatically created.
 #' 
 #' \code{proj} defines projection used by \code{data}. It could be a character string 
-#' corresponding to a \emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} 
+#' corresponding to a \emph{PROJ.4} projection (see \url{https://proj.org/} 
 #' for more details) or an object of class [`sp::CRS-class`].\cr
 #' If the projection of \code{boundary} is defined in  a slot called \code{proj4string}, 
 #' \code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string} 
@@ -88,7 +88,7 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +datum=WG
 #
 #   proj : De classe character il contient la projection dans laquelle  les donnees  x, y et boundary sont exprimees
 #          Peut egalement etre un objet de la classe CRS.
-#          Pour plus d'information rendez vous sur le site de proj4 http://trac.osgeo.org/proj/
+#          Pour plus d'information rendez vous sur le site de proj4 https://proj.org/
 #          Attention aucune transformation n'est realisee ici, cette variable est juste informative
 # 
 ##################################################################################################

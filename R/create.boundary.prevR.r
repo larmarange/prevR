@@ -12,7 +12,7 @@
 #' @param proj map projection to use for the result (longitude and latitude in decimal degrees by default).
 #' 
 #' @details \code{proj} could be a character string corresponding to a \emph{PROJ.4} 
-#' projection (see \url{http://trac.osgeo.org/proj/} for more details) 
+#' projection (see \url{https://proj.org/} for more details) 
 #' or an object of class [sp::CRS-class].
 #' 
 #' @return Object of class [sp::SpatialPolygons-class].
@@ -80,7 +80,7 @@ create.boundary = function(countries = NULL, multiple = F, proj = "+proj=longlat
   }
   sp::plot(boundary,col = 1 + (1:length(boundary)),asp =1,pbg = "white",axes=T)
   if(length(countries)==1) title(main = countries)
-    message("Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttp://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors.",domain="R-prevR")
+    message("Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttps://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors.",domain="R-prevR")
   boundary
 }
 
