@@ -1,11 +1,13 @@
 ## Test environments
-* local Windows 10 install, R 3.6.0
-* local CentOS 7 install, R 3.6.0
-* win-builder (devel and release)
-* ubuntu 14.04 (on travis-ci)
+* local R installation, R 4.0.2
+* ubuntu 16.04 (on travis-ci), R 4.0.2
+* mac OS (on github actions) R 4.0.2
+* Windows (on github actions) R 4.0.2
+* ubuntu 20.04 (on github actions) R-devel, R 4.0.2
+* win-builder (devel)
 
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
-* Note due to a big data file embed within package
+* This is a new release.
