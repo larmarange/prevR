@@ -20,7 +20,7 @@ With the kernel estimator approach, it's also possible to estimate a surface of 
 
 The methodological approach has been described in: 
 
-- Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", *Cybergeo: European Journal of Geography*, no 558, <http://cybergeo.revues.org/24606>, DOI: 10.4000/cybergeo.24606
+- Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", *Cybergeo: European Journal of Geography*, no 558, <https://journals.openedition.org/cybergeo/24606>, DOI: 10.4000/cybergeo.24606
 
 Application to generate HIV prevalence surfaces can be found at:
 

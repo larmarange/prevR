@@ -6,9 +6,9 @@ citEntry(entry="Article",
 	journal = "Cybergeo: European Journal of Geography",
 	year = "2011",
 	number = "558",
-	url = "http://cybergeo.revues.org/24606",
+	url = "https://journals.openedition.org/cybergeo/24606",
 	doi = "10.4000/cybergeo.24606",
 	 
-	textVersion = "Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 'Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)', Cybergeo : European Journal of Geography, no 558, http://cybergeo.revues.org/24606, DOI: 10.4000/cybergeo.24606."
+	textVersion = "Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 'Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)', Cybergeo : European Journal of Geography, no 558, https://journals.openedition.org/cybergeo/24606, DOI: 10.4000/cybergeo.24606."
 )
 

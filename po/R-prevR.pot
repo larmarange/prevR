@@ -31,7 +31,7 @@ msgstr ""
 msgid "Select countries (use CTRL):"
 msgstr ""
 
-msgid "Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttp://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors."
+msgid "Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php\nThe dataset was derived by Schuyler Erle from public domain sources.\nSean Gilles did some clean up and made some enhancements.\nThe dataset is available under a Creative Commons Attribution-Share Alike License.\nhttps://creativecommons.org/licenses/by-sa/3.0/\nThe boundaries, names designations used do not imply official endorsement or acceptance by the authors."
 msgstr ""
 
 msgid "Need colour or fill aesthetic to infer default direct labels."
