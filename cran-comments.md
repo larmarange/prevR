@@ -8,6 +8,15 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 2 notes
 
-* This is a new release.
+* checking installed package size ... NOTE
+  installed size is  5.2Mb
+  sub-directories of 1Mb or more:
+    data   3.6Mb
+    
+  Due to a dataset who was always embed within prevR
+  to simplify use by end-users.
+
+* checking for future file timestamps ... NOTE
+  unable to verify current time
