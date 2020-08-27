@@ -39,7 +39,7 @@ Only "x", "y" "n" and "pos" are required in \code{col}.
 If "id" is not specified, a numerical identifier will be automatically created.
 
 \code{proj} defines projection used by \code{data}. It could be a character string
-corresponding to a \emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/}
+corresponding to a \emph{PROJ.4} projection (see \url{https://proj.org/}
 for more details) or an object of class \code{\link[sp:CRS-class]{sp::CRS}}.\cr
 If the projection of \code{boundary} is defined in  a slot called \code{proj4string},
 \code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string}

@@ -12,7 +12,7 @@ using data from a Demographic and Health Survey (DHS) or an analog survey.
 \tabular{ll}{
 Package: \tab prevR\cr
 Type: \tab Package\cr
-Licence: \tab CeCILL-C - \url{http://www.cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
+Licence: \tab CeCILL-C - \url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 Website: \tab \url{https://larmarange.github.io/prevR/}\cr
 }
 
@@ -96,7 +96,7 @@ Institute for Sustainable Development (IRD - \url{https://www.ird.fr}), and tech
  To cite \pkg{prevR}:\cr
 Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for
 mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", \emph{Cybergeo:
-European Journal of Geography}, no 558, \url{http://cybergeo.revues.org/24606},
+European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606.
 }
 
@@ -158,7 +158,7 @@ DOI: 10.1097/QAD.0000000000000480
 
 Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
 "Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
-\emph{Cybergeo: European Journal of Geography}, n° 558, \url{http://cybergeo.revues.org/24606},
+\emph{Cybergeo: European Journal of Geography}, n° 558, \url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606
 
 Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure},

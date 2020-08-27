@@ -8,10 +8,10 @@ import.dhs(file.sav, file.dbf)
 }
 \arguments{
 \item{file.sav}{DHS data (one individual per line) in SPSS format (.sav),
-downloaded from \url{http://www.dhsprogram.com/}. Could also be directly a data.frame.}
+downloaded from \url{https://www.dhsprogram.com/}. Could also be directly a data.frame.}
 
 \item{file.dbf}{GPS position of clusters in DATABASE format (.dbf), downloaded from
-\url{http://www.dhsprogram.com/}.  Could also be directly a data.frame.}
+\url{https://www.dhsprogram.com/}.  Could also be directly a data.frame.}
 }
 \description{
 This step by step function guides users to import data from a Demographic and Health Survey (DHS)

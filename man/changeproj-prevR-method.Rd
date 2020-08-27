@@ -22,7 +22,7 @@ class \linkS4class{prevR} into another one.
 }
 \details{
 \code{proj} could be a character string corresponding to a
-\emph{PROJ.4} projection (see \url{http://trac.osgeo.org/proj/} for more details)
+\emph{PROJ.4} projection (see \url{https://proj.org/} for more details)
 or an object of class \link[sp:CRS-class]{sp::CRS}.
 
 \code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of

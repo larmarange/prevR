@@ -12,7 +12,7 @@ Provided by Bjorn Sandvik on \url{http://thematicmapping.org/downloads/world_bor
 The dataset was derived by Schuyler Erle from public domain sources. Sean Gilles did some clean up
 and made some enhancements. The dataset is available under a
 \emph{Creative Commons Attribution-Share Alike License}
-(\url{http://creativecommons.org/licenses/by-sa/3.0/}).
+(\url{https://creativecommons.org/licenses/by-sa/3.0/}).
 }
 \description{
 This dataset provides boundaries of all countries in the world, in decimal degrees.

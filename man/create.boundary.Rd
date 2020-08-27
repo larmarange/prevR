@@ -29,7 +29,7 @@ can be selected and will be returned as an object of class
 }
 \details{
 \code{proj} could be a character string corresponding to a \emph{PROJ.4}
-projection (see \url{http://trac.osgeo.org/proj/} for more details)
+projection (see \url{https://proj.org/} for more details)
 or an object of class \link[sp:CRS-class]{sp::CRS}.
 }
 \note{
