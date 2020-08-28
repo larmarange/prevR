@@ -163,7 +163,7 @@ DOI: 10.4000/cybergeo.24606
 
 Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure},
 PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes,
-\url{http://tel.archives-ouvertes.fr/tel-00320283}.
+\url{https://tel.archives-ouvertes.fr/tel-00320283}.
 
 Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda Nicolas and
 Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé
