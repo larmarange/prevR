@@ -139,31 +139,31 @@ interpolation.</p>
     </div>
 
     <pre class="usage"><span class='co'># S4 method for ANY,prevR</span>
-<span class='fu'>krige</span>(
-  <span class='no'>formula</span>,
-  <span class='no'>locations</span>,
-  <span class='kw'>N</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>R</span> <span class='kw'>=</span> <span class='fl'>Inf</span>,
-  <span class='kw'>model</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>nb.cells</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>cell.size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>fit</span> <span class='kw'>=</span> <span class='st'>"auto"</span>,
-  <span class='kw'>keep.variance</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>show.variogram</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)
+<span class='fu'>krige</span><span class='op'>(</span>
+  <span class='va'>formula</span>,
+  <span class='va'>locations</span>,
+  N <span class='op'>=</span> <span class='cn'>NULL</span>,
+  R <span class='op'>=</span> <span class='cn'>Inf</span>,
+  model <span class='op'>=</span> <span class='cn'>NULL</span>,
+  nb.cells <span class='op'>=</span> <span class='fl'>100</span>,
+  cell.size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  fit <span class='op'>=</span> <span class='st'>"auto"</span>,
+  keep.variance <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  show.variogram <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span>
 
 <span class='co'># S4 method for ANY,prevR</span>
-<span class='fu'>idw</span>(
-  <span class='no'>formula</span>,
-  <span class='no'>locations</span>,
-  <span class='kw'>N</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>R</span> <span class='kw'>=</span> <span class='fl'>Inf</span>,
-  <span class='kw'>nb.cells</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>cell.size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>idp</span> <span class='kw'>=</span> <span class='fl'>2</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'>idw</span><span class='op'>(</span>
+  <span class='va'>formula</span>,
+  <span class='va'>locations</span>,
+  N <span class='op'>=</span> <span class='cn'>NULL</span>,
+  R <span class='op'>=</span> <span class='cn'>Inf</span>,
+  nb.cells <span class='op'>=</span> <span class='fl'>100</span>,
+  cell.size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  idp <span class='op'>=</span> <span class='fl'>2</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -249,14 +249,14 @@ the sample variogram will be plotted and a graphical dialog box (adapted from
 directly the variogram to use with the parameter <code>model</code>. Packages <span class="pkg">geoR</span> and <span class="pkg">tcltk</span>
 are required for manual fit.</p>
 <p>Interpolations are calculated on a spatial grid obtained with
-<code><a href='as.SpatialGrid.html'>as.SpatialGrid()</a></code>.</p>
+<code><a href='as.SpatialGrid,prevR-method.html'>as.SpatialGrid()</a></code>.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Results could be plotted with <code><a href='https://rdrr.io/pkg/sp/man/spplot.html'>sp::spplot()</a></code>.<br />
 <span class="pkg">prevR</span> provides several continuous color palettes (see <a href='prevR.colors.html'>prevR.colors</a>) compatible
 with <code><a href='https://rdrr.io/pkg/sp/man/spplot.html'>sp::spplot()</a></code>.<br />
 Calculated surfaces could be export using the function
-<code><a href='https://rdrr.io/pkg/maptools/man/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
+<code><a href='http://maptools.r-forge.r-project.org/reference/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
@@ -266,16 +266,18 @@ DOI: 10.4000/cybergeo.24606.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/gstat/man/krige.html'>gstat::krige()</a></code>, <code><a href='https://rdrr.io/pkg/gstat/man/krige.html'>gstat::idw()</a></code>,
-<code><a href='rings-prevR-method.html'>rings()</a></code>, <code><a href='Noptim.html'>Noptim()</a></code>.</p></div>
+<code><a href='rings,prevR-method.html'>rings()</a></code>, <code><a href='Noptim.html'>Noptim()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-    <span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rings-prevR-method.html'>rings</a></span>(<span class='no'>fdhs</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span>))
-    <span class='no'>radius.N300</span> <span class='kw'>&lt;-</span> <span class='fu'>krige</span>(<span class='st'>'r.radius'</span>, <span class='no'>dhs</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>nb.cells</span> <span class='kw'>=</span> <span class='fl'>200</span>)
-    <span class='no'>prev.krige</span> <span class='kw'>&lt;-</span> <span class='fu'>krige</span>(<span class='no'>r.wprev</span> ~ <span class='fl'>1</span>, <span class='no'>dhs</span>, <span class='kw'>N</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>, <span class='fl'>300</span>, <span class='fl'>500</span>))
-    <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>sp</span>)
-    <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span>(<span class='no'>prev.krige</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'r.wprev.N100.RInf'</span>, <span class='st'>'r.wprev.N300.RInf'</span>, <span class='st'>'r.wprev.N500.RInf'</span>))
-  }</div></pre>
+    <pre class="examples"><div class='input'>  <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+    <span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='rings,prevR-method.html'>rings</a></span><span class='op'>(</span><span class='va'>fdhs</span>, N <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='va'>radius.N300</span> <span class='op'>&lt;-</span> <span class='fu'>krige</span><span class='op'>(</span><span class='st'>'r.radius'</span>, <span class='va'>dhs</span>, N <span class='op'>=</span> <span class='fl'>300</span>, nb.cells <span class='op'>=</span> <span class='fl'>200</span><span class='op'>)</span>
+    <span class='va'>prev.krige</span> <span class='op'>&lt;-</span> <span class='fu'>krige</span><span class='op'>(</span><span class='va'>r.wprev</span> <span class='op'>~</span> <span class='fl'>1</span>, <span class='va'>dhs</span>, N <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>, <span class='fl'>300</span>, <span class='fl'>500</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/edzer/sp/'>sp</a></span><span class='op'>)</span>
+    <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span><span class='op'>(</span><span class='va'>prev.krige</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'r.wprev.N100.RInf'</span>, <span class='st'>'r.wprev.N300.RInf'</span>, <span class='st'>'r.wprev.N500.RInf'</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -291,7 +293,7 @@ DOI: 10.4000/cybergeo.24606.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

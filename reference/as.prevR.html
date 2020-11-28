@@ -132,7 +132,7 @@
     <p>This function creates an object of class <code><a href='prevR-class.html'>prevR</a></code> from a data frame.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>as.prevR</span>(<span class='no'>data</span>, <span class='no'>col</span>, <span class='kw'>boundary</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>proj</span> <span class='kw'>=</span> <span class='st'>"+proj=longlat +datum=WGS84"</span>)</pre>
+    <pre class="usage"><span class='fu'>as.prevR</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>col</span>, boundary <span class='op'>=</span> <span class='cn'>NULL</span>, proj <span class='op'>=</span> <span class='st'>"+proj=longlat +datum=WGS84"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -152,7 +152,7 @@
 <li><p>"pos" number of positive cases in the cluster.</p></li>
 <li><p>"wn" (optional) sum of observations weight.</p></li>
 <li><p>"wpos" (optional) sum of positive cases weight.</p></li>
-<li><p>"c.type" (optional) type of cluster (used only by <code><a href='plot-prevR-missing-method.html'>plot()</a></code>).</p></li>
+<li><p>"c.type" (optional) type of cluster (used only by <code><a href='plot,prevR,missing-method.html'>plot()</a></code>).</p></li>
 </ul><p>See examples.</p></td>
     </tr>
     <tr>
@@ -184,25 +184,26 @@ is missing, <code>boundary</code> will be considered to be already in the same p
 and maximal coordinates of <code>data</code> will be used.<br />
 <code>boundary</code> could be the result of the function <code><a href='create.boundary.html'>create.boundary()</a></code>.</p>
 <p>It's not possible to change projection of <code>data</code> with <code>as.prevR()</code>.
-Use <code><a href='changeproj-prevR-method.html'>changeproj()</a></code> instead.</p>
+Use <code><a href='changeproj,prevR-method.html'>changeproj()</a></code> instead.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='prevR-class.html'>prevR</a></code> class, <code><a href='create.boundary.html'>create.boundary()</a></code>,
-<code><a href='changeproj-prevR-method.html'>changeproj()</a></code>, <code><a href='import.dhs.html'>import.dhs()</a></code>.</p></div>
+<code><a href='changeproj,prevR-method.html'>changeproj()</a></code>, <code><a href='import.dhs.html'>import.dhs()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'> <span class='no'>col</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"cluster"</span>,
-          <span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"x"</span>,
-          <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"y"</span>,
-          <span class='kw'>n</span> <span class='kw'>=</span> <span class='st'>"n"</span>,
-          <span class='kw'>pos</span> <span class='kw'>=</span> <span class='st'>"pos"</span>,
-          <span class='kw'>c.type</span> <span class='kw'>=</span> <span class='st'>"residence"</span>,
-          <span class='kw'>wn</span> <span class='kw'>=</span> <span class='st'>"weighted.n"</span>,
-          <span class='kw'>wpos</span> <span class='kw'>=</span> <span class='st'>"weighted.pos"</span>
- )
- <span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'>as.prevR</span>(<span class='no'>fdhs.clusters</span>,<span class='no'>col</span>, <span class='no'>fdhs.boundary</span>)
-
- <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>dhs</span>)</div><div class='output co'>#&gt; Formal class 'prevR' [package "prevR"] with 4 slots
+    <pre class="examples"><div class='input'> <span class='va'>col</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"cluster"</span>,
+          x <span class='op'>=</span> <span class='st'>"x"</span>,
+          y <span class='op'>=</span> <span class='st'>"y"</span>,
+          n <span class='op'>=</span> <span class='st'>"n"</span>,
+          pos <span class='op'>=</span> <span class='st'>"pos"</span>,
+          c.type <span class='op'>=</span> <span class='st'>"residence"</span>,
+          wn <span class='op'>=</span> <span class='st'>"weighted.n"</span>,
+          wpos <span class='op'>=</span> <span class='st'>"weighted.pos"</span>
+ <span class='op'>)</span>
+ <span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'>as.prevR</span><span class='op'>(</span><span class='va'>fdhs.clusters</span>,<span class='va'>col</span>, <span class='va'>fdhs.boundary</span><span class='op'>)</span>
+ 
+ <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Formal class 'prevR' [package "prevR"] with 4 slots
 #&gt;   ..@ clusters:'data.frame':	401 obs. of  10 variables:
 #&gt;   .. ..$ id    : int [1:401] 1 10 100 101 102 103 104 105 106 107 ...
 #&gt;   .. ..$ x     : num [1:401] -1.21 -1.79 -2.29 -2.71 -1.96 ...
@@ -237,7 +238,8 @@ Use <code><a href='changeproj-prevR-method.html'>changeproj()</a></code> instead
 #&gt;   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"
 #&gt;   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot
 #&gt;   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"
-#&gt;   ..@ rings   : list()</div><div class='input'> <span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt;   ..@ rings   : list()</div><div class='input'> <span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>National prevalence: 10.12%</span></div><div class='output co'>#&gt; <span class='message'>National weighted prevalence: 10.16%</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Projection used: +proj=longlat +datum=WGS84 +no_defs</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Coordinate range</span></div><div class='output co'>#&gt;        min     max
@@ -261,7 +263,7 @@ Use <code><a href='changeproj-prevR-method.html'>changeproj()</a></code> instead
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

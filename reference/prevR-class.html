@@ -138,7 +138,7 @@
 
     
 
-<dl'>
+<dl>
 <dt><code>clusters</code></dt><dd><p><code>data.frame</code> with observed data (one line per cluster).
 Columns names are:<ul>
 <li><p>"id" cluster ID.</p></li>
@@ -158,7 +158,7 @@ borders of the studied area.</p></dd>
 
 <dt><code>proj</code></dt><dd><p>object of class <a href='https://rdrr.io/pkg/sp/man/CRS-class.html'>sp::CRS</a>, map projection used.</p></dd>
 
-<dt><code>rings</code></dt><dd><p>list of results returned by <code><a href='rings-prevR-method.html'>rings()</a></code>.
+<dt><code>rings</code></dt><dd><p>list of results returned by <code><a href='rings,prevR-method.html'>rings()</a></code>.
 Each entry is composed of 3 elements: <code>N</code>, minimum number of observations per ring;
 <code>R</code>, maximum radius of rings and <code>estimates</code>, a data frame with the following
 variables:<ul>
@@ -184,7 +184,7 @@ N<em>N_value</em>.R<em>R_value</em>, for example <em>N300.RInf</em>.</p></dd>
 <p>Objects of this class could be created by the function <code><a href='as.prevR.html'>as.prevR()</a></code>.</p>
     <h2 class="hasAnchor" id="methods"><a class="anchor" href="#methods"></a>Methods</h2>
 
-    <p></p><dl'>
+    <p></p><dl>
 <dt>as.data.frame</dt><dd><p><code>signature(x = "prevR")</code> converts an object of class prevR
 into a data frame.</p></dd>
 <dt>as.SpatialGrid</dt><dd><p><code>signature(object = "prevR")</code> generates a spatial grid.</p></dd>
@@ -209,27 +209,29 @@ of a prevR object.</p></dd>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='as.prevR.html'>as.prevR()</a></code>, <code><a href='is.prevR.html'>is.prevR()</a></code>, <code><a href='changeproj-prevR-method.html'>changeproj()</a></code>, <code><a href='rings-prevR-method.html'>rings()</a></code>, <code><a href='print-prevR-method.html'>print()</a></code>, <code><a href='plot-prevR-missing-method.html'>plot()</a></code>,
-<code><a href='summary-prevR-method.html'>summary()</a></code>, <code><a href='kde-prevR-method.html'>kde()</a></code>, <code><a href='krige-ANY-prevR-method.html'>krige()</a></code>, <code><a href='krige-ANY-prevR-method.html'>idw()</a></code>, <code><a href='export-prevR-method.html'>export()</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='as.prevR.html'>as.prevR()</a></code>, <code><a href='is.prevR.html'>is.prevR()</a></code>, <code><a href='changeproj,prevR-method.html'>changeproj()</a></code>, <code><a href='rings,prevR-method.html'>rings()</a></code>, <code><a href='print,prevR-method.html'>print()</a></code>, <code><a href='plot,prevR,missing-method.html'>plot()</a></code>,
+<code><a href='summary,prevR-method.html'>summary()</a></code>, <code><a href='kde,prevR-method.html'>kde()</a></code>, <code><a href='krige,ANY,prevR-method.html'>krige()</a></code>, <code><a href='krige,ANY,prevR-method.html'>idw()</a></code>, <code><a href='export,prevR-method.html'>export()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>showClass</span>(<span class='st'>"prevR"</span>)</div><div class='output co'>#&gt; Class "prevR" [package "prevR"]
+    <pre class="examples"><div class='input'><span class='fu'>showClass</span><span class='op'>(</span><span class='st'>"prevR"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Class "prevR" [package "prevR"]
 #&gt; 
 #&gt; Slots:
 #&gt;                                                                       
 #&gt; Name:         clusters        boundary            proj           rings
 #&gt; Class:      data.frame SpatialPolygons             CRS            list</div><div class='input'>
-<span class='no'>col</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"cluster"</span>,
-        <span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"x"</span>,
-        <span class='kw'>y</span><span class='kw'>=</span><span class='st'>"y"</span>,
-        <span class='kw'>n</span><span class='kw'>=</span><span class='st'>"n"</span>,
-        <span class='kw'>pos</span> <span class='kw'>=</span> <span class='st'>"pos"</span>,
-        <span class='kw'>c.type</span> <span class='kw'>=</span> <span class='st'>"residence"</span>,
-        <span class='kw'>wn</span><span class='kw'>=</span><span class='st'>"weighted.n"</span>,
-        <span class='kw'>wpos</span><span class='kw'>=</span><span class='st'>"weighted.pos"</span>
-)
-<span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='as.prevR.html'>as.prevR</a></span>(<span class='no'>fdhs.clusters</span>,<span class='no'>col</span>, <span class='no'>fdhs.boundary</span>)
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>dhs</span>)</div><div class='output co'>#&gt; Formal class 'prevR' [package "prevR"] with 4 slots
+<span class='va'>col</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"cluster"</span>, 
+        x <span class='op'>=</span> <span class='st'>"x"</span>,
+        y<span class='op'>=</span><span class='st'>"y"</span>,
+        n<span class='op'>=</span><span class='st'>"n"</span>,
+        pos <span class='op'>=</span> <span class='st'>"pos"</span>,
+        c.type <span class='op'>=</span> <span class='st'>"residence"</span>,
+        wn<span class='op'>=</span><span class='st'>"weighted.n"</span>,
+        wpos<span class='op'>=</span><span class='st'>"weighted.pos"</span>
+<span class='op'>)</span>
+<span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='as.prevR.html'>as.prevR</a></span><span class='op'>(</span><span class='va'>fdhs.clusters</span>,<span class='va'>col</span>, <span class='va'>fdhs.boundary</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Formal class 'prevR' [package "prevR"] with 4 slots
 #&gt;   ..@ clusters:'data.frame':	401 obs. of  10 variables:
 #&gt;   .. ..$ id    : int [1:401] 1 10 100 101 102 103 104 105 106 107 ...
 #&gt;   .. ..$ x     : num [1:401] -1.21 -1.79 -2.29 -2.71 -1.96 ...
@@ -264,7 +266,8 @@ of a prevR object.</p></dd>
 #&gt;   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"
 #&gt;   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot
 #&gt;   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"
-#&gt;   ..@ rings   : list()</div><div class='input'><span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt;   ..@ rings   : list()</div><div class='input'><span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>National prevalence: 10.12%</span></div><div class='output co'>#&gt; <span class='message'>National weighted prevalence: 10.16%</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Projection used: +proj=longlat +datum=WGS84 +no_defs</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Coordinate range</span></div><div class='output co'>#&gt;        min     max
@@ -273,11 +276,12 @@ of a prevR object.</p></dd>
 #&gt; <span class='message'>Boundary coordinate range</span></div><div class='output co'>#&gt;         min       max
 #&gt; x -5.518916  3.851701
 #&gt; y  4.736723 15.082593</div><div class='input'>
-<span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
- <span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rings-prevR-method.html'>rings</a></span>(<span class='no'>fdhs</span>,<span class='kw'>N</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>300</span>,<span class='fl'>500</span>))
- <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>dhs</span>)
- <span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)
-}</div></pre>
+<span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='rings,prevR-method.html'>rings</a></span><span class='op'>(</span><span class='va'>fdhs</span>,N<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>300</span>,<span class='fl'>500</span><span class='op'>)</span><span class='op'>)</span>
+ <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+ <span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -293,7 +297,7 @@ of a prevR object.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

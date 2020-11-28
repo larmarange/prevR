@@ -137,18 +137,18 @@ with adaptative bandwiths of equal number of observations or equal radius.</p>
     </div>
 
     <pre class="usage"><span class='co'># S4 method for prevR</span>
-<span class='fu'>kde</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>N</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>R</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>weighted</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>risk.ratio</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>keep.details</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>nb.cells</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>cell.size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>progression</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>short.names</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
-)</pre>
+<span class='fu'>kde</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  N <span class='op'>=</span> <span class='cn'>NULL</span>,
+  R <span class='op'>=</span> <span class='cn'>NULL</span>,
+  weighted <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  risk.ratio <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  keep.details <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  nb.cells <span class='op'>=</span> <span class='fl'>100</span>,
+  cell.size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  progression <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  short.names <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -226,10 +226,10 @@ and could also calculate a relative risks surface corresponding to the ratio of 
 (whose integral has been normalized to one) of positive cas on density surface of observed cases.</p>
 <p>This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian
 kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of
-observations in the neighbourhood (see <code><a href='rings-prevR-method.html'>rings()</a></code> for more details).
+observations in the neighbourhood (see <code><a href='rings,prevR-method.html'>rings()</a></code> for more details).
 Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of
 equal number of observations or equal radius (parameters <code>N</code> and <code>R</code>) calculated by the
-function <code><a href='rings-prevR-method.html'>rings()</a></code>.<br />
+function <code><a href='rings,prevR-method.html'>rings()</a></code>.<br />
 See referenes for a detailed explanation of the implemented methodology.</p>
 <p><code>N</code> and <code>R</code> determine the rings to use for the estimation. If they are not defined,
 surfaces will be estimated for each available couples (N,R). Several estimations could be
@@ -241,7 +241,7 @@ simultaneously calculated if several values of N and R are defined.</p>
 <span class="pkg">prevR</span> provides several continuous color palettes (see <a href='prevR.colors.html'>prevR.colors</a>)
 compatible with <code><a href='https://rdrr.io/pkg/sp/man/spplot.html'>sp::spplot()</a></code>.<br />
 Calculated surfaces could be export using the function
-<code><a href='https://rdrr.io/pkg/maptools/man/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
+<code><a href='http://maptools.r-forge.r-project.org/reference/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
 <p>See the package <span class="pkg">sparr</span> for another methodology to estimate relative
 risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -252,29 +252,31 @@ risks surfaces, adapted for other kind of data than Demographic and Helath Surve
 DOI: 10.4000/cybergeo.24606.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/GenKern/man/KernSur.html'>GenKern::KernSur()</a></code>, <code><a href='rings-prevR-method.html'>rings()</a></code>, <code><a href='Noptim.html'>Noptim()</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/GenKern/man/KernSur.html'>GenKern::KernSur()</a></code>, <code><a href='rings,prevR-method.html'>rings()</a></code>, <code><a href='Noptim.html'>Noptim()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rings-prevR-method.html'>rings</a></span>(<span class='no'>fdhs</span>, <span class='kw'>N</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span>))
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='rings,prevR-method.html'>rings</a></span><span class='op'>(</span><span class='va'>fdhs</span>, N<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span><span class='op'>)</span><span class='op'>)</span>
+  
+  <span class='va'>prev.N300</span> <span class='op'>&lt;-</span> <span class='fu'>kde</span><span class='op'>(</span><span class='va'>dhs</span>, N<span class='op'>=</span><span class='fl'>300</span>, nb.cells<span class='op'>=</span><span class='fl'>200</span><span class='op'>)</span>
+  
+  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/edzer/sp/'>sp</a></span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span><span class='op'>(</span><span class='va'>prev.N300</span>, <span class='st'>'k.wprev.N300.RInf'</span>,
+         cuts<span class='op'>=</span><span class='fl'>100</span>, col.regions<span class='op'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span>,
+         main<span class='op'>=</span><span class='st'>"Regional trends of prevalence (N=300)"</span>
+  <span class='op'>)</span>
+  
+  <span class='va'>prev.krige</span> <span class='op'>&lt;-</span> <span class='fu'>kde</span><span class='op'>(</span><span class='va'>dhs</span>, N<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>300</span>,<span class='fl'>500</span><span class='op'>)</span>, R<span class='op'>=</span><span class='cn'>Inf</span>,
+                    nb.cells<span class='op'>=</span><span class='fl'>200</span>, risk.ratio<span class='op'>=</span><span class='fl'>2</span>, keep.details<span class='op'>=</span><span class='cn'>FALSE</span>
+  <span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>prev.krige</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span><span class='op'>(</span><span class='va'>prev.krige</span>,
+         <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'k.wprev.N100.RInf'</span>,<span class='st'>'k.wprev.N300.RInf'</span>,<span class='st'>'k.wprev.N500.RInf'</span><span class='op'>)</span>,
+         cuts<span class='op'>=</span><span class='fl'>100</span>, col.regions<span class='op'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span>
+  <span class='op'>)</span>
+<span class='op'>}</span>
 
-  <span class='no'>prev.N300</span> <span class='kw'>&lt;-</span> <span class='fu'>kde</span>(<span class='no'>dhs</span>, <span class='kw'>N</span><span class='kw'>=</span><span class='fl'>300</span>, <span class='kw'>nb.cells</span><span class='kw'>=</span><span class='fl'>200</span>)
-
-  <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>sp</span>)
-  <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span>(<span class='no'>prev.N300</span>, <span class='st'>'k.wprev.N300.RInf'</span>,
-         <span class='kw'>cuts</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>col.regions</span><span class='kw'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span>(<span class='fl'>101</span>),
-         <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Regional trends of prevalence (N=300)"</span>
-  )
-
-  <span class='no'>prev.krige</span> <span class='kw'>&lt;-</span> <span class='fu'>kde</span>(<span class='no'>dhs</span>, <span class='kw'>N</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>300</span>,<span class='fl'>500</span>), <span class='kw'>R</span><span class='kw'>=</span><span class='fl'>Inf</span>,
-                    <span class='kw'>nb.cells</span><span class='kw'>=</span><span class='fl'>200</span>, <span class='kw'>risk.ratio</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>keep.details</span><span class='kw'>=</span><span class='fl'>FALSE</span>
-  )
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>prev.krige</span>)
-  <span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span>(<span class='no'>prev.krige</span>,
-         <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'k.wprev.N100.RInf'</span>,<span class='st'>'k.wprev.N300.RInf'</span>,<span class='st'>'k.wprev.N500.RInf'</span>),
-         <span class='kw'>cuts</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>col.regions</span><span class='kw'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span>(<span class='fl'>101</span>)
-  )
-}</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -290,7 +292,7 @@ DOI: 10.4000/cybergeo.24606.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

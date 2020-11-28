@@ -174,36 +174,36 @@ data from a DHS (Demographic and Health Surveys) downloaded from
 <code><a href='create.boundary.html'>create.boundary()</a></code> could be used to select borders of a country and
 transfer them to <code><a href='as.prevR.html'>as.prevR()</a></code> in order to define the studied area.</p>
 <p><em>Data visualisation</em><br />
-Methods <code><a href='show-prevR-method.html'>show()</a></code>, <code><a href='print-prevR-method.html'>print()</a></code>
-and <code><a href='summary-prevR-method.html'>summary()</a></code> display a summary of a object of class
+Methods <code><a href='show,prevR-method.html'>show()</a></code>, <code><a href='print,prevR-method.html'>print()</a></code>
+and <code><a href='summary,prevR-method.html'>summary()</a></code> display a summary of a object of class
 <a href='prevR-class.html'>prevR</a>.<br />
-The method <code><a href='plot-prevR-missing-method.html'>plot()</a></code> could be used on a object of class
+The method <code><a href='plot,prevR,missing-method.html'>plot()</a></code> could be used on a object of class
 <a href='prevR-class.html'>prevR</a> for visualising the studied area, spatial position
 of clusters, number of observations or number of positive cases by cluster.</p>
 <p><em>Data manipulation</em><br />
-The method <code><a href='changeproj-prevR-method.html'>changeproj()</a></code> changes the projection
+The method <code><a href='changeproj,prevR-method.html'>changeproj()</a></code> changes the projection
 of the spatial coordinates.<br />
 The method <code><a href='as.data.frame.prevR.html'>as.data.frame()</a></code> converts an object of
 class <a href='prevR-class.html'>prevR</a> into a data frame.<br />
-The method <code><a href='export-prevR-method.html'>export()</a></code> export data and/or the studied
+The method <code><a href='export,prevR-method.html'>export()</a></code> export data and/or the studied
 area in a text file, a dbf file or a shapefile.</p>
 <p><em>Data analysis</em><br />
-<code><a href='rings-prevR-method.html'>rings()</a></code> calculates rings of equal number of
+<code><a href='rings,prevR-method.html'>rings()</a></code> calculates rings of equal number of
 observations and/or equal radius.<br />
-<code><a href='kde-prevR-method.html'>kde()</a></code> calculates a prevalence surface or a relative
+<code><a href='kde,prevR-method.html'>kde()</a></code> calculates a prevalence surface or a relative
 risks surface using gaussian kernel density estimators (kde) with adaptative bandwiths.<br />
-<code><a href='krige-ANY-prevR-method.html'>krige()</a></code> executes a spatial interpolation using an
+<code><a href='krige,ANY,prevR-method.html'>krige()</a></code> executes a spatial interpolation using an
 ordinary kriging.<br />
-<code><a href='krige-ANY-prevR-method.html'>idw()</a></code> executes a spatial interpolation using an inverse
+<code><a href='krige,ANY,prevR-method.html'>idw()</a></code> executes a spatial interpolation using an inverse
 distance weighting (idw) technique.</p>
 <p><em>Results visualisation and export</em><br />
-Outputs of <code><a href='kde-prevR-method.html'>kde()</a></code>, <code><a href='krige-ANY-prevR-method.html'>krige()</a></code> and <code><a href='krige-ANY-prevR-method.html'>idw()</a></code> are objects of class
+Outputs of <code><a href='kde,prevR-method.html'>kde()</a></code>, <code><a href='krige,ANY,prevR-method.html'>krige()</a></code> and <code><a href='krige,ANY,prevR-method.html'>idw()</a></code> are objects of class
 <a href='https://rdrr.io/pkg/sp/man/SpatialPixelsDataFrame-class.html'>sp::SpatialPixelsDataFrame</a>.<br />
 Results could be plotted using the function <code><a href='https://rdrr.io/pkg/sp/man/spplot.html'>sp::spplot()</a></code>.<br />
 <span class="pkg">prevR</span> provides several continuous color palettes (see <a href='prevR.colors.html'>prevR.colors</a>)
 compatible with <code><a href='https://rdrr.io/pkg/sp/man/spplot.html'>sp::spplot()</a></code>.<br />
 Calculated surfaces could be export using the function
-<code><a href='https://rdrr.io/pkg/maptools/man/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
+<code><a href='http://maptools.r-forge.r-project.org/reference/asciigrid.html'>maptools::writeAsciiGrid()</a></code>.</p>
     <h2 class="hasAnchor" id="acknowledgement"><a class="anchor" href="#acknowledgement"></a>Acknowledgement</h2>
 
     <p><span class="pkg">prevR</span> has been developed with funding from the French National Agency
@@ -234,57 +234,62 @@ Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques 
 à partir des coordonnées des zones d'enquête", <em>Chaire Quételet,
 29 novembre au 1er décembre 2006</em>, Université Catholique de Louvain, Louvain-la-Neuve,
 Belgique.</p>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Joseph Larmarange <a href='mailto:joseph.larmarange@ird.fr'>joseph.larmarange@ird.fr</a><br />
+IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>ask <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 <span class='co'># Creating an object of class prevR</span>
-<span class='no'>col</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='st'>"cluster"</span>,
-        <span class='kw'>x</span> <span class='kw'>=</span> <span class='st'>"x"</span>,
-        <span class='kw'>y</span> <span class='kw'>=</span> <span class='st'>"y"</span>,
-        <span class='kw'>n</span> <span class='kw'>=</span> <span class='st'>"n"</span>,
-        <span class='kw'>pos</span> <span class='kw'>=</span> <span class='st'>"pos"</span>,
-        <span class='kw'>c.type</span> <span class='kw'>=</span> <span class='st'>"residence"</span>,
-        <span class='kw'>wn</span> <span class='kw'>=</span> <span class='st'>"weighted.n"</span>,
-        <span class='kw'>wpos</span> <span class='kw'>=</span> <span class='st'>"weighted.pos"</span>
-)
-<span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='as.prevR.html'>as.prevR</a></span>(<span class='no'>fdhs.clusters</span>,<span class='no'>col</span>, <span class='no'>fdhs.boundary</span>)
+<span class='va'>col</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='st'>"cluster"</span>, 
+        x <span class='op'>=</span> <span class='st'>"x"</span>,
+        y <span class='op'>=</span> <span class='st'>"y"</span>,
+        n <span class='op'>=</span> <span class='st'>"n"</span>,
+        pos <span class='op'>=</span> <span class='st'>"pos"</span>,
+        c.type <span class='op'>=</span> <span class='st'>"residence"</span>,
+        wn <span class='op'>=</span> <span class='st'>"weighted.n"</span>,
+        wpos <span class='op'>=</span> <span class='st'>"weighted.pos"</span>
+<span class='op'>)</span>
+<span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='as.prevR.html'>as.prevR</a></span><span class='op'>(</span><span class='va'>fdhs.clusters</span>,<span class='va'>col</span>, <span class='va'>fdhs.boundary</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>dhs</span>)
-<span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+<span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
 
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Clusters position"</span>)
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='st'>"c.type"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Clusters by residence"</span>)
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='st'>"count"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Observations by cluster"</span>)
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='st'>"flower"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Positive cases by cluster"</span>)
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>, main<span class='op'>=</span><span class='st'>"Clusters position"</span><span class='op'>)</span>
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>, type<span class='op'>=</span><span class='st'>"c.type"</span>, main<span class='op'>=</span><span class='st'>"Clusters by residence"</span><span class='op'>)</span>
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>, type<span class='op'>=</span><span class='st'>"count"</span>, main<span class='op'>=</span><span class='st'>"Observations by cluster"</span><span class='op'>)</span>
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>, type<span class='op'>=</span><span class='st'>"flower"</span>, main<span class='op'>=</span><span class='st'>"Positive cases by cluster"</span><span class='op'>)</span>
 
 <span class='co'># Changing coordinates projection</span>
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>,<span class='kw'>axes</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
-<span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='changeproj-prevR-method.html'>changeproj</a></span>(<span class='no'>dhs</span>,
-                 <span class='st'>"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span>)
-<span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)
-<span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>dhs</span>, <span class='kw'>axes</span><span class='kw'>=</span><span class='fl'>TRUE</span>)
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>,axes<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='changeproj,prevR-method.html'>changeproj</a></span><span class='op'>(</span><span class='va'>dhs</span>,
+                 <span class='st'>"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class='op'>)</span>
+<span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+<span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>dhs</span>, axes<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
 
 <span class='co'># Calculating rings of equal number of observations for different values of N</span>
-<span class='no'>dhs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rings-prevR-method.html'>rings</a></span>(<span class='no'>dhs</span>,<span class='kw'>N</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span>))
-<span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>dhs</span>)
-<span class='fu'><a href='summary-prevR-method.html'>summary</a></span>(<span class='no'>dhs</span>)
+<span class='va'>dhs</span> <span class='op'>&lt;-</span> <span class='fu'><a href='rings,prevR-method.html'>rings</a></span><span class='op'>(</span><span class='va'>dhs</span>,N<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>100</span>,<span class='fl'>200</span>,<span class='fl'>300</span>,<span class='fl'>400</span>,<span class='fl'>500</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
+<span class='fu'><a href='summary,prevR-method.html'>summary</a></span><span class='op'>(</span><span class='va'>dhs</span><span class='op'>)</span>
 
 <span class='co'># Prevalence surface for N=300</span>
-<span class='no'>prev.N300</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='kde-prevR-method.html'>kde</a></span>(<span class='no'>dhs</span>, <span class='kw'>N</span><span class='kw'>=</span><span class='fl'>300</span>, <span class='kw'>nb.cells</span><span class='kw'>=</span><span class='fl'>200</span>)
-<span class='fu'>spplot</span>(<span class='no'>prev.N300</span>, <span class='st'>'k.wprev.N300.RInf'</span>,
-      <span class='kw'>cuts</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>col.regions</span><span class='kw'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span>(<span class='fl'>101</span>),
-      <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Regional trends of prevalence (N=300)"</span>
-)
+<span class='va'>prev.N300</span> <span class='op'>&lt;-</span> <span class='fu'><a href='kde,prevR-method.html'>kde</a></span><span class='op'>(</span><span class='va'>dhs</span>, N<span class='op'>=</span><span class='fl'>300</span>, nb.cells<span class='op'>=</span><span class='fl'>200</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span><span class='op'>(</span><span class='va'>prev.N300</span>, <span class='st'>'k.wprev.N300.RInf'</span>,
+      cuts<span class='op'>=</span><span class='fl'>100</span>, col.regions<span class='op'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.red</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span>,
+      main<span class='op'>=</span><span class='st'>"Regional trends of prevalence (N=300)"</span>
+<span class='op'>)</span>
 
 <span class='co'># Smoothing ring radii surface (spatial interpolation by kriging)</span>
-<span class='no'>radius.N300</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='krige-ANY-prevR-method.html'>krige</a></span>(<span class='st'>'r.radius'</span>, <span class='no'>dhs</span>, <span class='kw'>N</span><span class='kw'>=</span><span class='fl'>300</span>, <span class='kw'>nb.cells</span><span class='kw'>=</span><span class='fl'>200</span>)
-<span class='fu'>spplot</span>(<span class='no'>radius.N300</span>,
-      <span class='kw'>cuts</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>col.regions</span><span class='kw'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.blue</a></span>(<span class='fl'>101</span>),
-      <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Radius of circle (N=300)"</span>
-)
-<span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-}</div></pre>
+<span class='va'>radius.N300</span> <span class='op'>&lt;-</span> <span class='fu'><a href='krige,ANY,prevR-method.html'>krige</a></span><span class='op'>(</span><span class='st'>'r.radius'</span>, <span class='va'>dhs</span>, N<span class='op'>=</span><span class='fl'>300</span>, nb.cells<span class='op'>=</span><span class='fl'>200</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/sp/man/spplot.html'>spplot</a></span><span class='op'>(</span><span class='va'>radius.N300</span>, 
+      cuts<span class='op'>=</span><span class='fl'>100</span>, col.regions<span class='op'>=</span><span class='fu'><a href='prevR.colors.html'>prevR.colors.blue</a></span><span class='op'>(</span><span class='fl'>101</span><span class='op'>)</span>,
+      main<span class='op'>=</span><span class='st'>"Radius of circle (N=300)"</span>
+<span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>ask <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -300,7 +305,7 @@ Belgique.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

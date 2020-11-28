@@ -138,7 +138,7 @@ vector of ordinates in the y dimension and a matrix with the values of the surfa
 This function transforms a list "xyz" into a data frame.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>xyz2dataframe</span>(<span class='no'>xyz</span>, <span class='kw'>xcol</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>ycol</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>zcol</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
+    <pre class="usage"><span class='fu'>xyz2dataframe</span><span class='op'>(</span><span class='va'>xyz</span>, xcol <span class='op'>=</span> <span class='fl'>1</span>, ycol <span class='op'>=</span> <span class='fl'>2</span>, zcol <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -171,19 +171,21 @@ and matrix with value for each point of coordinates <code>x[i], y[j]</code>.</p>
 to <code><a href='https://rdrr.io/r/base/c.html'>c("z1","z2","z3")</a></code> or <code><a href='https://rdrr.io/r/base/c.html'>c(3,4,5)</a></code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>8</span>,<span class='fl'>10</span>)
-  <span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='no'>x</span>
-  <span class='no'>op</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>GenKern</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/GenKern/man/KernSur.html'>KernSur</a></span>(<span class='no'>x</span>,<span class='no'>y</span>, <span class='kw'>xgridsize</span><span class='kw'>=</span><span class='fl'>50</span>, <span class='kw'>ygridsize</span><span class='kw'>=</span><span class='fl'>50</span>,
-                <span class='kw'>correlation</span><span class='kw'>=</span><span class='fl'>0</span>,
-                <span class='kw'>xbandwidth</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>ybandwidth</span><span class='kw'>=</span><span class='fl'>1</span>,
-                <span class='kw'>range.x</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>13</span>), <span class='kw'>range.y</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>13</span>)
-  )
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>op</span>)</div><div class='output co'>#&gt; List of 3
+    <pre class="examples"><div class='input'>  <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>,<span class='fl'>4</span>,<span class='fl'>6</span>,<span class='fl'>8</span>,<span class='fl'>10</span><span class='op'>)</span>
+  <span class='va'>y</span> <span class='op'>&lt;-</span> <span class='va'>x</span> 
+  <span class='va'>op</span> <span class='op'>&lt;-</span> <span class='fu'>GenKern</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/GenKern/man/KernSur.html'>KernSur</a></span><span class='op'>(</span><span class='va'>x</span>,<span class='va'>y</span>, xgridsize<span class='op'>=</span><span class='fl'>50</span>, ygridsize<span class='op'>=</span><span class='fl'>50</span>,
+                correlation<span class='op'>=</span><span class='fl'>0</span>, 
+                xbandwidth<span class='op'>=</span><span class='fl'>1</span>, ybandwidth<span class='op'>=</span><span class='fl'>1</span>,
+                range.x<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>13</span><span class='op'>)</span>, range.y<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>13</span><span class='op'>)</span>
+  <span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>op</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; List of 3
 #&gt;  $ xords: num [1:50] 0 0.265 0.531 0.796 1.061 ...
 #&gt;  $ yords: num [1:50] 0 0.265 0.531 0.796 1.061 ...
-#&gt;  $ zden : num [1:50, 1:50] 0.00731 0.01199 0.01834 0.02615 0.03475 ...</div><div class='input'>
-  <span class='no'>op.df</span> <span class='kw'>&lt;-</span> <span class='fu'>xyz2dataframe</span>(<span class='no'>op</span>)
-  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>op.df</span>)</div><div class='output co'>#&gt; 'data.frame':	2500 obs. of  3 variables:
+#&gt;  $ zden : num [1:50, 1:50] 0.00731 0.01199 0.01834 0.02615 0.03475 ...</div><div class='input'>  
+  <span class='va'>op.df</span> <span class='op'>&lt;-</span> <span class='fu'>xyz2dataframe</span><span class='op'>(</span><span class='va'>op</span><span class='op'>)</span>
+  <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span><span class='op'>(</span><span class='va'>op.df</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; 'data.frame':	2500 obs. of  3 variables:
 #&gt;  $ xords: num  0 0.265 0.531 0.796 1.061 ...
 #&gt;  $ yords: num  0 0 0 0 0 0 0 0 0 0 ...
 #&gt;  $ zden : num  0.00731 0.01199 0.01834 0.02615 0.03475 ...</div><div class='input'>
@@ -203,7 +205,7 @@ to <code><a href='https://rdrr.io/r/base/c.html'>c("z1","z2","z3")</a></code> or
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

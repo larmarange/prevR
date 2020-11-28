@@ -135,7 +135,7 @@ class <a href='prevR-class.html'>prevR</a> into another one.</p>
     </div>
 
     <pre class="usage"><span class='co'># S4 method for prevR</span>
-<span class='fu'>changeproj</span>(<span class='no'>object</span>, <span class='no'>proj</span>)</pre>
+<span class='fu'>changeproj</span><span class='op'>(</span><span class='va'>object</span>, <span class='va'>proj</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,10 +163,11 @@ or an object of class <a href='https://rdrr.io/pkg/sp/man/CRS-class.html'>sp::CR
 If applicable, the slot <code>rings</code> will be recalculated.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/rgdal/man/spTransform-methods.html'>rgdal::spTransform()</a></code>, <a href='prevR-class.html'>prevR</a>.</p></div>
+    <div class='dont-index'><p><code><a href='http://rgdal.r-forge.r-project.org/reference/spTransform-methods.html'>rgdal::spTransform()</a></code>, <a href='prevR-class.html'>prevR</a>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>fdhs</span>)</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
+    <pre class="examples"><div class='input'><span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>fdhs</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>National prevalence: 10.12%</span></div><div class='output co'>#&gt; <span class='message'>National weighted prevalence: 10.16%</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Projection used: +proj=longlat +datum=WGS84 +no_defs</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Coordinate range</span></div><div class='output co'>#&gt;        min     max
@@ -174,9 +175,12 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 #&gt; y  4.80326 14.1225</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Boundary coordinate range</span></div><div class='output co'>#&gt;         min       max
 #&gt; x -5.518916  3.851701
-#&gt; y  4.736723 15.082593</div><div class='input'><span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>fdhs</span>, <span class='kw'>axes</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Projection: longitude/latitude"</span>)</div><div class='img'><img src='changeproj-prevR-method-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='no'>fdhs2</span> <span class='kw'>&lt;-</span> <span class='fu'>changeproj</span>(<span class='no'>fdhs</span>,
-                   <span class='st'>"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: CRS object has comment, which is lost in output</span></div><div class='input'><span class='fu'><a href='print-prevR-method.html'>print</a></span>(<span class='no'>fdhs2</span>)</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
+#&gt; y  4.736723 15.082593</div><div class='input'><span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>fdhs</span>, axes<span class='op'>=</span><span class='cn'>TRUE</span>, main<span class='op'>=</span><span class='st'>"Projection: longitude/latitude"</span><span class='op'>)</span>
+</div><div class='img'><img src='changeproj-prevR-method-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='va'>fdhs2</span> <span class='op'>&lt;-</span> <span class='fu'>changeproj</span><span class='op'>(</span><span class='va'>fdhs</span>,
+                   <span class='st'>"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: CRS object has comment, which is lost in output</span></div><div class='input'><span class='fu'><a href='print,prevR-method.html'>print</a></span><span class='op'>(</span><span class='va'>fdhs2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Object of class 'prevR'</span></div><div class='output co'>#&gt; <span class='message'>Number of clusters: 401</span></div><div class='output co'>#&gt; <span class='message'>Number of observations: 8000</span></div><div class='output co'>#&gt; <span class='message'>Number of positive cases: 810</span></div><div class='output co'>#&gt; <span class='message'>The dataset is weighted.</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>National prevalence: 10.12%</span></div><div class='output co'>#&gt; <span class='message'>National weighted prevalence: 10.16%</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Projection used: +proj=utm +zone=30 +datum=WGS84 +units=m +no_defs</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Coordinate range</span></div><div class='output co'>#&gt;        min     max
@@ -184,7 +188,8 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 #&gt; y 531003.3 1562155</div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>Boundary coordinate range</span></div><div class='output co'>#&gt;        min     max
 #&gt; x 224228.1 1251165
-#&gt; y 523628.1 1669034</div><div class='input'><span class='fu'><a href='plot-prevR-missing-method.html'>plot</a></span>(<span class='no'>fdhs2</span>, <span class='kw'>axes</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Projection: UTM Zone 30"</span>)</div><div class='img'><img src='changeproj-prevR-method-2.png' alt='' width='700' height='433' /></div><div class='input'>
+#&gt; y 523628.1 1669034</div><div class='input'><span class='fu'><a href='plot,prevR,missing-method.html'>plot</a></span><span class='op'>(</span><span class='va'>fdhs2</span>, axes<span class='op'>=</span><span class='cn'>TRUE</span>, main<span class='op'>=</span><span class='st'>"Projection: UTM Zone 30"</span><span class='op'>)</span>
+</div><div class='img'><img src='changeproj-prevR-method-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -201,7 +206,7 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

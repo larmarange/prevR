@@ -134,25 +134,25 @@
 
     <div class="ref-description">
     <p>This function performs several analysis in one go:
-(i) apply <code><a href='rings-prevR-method.html'>rings()</a></code>;
-(ii) compute prevalence surface with <code><a href='kde-prevR-method.html'>kde()</a></code>;
-(iii) compute the surface of rings radii with <code><a href='krige-ANY-prevR-method.html'>krige()</a></code>;
+(i) apply <code><a href='rings,prevR-method.html'>rings()</a></code>;
+(ii) compute prevalence surface with <code><a href='kde,prevR-method.html'>kde()</a></code>;
+(iii) compute the surface of rings radii with <code><a href='krige,ANY,prevR-method.html'>krige()</a></code>;
 (iv) plot prevalence surface using <code><a href='prevR.colors.html'>prevR.colors.red()</a></code> and add rings radii as a contour plot.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>quick.prevR</span>(
-  <span class='no'>object</span>,
-  <span class='kw'>N</span> <span class='kw'>=</span> <span class='fu'><a href='Noptim.html'>Noptim</a></span>(<span class='no'>object</span>),
-  <span class='kw'>nb.cells</span> <span class='kw'>=</span> <span class='fl'>100</span>,
-  <span class='kw'>cell.size</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>weighted</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>plot.results</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>return.results</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>return.plot</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>legend.title</span> <span class='kw'>=</span> <span class='st'>"%"</span>,
-  <span class='kw'>cex</span> <span class='kw'>=</span> <span class='fl'>0.7</span>,
-  <span class='kw'>progression</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>quick.prevR</span><span class='op'>(</span>
+  <span class='va'>object</span>,
+  N <span class='op'>=</span> <span class='fu'><a href='Noptim.html'>Noptim</a></span><span class='op'>(</span><span class='va'>object</span><span class='op'>)</span>,
+  nb.cells <span class='op'>=</span> <span class='fl'>100</span>,
+  cell.size <span class='op'>=</span> <span class='cn'>NULL</span>,
+  weighted <span class='op'>=</span> <span class='cn'>NULL</span>,
+  plot.results <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  return.results <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  return.plot <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  legend.title <span class='op'>=</span> <span class='st'>"%"</span>,
+  cex <span class='op'>=</span> <span class='fl'>0.7</span>,
+  progression <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -216,12 +216,14 @@ kriged surface of the rings radii; (iii) <code>plot</code> a <code>ggplot</code>
 By default, a suggested value of N will be computed with <code><a href='Noptim.html'>Noptim()</a></code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='Noptim.html'>Noptim()</a></code>, <code><a href='rings-prevR-method.html'>rings()</a></code>, <code><a href='kde-prevR-method.html'>kde()</a></code> and <code><a href='krige-ANY-prevR-method.html'>krige()</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='Noptim.html'>Noptim()</a></code>, <code><a href='rings,prevR-method.html'>rings()</a></code>, <code><a href='kde,prevR-method.html'>kde()</a></code> and <code><a href='krige,ANY,prevR-method.html'>krige()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-  <span class='fu'>quick.prevR</span>(<span class='no'>fdhs</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='fu'>quick.prevR</span><span class='op'>(</span><span class='va'>fdhs</span><span class='op'>)</span>
+<span class='op'>}</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -237,7 +239,7 @@ By default, a suggested value of N will be computed with <code><a href='Noptim.h
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

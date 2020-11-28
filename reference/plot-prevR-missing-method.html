@@ -135,16 +135,16 @@ Plot clusters, number of observations per cluster or number of positive cases pe
     </div>
 
     <pre class="usage"><span class='co'># S4 method for prevR,missing</span>
-<span class='fu'>plot</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"position"</span>,
-  <span class='kw'>add.legend</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>legend.location</span> <span class='kw'>=</span> <span class='st'>"bottomright"</span>,
-  <span class='kw'>factor.size</span> <span class='kw'>=</span> <span class='fl'>0.2</span>,
-  <span class='kw'>new.window</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='no'>F</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'>plot</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  type <span class='op'>=</span> <span class='st'>"position"</span>,
+  add.legend <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  legend.location <span class='op'>=</span> <span class='st'>"bottomright"</span>,
+  factor.size <span class='op'>=</span> <span class='fl'>0.2</span>,
+  new.window <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  axes <span class='op'>=</span> <span class='cn'>F</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -200,8 +200,14 @@ Plot clusters, number of observations per cluster or number of positive cases pe
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/graphics/title.html'>graphics::title()</a></code>, <code><a href='https://rdrr.io/r/graphics/legend.html'>graphics::legend()</a></code>.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-<span class='fu'>plot</span>(<span class='no'>fdhs</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"position"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"position"</span>, <span class='kw'>axes</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='plot-prevR-missing-method-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span>(<span class='no'>fdhs</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"c.type"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"c.type"</span>)</div><div class='img'><img src='plot-prevR-missing-method-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span>(<span class='no'>fdhs</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"count"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"count"</span>, <span class='kw'>factor.size</span> <span class='kw'>=</span> <span class='fl'>0.1</span>)</div><div class='img'><img src='plot-prevR-missing-method-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span>(<span class='no'>fdhs</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"flower"</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"flower"</span>)</div><div class='img'><img src='plot-prevR-missing-method-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>ask</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>ask <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='fu'>plot</span><span class='op'>(</span><span class='va'>fdhs</span>, type <span class='op'>=</span> <span class='st'>"position"</span>, main<span class='op'>=</span><span class='st'>"position"</span>, axes<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='plot-prevR-missing-method-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span><span class='op'>(</span><span class='va'>fdhs</span>, type <span class='op'>=</span> <span class='st'>"c.type"</span>, main<span class='op'>=</span><span class='st'>"c.type"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot-prevR-missing-method-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span><span class='op'>(</span><span class='va'>fdhs</span>, type <span class='op'>=</span> <span class='st'>"count"</span>, main<span class='op'>=</span><span class='st'>"count"</span>, factor.size <span class='op'>=</span> <span class='fl'>0.1</span><span class='op'>)</span>
+</div><div class='img'><img src='plot-prevR-missing-method-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>plot</span><span class='op'>(</span><span class='va'>fdhs</span>, type <span class='op'>=</span> <span class='st'>"flower"</span>, main<span class='op'>=</span><span class='st'>"flower"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot-prevR-missing-method-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>ask <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -217,7 +223,7 @@ Plot clusters, number of observations per cluster or number of positive cases pe
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
