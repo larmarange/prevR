@@ -60,8 +60,8 @@ is.prevR = function(object, slot = NULL){
   # is.prevR(data.prevR,c("rings","boundary"))
   # 
   ###############################################################################################  
-  if(class(object)!="prevR") return(F)
-  if(is.null(slot) && class(object)=="prevR") return(T)
+  if(!inherits(object, "prevR")) return(F)
+  if(is.null(slot) && inherits(object, "prevR")) return(T)
   ind = match(slot,slotNames(object),nomatch=0)
   if(any(ind==0)){
     for (i in length(slot[ind==0])) {

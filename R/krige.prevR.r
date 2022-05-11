@@ -127,13 +127,13 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
   
     # On accepte que l'on passe a formula une formule ou une liste de formule
     # Cependant, seuls les formules de la forme variable~1 sont acceptees
-    if (class(formula)=='formula') {
+    if (inherits(formula, 'formula')) {
       formula = list(formula)
     }
-    if (class(formula)=='list') { # Si on a fourni une liste de chaines de caracteres, la classe est character
+    if (is.list(formula)) { # Si on a fourni une liste de chaines de caracteres, la classe est character
       for (i in 1:length(formula)) {
         formule = formula[[i]]
-        if (class(formule)=='formula') {
+        if (inherits(formule, 'formula')) {
           if (formule[[3]]!=1 || length(all.names(formule))!=2) {
             stop(gettextf("%s is not a valid formula: idw.prevR only implement simple or ordinary kriging, so formula must have only one variable and no predictor (like 'var~1').",formule,domain="R-prevR"))
           }
@@ -145,7 +145,7 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
     if(is.null(model) && !is.element(fit,(c("auto")))){
        stop("the 'fit' argument must be 'auto'.")
     }
-    if(any(class(model)=="variogramModel")) model = list(model)
+    if(inherits(model, "variogramModel")) model = list(model)
     
     clusters  = slot(object,"clusters")
     rings  = slot(object,"rings")
@@ -288,13 +288,13 @@ setMethod("idw",c(formula="ANY", locations="prevR"),
             
             # On accepte que l'on passe a formula une formule ou une liste de formule
             # Cependant, seuls les formules de la forme variable~1 sont acceptees
-            if (class(formula)=='formula') {
+            if (inherits(formula, 'formula')) {
               formula = list(formula)
             }
-            if (class(formula)=='list') { # Si on a fourni une liste de chaines de caracteres, la classe est character
+            if (is.list(formula)) { # Si on a fourni une liste de chaines de caracteres, la classe est character
               for (i in 1:length(formula)) {
                 formule = formula[[i]]
-                if (class(formule)=='formula') {
+                if (inherits(formule, 'formula')) {
                   if (formule[[3]]!=1 || length(all.names(formule))!=2) {
                     stop(gettextf("%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'.",formule,domain="R-prevR"))
                   }
