@@ -1,14 +1,16 @@
 ## Test environments
-* local R installation, R 4.0.2
-* ubuntu 16.04 (on travis-ci), R 4.0.2
-* mac OS (on github actions) R 4.0.2
-* Windows (on github actions) R 4.0.2
-* ubuntu 20.04 (on github actions) R-devel, R 4.0.2
-* win-builder (devel)
+
+* local R installation: R 4.1.3
+* mac OS (on github actions): R-release, R-oldrel
+* windows (on github actions): R-release, R-oldrel
+* ubuntu 20.04 (on github actions): R-release
+* ubuntu 18.04 (on github actions): R-devel, R-release, R-oldrel
+
+cf. https://github.com/larmarange/prevR/actions
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 0 or 1 note
 
 * checking installed package size ... NOTE
   installed size is  5.2Mb
@@ -18,5 +20,10 @@
   Due to a dataset who was always embed within prevR
   to simplify use by end-users.
 
-* checking for future file timestamps ... NOTE
-  unable to verify current time
+
+## revdepcheck results
+
+We checked 1 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
+
+ * We saw 0 new problems
+ * We failed to check 0 packages
