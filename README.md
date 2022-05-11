@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/0.1.0/active.svg)](https://www.repostatus.org/#active) 
 [![R build status](https://github.com/larmarange/prevR/workflows/R-CMD-check/badge.svg)](https://github.com/larmarange/prevR/actions)
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/prevR)](https://cran.r-project.org/web/packages/prevR) 
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/prevR)](https://cran.r-project.org/package=prevR) 
 [![Codecov test coverage](https://codecov.io/gh/larmarange/prevR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/larmarange/prevR?branch=main)
 [![Downloads](https://cranlogs.r-pkg.org/badges/prevR)](https://cran.r-project.org/package=prevR)
 [![DOI](https://www.zenodo.org/badge/6281387.svg)](https://www.zenodo.org/badge/latestdoi/6281387)
