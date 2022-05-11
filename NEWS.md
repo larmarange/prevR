@@ -1,4 +1,4 @@
-# prevR (development version)
+# prevR 4.0.0
 
 **Breaking change:**
 
