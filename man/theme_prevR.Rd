@@ -13,5 +13,5 @@ theme_prevR_light(base_size = 12)
 \item{base_size}{base font size}
 }
 \description{
-Two custom themes for ggplot2 graphs, hidding axis.
+Two custom themes for ggplot2 graphs, hiding axis.
 }

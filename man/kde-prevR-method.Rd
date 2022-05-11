@@ -32,7 +32,7 @@
 
 \item{keep.details}{return surface of positive cases and surface of observed cases?}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area
+\item{nb.cells}{number of cells on the longest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
@@ -68,21 +68,21 @@ Estimated variables are (depending on the function parameters) :\itemize{
 \description{
 This function allows to calculate a prevalence surface (ratio of two intensity surfaces)
 and/or a relative risks surface (ratio of two density surfaces) using gaussian kernel estimators
-with adaptative bandwiths of equal number of observations or equal radius.
+with adaptative bandwidths of equal number of observations or equal radius.
 }
 \details{
 This function calculates a prevalence surface as the ratio of the intensity surface
 (expressed in cases per surface unit) of positive cases on the intensity surface of observed cases
 and could also calculate a relative risks surface corresponding to the ratio of the density surface
-(whose integral has been normalized to one) of positive cas on density surface of observed cases.
+(whose integral has been normalized to one) of positive cases on density surface of observed cases.
 
-This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian
-kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of
-observations in the neighbourhood (see \code{\link[=rings]{rings()}} for more details).
-Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of
+This method is a variant of the nearest neighbor technique. Surfaces are estimated using gaussian
+kernel estimators with adaptative bandwidths, bandwidth size being determined by a minimum number of
+observations in the neighborhood (see \code{\link[=rings]{rings()}} for more details).
+Fixed bandwidths could also be used. More precisely, the bandwidth used is half the radius of rings of
 equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the
 function \code{\link[=rings]{rings()}}.\cr
-See referenes for a detailed explanation of the implemented methodology.
+See references for a detailed explanation of the implemented methodology.
 
 \code{N} and \code{R} determine the rings to use for the estimation. If they are not defined,
 surfaces will be estimated for each available couples (N,R). Several estimations could be
@@ -98,7 +98,7 @@ Calculated surfaces could be export using the function
 \code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 
 See the package \pkg{sparr} for another methodology to estimate relative
-risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
+risks surfaces, adapted for other kind of data than Demographic and Health Surveys (DHS).
 }
 \examples{
 \dontrun{
@@ -130,7 +130,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
 DOI: 10.4000/cybergeo.24606.
 }
 \seealso{
-\code{\link[GenKern:KernSur]{GenKern::KernSur()}}, \code{\link[=rings]{rings()}}, \code{\link[=Noptim]{Noptim()}}.
+\code{\link[KernSmooth:bkde2D]{KernSmooth::bkde2D()}}, \code{\link[=rings]{rings()}}, \code{\link[=Noptim]{Noptim()}}.
 }
 \keyword{smooth}
 \keyword{spatial}

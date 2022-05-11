@@ -1,14 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: prevR 3.1\n"
-"POT-Creation-Date: 2015-05-19 10:51\n"
+"Project-Id-Version: prevR 3.4.1.9000\n"
+"POT-Creation-Date: 2022-05-11 16:54\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 msgid "the 'data' argument must be a dataframe."
 msgstr ""
@@ -40,34 +41,7 @@ msgstr ""
 msgid "the 'element' argument must be 'clusters' or 'boundary'."
 msgstr ""
 
-msgid "The package maptools is required to export boundary or clusters as shapefile. Please install it."
-msgstr ""
-
 msgid "the 'format' argument must be 'dbf', 'txt', 'csv', 'csv2' or 'shp'."
-msgstr ""
-
-msgid "The package foreign is required to export to DBF. Please install it."
-msgstr ""
-
-msgid "The package tcltk is required to use manual fit. Please install it."
-msgstr ""
-
-msgid "Parameters"
-msgstr ""
-
-msgid "Max. Distance"
-msgstr ""
-
-msgid "Cov. Parameters"
-msgstr ""
-
-msgid "Function"
-msgstr ""
-
-msgid "Choose this variogram"
-msgstr ""
-
-msgid "The package foreign is required to use import.dhs(). Please install it."
 msgstr ""
 
 msgid "A window will open presenting the data contained in the file. Thank you to identify the following variables: \n- Cluster number (needed) \n- Longitude (decimal format in degrees, needed) \n- Latitude (decimal format in degrees, needed) \n- Clusters with missing coordinates (optional) \n- Clusters type (optional)\n Once the names of these variables identified, close the window so that the program can continue. \n\n Are you ready?"
@@ -289,16 +263,10 @@ msgstr ""
 msgid "%s is not a valid formula: idw.prevR only implement simple or ordinary kriging, so formula must have only one variable and no predictor (like 'var~1')."
 msgstr ""
 
-msgid "the 'fit' argument must be 'auto' or 'manual'."
+msgid "the 'fit' argument must be 'auto'."
 msgstr ""
 
 msgid "problem to fit the variogram: the variable '%s' width N=%s and R=%s has not been treated."
-msgstr ""
-
-msgid "The packages geoR and tcltk are required to use manual fit. Please install it."
-msgstr ""
-
-msgid "Error: select an other model."
 msgstr ""
 
 msgid "%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'."
@@ -323,15 +291,6 @@ msgid "One positive case by 'petal'"
 msgstr ""
 
 msgid "object must be of class prevR."
-msgstr ""
-
-msgid "Package ggplot2 is required for plotting."
-msgstr ""
-
-msgid "Package directlabels is required for plotting."
-msgstr ""
-
-msgid "Package grid is required for plotting."
 msgstr ""
 
 msgid "No weighted data found in object."

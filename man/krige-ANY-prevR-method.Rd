@@ -47,20 +47,20 @@
 
 \item{model}{a variogram model returned by the function \code{\link[gstat:vgm]{gstat::vgm()}}.}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area
+\item{nb.cells}{number of cells on the longest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
 
-\item{fit}{"auto" for using a variogram automatically fitted from the data,
-"manual" for using a variogram fitted through a graphic interface
-(unused if \code{model} is defined).}
+\item{fit}{\code{"auto"} for using a variogram automatically fitted from the data,
+only if \code{model} is not defined (\code{NULL}). DEPRECATED: as \code{geoR} package
+has been removed from CRAN, \code{"manual"} option is no longer available.}
 
 \item{keep.variance}{return variance of estimates?}
 
 \item{show.variogram}{plot the variogram?}
 
-\item{\dots}{additional arguments transmited to \code{\link[gstat:krige]{gstat::krige()}}
+\item{\dots}{additional arguments transmitted to \code{\link[gstat:krige]{gstat::krige()}}
 or \code{\link[gstat:krige]{gstat::idw()}}.}
 
 \item{idp}{inverse distance weighting power (see \code{\link[gstat:krige]{gstat::idw()}}).}
@@ -72,7 +72,7 @@ The name of estimated surfaces depends on the name of the interpolated variable,
 (\code{keep.variance=TRUE}), corresponding surfaces names will have the suffix \emph{.var}.
 
 \code{NA} value is applied to points located outside of the studied area \cr
-(voir \code{\link[=NA.outside.SpatialPolygons]{NA.outside.SpatialPolygons()}}).
+(see \code{\link[=NA.outside.SpatialPolygons]{NA.outside.SpatialPolygons()}}).
 }
 \description{
 These functions execute a spatial interpolation of a variable of the slot \code{rings} of
@@ -83,9 +83,9 @@ interpolation.
 \details{
 \code{formula} specifies the variable(s) to interpolate. Only variables available in the
 slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev",
-"r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character
+"r.radius", "r.clusters", "r.wpos", "r.wn" or "r.wprev". Variables could be specified with a character
 string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1}
-are accepted. For more complexe interpolations, use directly functions \code{\link[gstat:krige]{gstat::krige()}} and
+are accepted. For more complex interpolations, use directly functions \code{\link[gstat:krige]{gstat::krige()}} and
 \code{\link[gstat:krige]{gstat::idw()}} from \pkg{gstat}.
 
 \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined,
@@ -95,11 +95,8 @@ simultaneously calculated if several variables and/or several values of N and R 
 A suggested value of N could be computed with \code{\link[=Noptim]{Noptim()}}.
 
 In the case of an ordinary kriging, the method \code{\link[=krige]{krige()}} from \pkg{prevR} will try to fit automatically
-a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"},
-the sample variogram will be plotted and a graphical dialog box (adapted from
-\code{\link[geoR:eyefit]{geoR::eyefit()}} will appear for a manual and visual fitting. You can also specify
-directly the variogram to use with the parameter \code{model}. Packages \pkg{geoR} and \pkg{tcltk}
-are required for manual fit.
+a exponential variogram to the sample variogram (\code{fit="auto"}). You can also specify
+directly the variogram to use with the parameter \code{model}.
 
 Interpolations are calculated on a spatial grid obtained with
 \code{\link[=as.SpatialGrid]{as.SpatialGrid()}}.

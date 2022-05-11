@@ -46,7 +46,7 @@ setMethod("changeproj","prevR",
   # Pour faire cela on utilise la fonction spTransform du package rgdal
   # proj peut etre une chaine de caractere ou un objet CRS
   ###############################################################################################
-    if (class(proj)!="CRS")
+    if (!inherits(proj, "CRS"))
       proj = CRS(proj)
     
     # cluster slot modification

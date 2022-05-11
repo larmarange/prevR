@@ -9,7 +9,7 @@ direct.label_prevR(p, method = NULL, debug = FALSE)
 \arguments{
 \item{p}{The ggplot object.}
 
-\item{method}{Method for direct labelling (see \code{\link[directlabels:direct.label]{directlabels::direct.label()}}).}
+\item{method}{Method for direct labeling (see \code{\link[directlabels:direct.label]{directlabels::direct.label()}}).}
 
 \item{debug}{Show debug output?}
 }

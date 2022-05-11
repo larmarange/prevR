@@ -16,9 +16,9 @@ setGeneric("rings",
 #'   in the unit of the projection otherwise).
 #' @param progression show a progress bar?
 #' 
-#' @details For each ligne of the data frame \code{clusters} of \code{object}, \code{rings} determines 
-#' a ring, centred on the cluster. It could be:\itemize{
-#'   \item rings of eaqul number of observations if \code{N} is finite and \code{R=Inf};
+#' @details For each row of the data frame \code{clusters} of \code{object}, \code{rings} determines 
+#' a ring, centered on the cluster. It could be:\itemize{
+#'   \item rings of equal number of observations if \code{N} is finite and \code{R=Inf};
 #'   \item rings of equal radius if \code{N=Inf} and \code{R} is finite;
 #'   \item a combination of both (see below) if \code{N} and \code{R} are finite.
 #' }
@@ -26,10 +26,10 @@ setGeneric("rings",
 #' ring containing at least \code{N} valid observations.\cr
 #' For \emph{rings of equal radius}, \code{rings} selects all clusters located at a lower
 #' distance than \code{R} from the central cluster.\cr For \emph{combination of both}, \code{rings} 
-#' calculates firts the ring with the minimum number of observations and test if its radius is lower 
+#' calculates first the ring with the minimum number of observations and test if its radius is lower 
 #' than \code{R} or not. If so, the ring is kept, otherwise the ring of maximum radius is calculated.
 #' 
-#' Different series of rings could be simultaneoulsy calculated by providing different values for \code{N} 
+#' Different series of rings could be simultaneously calculated by providing different values for \code{N} 
 #' and \code{R}. \code{rings} will calculate rings corresponding to each couple (N,R).
 #' 
 #' @return Return \code{object} with the slot \code{rings} completed for each couple (N,R).

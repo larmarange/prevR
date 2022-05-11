@@ -1,6 +1,6 @@
 #' Convert a surface in xyz to a data frame.
 #' 
-#' Several functions (for example [GenKern::KernSur()]) 
+#' Several functions (for example [KernSmooth::bkde2D()]) 
 #' return a surface as a list "xyz" composed of three elements: vector of ordinates in the x dimension, 
 #' vector of ordinates in the y dimension and a matrix with the values of the surface in x and y. 
 #' This function transforms a list "xyz" into a data frame.
@@ -17,13 +17,8 @@
 #' @return A \code{data.frame}.
 #' 
 #' @examples 
-#'   x <- c(2,4,6,8,10)
-#'   y <- x 
-#'   op <- GenKern::KernSur(x,y, xgridsize=50, ygridsize=50,
-#'                 correlation=0, 
-#'                 xbandwidth=1, ybandwidth=1,
-#'                 range.x=c(0,13), range.y=c(0,13)
-#'   )
+#'   x <- matrix(c(2,4,6,8,10,2,4,6,8,10), ncol = 2)
+#'   op <- KernSmooth::bkde2D(x, bandwidth = 1)
 #'   str(op)
 #'   
 #'   op.df <- xyz2dataframe(op)
@@ -32,7 +27,7 @@
 #' @keywords manip spatial
 #' @export
 
-# Transforme une liste de 3 elements (x, y et z) comme le resultat de KernSur
+# Transforme une liste de 3 elements (x, y et z) comme le resultat de bkde2D
 # en un data.frame
 # note : z peut etre une liste de matrices
 xyz2dataframe <- function(xyz, xcol=1, ycol=2, zcol=3) {

@@ -10,16 +10,16 @@
 #' @param N integer or list of integers corresponding to the rings to use.
 #' @param R integer or list of integers corresponding to the rings to use.
 #' @param model a variogram model returned by the function [gstat::vgm()].
-#' @param nb.cells number of cells on the longuest side of the studied area 
+#' @param nb.cells number of cells on the longest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
-#' @param fit "auto" for using a variogram automatically fitted from the data, 
-#'   "manual" for using a variogram fitted through a graphic interface 
-#'   (unused if \code{model} is defined).
+#' @param fit `"auto"` for using a variogram automatically fitted from the data, 
+#'   only if \code{model} is not defined (`NULL`). DEPRECATED: as `geoR` package
+#'   has been removed from CRAN, `"manual"` option is no longer available.
 #' @param keep.variance return variance of estimates?
 #' @param show.variogram plot the variogram?
 #' @param  idp inverse distance weighting power (see [gstat::idw()]).
-#' @param \dots additional arguments transmited to [gstat::krige()]
+#' @param \dots additional arguments transmitted to [gstat::krige()]
 #'   or [gstat::idw()].
 #'   
 #' @import sp
@@ -30,9 +30,9 @@
 #'   
 #' @details \code{formula} specifies the variable(s) to interpolate. Only variables available in the 
 #' slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", 
-#' "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character 
+#' "r.radius", "r.clusters", "r.wpos", "r.wn" or "r.wprev". Variables could be specified with a character 
 #' string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1} 
-#' are accepted. For more complexe interpolations, use directly functions [gstat::krige()] and
+#' are accepted. For more complex interpolations, use directly functions [gstat::krige()] and
 #' [gstat::idw()] from \pkg{gstat}.
 #' 
 #' \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, 
@@ -42,11 +42,8 @@
 #' A suggested value of N could be computed with [Noptim()].
 #' 
 #' In the case of an ordinary kriging, the method [krige()] from \pkg{prevR} will try to fit automatically
-#' a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, 
-#' the sample variogram will be plotted and a graphical dialog box (adapted from 
-#' [geoR::eyefit()] will appear for a manual and visual fitting. You can also specify
-#' directly the variogram to use with the parameter \code{model}. Packages \pkg{geoR} and \pkg{tcltk} 
-#' are required for manual fit.
+#' a exponential variogram to the sample variogram (\code{fit="auto"}). You can also specify
+#' directly the variogram to use with the parameter \code{model}. 
 #' 
 #' Interpolations are calculated on a spatial grid obtained with 
 #' [as.SpatialGrid()].
@@ -57,7 +54,7 @@
 #' (\code{keep.variance=TRUE}), corresponding surfaces names will have the suffix \emph{.var}.
 #' 
 #' \code{NA} value is applied to points located outside of the studied area \cr
-#' (voir [NA.outside.SpatialPolygons()]).
+#' (see [NA.outside.SpatialPolygons()]).
 #' 
 #' @references
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 
@@ -110,7 +107,6 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
   #      On deduit facilement la taille d'une cellule donc le nombre de cellules sur la plus petite des dimensions
   # cell.size : la taille d'une cellule. Si cette valeur est fournie nb.cells est ignore
   # fit : Une chaine de characters precisant si l'ajustement du semi variogram doit etre effectue de facon "auto" ou "manual" 
-  #      si fit = "manual" une fenetre apparait proposant un ajustement a vue de nez
   #      si fit = "auto" un modele exponentiel est ajuste
   # Remarque Si l'argument model n'est pas NULL, l'argument fit n'est pas pris en compte
   #          La longueur de la liste model doit etre compatible avec la taille de N , de R de var .(Pour plus d'information regarder la fonction .isInputOk.prevR)
@@ -131,13 +127,13 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
   
     # On accepte que l'on passe a formula une formule ou une liste de formule
     # Cependant, seuls les formules de la forme variable~1 sont acceptees
-    if (class(formula)=='formula') {
+    if (inherits(formula, 'formula')) {
       formula = list(formula)
     }
-    if (class(formula)=='list') { # Si on a fourni une liste de chaines de caracteres, la classe est character
+    if (is.list(formula)) { # Si on a fourni une liste de chaines de caracteres, la classe est character
       for (i in 1:length(formula)) {
         formule = formula[[i]]
-        if (class(formule)=='formula') {
+        if (inherits(formule, 'formula')) {
           if (formule[[3]]!=1 || length(all.names(formule))!=2) {
             stop(gettextf("%s is not a valid formula: idw.prevR only implement simple or ordinary kriging, so formula must have only one variable and no predictor (like 'var~1').",formule,domain="R-prevR"))
           }
@@ -146,10 +142,10 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
       }
       formula = as.character(formula)
     }
-    if(is.null(model) && !is.element(fit,(c("auto","manual")))){
-       stop("the 'fit' argument must be 'auto' or 'manual'.")
+    if(is.null(model) && !is.element(fit,(c("auto")))){
+       stop("the 'fit' argument must be 'auto'.")
     }
-    if(any(class(model)=="variogramModel")) model = list(model)
+    if(inherits(model, "variogramModel")) model = list(model)
     
     clusters  = slot(object,"clusters")
     rings  = slot(object,"rings")
@@ -199,23 +195,6 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
          if(inherits(one.model, "try-error") || attr(one.model,"singular")) one.model = gstat::vgm(param[1],'Exp',param[2])
       }
 
-      if(is.null(model) && fit == "manual") {
-        sample.vario   = gstat::variogram(formule, dataCase)
-        # Seuls les modeles suivants sont valides c("matern", "exponential", "gaussian", "spherical",   "power")
-        out = NULL
-        while(is.null(out)){
-          if (!requireNamespace("geoR", quietly = TRUE) || !requireNamespace("tcltk", quietly = TRUE)) 
-            stop("The packages geoR and tcltk are required to use manual fit. Please install it.", domain="R-prevR")
-          varioGeoR  = geoR::variog(data = slot(dataCase,"data")[[one.var]],coords = slot(dataCase,"coords"))
-          #assign("varioGeoR",varioGeoR,pos=1) inutile
-          out        = .eyefit.prevR(varioGeoR)
-          one.model   =  try(gstat::as.vgm.variomodel(out[[length(out)]]),silent=T)
-          if(inherits(one.model, "try-error")){
-             message("Error: select an other model.\n",domain="R-prevR")
-             out = NULL
-          }
-        }
-      }
       result.one            = krige(formule, dataCase, locations.data, model = one.model, ...)
       if(length(model)==0) {
          i = i+1
@@ -309,13 +288,13 @@ setMethod("idw",c(formula="ANY", locations="prevR"),
             
             # On accepte que l'on passe a formula une formule ou une liste de formule
             # Cependant, seuls les formules de la forme variable~1 sont acceptees
-            if (class(formula)=='formula') {
+            if (inherits(formula, 'formula')) {
               formula = list(formula)
             }
-            if (class(formula)=='list') { # Si on a fourni une liste de chaines de caracteres, la classe est character
+            if (is.list(formula)) { # Si on a fourni une liste de chaines de caracteres, la classe est character
               for (i in 1:length(formula)) {
                 formule = formula[[i]]
-                if (class(formule)=='formula') {
+                if (inherits(formule, 'formula')) {
                   if (formule[[3]]!=1 || length(all.names(formule))!=2) {
                     stop(gettextf("%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'.",formule,domain="R-prevR"))
                   }

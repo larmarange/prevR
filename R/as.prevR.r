@@ -165,8 +165,8 @@ as.prevR = function(data, col,  boundary = NULL, proj = "+proj=longlat +datum=WG
     attr(boundary,"valid") = F
     slot(boundary,"proj4string") = projCRS
   } else {
-    if (class(boundary) == "SpatialPolygonsDataFrame") class(boundary) = "SpatialPolygons"
-    if(class(boundary) != "SpatialPolygons") {
+    if (inherits(boundary, "SpatialPolygonsDataFrame")) class(boundary) = "SpatialPolygons"
+    if(!inherits(boundary, "SpatialPolygons")) {
       stop("the class of 'boundary' must be SpatialPolygons.", call.=F)
     }
     # On teste si boundary contient une projection.

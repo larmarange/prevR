@@ -11,7 +11,7 @@
 \arguments{
 \item{object}{object of class \linkS4class{prevR}.}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area
+\item{nb.cells}{number of cells on the longest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}
@@ -27,7 +27,7 @@ by the methods \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}} and \cod
 \details{
 This function generates a spatial rectangular grid, each cell being a square
 of side \code{cell.size}. If \code{cell.size} is not defined, side of cells will be
-calculated as the longuest side of the slot \code{boundary} of \code{object} divided
+calculated as the longest side of the slot \code{boundary} of \code{object} divided
 by \code{nb.cells}.
 }
 \examples{

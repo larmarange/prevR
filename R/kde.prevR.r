@@ -10,7 +10,7 @@ setGeneric("kde",
 #' 
 #' This function allows to calculate a prevalence surface (ratio of two intensity surfaces) 
 #' and/or a relative risks surface (ratio of two density surfaces) using gaussian kernel estimators 
-#' with adaptative bandwiths of equal number of observations or equal radius.
+#' with adaptative bandwidths of equal number of observations or equal radius.
 #' 
 #' @param object object of class [prevR-class].
 #' @param N integer or list of integers corresponding to the rings to use.
@@ -18,26 +18,26 @@ setGeneric("kde",
 #' @param weighted use weighted data (TRUE, FALSE or "2")?
 #' @param risk.ratio calculate a relative risks surface instead of a prevalence surface (TRUE, FALSE or "2")?
 #' @param keep.details return surface of positive cases and surface of observed cases?
-#' @param nb.cells number of cells on the longuest side of the studied area 
+#' @param nb.cells number of cells on the longest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
 #' @param progression show a progress bar?
 #' @param short.names should names of the output be short?
 #' @import sp
-#' @importFrom GenKern KernSur
+#' @importFrom KernSmooth bkde2D
 #' 
 #' @details This function calculates a prevalence surface as the ratio of the intensity surface 
 #' (expressed in cases per surface unit) of positive cases on the intensity surface of observed cases 
 #' and could also calculate a relative risks surface corresponding to the ratio of the density surface 
-#' (whose integral has been normalized to one) of positive cas on density surface of observed cases.
+#' (whose integral has been normalized to one) of positive cases on density surface of observed cases.
 #' 
-#' This method is a variant of the nearest neighbour technique. Surfaces are estimated using gaussian 
-#' kernel estimators with adaptative bandwiths, bandwith size being determined by a minimum number of 
-#' observations in the neighbourhood (see [rings()] for more details). 
-#' Fixed bandwiths could also be used. More precisely, the bandwith used is half the radius of rings of 
+#' This method is a variant of the nearest neighbor technique. Surfaces are estimated using gaussian 
+#' kernel estimators with adaptative bandwidths, bandwidth size being determined by a minimum number of 
+#' observations in the neighborhood (see [rings()] for more details). 
+#' Fixed bandwidths could also be used. More precisely, the bandwidth used is half the radius of rings of 
 #' equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the 
 #' function [rings()].\cr
-#' See referenes for a detailed explanation of the implemented methodology.
+#' See references for a detailed explanation of the implemented methodology.
 #' 
 #' \code{N} and \code{R} determine the rings to use for the estimation. If they are not defined, 
 #' surfaces will be estimated for each available couples (N,R). Several estimations could be 
@@ -80,9 +80,9 @@ setGeneric("kde",
 #' [maptools::writeAsciiGrid()].
 #' 
 #' See the package \pkg{sparr} for another methodology to estimate relative 
-#' risks surfaces, adapted for other kind of data than Demographic and Helath Surveys (DHS).
+#' risks surfaces, adapted for other kind of data than Demographic and Health Surveys (DHS).
 #' 
-#' @seealso [GenKern::KernSur()], [rings()], [Noptim()].
+#' @seealso [KernSmooth::bkde2D()], [rings()], [Noptim()].
 #' 
 #' @examples 
 #' \dontrun{
@@ -114,7 +114,7 @@ setMethod("kde","prevR",
   ###############################################################################################
   # Cette fonction calcule une surface de prevalence a partir du ratio de  2 surfaces de densites
   #   calculees par la methode  des estimateurs a noyaux ( noyaux Gaussiens)
-  # Cette fonction est base sur la fonction KernSur du package GenKern  
+  # Cette fonction est base sur la fonction bkde2D du package KernSmooth  
   # La position du centre de chaque cercle est defini dans l'element clusters de object (colonnes x et y)
   # La largeur de bande est egale a la moitie du rayon des cercles. Dans le cas de donnees en longlat un 
   #  calcul supplementaire est necessaire
@@ -153,7 +153,7 @@ setMethod("kde","prevR",
   #              pos[i] nombre de cas positifs dans le cercle i 
   #              n[i]   nombre d'individus dans le cercle i  
   #              dens[j,k] densite au pont j,k de centre x[i] y[i] de largeur de bande = radius[i]/2
-  #                        dens est calcule par la fonction KernSur
+  #                        dens est calcule par la fonction bkde2D 
   #
   #
   ###############################################################################################
@@ -197,8 +197,10 @@ setMethod("kde","prevR",
     
     # Calcul de la grille
     coord = coordinates(as.SpatialGrid(object, nb.cells=nb.cells, cell.size=cell.size))
-    range.x = unique(coord[,1])
-    range.y = unique(coord[,2])
+    range.x = range(unique(coord[,1]))
+    range.y = range(unique(coord[,2]))
+    gridsize.x = length(unique(coord[,1]))
+    gridsize.y = length(unique(coord[,2]))
     
     first = T
     one.var="r.prev"
@@ -248,12 +250,18 @@ setMethod("kde","prevR",
       k.wpos = 0
       k.wobs = 0
       for (i in 1:length(bw)) {
-        temp   = GenKern::KernSur(x=x[i],y=y[i],xbandwidth=bwx[i]/2,ybandwidth=bwy[i]/2,range.x=range.x,range.y=range.y)
-        k.pos  = k.pos + temp$zden * dataCase[["pos"]][i]
-        k.obs  = k.obs + temp$zden * dataCase[["n"]][i]
+        temp   = KernSmooth::bkde2D(
+          x = matrix(c(x[i], y[i]), ncol = 2),
+          bandwidth = c(bwx[i]/2, bwy[i]/2),
+          gridsize = c(gridsize.x, gridsize.y),
+          range.x = list(range.x, range.y),
+          truncate = FALSE
+        )
+        k.pos  = k.pos + temp$fhat * dataCase[["pos"]][i]
+        k.obs  = k.obs + temp$fhat * dataCase[["n"]][i]
         if(weighted == T || weighted == 2){
-          k.wpos = k.wpos + temp$zden * dataCase[["wpos"]][i]
-          k.wobs = k.wobs + temp$zden * dataCase[["wn"]][i]
+          k.wpos = k.wpos + temp$fhat * dataCase[["wpos"]][i]
+          k.wobs = k.wobs + temp$fhat * dataCase[["wn"]][i]
         }
         if (progression) {
           barre.cur = (ic-1)*nrow(clusters)+i
@@ -303,7 +311,7 @@ setMethod("kde","prevR",
     }
     
     # Ajout des coordonnees
-    result = c(list(x=temp$xords, y=temp$yords),result)
+    result = c(list(x=temp$x1, y=temp$x2),result)
     
     # Passage en data.frame
     result = xyz2dataframe(result,'x','y',names(result)[c(-1,-2)])

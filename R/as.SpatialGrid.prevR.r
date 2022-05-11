@@ -12,13 +12,13 @@ setGeneric("as.SpatialGrid",
 #' by the methods [kde()], [krige()] and [idw()].
 #' 
 #' @param object object of class [prevR-class].
-#' @param nb.cells number of cells on the longuest side of the studied area 
+#' @param nb.cells number of cells on the longest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
 #' 
 #' @details This function generates a spatial rectangular grid, each cell being a square 
 #' of side \code{cell.size}. If \code{cell.size} is not defined, side of cells will be 
-#' calculated as the longuest side of the slot \code{boundary} of \code{object} divided 
+#' calculated as the longest side of the slot \code{boundary} of \code{object} divided 
 #' by \code{nb.cells}.
 #' 
 #' @return Object of class [sp::SpatialGrid-class].

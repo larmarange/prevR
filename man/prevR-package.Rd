@@ -22,8 +22,8 @@ of a prevalence using data from surveys using a stratified two-stage sample desi
 are spatially positioned at the centre of their corresponding surveyed cluster.
 
 This package provides functions to estimate a prevalence surface using a kernel estimator
-with adaptative bandwiths of equal number of persons surveyed (a variant of the nearest
-neighbour technique) or with fixed bandwiths. The prevalence surface could also be calculated
+with adaptative bandwidths of equal number of persons surveyed (a variant of the nearest
+neighbor technique) or with fixed bandwidths. The prevalence surface could also be calculated
 using a spatial interpolation (kriging or inverse distance weighting) after a moving average
 smoothing based on circles of equal number of observed persons or circles of equal radius.
 
@@ -41,7 +41,7 @@ The content of \pkg{prevR} can be broken up as follows:
 could be used to define the limits of the studied area.
 
 \emph{Creating objects}\cr
-\pkg{prevR} functions takes as input ojects of class \linkS4class{prevR}.\cr
+\pkg{prevR} functions takes as input objects of class \linkS4class{prevR}.\cr
 \code{\link[=import.dhs]{import.dhs()}} allows to import easily, through a step by step procedure,
 data from a DHS (Demographic and Health Surveys) downloaded from
 \url{http://www.measuredhs.com}.\cr
@@ -50,12 +50,12 @@ data from a DHS (Demographic and Health Surveys) downloaded from
 \code{\link[=create.boundary]{create.boundary()}} could be used to select borders of a country and
 transfer them to \code{\link[=as.prevR]{as.prevR()}} in order to define the studied area.
 
-\emph{Data visualisation}\cr
+\emph{Data visualization}\cr
 Methods \code{\link[=show]{show()}}, \code{\link[=print]{print()}}
 and \code{\link[=summary]{summary()}} display a summary of a object of class
 \linkS4class{prevR}.\cr
 The method \code{\link[=plot]{plot()}} could be used on a object of class
-\linkS4class{prevR} for visualising the studied area, spatial position
+\linkS4class{prevR} for visualizing the studied area, spatial position
 of clusters, number of observations or number of positive cases by cluster.
 
 \emph{Data manipulation}\cr
@@ -70,13 +70,13 @@ area in a text file, a dbf file or a shapefile.
 \code{\link[=rings]{rings()}} calculates rings of equal number of
 observations and/or equal radius.\cr
 \code{\link[=kde]{kde()}} calculates a prevalence surface or a relative
-risks surface using gaussian kernel density estimators (kde) with adaptative bandwiths.\cr
+risks surface using gaussian kernel density estimators (kde) with adaptative bandwidths.\cr
 \code{\link[=krige]{krige()}} executes a spatial interpolation using an
 ordinary kriging.\cr
 \code{\link[=idw]{idw()}} executes a spatial interpolation using an inverse
 distance weighting (idw) technique.
 
-\emph{Results visualisation and export}\cr
+\emph{Results visualization and export}\cr
 Outputs of \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}} and \code{\link[=idw]{idw()}} are objects of class
 \link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.\cr
 Results could be plotted using the function \code{\link[sp:spplot]{sp::spplot()}}.\cr
@@ -85,7 +85,7 @@ compatible with \code{\link[sp:spplot]{sp::spplot()}}.\cr
 Calculated surfaces could be export using the function
 \code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 }
-\section{Acknowledgement}{
+\section{Acknowledgment}{
  \pkg{prevR} has been developed with funding from the French National Agency
 for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research
 Institute for Sustainable Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS
