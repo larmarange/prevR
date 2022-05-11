@@ -13,7 +13,7 @@ Noptim(object)
 an integer.
 }
 \description{
-Based on previous similutation work, the function suggests an optimal
+Based on previous simulation work, the function suggests an optimal
 value for the N parameter based on national prevalence, the total number
 of observations and the number of clusters. See Larmarange et al. 2011
 for more details.

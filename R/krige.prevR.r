@@ -10,7 +10,7 @@
 #' @param N integer or list of integers corresponding to the rings to use.
 #' @param R integer or list of integers corresponding to the rings to use.
 #' @param model a variogram model returned by the function [gstat::vgm()].
-#' @param nb.cells number of cells on the longuest side of the studied area 
+#' @param nb.cells number of cells on the longest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
 #' @param fit `"auto"` for using a variogram automatically fitted from the data, 
@@ -19,7 +19,7 @@
 #' @param keep.variance return variance of estimates?
 #' @param show.variogram plot the variogram?
 #' @param  idp inverse distance weighting power (see [gstat::idw()]).
-#' @param \dots additional arguments transmited to [gstat::krige()]
+#' @param \dots additional arguments transmitted to [gstat::krige()]
 #'   or [gstat::idw()].
 #'   
 #' @import sp
@@ -30,9 +30,9 @@
 #'   
 #' @details \code{formula} specifies the variable(s) to interpolate. Only variables available in the 
 #' slot \code{rings} of \code{locations} could be used. Possible values are "r.pos", "r.n", "r.prev", 
-#' "r.radius", "r.clusters", "r.wpos", "r.wn" ou "r.wprev". Variables could be specifed with a character 
+#' "r.radius", "r.clusters", "r.wpos", "r.wn" or "r.wprev". Variables could be specified with a character 
 #' string or a formula (example: \code{list(r.pos~1,r.prev~1}). Only formula like \code{variable.name~1} 
-#' are accepted. For more complexe interpolations, use directly functions [gstat::krige()] and
+#' are accepted. For more complex interpolations, use directly functions [gstat::krige()] and
 #' [gstat::idw()] from \pkg{gstat}.
 #' 
 #' \code{N} and \code{R} determine the rings to use for the interpolation. If they are not defined, 
@@ -42,7 +42,7 @@
 #' A suggested value of N could be computed with [Noptim()].
 #' 
 #' In the case of an ordinary kriging, the method [krige()] from \pkg{prevR} will try to fit automatically
-#' a exponantial variogram to the sample variogram (\code{fit="auto"}). You can also specify
+#' a exponential variogram to the sample variogram (\code{fit="auto"}). You can also specify
 #' directly the variogram to use with the parameter \code{model}. 
 #' 
 #' Interpolations are calculated on a spatial grid obtained with 
@@ -54,7 +54,7 @@
 #' (\code{keep.variance=TRUE}), corresponding surfaces names will have the suffix \emph{.var}.
 #' 
 #' \code{NA} value is applied to points located outside of the studied area \cr
-#' (voir [NA.outside.SpatialPolygons()]).
+#' (see [NA.outside.SpatialPolygons()]).
 #' 
 #' @references
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) 

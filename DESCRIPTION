@@ -6,7 +6,7 @@ Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Authors@R: c(
   person("Joseph", "Larmarange", email = "joseph.larmarange@ird.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7097-700X"))
   )
-Acknowledgements: funding from ANRS and IRD, and technical support from LYSIS
+Acknowledgments: funding from ANRS and IRD, and technical support from LYSIS
     (info@lysis-consultants.fr)
 Description: Spatial estimation of a prevalence surface
     or a relative risks surface, using data from a Demographic and Health
@@ -15,7 +15,7 @@ Description: Spatial estimation of a prevalence surface
 License: CeCILL
 URL: https://github.com/larmarange/prevR/
 BugReports: https://github.com/larmarange/prevR/issues
-LazyLoad: yes
+Language: en-US
 LazyData: yes
 Depends:
     R (>= 3.5.0)

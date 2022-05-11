@@ -23,7 +23,7 @@ quick.prevR(
 
 \item{N}{integer or list of integers corresponding to the rings to use.}
 
-\item{nb.cells}{number of cells on the longuest side of the studied area
+\item{nb.cells}{number of cells on the longest side of the studied area
 (unused if \code{cell.size} is defined).}
 
 \item{cell.size}{size of each cell (in the unit of the projection).}

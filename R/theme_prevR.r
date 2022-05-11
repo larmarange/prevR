@@ -1,6 +1,6 @@
 #' prevR themes for ggplot2
 #' 
-#' Two custom themes for ggplot2 graphs, hidding axis.
+#' Two custom themes for ggplot2 graphs, hiding axis.
 #' 
 #' @param base_size base font size
 #' @importFrom ggplot2 '%+replace%'

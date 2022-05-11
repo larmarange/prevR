@@ -38,7 +38,7 @@ devtools::install_github("larmarange/prevR")
 
 ## Updating PO files
 
-Run the folowing command:
+Run the following command:
 
 ```r
 library(tools)

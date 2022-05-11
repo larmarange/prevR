@@ -57,9 +57,9 @@ prevR.colors.qgis.pal(file, at, pal = "red", inverse = FALSE)
 The other functions return a list of colors coded in hexadecimal.
 }
 \description{
-Functions generating color palettes useable with \R graphical functions, in particular with
+Functions generating color palettes usable with \R graphical functions, in particular with
 \code{\link[sp:spplot]{sp::spplot()}}. These palettes are continuous, contrast being accentuated by darkening
-and lightening extrem values. \code{prevR.demo.pal} plot the available palettes.
+and lightening extreme values. \code{prevR.demo.pal} plot the available palettes.
 \code{prevR.colors.qgis.pal} export a palette in a text file readable by Quantum GIS,
 an open-source mapping software.
 }
@@ -72,7 +72,7 @@ an open-source mapping software.
 Functions with a suffix \emph{.inverse} produce the same color gradation, but from dark colors to light ones.
 }
 \note{
-To obtain the liste of colors in RGB (Red/Green/Blue), use the function
+To obtain the list of colors in RGB (Red/Green/Blue), use the function
 \code{\link[grDevices:col2rgb]{grDevices::col2rgb()}}.
 The code of \code{\link[=prevR.demo.pal]{prevR.demo.pal()}} was adapted from the function \code{demo.pal}
 presented in the examples of \code{\link[grDevices:palettes]{grDevices::rainbow()}}.

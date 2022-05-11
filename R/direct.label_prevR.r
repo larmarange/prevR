@@ -3,7 +3,7 @@
 #' Direct label a ggplot2 grouped plot
 #' 
 #' @param p The ggplot object.
-#' @param method Method for direct labelling (see [directlabels::direct.label()]).
+#' @param method Method for direct labeling (see [directlabels::direct.label()]).
 #' @param debug Show debug output?
 #' 
 #' @return The ggplot object with direct labels added.

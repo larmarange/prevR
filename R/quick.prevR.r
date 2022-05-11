@@ -8,7 +8,7 @@
 #' 
 #' @param object object of class [prevR-class].
 #' @param N integer or list of integers corresponding to the rings to use.
-#' @param nb.cells number of cells on the longuest side of the studied area 
+#' @param nb.cells number of cells on the longest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
 #' @param weighted use weighted data (TRUE, FALSE or "2")?

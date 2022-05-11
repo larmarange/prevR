@@ -3,7 +3,7 @@
 **Breaking change:**
 
 * Manual fitting of the variogram is no longer available in `krige()` as
-  it was reliying on `geoR` package was has been removed from the CRAN (#22)
+  it was relying on `geoR` package was has been removed from the CRAN (#22)
 
 **Other changes:**
 
