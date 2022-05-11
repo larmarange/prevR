@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: prevR 3.4.1.9000\n"
-"POT-Creation-Date: 2022-05-11 16:32\n"
+"POT-Creation-Date: 2022-05-11 16:54\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -263,16 +263,10 @@ msgstr ""
 msgid "%s is not a valid formula: idw.prevR only implement simple or ordinary kriging, so formula must have only one variable and no predictor (like 'var~1')."
 msgstr ""
 
-msgid "the 'fit' argument must be 'auto' or 'manual'."
+msgid "the 'fit' argument must be 'auto'."
 msgstr ""
 
 msgid "problem to fit the variogram: the variable '%s' width N=%s and R=%s has not been treated."
-msgstr ""
-
-msgid "The packages geoR and tcltk are required to use manual fit. Please install it."
-msgstr ""
-
-msgid "Error: select an other model."
 msgstr ""
 
 msgid "%s is not a valid formula: idw.prevR only accept formula with only one variable and no predictor like 'var~1'."

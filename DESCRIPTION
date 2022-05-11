@@ -31,8 +31,6 @@ Imports:
     maptools,
     methods
 Suggests:
-    tcltk,
-    geoR,
     knitr,
     rmarkdown
 Encoding: UTF-8
@@ -59,7 +57,6 @@ Collate:
     'NA.outside.SpatialPolygons.prevR.r'
     'xyz2dataframe.prevR.r'
     'init.exp.model.variogram.r'
-    'eyefit.prevR.r'
     'krige.prevR.r'
     'kde.prevR.r'
     'Noptim.r'

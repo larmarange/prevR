@@ -1,5 +1,12 @@
 # prevR (development version)
 
+**Breaking change:**
+
+* Manual fitting of the variogram is no longer available in `krige()` as
+  it was reliying on `geoR` package was has been removed from the CRAN (#22)
+
+**Other changes:**
+
 * `kde()` now relies on `KernSmooth::bkde2D()` instead of 
   `GenKern::KernSur()` (#21)
 

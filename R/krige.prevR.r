@@ -13,9 +13,9 @@
 #' @param nb.cells number of cells on the longuest side of the studied area 
 #'   (unused if \code{cell.size} is defined).
 #' @param cell.size size of each cell (in the unit of the projection).
-#' @param fit "auto" for using a variogram automatically fitted from the data, 
-#'   "manual" for using a variogram fitted through a graphic interface 
-#'   (unused if \code{model} is defined).
+#' @param fit `"auto"` for using a variogram automatically fitted from the data, 
+#'   only if \code{model} is not defined (`NULL`). DEPRECATED: as `geoR` package
+#'   has been removed from CRAN, `"manual"` option is no longer available.
 #' @param keep.variance return variance of estimates?
 #' @param show.variogram plot the variogram?
 #' @param  idp inverse distance weighting power (see [gstat::idw()]).
@@ -42,11 +42,8 @@
 #' A suggested value of N could be computed with [Noptim()].
 #' 
 #' In the case of an ordinary kriging, the method [krige()] from \pkg{prevR} will try to fit automatically
-#' a exponantial variogram to the sample variogram (\code{fit="auto"}). If you choose \code{fit="manual"}, 
-#' the sample variogram will be plotted and a graphical dialog box (adapted from 
-#' [geoR::eyefit()] will appear for a manual and visual fitting. You can also specify
-#' directly the variogram to use with the parameter \code{model}. Packages \pkg{geoR} and \pkg{tcltk} 
-#' are required for manual fit.
+#' a exponantial variogram to the sample variogram (\code{fit="auto"}). You can also specify
+#' directly the variogram to use with the parameter \code{model}. 
 #' 
 #' Interpolations are calculated on a spatial grid obtained with 
 #' [as.SpatialGrid()].
@@ -110,7 +107,6 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
   #      On deduit facilement la taille d'une cellule donc le nombre de cellules sur la plus petite des dimensions
   # cell.size : la taille d'une cellule. Si cette valeur est fournie nb.cells est ignore
   # fit : Une chaine de characters precisant si l'ajustement du semi variogram doit etre effectue de facon "auto" ou "manual" 
-  #      si fit = "manual" une fenetre apparait proposant un ajustement a vue de nez
   #      si fit = "auto" un modele exponentiel est ajuste
   # Remarque Si l'argument model n'est pas NULL, l'argument fit n'est pas pris en compte
   #          La longueur de la liste model doit etre compatible avec la taille de N , de R de var .(Pour plus d'information regarder la fonction .isInputOk.prevR)
@@ -146,8 +142,8 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
       }
       formula = as.character(formula)
     }
-    if(is.null(model) && !is.element(fit,(c("auto","manual")))){
-       stop("the 'fit' argument must be 'auto' or 'manual'.")
+    if(is.null(model) && !is.element(fit,(c("auto")))){
+       stop("the 'fit' argument must be 'auto'.")
     }
     if(any(class(model)=="variogramModel")) model = list(model)
     
@@ -199,23 +195,6 @@ setMethod("krige",c(formula="ANY", locations="prevR"),
          if(inherits(one.model, "try-error") || attr(one.model,"singular")) one.model = gstat::vgm(param[1],'Exp',param[2])
       }
 
-      if(is.null(model) && fit == "manual") {
-        sample.vario   = gstat::variogram(formule, dataCase)
-        # Seuls les modeles suivants sont valides c("matern", "exponential", "gaussian", "spherical",   "power")
-        out = NULL
-        while(is.null(out)){
-          if (!requireNamespace("geoR", quietly = TRUE) || !requireNamespace("tcltk", quietly = TRUE)) 
-            stop("The packages geoR and tcltk are required to use manual fit. Please install it.", domain="R-prevR")
-          varioGeoR  = geoR::variog(data = slot(dataCase,"data")[[one.var]],coords = slot(dataCase,"coords"))
-          #assign("varioGeoR",varioGeoR,pos=1) inutile
-          out        = .eyefit.prevR(varioGeoR)
-          one.model   =  try(gstat::as.vgm.variomodel(out[[length(out)]]),silent=T)
-          if(inherits(one.model, "try-error")){
-             message("Error: select an other model.\n",domain="R-prevR")
-             out = NULL
-          }
-        }
-      }
       result.one            = krige(formule, dataCase, locations.data, model = one.model, ...)
       if(length(model)==0) {
          i = i+1
