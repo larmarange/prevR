@@ -169,7 +169,6 @@
 #' @import sp
 #' @importFrom gstat idw krige vgm as.vgm.variomodel fit.variogram variogram
 #' @importFrom fields rdist rdist.earth
-#' @importFrom GenKern KernSur
 #' @importFrom methods setClass setGeneric setMethod
 #' @importFrom maptools writePointsShape writePolyShape
 #' @importFrom foreign write.dbf read.dbf read.spss

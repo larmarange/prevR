@@ -130,7 +130,7 @@ Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicol
 DOI: 10.4000/cybergeo.24606.
 }
 \seealso{
-\code{\link[GenKern:KernSur]{GenKern::KernSur()}}, \code{\link[=rings]{rings()}}, \code{\link[=Noptim]{Noptim()}}.
+\code{\link[KernSmooth:bkde2D]{KernSmooth::bkde2D()}}, \code{\link[=rings]{rings()}}, \code{\link[=Noptim]{Noptim()}}.
 }
 \keyword{smooth}
 \keyword{spatial}

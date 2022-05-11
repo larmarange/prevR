@@ -24,7 +24,7 @@ Imports:
     rgdal (>= 0.7),
     ggplot2,
     directlabels,
-    GenKern,
+    KernSmooth,
     fields,
     gstat,
     foreign,
@@ -67,5 +67,5 @@ Collate:
     'direct.label_prevR.r'
     'quick.prevR.r'
 VignetteBuilder: knitr
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)

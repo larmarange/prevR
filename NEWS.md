@@ -1,5 +1,8 @@
 # prevR (development version)
 
+* `kde()` now relies on `KernSmooth::bkde2D()` instead of 
+  `GenKern::KernSur()` (#21)
+
 # prevR 3.4.1
 
 * DOI added (#12)
