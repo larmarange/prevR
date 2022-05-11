@@ -11,3 +11,4 @@ gps.dbf
 ^CRAN-RELEASE$
 ^revdep$
 ^\.github$
+^CRAN-SUBMISSION$
