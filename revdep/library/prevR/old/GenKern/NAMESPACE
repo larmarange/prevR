@@ -1,3 +1,0 @@
-useDynLib(GenKern)
-export(KernSec, KernSur, nearest, per)
-
