@@ -69,72 +69,102 @@ interpolation.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for ANY,prevR</span>
-<span class="fu">krige</span><span class="op">(</span>
-  <span class="va">formula</span>,
-  <span class="va">locations</span>,
-  N <span class="op">=</span> <span class="cn">NULL</span>,
-  R <span class="op">=</span> <span class="cn">Inf</span>,
-  model <span class="op">=</span> <span class="cn">NULL</span>,
-  nb.cells <span class="op">=</span> <span class="fl">100</span>,
-  cell.size <span class="op">=</span> <span class="cn">NULL</span>,
-  fit <span class="op">=</span> <span class="st">"auto"</span>,
-  keep.variance <span class="op">=</span> <span class="cn">FALSE</span>,
-  show.variogram <span class="op">=</span> <span class="cn">FALSE</span>,
-  <span class="va">...</span>
-<span class="op">)</span>
-
-<span class="co"># S4 method for ANY,prevR</span>
-<span class="fu">idw</span><span class="op">(</span>
-  <span class="va">formula</span>,
-  <span class="va">locations</span>,
-  N <span class="op">=</span> <span class="cn">NULL</span>,
-  R <span class="op">=</span> <span class="cn">Inf</span>,
-  nb.cells <span class="op">=</span> <span class="fl">100</span>,
-  cell.size <span class="op">=</span> <span class="cn">NULL</span>,
-  idp <span class="op">=</span> <span class="fl">2</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for ANY,prevR</span></span>
+<span><span class="fu">krige</span><span class="op">(</span></span>
+<span>  <span class="va">formula</span>,</span>
+<span>  <span class="va">locations</span>,</span>
+<span>  N <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  R <span class="op">=</span> <span class="cn">Inf</span>,</span>
+<span>  model <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  nb.cells <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  cell.size <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  fit <span class="op">=</span> <span class="st">"auto"</span>,</span>
+<span>  keep.variance <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  show.variogram <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># S4 method for ANY,prevR</span></span>
+<span><span class="fu">idw</span><span class="op">(</span></span>
+<span>  <span class="va">formula</span>,</span>
+<span>  <span class="va">locations</span>,</span>
+<span>  N <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  R <span class="op">=</span> <span class="cn">Inf</span>,</span>
+<span>  nb.cells <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  cell.size <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  idp <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>formula</dt>
 <dd><p>variable(s) to interpolate (see details).</p></dd>
+
+
 <dt>locations</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>N</dt>
 <dd><p>integer or list of integers corresponding to the rings to use.</p></dd>
+
+
 <dt>R</dt>
 <dd><p>integer or list of integers corresponding to the rings to use.</p></dd>
+
+
 <dt>model</dt>
 <dd><p>a variogram model returned by the function <code><a href="https://rdrr.io/pkg/gstat/man/vgm.html" class="external-link">gstat::vgm()</a></code>.</p></dd>
+
+
 <dt>nb.cells</dt>
 <dd><p>number of cells on the longest side of the studied area
 (unused if <code>cell.size</code> is defined).</p></dd>
+
+
 <dt>cell.size</dt>
 <dd><p>size of each cell (in the unit of the projection).</p></dd>
+
+
 <dt>fit</dt>
 <dd><p><code>"auto"</code> for using a variogram automatically fitted from the data,
 only if <code>model</code> is not defined (<code>NULL</code>). DEPRECATED: as <code>geoR</code> package
 has been removed from CRAN, <code>"manual"</code> option is no longer available.</p></dd>
+
+
 <dt>keep.variance</dt>
 <dd><p>return variance of estimates?</p></dd>
+
+
 <dt>show.variogram</dt>
 <dd><p>plot the variogram?</p></dd>
+
+
 <dt>...</dt>
 <dd><p>additional arguments transmitted to <code><a href="https://rdrr.io/pkg/gstat/man/krige.html" class="external-link">gstat::krige()</a></code>
 or <code><a href="https://rdrr.io/pkg/gstat/man/krige.html" class="external-link">gstat::idw()</a></code>.</p></dd>
+
+
 <dt>idp</dt>
 <dd><p>inverse distance weighting power (see <code><a href="https://rdrr.io/pkg/gstat/man/krige.html" class="external-link">gstat::idw()</a></code>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of class <a href="https://rdrr.io/pkg/sp/man/SpatialPixelsDataFrame-class.html" class="external-link">sp::SpatialPixelsDataFrame</a>.
+    
+
+<p>Object of class <a href="https://rdrr.io/pkg/sp/man/SpatialPixelsDataFrame-class.html" class="external-link">sp::SpatialPixelsDataFrame</a>.
 The name of estimated surfaces depends on the name of the interpolated variable, N and R
 (for example: <em>r.radius.N300.RInf</em>). If you ask the function to return variance
-(<code>keep.variance=TRUE</code>), corresponding surfaces names will have the suffix <em>.var</em>.
-<code>NA</code> value is applied to points located outside of the studied area <br>(see <code><a href="NA.outside.SpatialPolygons.html">NA.outside.SpatialPolygons()</a></code>).</p>
+(<code>keep.variance=TRUE</code>), corresponding surfaces names will have the suffix <em>.var</em>.</p>
+
+
+<p><code>NA</code> value is applied to points located outside of the studied area <br></p>
+
+
+<p>(see <code><a href="NA.outside.SpatialPolygons.html">NA.outside.SpatialPolygons()</a></code>).</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -176,14 +206,14 @@ DOI: 10.4000/cybergeo.24606.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">    <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">radius.N300</span> <span class="op">&lt;-</span> <span class="fu">krige</span><span class="op">(</span><span class="st">'r.radius'</span>, <span class="va">dhs</span>, N <span class="op">=</span> <span class="fl">300</span>, nb.cells <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span>
-<span class="r-in">    <span class="va">prev.krige</span> <span class="op">&lt;-</span> <span class="fu">krige</span><span class="op">(</span><span class="va">r.wprev</span> <span class="op">~</span> <span class="fl">1</span>, <span class="va">dhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">300</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/" class="external-link">sp</a></span><span class="op">)</span></span>
-<span class="r-in">    <span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">prev.krige</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'r.wprev.N100.RInf'</span>, <span class="st">'r.wprev.N300.RInf'</span>, <span class="st">'r.wprev.N500.RInf'</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">radius.N300</span> <span class="op">&lt;-</span> <span class="fu">krige</span><span class="op">(</span><span class="st">'r.radius'</span>, <span class="va">dhs</span>, N <span class="op">=</span> <span class="fl">300</span>, nb.cells <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="va">prev.krige</span> <span class="op">&lt;-</span> <span class="fu">krige</span><span class="op">(</span><span class="va">r.wprev</span> <span class="op">~</span> <span class="fl">1</span>, <span class="va">dhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">300</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/" class="external-link">sp</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">prev.krige</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'r.wprev.N100.RInf'</span>, <span class="st">'r.wprev.N300.RInf'</span>, <span class="st">'r.wprev.N500.RInf'</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -198,7 +228,7 @@ DOI: 10.4000/cybergeo.24606.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

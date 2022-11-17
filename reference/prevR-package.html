@@ -156,55 +156,55 @@ IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="co"># Creating an object of class prevR</span></span>
-<span class="r-in"><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, </span>
-<span class="r-in">        x <span class="op">=</span> <span class="st">"x"</span>,</span>
-<span class="r-in">        y <span class="op">=</span> <span class="st">"y"</span>,</span>
-<span class="r-in">        n <span class="op">=</span> <span class="st">"n"</span>,</span>
-<span class="r-in">        pos <span class="op">=</span> <span class="st">"pos"</span>,</span>
-<span class="r-in">        c.type <span class="op">=</span> <span class="st">"residence"</span>,</span>
-<span class="r-in">        wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span>
-<span class="r-in">        wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, main<span class="op">=</span><span class="st">"Clusters position"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"c.type"</span>, main<span class="op">=</span><span class="st">"Clusters by residence"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"count"</span>, main<span class="op">=</span><span class="st">"Observations by cluster"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"flower"</span>, main<span class="op">=</span><span class="st">"Positive cases by cluster"</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Changing coordinates projection</span></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>,axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="changeproj-prevR-method.html">changeproj</a></span><span class="op">(</span><span class="va">dhs</span>,</span>
-<span class="r-in">                 <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Calculating rings of equal number of observations for different values of N</span></span>
-<span class="r-in"><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">dhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="summary-prevR-method.html">summary</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Prevalence surface for N=300</span></span>
-<span class="r-in"><span class="va">prev.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="kde-prevR-method.html">kde</a></span><span class="op">(</span><span class="va">dhs</span>, N<span class="op">=</span><span class="fl">300</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">prev.N300</span>, <span class="st">'k.wprev.N300.RInf'</span>,</span>
-<span class="r-in">      cuts<span class="op">=</span><span class="fl">100</span>, col.regions<span class="op">=</span><span class="fu"><a href="prevR.colors.html">prevR.colors.red</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>,</span>
-<span class="r-in">      main<span class="op">=</span><span class="st">"Regional trends of prevalence (N=300)"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Smoothing ring radii surface (spatial interpolation by kriging)</span></span>
-<span class="r-in"><span class="va">radius.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="krige-ANY-prevR-method.html">krige</a></span><span class="op">(</span><span class="st">'r.radius'</span>, <span class="va">dhs</span>, N<span class="op">=</span><span class="fl">300</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">radius.N300</span>, </span>
-<span class="r-in">      cuts<span class="op">=</span><span class="fl">100</span>, col.regions<span class="op">=</span><span class="fu"><a href="prevR.colors.html">prevR.colors.blue</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>,</span>
-<span class="r-in">      main<span class="op">=</span><span class="st">"Radius of circle (N=300)"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># Creating an object of class prevR</span></span></span>
+<span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, </span></span>
+<span class="r-in"><span>        x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
+<span class="r-in"><span>        y <span class="op">=</span> <span class="st">"y"</span>,</span></span>
+<span class="r-in"><span>        n <span class="op">=</span> <span class="st">"n"</span>,</span></span>
+<span class="r-in"><span>        pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
+<span class="r-in"><span>        c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
+<span class="r-in"><span>        wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span></span>
+<span class="r-in"><span>        wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, main<span class="op">=</span><span class="st">"Clusters position"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"c.type"</span>, main<span class="op">=</span><span class="st">"Clusters by residence"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"count"</span>, main<span class="op">=</span><span class="st">"Observations by cluster"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, type<span class="op">=</span><span class="st">"flower"</span>, main<span class="op">=</span><span class="st">"Positive cases by cluster"</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Changing coordinates projection</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>,axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="changeproj-prevR-method.html">changeproj</a></span><span class="op">(</span><span class="va">dhs</span>,</span></span>
+<span class="r-in"><span>                 <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Calculating rings of equal number of observations for different values of N</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">dhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="summary-prevR-method.html">summary</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Prevalence surface for N=300</span></span></span>
+<span class="r-in"><span><span class="va">prev.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="kde-prevR-method.html">kde</a></span><span class="op">(</span><span class="va">dhs</span>, N<span class="op">=</span><span class="fl">300</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">prev.N300</span>, <span class="st">'k.wprev.N300.RInf'</span>,</span></span>
+<span class="r-in"><span>      cuts<span class="op">=</span><span class="fl">100</span>, col.regions<span class="op">=</span><span class="fu"><a href="prevR.colors.html">prevR.colors.red</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      main<span class="op">=</span><span class="st">"Regional trends of prevalence (N=300)"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Smoothing ring radii surface (spatial interpolation by kriging)</span></span></span>
+<span class="r-in"><span><span class="va">radius.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="krige-ANY-prevR-method.html">krige</a></span><span class="op">(</span><span class="st">'r.radius'</span>, <span class="va">dhs</span>, N<span class="op">=</span><span class="fl">300</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">radius.N300</span>, </span></span>
+<span class="r-in"><span>      cuts<span class="op">=</span><span class="fl">100</span>, col.regions<span class="op">=</span><span class="fu"><a href="prevR.colors.html">prevR.colors.blue</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>      main<span class="op">=</span><span class="st">"Radius of circle (N=300)"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -219,7 +219,7 @@ IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

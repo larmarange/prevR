@@ -171,25 +171,25 @@ of a prevR object.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/methods/RClassUtils.html" class="external-link">showClass</a></span><span class="op">(</span><span class="st">"prevR"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/methods/RClassUtils.html" class="external-link">showClass</a></span><span class="op">(</span><span class="st">"prevR"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Class "prevR" [package "prevR"]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slots:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Name:         clusters        boundary            proj           rings</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Class:      data.frame SpatialPolygons             CRS            list</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, </span>
-<span class="r-in">        x <span class="op">=</span> <span class="st">"x"</span>,</span>
-<span class="r-in">        y<span class="op">=</span><span class="st">"y"</span>,</span>
-<span class="r-in">        n<span class="op">=</span><span class="st">"n"</span>,</span>
-<span class="r-in">        pos <span class="op">=</span> <span class="st">"pos"</span>,</span>
-<span class="r-in">        c.type <span class="op">=</span> <span class="st">"residence"</span>,</span>
-<span class="r-in">        wn<span class="op">=</span><span class="st">"weighted.n"</span>,</span>
-<span class="r-in">        wpos<span class="op">=</span><span class="st">"weighted.pos"</span></span>
-<span class="r-in"><span class="op">)</span></span>
-<span class="r-in"><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, </span></span>
+<span class="r-in"><span>        x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
+<span class="r-in"><span>        y<span class="op">=</span><span class="st">"y"</span>,</span></span>
+<span class="r-in"><span>        n<span class="op">=</span><span class="st">"n"</span>,</span></span>
+<span class="r-in"><span>        pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
+<span class="r-in"><span>        c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
+<span class="r-in"><span>        wn<span class="op">=</span><span class="st">"weighted.n"</span>,</span></span>
+<span class="r-in"><span>        wpos<span class="op">=</span><span class="st">"weighted.pos"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Formal class 'prevR' [package "prevR"] with 4 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ clusters:'data.frame':	401 obs. of  10 variables:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ id    : int [1:401] 1 10 100 101 102 103 104 105 106 107 ...</span>
@@ -230,7 +230,7 @@ of a prevR object.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ rings   : list()</span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Object of class 'prevR'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Number of clusters: 401</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Number of observations: 8000</span>
@@ -251,12 +251,12 @@ of a prevR object.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         min       max</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> x -5.518916  3.851701</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y  4.736723 15.082593</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"> <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"> <span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span> <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span> <span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -271,7 +271,7 @@ of a prevR object.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

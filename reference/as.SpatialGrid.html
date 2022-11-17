@@ -67,23 +67,30 @@ by the methods <code><a href="kde-prevR-method.html">kde()</a></code>, <code><a 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for prevR</span>
-<span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">object</span>, nb.cells <span class="op">=</span> <span class="fl">100</span>, cell.size <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for prevR</span></span>
+<span><span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">object</span>, nb.cells <span class="op">=</span> <span class="fl">100</span>, cell.size <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>nb.cells</dt>
 <dd><p>number of cells on the longest side of the studied area
 (unused if <code>cell.size</code> is defined).</p></dd>
+
+
 <dt>cell.size</dt>
 <dd><p>size of each cell (in the unit of the projection).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Object of class <a href="https://rdrr.io/pkg/sp/man/SpatialGrid-class.html" class="external-link">sp::SpatialGrid</a>.</p>
+    
+
+<p>Object of class <a href="https://rdrr.io/pkg/sp/man/SpatialGrid-class.html" class="external-link">sp::SpatialGrid</a>.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -99,7 +106,7 @@ by <code>nb.cells</code>.</p>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Formal class 'SpatialGrid' [package "sp"] with 3 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ grid       :Formal class 'GridTopology' [package "sp"] with 3 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ cellcentre.offset: num [1:2] -5.52 4.74</span>
@@ -112,7 +119,7 @@ by <code>nb.cells</code>.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">fdhs</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.SpatialGrid</span><span class="op">(</span><span class="va">fdhs</span>, nb.cells<span class="op">=</span><span class="fl">200</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Formal class 'SpatialGrid' [package "sp"] with 3 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ grid       :Formal class 'GridTopology' [package "sp"] with 3 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ cellcentre.offset: num [1:2] -5.52 4.74</span>
@@ -125,7 +132,7 @@ by <code>nb.cells</code>.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -140,7 +147,7 @@ by <code>nb.cells</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

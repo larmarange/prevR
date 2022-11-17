@@ -71,50 +71,73 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">quick.prevR</span><span class="op">(</span>
-  <span class="va">object</span>,
-  N <span class="op">=</span> <span class="fu"><a href="Noptim.html">Noptim</a></span><span class="op">(</span><span class="va">object</span><span class="op">)</span>,
-  nb.cells <span class="op">=</span> <span class="fl">100</span>,
-  cell.size <span class="op">=</span> <span class="cn">NULL</span>,
-  weighted <span class="op">=</span> <span class="cn">NULL</span>,
-  plot.results <span class="op">=</span> <span class="cn">TRUE</span>,
-  return.results <span class="op">=</span> <span class="cn">FALSE</span>,
-  return.plot <span class="op">=</span> <span class="cn">FALSE</span>,
-  legend.title <span class="op">=</span> <span class="st">"%"</span>,
-  cex <span class="op">=</span> <span class="fl">0.7</span>,
-  progression <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">quick.prevR</span><span class="op">(</span></span>
+<span>  <span class="va">object</span>,</span>
+<span>  N <span class="op">=</span> <span class="fu"><a href="Noptim.html">Noptim</a></span><span class="op">(</span><span class="va">object</span><span class="op">)</span>,</span>
+<span>  nb.cells <span class="op">=</span> <span class="fl">100</span>,</span>
+<span>  cell.size <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  weighted <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  plot.results <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  return.results <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  return.plot <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  legend.title <span class="op">=</span> <span class="st">"%"</span>,</span>
+<span>  cex <span class="op">=</span> <span class="fl">0.7</span>,</span>
+<span>  progression <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>N</dt>
 <dd><p>integer or list of integers corresponding to the rings to use.</p></dd>
+
+
 <dt>nb.cells</dt>
 <dd><p>number of cells on the longest side of the studied area
 (unused if <code>cell.size</code> is defined).</p></dd>
+
+
 <dt>cell.size</dt>
 <dd><p>size of each cell (in the unit of the projection).</p></dd>
+
+
 <dt>weighted</dt>
 <dd><p>use weighted data (TRUE, FALSE or "2")?</p></dd>
+
+
 <dt>plot.results</dt>
 <dd><p>plot the results?</p></dd>
+
+
 <dt>return.results</dt>
 <dd><p>return the results?</p></dd>
+
+
 <dt>return.plot</dt>
 <dd><p>return the plot within the results?</p></dd>
+
+
 <dt>legend.title</dt>
 <dd><p>title of the legend</p></dd>
+
+
 <dt>cex</dt>
 <dd><p>to control the text size on the graph</p></dd>
+
+
 <dt>progression</dt>
 <dd><p>show a progress bar?</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list of one or several elements, depending on the arguments:
+    
+
+<p>A list of one or several elements, depending on the arguments:
 (i) <code>prev</code> is a <code>SpatialPixelsDataFrame</code> containing the prevalence
 surface; (ii) <code>radius</code> a <code>SpatialPixelsDataFrame</code> containing the
 kriged surface of the rings radii; (iii) <code>plot</code> a <code>ggplot</code> graph.</p>
@@ -131,10 +154,10 @@ By default, a suggested value of N will be computed with <code><a href="Noptim.h
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">  <span class="fu">quick.prevR</span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">quick.prevR</span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -149,7 +172,7 @@ By default, a suggested value of N will be computed with <code><a href="Noptim.h
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

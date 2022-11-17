@@ -65,54 +65,75 @@ in different formats (text, shapefile, dbase...)</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for prevR</span>
-<span class="fu">export</span><span class="op">(</span>
-  <span class="va">object</span>,
-  <span class="va">element</span>,
-  <span class="va">format</span>,
-  <span class="va">file</span>,
-  N <span class="op">=</span> <span class="cn">NULL</span>,
-  R <span class="op">=</span> <span class="cn">NULL</span>,
-  clusters.only <span class="op">=</span> <span class="cn">FALSE</span>,
-  ext <span class="op">=</span> <span class="cn">NULL</span>,
-  sep <span class="op">=</span> <span class="cn">NULL</span>,
-  dec <span class="op">=</span> <span class="cn">NULL</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for prevR</span></span>
+<span><span class="fu">export</span><span class="op">(</span></span>
+<span>  <span class="va">object</span>,</span>
+<span>  <span class="va">element</span>,</span>
+<span>  <span class="va">format</span>,</span>
+<span>  <span class="va">file</span>,</span>
+<span>  N <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  R <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  clusters.only <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  ext <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  sep <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  dec <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>element</dt>
 <dd><p>element to export: "clusters" or "boundary".</p></dd>
+
+
 <dt>format</dt>
 <dd><p>format: "dbf", "txt", csv", "csv2" or "shp" (unused if <code>element="boundary"</code>).</p></dd>
+
+
 <dt>file</dt>
 <dd><p>file name without extension.</p></dd>
+
+
 <dt>N</dt>
 <dd><p>integer or list of integers setting elements of <code>rings</code> to export
 (unused if <code>element="boundary"</code>).</p></dd>
+
+
 <dt>R</dt>
 <dd><p>integer or list of integers setting elements of <code>rings</code> to export
 (unused if <code>element="boundary"</code>).</p></dd>
+
+
 <dt>clusters.only</dt>
 <dd><p>export only the slot <code>clusters</code> of <code>object</code>
 (unused if <code>element="boundary"</code>)?</p></dd>
+
+
 <dt>ext</dt>
 <dd><p>coerce the extension of the export file
 (unused if <code>element="boundary"</code> or if <code>format="shp"</code>).</p></dd>
+
+
 <dt>sep</dt>
 <dd><p>coerce the field separator string (unused if <code>element="boundary"</code>
 or if <code>format="shp"</code> or if <code>format="dbf"</code>).</p></dd>
+
+
 <dt>dec</dt>
 <dd><p>coerce the string to use for decimal point
 (unused if <code>element="boundary"</code> or if <code>format="shp"</code> or if <code>format="dbf"</code>).</p></dd>
+
+
 <dt>...</dt>
 <dd><p>additional arguments transmitted to
-<code><a href="http://rgdal.r-forge.r-project.org/reference/writeOGR.html" class="external-link">rgdal::writeOGR()</a></code>, <code><a href="https://rdrr.io/pkg/foreign/man/write.dbf.html" class="external-link">foreign::write.dbf()</a></code> or
+<code><a href="http://rgdal.r-forge.r-project.org/reference/rgdal-deprecated.html" class="external-link">rgdal::writeOGR()</a></code>, <code><a href="https://rdrr.io/pkg/foreign/man/write.dbf.html" class="external-link">foreign::write.dbf()</a></code> or
 <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">utils::write.table()</a></code>.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -132,20 +153,20 @@ the Excel convention for CSV files in some Western European locales. <br><code>s
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><a href="http://maptools.r-forge.r-project.org/reference/readShapePoly.html" class="external-link">maptools::writePolyShape</a>, <code><a href="http://maptools.r-forge.r-project.org/reference/readShapePoints.html" class="external-link">maptools::writePointsShape()</a></code>,
+    <div class="dont-index"><p><a href="http://maptools.r-forge.r-project.org/reference/maptools-deprecated.html" class="external-link">maptools::writePolyShape</a>, <code><a href="http://maptools.r-forge.r-project.org/reference/maptools-deprecated.html" class="external-link">maptools::writePointsShape()</a></code>,
 <code><a href="https://rdrr.io/pkg/foreign/man/write.dbf.html" class="external-link">foreign::write.dbf()</a></code>, <code><a href="https://rdrr.io/r/utils/write.table.html" class="external-link">utils::write.table()</a></code>.</p></div>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in">  <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in">    <span class="fu">export</span><span class="op">(</span><span class="va">fdhs</span>, element<span class="op">=</span><span class="st">"boundary"</span>, file<span class="op">=</span><span class="st">"area"</span><span class="op">)</span></span>
-<span class="r-in">    <span class="fu">export</span><span class="op">(</span><span class="va">fdhs</span>, element<span class="op">=</span><span class="st">"clusters"</span>, format<span class="op">=</span><span class="st">"shp"</span>, file<span class="op">=</span><span class="st">"points"</span><span class="op">)</span></span>
-<span class="r-in">    </span>
-<span class="r-in">    <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in">    <span class="fu">export</span><span class="op">(</span><span class="va">dhs</span>, element<span class="op">=</span><span class="st">"clusters"</span>, format<span class="op">=</span><span class="st">"csv"</span>, N<span class="op">=</span><span class="fl">300</span>, file<span class="op">=</span><span class="st">"points"</span><span class="op">)</span></span>
-<span class="r-in">  <span class="op">}</span></span>
-<span class="r-in"></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span>  <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>    <span class="fu">export</span><span class="op">(</span><span class="va">fdhs</span>, element<span class="op">=</span><span class="st">"boundary"</span>, file<span class="op">=</span><span class="st">"area"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="fu">export</span><span class="op">(</span><span class="va">fdhs</span>, element<span class="op">=</span><span class="st">"clusters"</span>, format<span class="op">=</span><span class="st">"shp"</span>, file<span class="op">=</span><span class="st">"points"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    </span></span>
+<span class="r-in"><span>    <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span>    <span class="fu">export</span><span class="op">(</span><span class="va">dhs</span>, element<span class="op">=</span><span class="st">"clusters"</span>, format<span class="op">=</span><span class="st">"csv"</span>, N<span class="op">=</span><span class="fl">300</span>, file<span class="op">=</span><span class="st">"points"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -160,7 +181,7 @@ the Excel convention for CSV files in some Western European locales. <br><code>s
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

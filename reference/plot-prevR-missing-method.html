@@ -65,41 +65,56 @@ Plot clusters, number of observations per cluster or number of positive cases pe
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for prevR,missing</span>
-<span class="fu">plot</span><span class="op">(</span>
-  <span class="va">x</span>,
-  type <span class="op">=</span> <span class="st">"position"</span>,
-  add.legend <span class="op">=</span> <span class="cn">TRUE</span>,
-  legend.location <span class="op">=</span> <span class="st">"bottomright"</span>,
-  factor.size <span class="op">=</span> <span class="fl">0.2</span>,
-  new.window <span class="op">=</span> <span class="cn">FALSE</span>,
-  axes <span class="op">=</span> <span class="cn">F</span>,
-  <span class="va">...</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for prevR,missing</span></span>
+<span><span class="fu">plot</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"position"</span>,</span>
+<span>  add.legend <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  legend.location <span class="op">=</span> <span class="st">"bottomright"</span>,</span>
+<span>  factor.size <span class="op">=</span> <span class="fl">0.2</span>,</span>
+<span>  new.window <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  axes <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>type</dt>
 <dd><p>graph to plot:</p><ul><li><p>"position" clusters position.</p></li>
 <li><p>"c.type" clusters per <code>c.type</code>.</p></li>
 <li><p>"count" number of observations per cluster.</p></li>
 <li><p>"flower" number of positive cases per cluster.</p></li>
 </ul></dd>
+
+
 <dt>add.legend</dt>
 <dd><p>add a legend?</p></dd>
+
+
 <dt>legend.location</dt>
 <dd><p>legend location.</p></dd>
+
+
 <dt>factor.size</dt>
 <dd><p>scale factor of rings (for <code>type="count"</code>).</p></dd>
+
+
 <dt>new.window</dt>
 <dd><p>plot in a new window?</p></dd>
+
+
 <dt>axes</dt>
 <dd><p>show axes?</p></dd>
+
+
 <dt>...</dt>
 <dd><p>additional arguments transmitted to <code><a href="https://rdrr.io/r/graphics/title.html" class="external-link">graphics::title()</a></code>.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -116,17 +131,17 @@ Plot clusters, number of observations per cluster or number of positive cases pe
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"position"</span>, main<span class="op">=</span><span class="st">"position"</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"position"</span>, main<span class="op">=</span><span class="st">"position"</span>, axes<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot-prevR-missing-method-1.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"c.type"</span>, main<span class="op">=</span><span class="st">"c.type"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"c.type"</span>, main<span class="op">=</span><span class="st">"c.type"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot-prevR-missing-method-2.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"count"</span>, main<span class="op">=</span><span class="st">"count"</span>, factor.size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"count"</span>, main<span class="op">=</span><span class="st">"count"</span>, factor.size <span class="op">=</span> <span class="fl">0.1</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot-prevR-missing-method-3.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"flower"</span>, main<span class="op">=</span><span class="st">"flower"</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">plot</span><span class="op">(</span><span class="va">fdhs</span>, type <span class="op">=</span> <span class="st">"flower"</span>, main<span class="op">=</span><span class="st">"flower"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot-prevR-missing-method-4.png" alt="" width="700" height="433"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -141,7 +156,7 @@ Plot clusters, number of observations per cluster or number of positive cases pe
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

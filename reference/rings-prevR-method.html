@@ -65,26 +65,37 @@ and/or equal radius and calculates several indicators from observations located 
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="co"># S4 method for prevR</span>
-<span class="fu">rings</span><span class="op">(</span><span class="va">object</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">50</span><span class="op">)</span>, R <span class="op">=</span> <span class="cn">Inf</span>, progression <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="co"># S4 method for prevR</span></span>
+<span><span class="fu">rings</span><span class="op">(</span><span class="va">object</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">500</span>, <span class="fl">50</span><span class="op">)</span>, R <span class="op">=</span> <span class="cn">Inf</span>, progression <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>object</dt>
 <dd><p>object of class <a href="prevR-class.html">prevR</a>.</p></dd>
+
+
 <dt>N</dt>
 <dd><p>minimum number of observations.</p></dd>
+
+
 <dt>R</dt>
 <dd><p>maximum rings radius (in kilometers if coordinates in decimal degrees,
 in the unit of the projection otherwise).</p></dd>
+
+
 <dt>progression</dt>
 <dd><p>show a progress bar?</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Return <code>object</code> with the slot <code>rings</code> completed for each couple (N,R).
-Each entry is composed of 3 elements: <code>N</code>, minimum number of observations per ring; <code>R</code>,
+    
+
+<p>Return <code>object</code> with the slot <code>rings</code> completed for each couple (N,R).</p>
+
+
+<p>Each entry is composed of 3 elements: <code>N</code>, minimum number of observations per ring; <code>R</code>,
 maximum radius of rings and <code>estimates</code>, a data frame with the following variables:</p><ul><li><p>"id" cluster ID.</p></li>
 <li><p>"r.pos" number of positive cases inside the ring.</p></li>
 <li><p>"r.n" number of valid observations inside the ring.</p></li>
@@ -96,8 +107,13 @@ in the unit of the projection otherwise).</p></li>
 <li><p>"r.wn" (optional) sum of weights of valid observations inside the ring.</p></li>
 <li><p>"r.wprev" (optional) weighted observed prevalence (in \<!-- %) inside the ring (r.wpos/r.wn). --></p></li>
 </ul><p>Note: the list <code>rings</code> is named, the name of each element is N<em>N_value</em>.R<em>R_value</em>,
-for example <em>N300.RInf</em>.
-Note 2: <em>r.wpos</em>, <em>r.wn</em> and <em>r.wprev</em> are calculated only if the slot <code>clusters</code>of <code>object</code> contains weighted data.</p>
+for example <em>N300.RInf</em>.</p>
+
+
+<p>Note 2: <em>r.wpos</em>, <em>r.wn</em> and <em>r.wprev</em> are calculated only if the slot <code>clusters</code></p>
+
+
+<p>of <code>object</code> contains weighted data.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -131,11 +147,11 @@ PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu">rings</span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu">rings</span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span>,<span class="fl">400</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -150,7 +166,7 @@ PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
