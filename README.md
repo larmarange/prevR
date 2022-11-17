@@ -28,7 +28,7 @@ install.packages("prevR")
 Latest version from GitHub:
 
 ```
-devtools::install_github("larmarange/prevR")
+remotes::install_github("larmarange/prevR")
 ```
 
 ## Some additional code / functions
