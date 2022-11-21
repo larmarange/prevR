@@ -1,105 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://larmarange.github.io/prevR/404.html</loc>
   </url>
   <url>
-    <loc>/articles/index.html</loc>
+    <loc>https://larmarange.github.io/prevR/articles/index.html</loc>
   </url>
   <url>
-    <loc>/articles/intro_prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/articles/intro_prevR.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://larmarange.github.io/prevR/authors.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://larmarange.github.io/prevR/index.html</loc>
   </url>
   <url>
-    <loc>/news/index.html</loc>
+    <loc>https://larmarange.github.io/prevR/news/index.html</loc>
   </url>
   <url>
-    <loc>/reference/NA.outside.SpatialPolygons.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/NA.outside.SpatialPolygons.html</loc>
   </url>
   <url>
-    <loc>/reference/Noptim.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/Noptim.html</loc>
   </url>
   <url>
-    <loc>/reference/TMWorldBorders.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/TMWorldBorders.html</loc>
   </url>
   <url>
-    <loc>/reference/as.SpatialGrid.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/as.SpatialGrid.html</loc>
   </url>
   <url>
-    <loc>/reference/as.data.frame.prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/as.data.frame.prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/as.prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/as.prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/changeproj-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/changeproj-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/create.boundary.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/create.boundary.html</loc>
   </url>
   <url>
-    <loc>/reference/direct.label_prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/direct.label_prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/export-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/export-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/fdhs.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/fdhs.html</loc>
   </url>
   <url>
-    <loc>/reference/import.dhs.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/import.dhs.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/index.html</loc>
   </url>
   <url>
-    <loc>/reference/is.prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/is.prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/kde-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/kde-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/krige-ANY-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/krige-ANY-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/plot-prevR-missing-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/plot-prevR-missing-method.html</loc>
   </url>
   <url>
-    <loc>/reference/point.in.SpatialPolygons.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/point.in.SpatialPolygons.html</loc>
   </url>
   <url>
-    <loc>/reference/prevR-class.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/prevR-class.html</loc>
   </url>
   <url>
-    <loc>/reference/prevR-package.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/prevR-package.html</loc>
   </url>
   <url>
-    <loc>/reference/prevR.colors.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/prevR.colors.html</loc>
   </url>
   <url>
-    <loc>/reference/print-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/print-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/quick.prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/quick.prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/rings-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/rings-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/show-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/show-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/summary-prevR-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/summary-prevR-method.html</loc>
   </url>
   <url>
-    <loc>/reference/theme_prevR.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/theme_prevR.html</loc>
   </url>
   <url>
-    <loc>/reference/xyz2dataframe.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/xyz2dataframe.html</loc>
   </url>
 </urlset>
