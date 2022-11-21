@@ -21,7 +21,7 @@ Survey (DHS) or an analog survey.
 
 To install **stable version**:
 
-```{r eval=FALSE}
+```
 install.packages("prevR")
 ```
 
@@ -29,7 +29,7 @@ Documentation of stable version: <https://larmarange.github.io/prevR/>
 
 To install **development version**:
 
-```{r eval=FALSE}
+```
 remotes::install_github("larmarange/prevR")
 ```
 
