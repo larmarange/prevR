@@ -17,23 +17,23 @@ Survey (DHS) or an analog survey.
 
 * <https://journals.openedition.org/cybergeo/24606>
 
-## Installation
+## Installation & Documentation
 
-From CRAN:
+To install **stable version**:
 
-```
+```{r eval=FALSE}
 install.packages("prevR")
 ```
 
-Latest version from GitHub:
+Documentation of stable version: <https://larmarange.github.io/prevR/>
 
-```
+To install **development version**:
+
+```{r eval=FALSE}
 remotes::install_github("larmarange/prevR")
 ```
 
-## Some additional code / functions
-
-<https://github.com/larmarange/prevR-extra>
+Documentation of development version: <https://larmarange.github.io/prevR/dev/>
 
 
 ## Updating PO files
