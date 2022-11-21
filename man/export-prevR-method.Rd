@@ -48,7 +48,7 @@ or if \code{format="shp"} or if \code{format="dbf"}).}
 (unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).}
 
 \item{\dots}{additional arguments transmitted to
-\code{\link[rgdal:writeOGR]{rgdal::writeOGR()}}, \code{\link[foreign:write.dbf]{foreign::write.dbf()}} or
+\code{\link[rgdal:rgdal-deprecated]{rgdal::writeOGR()}}, \code{\link[foreign:write.dbf]{foreign::write.dbf()}} or
 \code{\link[utils:write.table]{utils::write.table()}}.}
 }
 \description{
@@ -92,7 +92,7 @@ the Excel convention for CSV files in some Western European locales. \cr
 
 }
 \seealso{
-\link[maptools:readShapePoly]{maptools::writePolyShape}, \code{\link[maptools:readShapePoints]{maptools::writePointsShape()}},
+\link[maptools:maptools-deprecated]{maptools::writePolyShape}, \code{\link[maptools:maptools-deprecated]{maptools::writePointsShape()}},
 \code{\link[foreign:write.dbf]{foreign::write.dbf()}}, \code{\link[utils:write.table]{utils::write.table()}}.
 }
 \keyword{manip}
