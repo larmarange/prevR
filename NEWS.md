@@ -1,4 +1,4 @@
-# prevR (development version)
+# prevR 4.0.1
 
 * Compatibility with `rlang` 0.3.0 and `ggplot2` 3.4.0 (#24)
 
