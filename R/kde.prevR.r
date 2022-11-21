@@ -250,12 +250,14 @@ setMethod("kde","prevR",
       k.wpos = 0
       k.wobs = 0
       for (i in 1:length(bw)) {
-        temp   = KernSmooth::bkde2D(
-          x = matrix(c(x[i], y[i]), ncol = 2),
-          bandwidth = c(bwx[i]/2, bwy[i]/2),
-          gridsize = c(gridsize.x, gridsize.y),
-          range.x = list(range.x, range.y),
-          truncate = FALSE
+        temp = suppressWarnings(
+          KernSmooth::bkde2D(
+            x = matrix(c(x[i], y[i]), ncol = 2),
+            bandwidth = c(bwx[i]/2, bwy[i]/2),
+            gridsize = c(gridsize.x, gridsize.y),
+            range.x = list(range.x, range.y),
+            truncate = FALSE
+          )
         )
         k.pos  = k.pos + temp$fhat * dataCase[["pos"]][i]
         k.obs  = k.obs + temp$fhat * dataCase[["n"]][i]

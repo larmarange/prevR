@@ -26,7 +26,7 @@ direct.label_prevR <- function (p, method = NULL, debug = FALSE)
       m[names(L$mapping)] <- L$mapping
       colvar <- m[[colour.or.fill]]
       if (!is.null(colvar)) {
-        return(list(layer = L, colvar = as.character(colvar)))
+        return(list(layer = L, colvar = colvar))
       }
     }
   }
@@ -38,7 +38,7 @@ direct.label_prevR <- function (p, method = NULL, debug = FALSE)
     stop("Need colour or fill aesthetic to infer default direct labels.")
   }
   L <- dl.info$layer
-  colvar <- dl.info$colvar[2]
+  colvar <- dl.info$colvar
   geom <- L$geom$objname
   if (is.null(method)) 
     method <- directlabels::default.picker("ggplot")
@@ -47,7 +47,7 @@ direct.label_prevR <- function (p, method = NULL, debug = FALSE)
   } else {
     NULL
   }
-  a <- ggplot2::aes_string(label = colvar, colour = colvar)
+  a <- ggplot2::aes(label = {{ colvar }}, colour = {{ colvar }})
   a2 <- structure(c(L$mapping, a), class = "uneval")
   dlgeom <- directlabels::geom_dl(a2, method = method, stat = L$stat, debug = debug, 
                     data = data)
