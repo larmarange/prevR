@@ -107,3 +107,6 @@ quick.prevR <- function(object, N = Noptim(object), nb.cells = 100, cell.size = 
   else if (!return.results & return.plot)
     return(list(tidy = r, plot=p))
 }
+
+# to avoid no visible binding in after_stat(level)
+utils::globalVariables("level")
