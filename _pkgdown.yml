@@ -1,4 +1,12 @@
-destination: docs
+url: https://larmarange.github.io/prevR/
+development:
+  mode: auto
+template:
+  params:
+    bootswatch: flatly
+authors:
+  Joseph Larmarange:
+    href: "http://joseph.larmarange.net/"
 reference:
 - title: Data imort
   desc:  Functions to create a prevR object and to import data
