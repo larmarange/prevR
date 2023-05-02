@@ -144,7 +144,7 @@ methods::setClass(
       )
     }
     proj <- slot(object, "proj")
-    isOk <- try(sf::st_crs(proj$input), silent = TRUE)
+    isOk <- try(sf::st_crs(proj), silent = TRUE)
     if (inherits(isOk, "try-error")) {
       stop(
         gettextf(
