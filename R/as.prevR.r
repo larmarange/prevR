@@ -75,7 +75,8 @@ as.prevR <- function(data,
         "the following variables (%s), defined in 'col', are not present in 'data'.", # nolint
         domain = "R-prevR"
       ),
-      missing.var)
+      missing.var
+    )
     stop(stop.mess, call. = FALSE)
   }
 
@@ -116,7 +117,8 @@ as.prevR <- function(data,
         n.cancelled,
         "The variable %s has been cancelled from 'data'.",
         "The following variables (%s) have been cancelled from 'data'.",
-        domain = "R-prevR"),
+        domain = "R-prevR"
+      ),
       cancelled.var
     )
     warning(mess)

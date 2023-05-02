@@ -18,10 +18,10 @@
     nom.param <- paste(names(nc), sep = ", ")
     stop(
       gettextf(
-        "the input parameters are not valid: %s must have the same length or a length equal to 1.", #nolint
+        "the input parameters are not valid: %s must have the same length or a length equal to 1.", # nolint
         nom.param,
         domain = "R-prevR"
-        ),
+      ),
       call. = FALSE
     )
   }

@@ -10,16 +10,17 @@
 #' @examples
 #' print(fdhs)
 #' \dontrun{
-#'  dhs <- rings(fdhs,N=c(100,300,500))
-#'  print(dhs)
+#' dhs <- rings(fdhs, N = c(100, 300, 500))
+#' print(dhs)
 #' }
 #'
 #' @aliases print print-methods print,prevR-method
 #' @exportMethod print
 
-setMethod("print", "prevR",
+setMethod(
+  "print", "prevR",
   function(x) {
-     show(x)
-     invisible(NULL)
-    }
+    show(x)
+    invisible(NULL)
+  }
 )

@@ -28,8 +28,7 @@ setMethod(
 
 prevRsummary <- function(
     object,
-    probs = c(0, .10, .25, .50, .75, .80, .90, .95, .99, 1)
-  ) {
+    probs = c(0, .10, .25, .50, .75, .80, .90, .95, .99, 1)) {
   message("Object of class 'prevR'\n", domain = "R-prevR")
   clusters <- slot(object, "clusters")
   message("SLOT CLUSTERS\n", domain = "R-prevR")
