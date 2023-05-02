@@ -20,13 +20,9 @@ LazyData: yes
 Depends:
     R (>= 3.5.0)
 Imports:
-    sp,
-    rgdal (>= 0.7),
     ggplot2,
     directlabels,
     KernSmooth,
-    fields,
-    gstat,
     foreign,
     maptools,
     methods
