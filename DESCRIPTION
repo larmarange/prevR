@@ -23,6 +23,7 @@ Imports:
     ggplot2,
     directlabels,
     KernSmooth,
+    fields,
     foreign,
     maptools,
     methods

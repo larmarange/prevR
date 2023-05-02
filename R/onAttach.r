@@ -8,9 +8,9 @@
   packageStartupMessage(
     gettext(
       paste0(
-        "\t- type help('prevR') for details\n\t- type demo(prevR) for a ",
-        "demonstration\n\t- type citation('prevR') to cite prevR in a ",
-        "publication.\n\n "
+        "\t- type help('prevR') for details\n",
+        "\t- type demo(prevR) for a demonstration\n",
+        "\t- type citation('prevR') to cite prevR in a publication.\n\n "
       ),
       domain = "R-prevR"
     )
