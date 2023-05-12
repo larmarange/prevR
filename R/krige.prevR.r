@@ -19,7 +19,7 @@
 #' @param keep.variance return variance of estimates?
 #' @param show.variogram plot the variogram?
 #' @param  idp inverse distance weighting power (see [gstat::idw()]).
-#' @param \dots additional arguments transmitted to [gstat::krige()]
+#' @param ... additional arguments transmitted to [gstat::krige()]
 #'   or [gstat::idw()].
 #'
 #' @importMethodsFrom gstat krige
@@ -65,11 +65,14 @@
 #' DOI: 10.4000/cybergeo.24606.
 #'
 #' @note Results could be plotted with [sf::plot()] or with \pkg{ggplot2}
-#' using [ggplot2::geom_sf()]. See examples.\cr
+#' using [ggplot2::geom_sf()]. See examples.
+#'
 #' \pkg{prevR} provides several continuous color palettes
-#' (see [prevR.colors]).\cr
+#' (see [prevR.colors]).
+#'
 #' Results could be turned into a \pkg{stars} raster using
-#' [stars::st_rasterize()].\cr
+#' [stars::st_rasterize()].
+#'
 #' To export to ASCII grid, rasterize the results with [stars::st_rasterize()],
 #' convert to `SpatRast` with [terra::rast()], extract the desired layer with
 #' `[[]]` and then use `terra::writeRaster()`. See examples.
@@ -81,7 +84,9 @@
 #'     dhs <- rings(fdhs, N = c(100,200,300,400,500))
 #'     radius.N300 <- krige('r.radius', dhs, N = 300, nb.cells = 50)
 #'     prev.krige <- krige(r.wprev ~ 1, dhs, N = c(100, 300, 500))
+#'
 #'     plot(prev.krige, lty = 0)
+#'
 #'     library(ggplot2)
 #'     ggplot(prev.krige) +
 #'       aes(fill = r.wprev.N300.RInf) +
@@ -97,12 +102,11 @@
 #' @keywords smooth spatial
 #' @exportMethod krige
 #' @aliases krige,prevR-method krige-methods krige,ANY,prevR-method krige
-
 setMethod(
   "krige", c(formula = "ANY", locations = "prevR"),
   function(formula, locations, N = NULL, R = Inf, model = NULL,
-            nb.cells = 100, cell.size = NULL, fit = "auto",
-            keep.variance = FALSE,  show.variogram = FALSE, ...) {
+           nb.cells = 100, cell.size = NULL, fit = "auto",
+           keep.variance = FALSE, show.variogram = FALSE, ...) {
     object <- locations
     if (!is.prevR(object, "rings")) {
       stop(
@@ -127,10 +131,12 @@ setMethod(
                   "%s is not a valid formula: ",
                   "krige.prevR only implement simple or ordinary kriging, ",
                   "so formula must have only one variable and ",
-                  "no predictor (like 'var~1')."),
+                  "no predictor (like 'var~1')."
+                ),
                 formule,
                 domain = "R-prevR"
-              ))
+              )
+            )
           }
           formula[[i]] <- all.vars(formule)
         }
@@ -138,7 +144,7 @@ setMethod(
       formula <- as.character(formula)
     }
     if (is.null(model) && !is.element(fit, "auto")) {
-       stop("the 'fit' argument must be 'auto'.")
+      stop("the 'fit' argument must be 'auto'.")
     }
     if (inherits(model, "variogramModel")) model <- list(model)
 
@@ -148,9 +154,9 @@ setMethod(
     if (is.null(R)) R <- sapply(rings, function(x) x$R)
 
     if (length(model) != 0) {
-        .isInputOk.prevR(formula = formula, N = N, R = R, model = model)
+      .isInputOk.prevR(formula = formula, N = N, R = R, model = model)
     } else {
-        .isInputOk.prevR(formula = formula, N = N, R = R)
+      .isInputOk.prevR(formula = formula, N = N, R = R)
     }
     couples <- unique(
       data.frame(
@@ -228,8 +234,9 @@ setMethod(
           ),
           silent = TRUE
         )
-        if (inherits(one.model, "try-error") || attr(one.model, "singular"))
+        if (inherits(one.model, "try-error") || attr(one.model, "singular")) {
           one.model <- gstat::vgm(param[1], "Exp", param[2])
+        }
       }
 
       result.one <- krige(
@@ -240,24 +247,25 @@ setMethod(
         ...
       )
       if (length(model) == 0) {
-         i <- i + 1
-         list.variogram[[i]] <- list(
-           parameters = c(one.var, one.N, one.R),
-           sample.vario = sample.vario,
-           model = one.model
-         )
+        i <- i + 1
+        list.variogram[[i]] <- list(
+          parameters = c(one.var, one.N, one.R),
+          sample.vario = sample.vario,
+          model = one.model
+        )
       }
       names(result.one) <- c(
         paste0(one.var, ".N", one.N, ".R", one.R),
         paste0(one.var, ".N", one.N, ".R", one.R, ".var"),
         "geometry"
       )
-      if (!keep.variance)
+      if (!keep.variance) {
         result.one <- result.one[, -2]
+      }
 
       if (first) {
         result <- result.one
-        first  <- FALSE
+        first <- FALSE
       } else {
         result <- cbind(
           result,
@@ -289,8 +297,8 @@ setMethod(
         )
         n1 <- n1 + 1
         if (n1 == nn + 1) {
-         n1 <- 1
-         n2 <- n2 + 1
+          n1 <- 1
+          n2 <- n2 + 1
         }
       }
     }
@@ -304,7 +312,7 @@ setMethod(
       result <- st_filter_prevR(result, boundary)
     }
 
-  result
+    result
   }
 )
 
@@ -317,13 +325,14 @@ setMethod(
 setMethod(
   "idw", c(formula = "ANY", locations = "prevR"),
   function(formula, locations, N = NULL, R = Inf,
-            nb.cells = 100, cell.size = NULL, idp = 2,  ...) {
+           nb.cells = 100, cell.size = NULL, idp = 2, ...) {
     object <- locations
     keep.variance <- FALSE
     if (!is.prevR(object, "rings")) {
       stop(
         "the slot 'rings' is empty: you have to run the rings function first.", # nolint
-        call. = FALSE)
+        call. = FALSE
+      )
     }
 
     if (inherits(formula, "formula")) {
@@ -339,7 +348,8 @@ setMethod(
                 paste0(
                   "%s is not a valid formula: ",
                   "idw.prevR only accept formula with only one ",
-                  "variable and no predictor like 'var ~ 1'."),
+                  "variable and no predictor like 'var ~ 1'."
+                ),
                 formule,
                 domain = "R-prevR"
               )
@@ -374,7 +384,7 @@ setMethod(
 
     first <- TRUE
 
-    for (ic in seq_len(nrow(couples))){
+    for (ic in seq_len(nrow(couples))) {
       one.var <- couples[ic, "var"]
       one.N <- couples[ic, "N"]
       one.R <- couples[ic, "R"]
@@ -417,12 +427,13 @@ setMethod(
         paste0(one.var, ".N", one.N, ".R", one.R, ".var"),
         "geometry"
       )
-      if (!keep.variance)
+      if (!keep.variance) {
         result.one <- result.one[, -2]
+      }
 
       if (first) {
         result <- result.one
-        first  <- FALSE
+        first <- FALSE
       } else {
         result <- cbind(
           result,

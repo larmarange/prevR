@@ -3,18 +3,17 @@
 setGeneric(
   "kde",
   function(
-    object,
-    N = NULL,
-    R = NULL,
-    weighted = TRUE,
-    risk.ratio = FALSE,
-    keep.details = FALSE,
-    nb.cells = 100,
-    cell.size = NULL,
-    progression = TRUE,
-    short.names = FALSE
-  ) {
-  standardGeneric("kde")
+      object,
+      N = NULL,
+      R = NULL,
+      weighted = TRUE,
+      risk.ratio = FALSE,
+      keep.details = FALSE,
+      nb.cells = 100,
+      cell.size = NULL,
+      progression = TRUE,
+      short.names = FALSE) {
+    standardGeneric("kde")
   }
 )
 
@@ -54,7 +53,7 @@ setGeneric(
 #' Fixed bandwidths could also be used. More precisely, the bandwidth used is
 #' half the radius of rings of equal number of observations or equal radius
 #' (parameters `N` and `R`) calculated by the' function [rings()].
-#' 
+#'
 #' See references for a detailed explanation of the implemented methodology.
 #'
 #' `N` and `R` determine the rings to use for the estimation. If they are not
@@ -94,13 +93,13 @@ setGeneric(
 #'
 #' @note Results could be plotted with [sf::plot()] or with \pkg{ggplot2}
 #' using [ggplot2::geom_sf()]. See examples.
-#' 
+#'
 #' \pkg{prevR} provides several continuous color palettes
 #' (see [prevR.colors]).
-#' 
+#'
 #' Results could be turned into a \pkg{stars} raster using
 #' [stars::st_rasterize()].
-#' 
+#'
 #' To export to ASCII grid, rasterize the results with [stars::st_rasterize()],
 #' convert to `SpatRast` with [terra::rast()], extract the desired layer with
 #' `[[]]` and then use `terra::writeRaster()`. See examples.
@@ -113,22 +112,22 @@ setGeneric(
 #'
 #' @examples
 #' \dontrun{
-#'   dhs <- rings(fdhs, N = c(100, 200, 300, 400, 500))
+#' dhs <- rings(fdhs, N = c(100, 200, 300, 400, 500))
 #'
-#'   prev.N300 <- kde(dhs, N = 300, nb.cells = 200)
+#' prev.N300 <- kde(dhs, N = 300, nb.cells = 200)
 #'
-#'   plot(prev.N300, lty = 0)
-#'     
-#'   library(ggplot2)
-#'   ggplot(prev.N300) +
-#'     aes(fill = k.wprev.N300.RInf) +
-#'     geom_sf(colour = "transparent") +
-#'     scale_fill_gradientn(colors = prevR.colors.red()) +
-#'     theme_prevR_light()
+#' plot(prev.N300, lty = 0)
 #'
-#'   # Export k.wprev.N300.RInf surface in ASCII Grid
-#'   r <- terra::rast(stars::st_rasterize(prev.N300))
-#'   # writeRaster(r[[2]], "kprev.N300.asc")
+#' library(ggplot2)
+#' ggplot(prev.N300) +
+#'   aes(fill = k.wprev.N300.RInf) +
+#'   geom_sf(colour = "transparent") +
+#'   scale_fill_gradientn(colors = prevR.colors.red()) +
+#'   theme_prevR_light()
+#'
+#' # Export k.wprev.N300.RInf surface in ASCII Grid
+#' r <- terra::rast(stars::st_rasterize(prev.N300))
+#' # writeRaster(r[[2]], "kprev.N300.asc")
 #' }
 #'
 #' @keywords smooth spatial
@@ -138,18 +137,16 @@ setGeneric(
 setMethod(
   "kde", "prevR",
   function(
-    object,
-    N = NULL,
-    R = NULL,
-    weighted = TRUE,
-    risk.ratio = FALSE,
-    keep.details = FALSE,
-    nb.cells = 100,
-    cell.size = NULL,
-    progression = TRUE,
-    short.names = FALSE
-  ) {
-
+      object,
+      N = NULL,
+      R = NULL,
+      weighted = TRUE,
+      risk.ratio = FALSE,
+      keep.details = FALSE,
+      nb.cells = 100,
+      cell.size = NULL,
+      progression = TRUE,
+      short.names = FALSE) {
     if (is.null(N) && !is.null(R)) N <- Inf
     if (is.null(R) && !is.null(N)) R <- Inf
 
@@ -184,7 +181,7 @@ setMethod(
     proj <- slot(object, "proj")
     longlat <- FALSE
     if (regexpr("longlat", proj$input) != -1 ||
-        regexpr("latlong", proj$input) != -1) {
+      regexpr("latlong", proj$input) != -1) {
       longlat <- TRUE
     }
 
@@ -200,7 +197,6 @@ setMethod(
     gridsize.x <- length(unique(coord[, 1]))
     gridsize.y <- length(unique(coord[, 2]))
 
-    first <- TRUE
     one.var <- "r.prev"
     result <- NULL
 
@@ -241,7 +237,7 @@ setMethod(
         dataCase$r.radius <- one.R
       }
       if (nrow(dataCase) == 0) next
-      
+
       bw <- dataCase[["r.radius"]]
       bwx <- bw
       bwy <- bw
@@ -260,7 +256,7 @@ setMethod(
       k.obs <- 0
       k.wpos <- 0
       k.wobs <- 0
-      for (i in 1:length(bw)) {
+      for (i in seq_len(length(bw))) {
         temp <- suppressWarnings(
           KernSmooth::bkde2D(
             x = matrix(c(x[i], y[i]), ncol = 2),
@@ -295,15 +291,27 @@ setMethod(
       result.one <- NULL
 
       if (risk.ratio == FALSE || risk.ratio == 2) {
-        result.one <- c(result.one, list(k.pos = k.pos, k.obs = k.obs, k.prev = k.prev))
+        result.one <- c(
+          result.one,
+          list(k.pos = k.pos, k.obs = k.obs, k.prev = k.prev)
+        )
         if (weighted == TRUE || weighted == 2) {
-          result.one <- c(result.one, list(k.wpos = k.wpos, k.wobs = k.wobs, k.wprev = k.wprev))
+          result.one <- c(
+            result.one,
+            list(k.wpos = k.wpos, k.wobs = k.wobs, k.wprev = k.wprev)
+          )
         }
       }
       if (risk.ratio == TRUE || risk.ratio == 2) {
-        result.one <- c(result.one, list(k.case = k.case, k.control = k.control, k.rr = k.rr))
+        result.one <- c(
+          result.one,
+          list(k.case = k.case, k.control = k.control, k.rr = k.rr)
+        )
         if (weighted == TRUE || weighted == 2) {
-          result.one <- c(result.one, list(k.wcase = k.wcase, k.wcontrol = k.wcontrol, k.wrr = k.wrr))
+          result.one <- c(
+            result.one,
+            list(k.wcase = k.wcase, k.wcontrol = k.wcontrol, k.wrr = k.wrr)
+          )
         }
       }
 
