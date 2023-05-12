@@ -55,7 +55,7 @@
 #' @export
 #' @keywords color
 prevR.colors.blue <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 2.75
       i <- n - 2 * j
@@ -79,7 +79,7 @@ prevR.colors.blue <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.blue.inverse <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 2.75
       i <- n - 2 * j
@@ -103,7 +103,7 @@ prevR.colors.blue.inverse <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.gray <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       i <- n - 1
       gray(i:0 / i)
@@ -115,7 +115,7 @@ prevR.colors.gray <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.gray.inverse <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       i <- n - 1
       gray(0:i / i)
@@ -127,7 +127,7 @@ prevR.colors.gray.inverse <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.green <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 2
       i <- n - 2 * j
@@ -151,7 +151,7 @@ prevR.colors.green <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.green.inverse <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 2
       i <- n - 2 * j
@@ -175,7 +175,7 @@ prevR.colors.green.inverse <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.red <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 3.5
       i <- n - 2 * j
@@ -199,7 +199,7 @@ prevR.colors.red <-
 #' @export
 #' @rdname prevR.colors
 prevR.colors.red.inverse <-
-  function(n) {
+  function(n = 10) {
     if ((n <- as.integer(n[1])) > 0) {
       j <- n %/% 3.5
       i <- n - 2 * j
