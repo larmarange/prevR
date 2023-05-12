@@ -38,7 +38,6 @@ setGeneric(
 #'   [sf::st_write], [foreign::write.dbf()] or
 #'   [utils::write.table()].
 #' @importFrom foreign write.dbf
-#' @importFrom rgdal writeOGR
 #' @details If \code{element="boundary"}, the slot \code{boundary} of
 #' \code{object} will be exported as a \emph{shapefile}.
 #'
