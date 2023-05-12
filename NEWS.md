@@ -1,5 +1,8 @@
 # prevR (development version)
 
+* `prevR` objects now use `sf` spatial classes instead of those from `sp`
+* `as.SpatialGrid()` method has been removed: use `make.grid.prevR()` instead
+
 # prevR 4.0.1
 
 * Compatibility with `rlang` 0.3.0 and `ggplot2` 3.4.0 (#24)
