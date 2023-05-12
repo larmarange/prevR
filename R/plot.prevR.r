@@ -1,5 +1,4 @@
 #' @exportMethod plot
-#' @importFrom sp plot
 
 if (!isGeneric("plot")) {
   setGeneric("plot", function(x, y, ...) standardGeneric("plot"))
@@ -24,7 +23,6 @@ if (!isGeneric("plot")) {
 #' @param new.window plot in a new window?
 #' @param axes show axes?
 #' @param ... additional arguments transmitted to [graphics::title()].
-#' @import sp
 #'
 #' @details
 #' Available values for `legend.location` are: \emph{"bottomright"},
@@ -89,9 +87,9 @@ setMethod(
           legend(
             legend.location,
             legend = niveaux,
-            pch = pchDep + seq_along(length(niveaux)),
+            pch = pchDep + seq_len(length(niveaux)),
             col = "black",
-            pt.bg = 1 + seq_along(length(niveaux))
+            pt.bg = 1 + seq_len(length(niveaux))
           )
         }
         title(...)
