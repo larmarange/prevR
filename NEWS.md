@@ -2,6 +2,8 @@
 
 * `prevR` objects now use `sf` spatial classes instead of those from `sp`
 * `as.SpatialGrid()` method has been removed: use `make.grid.prevR()` instead
+* `point.in.SpatialPolygons()` and `NA.outside.SpatialPolygons()` have been
+  removed, see `st_filter_prevR()` instead
 
 # prevR 4.0.1
 

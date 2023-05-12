@@ -20,14 +20,18 @@ LazyData: yes
 Depends:
     R (>= 3.5.0)
 Imports:
-    ggplot2,
     directlabels,
+    ggplot2,
+    gstat,
     KernSmooth,
     fields,
     foreign,
     maptools,
-    methods
+    methods,
+    sf,
+    stars
 Suggests:
+    grDevices,
     knitr,
     rmarkdown
 Encoding: UTF-8
