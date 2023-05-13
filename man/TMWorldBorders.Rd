@@ -38,7 +38,7 @@ endorsement or acceptance by the authors. Use this dataset with care,
 as several of the borders are disputed.
 }
 \examples{
-plot(TMWorldBorders)
+plot(TMWorldBorders["NAME"])
 }
 \keyword{datasets}
 \keyword{spatial}

@@ -50,7 +50,7 @@
 #' Interpolations are calculated on a spatial grid obtained with
 #' [make.grid.prevR()].
 #'
-#' @return Object of class [sf:sf].
+#' @return Object of class [sf::sf].
 #' The name of estimated surfaces depends on the name of the interpolated
 #' variable, N and R (for example: \emph{r.radius.N300.RInf}).
 #' If you ask the function to return variance (`keep.variance=TRUE`),

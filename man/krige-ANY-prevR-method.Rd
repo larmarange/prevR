@@ -66,7 +66,7 @@ or \code{\link[gstat:krige]{gstat::idw()}}.}
 \item{idp}{inverse distance weighting power (see \code{\link[gstat:krige]{gstat::idw()}}).}
 }
 \value{
-Object of class \link{sf:sf}.
+Object of class \link[sf:sf]{sf::sf}.
 The name of estimated surfaces depends on the name of the interpolated
 variable, N and R (for example: \emph{r.radius.N300.RInf}).
 If you ask the function to return variance (\code{keep.variance=TRUE}),

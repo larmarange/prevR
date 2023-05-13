@@ -164,7 +164,7 @@ as.prevR <- function(data,
     boundary <- sf::st_polygon(list(cbind(xx, yy)))
     boundary <- sf::st_sfc(boundary)
     boundary <- sf::st_sf(boundary)
-    st_crs(boundary) <- projCRS
+    sf::st_crs(boundary) <- projCRS
     attr(boundary, "valid") <- FALSE
   } else {
     if (!inherits(boundary, "sf")) {

@@ -202,4 +202,4 @@ prevR functions takes as input objects of class prevR.
 - Outputs of `kde()`, `krige()` and `idw()` are objects of class `SpatialPixelsDataFrame` (**sp** package).
 - Results could be plotted using the function `spplot()` from **sp**.
 - prevR provides several continuous color palettes (see `prevR.colors`) compatible with `spplot()`.
-- Calculated surfaces could be export using the function `writeAsciiGrid()`  from **maptools**.
+- Calculated surfaces could be export using the function `writeRaster()`  from **terra** (see examples in the documentation of `kde()` and `krige()`.
