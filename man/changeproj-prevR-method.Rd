@@ -11,7 +11,9 @@
 \arguments{
 \item{object}{object of class \linkS4class{prevR}.}
 
-\item{proj}{new map projection.}
+\item{proj}{new map projection. One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class \code{crs}, see \code{\link[sf:st_crs]{sf::st_crs()}}.}
 }
 \value{
 Return \code{object} expressed in the projection \code{proj}.
@@ -21,26 +23,26 @@ This function converts map projection (and/or datum) used by an object of
 class \linkS4class{prevR} into another one.
 }
 \details{
-\code{proj} could be a character string corresponding to a
-\emph{PROJ.4} projection (see \url{https://proj.org/} for more details)
-or an object of class \link[sp:CRS-class]{sp::CRS}.
+\code{changeproj()} transform the columns  "x" and "y" of the slot
+\code{clusters} of \code{object} and convert \code{boundary} using the new
+map projection defined by \code{proj}.
 
-\code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of
-\code{object} and convert \code{boundary} using the new map projection defined by \code{proj}.\cr
 If applicable, the slot \code{rings} will be recalculated.
 }
 \examples{
 print(fdhs)
-plot(fdhs, axes=TRUE, main="Projection: longitude/latitude")
+plot(fdhs, axes = TRUE, main = "Projection: longitude/latitude")
 
-fdhs2 <- changeproj(fdhs,
-                   "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+fdhs2 <- changeproj(
+  fdhs,
+  "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+)
 print(fdhs2)
-plot(fdhs2, axes=TRUE, main="Projection: UTM Zone 30")
+plot(fdhs2, axes = TRUE, main = "Projection: UTM Zone 30")
 
 }
 \seealso{
-\code{\link[rgdal:spTransform-methods]{rgdal::spTransform()}}, \linkS4class{prevR}.
+\code{\link[sf:st_transform]{sf::st_transform()}}, \linkS4class{prevR}
 }
 \keyword{manip}
 \keyword{spatial}

@@ -21,11 +21,11 @@ Exactly the same as \code{\link[=print]{print()}}.
 \examples{
 fdhs
 \dontrun{
- dhs <- rings(fdhs,N=c(100,300,500))
- dhs
+dhs <- rings(fdhs, N = c(100, 300, 500))
+dhs
 }
 
 }
 \seealso{
-\code{\link[=summary]{summary()}}.
+\code{\link[=summary]{summary()}}
 }

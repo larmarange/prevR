@@ -53,7 +53,8 @@ This function performs several analysis in one go:
 (i) apply \code{\link[=rings]{rings()}};
 (ii) compute prevalence surface with \code{\link[=kde]{kde()}};
 (iii) compute the surface of rings radii with \code{\link[=krige]{krige()}};
-(iv) plot prevalence surface using \code{\link[=prevR.colors.red]{prevR.colors.red()}} and add rings radii as a contour plot.
+(iv) plot prevalence surface using \code{\link[=prevR.colors.red]{prevR.colors.red()}} and add rings radii
+as a contour plot.
 }
 \details{
 \code{N} determine the rings to use for the estimation.
@@ -61,7 +62,7 @@ By default, a suggested value of N will be computed with \code{\link[=Noptim]{No
 }
 \examples{
 \dontrun{
-  quick.prevR(fdhs)
+quick.prevR(fdhs)
 }
 
 }

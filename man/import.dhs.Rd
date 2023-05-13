@@ -8,18 +8,22 @@ import.dhs(file.sav, file.dbf)
 }
 \arguments{
 \item{file.sav}{DHS data (one individual per line) in SPSS format (.sav),
-downloaded from \url{https://www.dhsprogram.com/}. Could also be directly a data.frame.}
+downloaded from \url{https://www.dhsprogram.com/}. Could also be directly a
+data.frame.}
 
-\item{file.dbf}{GPS position of clusters in DATABASE format (.dbf), downloaded from
-\url{https://www.dhsprogram.com/}.  Could also be directly a data.frame.}
+\item{file.dbf}{GPS position of clusters in DATABASE format (.dbf),
+downloaded from \url{https://www.dhsprogram.com/}.
+Could also be directly a data.frame.}
 }
 \description{
-This step by step function guides users to import data from a Demographic and Health Survey (DHS)
+This step by step function guides users to import data from a Demographic
+and Health Survey (DHS)
 and create an object of class \linkS4class{prevR}.
 }
 \note{
-If you don't provide the precise path of files, \R will check the working directory
-(see \code{\link[base:getwd]{base::setwd()}}). To specify the file path, see \code{\link[base:file.path]{base::file.path()}}.
+If you don't provide the precise path of files, \R will check the
+working directory (see \code{\link[base:getwd]{base::setwd()}}).
+To specify the file path, see \code{\link[base:file.path]{base::file.path()}}.
 
 This function was developed specifically for importing DHS.
 For a generic function for creating an object of class \linkS4class{prevR},

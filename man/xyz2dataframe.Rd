@@ -7,7 +7,8 @@
 xyz2dataframe(xyz, xcol = 1, ycol = 2, zcol = 3)
 }
 \arguments{
-\item{xyz}{a list with 3 elements: a vector with x-coordinates, a vector with y-coordinates and
+\item{xyz}{a list with 3 elements: a vector with x-coordinates,
+a vector with y-coordinates and
 and matrix with value for each point of coordinates \verb{x[i], y[j]}.}
 
 \item{xcol}{x index.}
@@ -21,21 +22,24 @@ A \code{data.frame}.
 }
 \description{
 Several functions (for example \code{\link[KernSmooth:bkde2D]{KernSmooth::bkde2D()}})
-return a surface as a list "xyz" composed of three elements: vector of ordinates in the x dimension,
-vector of ordinates in the y dimension and a matrix with the values of the surface in x and y.
+return a surface as a list "xyz" composed of three elements:
+vector of ordinates in the x dimension,
+vector of ordinates in the y dimension and
+a matrix with the values of the surface in x and y.
 This function transforms a list "xyz" into a data frame.
 }
 \note{
-\code{xyz} could be a list like \code{x,y,z1,z2,z3}. If so, \code{zcol} should be equal
+\code{xyz} could be a list like \code{x,y,z1,z2,z3}.
+If so, \code{zcol} should be equal
 to \code{c("z1","z2","z3")} or \code{c(3,4,5)}.
 }
 \examples{
-  x <- matrix(c(2,4,6,8,10,2,4,6,8,10), ncol = 2)
-  op <- KernSmooth::bkde2D(x, bandwidth = 1)
-  str(op)
-  
-  op.df <- xyz2dataframe(op)
-  str(op.df)
+x <- matrix(c(2, 4, 6, 8, 10, 2, 4, 6, 8, 10), ncol = 2)
+op <- KernSmooth::bkde2D(x, bandwidth = 1)
+str(op)
+
+op.df <- xyz2dataframe(op)
+str(op.df)
 
 }
 \keyword{manip}

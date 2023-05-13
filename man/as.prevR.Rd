@@ -22,11 +22,12 @@ as.prevR(data, col, boundary = NULL, proj = "+proj=longlat +datum=WGS84")
 }
 See examples.}
 
-\item{boundary}{object of class \code{\link[sp:SpatialPolygons-class]{sp::SpatialPolygons}}
-defining the studied area.}
+\item{boundary}{object of class \link[sf:sf]{sf::sf} defining the studied area.}
 
 \item{proj}{projection of clusters coordinates used in \code{data}
-(longitude and latitude in decimal degrees by default).}
+(longitude and latitude in decimal degrees by default). One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class \code{crs}, see \code{\link[sf:st_crs]{sf::st_crs()}}.}
 }
 \value{
 Object of class \code{\linkS4class{prevR}}
@@ -36,36 +37,32 @@ This function creates an object of class \code{\linkS4class{prevR}} from a data 
 }
 \details{
 Only "x", "y" "n" and "pos" are required in \code{col}.
-If "id" is not specified, a numerical identifier will be automatically created.
+If "id" is not specified, a numerical identifier will be automatically
+created.
 
-\code{proj} defines projection used by \code{data}. It could be a character string
-corresponding to a \emph{PROJ.4} projection (see \url{https://proj.org/}
-for more details) or an object of class \code{\link[sp:CRS-class]{sp::CRS}}.\cr
-If the projection of \code{boundary} is defined in  a slot called \code{proj4string},
-\code{boundary} will be projected according to \code{proj}. If the slot \code{proj4string}
-is missing, \code{boundary} will be considered to be already in the same projection as \code{proj}.
+If \code{boundary} is not defined (\code{NULL}), a rectangle corresponding to minimal
+and maximal coordinates of \code{data} will be used.
 
-If \code{boundary} is not defined (\code{NULL}), a considered  corresponding to minimal
-and maximal coordinates of \code{data} will be used.\cr
 \code{boundary} could be the result of the function \code{\link[=create.boundary]{create.boundary()}}.
 
 It's not possible to change projection of \code{data} with \code{as.prevR()}.
 Use \code{\link[=changeproj]{changeproj()}} instead.
 }
 \examples{
- col <- c(id = "cluster",
-          x = "x",
-          y = "y",
-          n = "n",
-          pos = "pos",
-          c.type = "residence",
-          wn = "weighted.n",
-          wpos = "weighted.pos"
- )
- dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
- 
- str(dhs)
- print(dhs)
+col <- c(
+  id = "cluster",
+  x = "x",
+  y = "y",
+  n = "n",
+  pos = "pos",
+  c.type = "residence",
+  wn = "weighted.n",
+  wpos = "weighted.pos"
+)
+dhs <- as.prevR(fdhs.clusters, col, fdhs.boundary)
+
+str(dhs)
+print(dhs)
 }
 \seealso{
 \code{\linkS4class{prevR}} class, \code{\link[=create.boundary]{create.boundary()}},

@@ -26,11 +26,13 @@
 
 \item{R}{integer or list of integers corresponding to the rings to use.}
 
-\item{weighted}{use weighted data (TRUE, FALSE or "2")?}
+\item{weighted}{use weighted data (\code{TRUE}, \code{FALSE} or \code{2})?}
 
-\item{risk.ratio}{calculate a relative risks surface instead of a prevalence surface (TRUE, FALSE or "2")?}
+\item{risk.ratio}{calculate a relative risks surface instead of a
+prevalence surface (\code{TRUE}, \code{FALSE} or \code{2})?}
 
-\item{keep.details}{return surface of positive cases and surface of observed cases?}
+\item{keep.details}{return surface of positive cases and surface of
+observed cases?}
 
 \item{nb.cells}{number of cells on the longest side of the studied area
 (unused if \code{cell.size} is defined).}
@@ -42,11 +44,11 @@
 \item{short.names}{should names of the output be short?}
 }
 \value{
-Object of class \link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.
-Surfaces are named according to the name of the corresponding variable, N and R
-(for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and if there is
-only one combination of couples (N, R), variable names will not be suffixed by the value of
-N and R.
+Object of class \link[sf:sf]{sf::sf}.
+Surfaces are named according to the name of the corresponding N and R
+(for example: \emph{k.prev.N300.RInf}). If \code{short.names} is \code{TRUE} and
+if there is only one combination of couples (N, R), variable names will not
+be suffixed by the value of N and R.
 
 Estimated variables are (depending on the function parameters) :\itemize{
 \item "k.pos" unweighted intensity surface of positive cases.
@@ -62,71 +64,83 @@ Estimated variables are (depending on the function parameters) :\itemize{
 \item "k.wcontrol" weighted density surface of observed cases.
 \item "k.wrr" weighted surface of relative risks (k.wcase/k.wcontrol).
 }
-\code{NA} value is applied to cells of the grid located outside of the studied area\cr
-(see \code{\link[=NA.outside.SpatialPolygons]{NA.outside.SpatialPolygons()}}).
 }
 \description{
-This function allows to calculate a prevalence surface (ratio of two intensity surfaces)
-and/or a relative risks surface (ratio of two density surfaces) using gaussian kernel estimators
-with adaptative bandwidths of equal number of observations or equal radius.
+This function allows to calculate a prevalence surface (ratio of two
+intensity surfaces) and/or a relative risks surface (ratio of two density
+surfaces) using gaussian kernel estimators with adaptative bandwidths of
+equal number of observations or equal radius.
 }
 \details{
-This function calculates a prevalence surface as the ratio of the intensity surface
-(expressed in cases per surface unit) of positive cases on the intensity surface of observed cases
-and could also calculate a relative risks surface corresponding to the ratio of the density surface
-(whose integral has been normalized to one) of positive cases on density surface of observed cases.
+This function calculates a prevalence surface as the ratio of the
+intensity surface (expressed in cases per surface unit) of positive cases
+on the intensity surface of observed cases and could also calculate a
+relative risks surface corresponding to the ratio of the density surface
+(whose integral has been normalized to one) of positive cases on density
+surface of observed cases.
 
-This method is a variant of the nearest neighbor technique. Surfaces are estimated using gaussian
-kernel estimators with adaptative bandwidths, bandwidth size being determined by a minimum number of
+This method is a variant of the nearest neighbor technique. Surfaces are
+estimated using gaussian kernel estimators with adaptative bandwidths,
+bandwidth size being determined by a minimum number of
 observations in the neighborhood (see \code{\link[=rings]{rings()}} for more details).
-Fixed bandwidths could also be used. More precisely, the bandwidth used is half the radius of rings of
-equal number of observations or equal radius (parameters \code{N} and \code{R}) calculated by the
-function \code{\link[=rings]{rings()}}.\cr
+Fixed bandwidths could also be used. More precisely, the bandwidth used is
+half the radius of rings of equal number of observations or equal radius
+(parameters \code{N} and \code{R}) calculated by the' function \code{\link[=rings]{rings()}}.
+
 See references for a detailed explanation of the implemented methodology.
 
-\code{N} and \code{R} determine the rings to use for the estimation. If they are not defined,
-surfaces will be estimated for each available couples (N,R). Several estimations could be
+\code{N} and \code{R} determine the rings to use for the estimation. If they are not
+defined, surfaces will be estimated for each available couples (N,R)
+available in \code{object}. Several estimations could be
 simultaneously calculated if several values of N and R are defined.
 
 A suggested value of N could be computed with \code{\link[=Noptim]{Noptim()}}.
 }
 \note{
-Results could be plotted with \code{\link[sp:spplot]{sp::spplot()}}.\cr
-\pkg{prevR} provides several continuous color palettes (see \link{prevR.colors})
-compatible with \code{\link[sp:spplot]{sp::spplot()}}.\cr
-Calculated surfaces could be export using the function
-\code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
+Results could be plotted with \code{\link[sf:plot]{sf::plot()}} or with \pkg{ggplot2}
+using \code{\link[ggplot2:ggsf]{ggplot2::geom_sf()}}. See examples.
+
+\pkg{prevR} provides several continuous color palettes
+(see \link{prevR.colors}).
+
+Results could be turned into a \pkg{stars} raster using
+\code{\link[stars:st_rasterize]{stars::st_rasterize()}}.
+
+To export to ASCII grid, rasterize the results with \code{\link[stars:st_rasterize]{stars::st_rasterize()}},
+convert to \code{SpatRast} with \code{\link[terra:rast]{terra::rast()}}, extract the desired layer with
+\verb{[[]]} and then use \code{terra::writeRaster()}. See examples.
 
 See the package \pkg{sparr} for another methodology to estimate relative
-risks surfaces, adapted for other kind of data than Demographic and Health Surveys (DHS).
+risks surfaces, adapted for other kind of data than Demographic and
+Health Surveys (DHS).
 }
 \examples{
 \dontrun{
-  dhs <- rings(fdhs, N=c(100,200,300,400,500))
-  
-  prev.N300 <- kde(dhs, N=300, nb.cells=200)
-  
-  library(sp)
-  spplot(prev.N300, 'k.wprev.N300.RInf',
-         cuts=100, col.regions=prevR.colors.red(101),
-         main="Regional trends of prevalence (N=300)"
-  )
-  
-  prev.krige <- kde(dhs, N=c(100,300,500), R=Inf,
-                    nb.cells=200, risk.ratio=2, keep.details=FALSE
-  )
-  str(prev.krige)
-  spplot(prev.krige,
-         c('k.wprev.N100.RInf','k.wprev.N300.RInf','k.wprev.N500.RInf'),
-         cuts=100, col.regions=prevR.colors.red(101)
-  )
+dhs <- rings(fdhs, N = c(100, 200, 300, 400, 500))
+
+prev.N300 <- kde(dhs, N = 300, nb.cells = 200)
+
+plot(prev.N300, lty = 0)
+
+library(ggplot2)
+ggplot(prev.N300) +
+  aes(fill = k.wprev.N300.RInf) +
+  geom_sf(colour = "transparent") +
+  scale_fill_gradientn(colors = prevR.colors.red()) +
+  theme_prevR_light()
+
+# Export k.wprev.N300.RInf surface in ASCII Grid
+r <- terra::rast(stars::st_rasterize(prev.N300))
+# writeRaster(r[[2]], "kprev.N300.asc")
 }
 
 }
 \references{
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
-"Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
-\emph{Cybergeo: European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606},
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe
+and Meda Nicolas (2011) "Methods for mapping regional trends of HIV
+prevalence from Demographic and Health Surveys (DHS)",
+\emph{Cybergeo: European Journal of Geography}, no 558,
+\url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606.
 }
 \seealso{

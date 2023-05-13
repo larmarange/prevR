@@ -6,18 +6,22 @@
 \usage{
 create.boundary(
   countries = NULL,
-  multiple = F,
+  multiple = FALSE,
   proj = "+proj=longlat +datum=WGS84"
 )
 }
 \arguments{
-\item{countries}{a vector of character string corresponding to the name of the countries
-you want to extract from the dataset. If \code{NULL}, a dialogue box will be appear in order to select
-the desired country.}
+\item{countries}{a vector of character string corresponding to the name of
+the countries you want to extract from the dataset. If \code{NULL},
+a dialogue box will be appear in order to select the desired country.}
 
-\item{multiple}{should the dialog box allow multiple selection (unused if \code{countries} is specified)?}
+\item{multiple}{should the dialog box allow multiple selection
+(unused if \code{countries} is specified)?}
 
-\item{proj}{map projection to use for the result (longitude and latitude in decimal degrees by default).}
+\item{proj}{projection of clusters coordinates used in \code{data}
+(longitude and latitude in decimal degrees by default). One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class \code{crs}, see \code{\link[sf:st_crs]{sf::st_crs()}}.}
 }
 \value{
 Object of class \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.
@@ -27,11 +31,6 @@ This function uses the data set \link{TMWorldBorders}. One or several countries
 can be selected and will be returned as an object of class
 \link[sp:SpatialPolygons-class]{sp::SpatialPolygons}.
 }
-\details{
-\code{proj} could be a character string corresponding to a \emph{PROJ.4}
-projection (see \url{https://proj.org/} for more details)
-or an object of class \link[sp:CRS-class]{sp::CRS}.
-}
 \note{
 The result will be automatically plotted.
 }
@@ -39,12 +38,17 @@ The result will be automatically plotted.
 \dontrun{
 boundary <- create.boundary()
 }
-\dontshow{par(ask = TRUE)}
+\dontshow{
+par(ask = TRUE)
+}
 boundary <- create.boundary("Burkina Faso")
 boundary <- create.boundary("Burkina Faso",
- proj="+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+  proj = "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+)
 boundary <- create.boundary(countries = c("Burkina Faso", "Ghana", "Benin"))
-\dontshow{par(ask = FALSE)}
+\dontshow{
+par(ask = FALSE)
+}
 
 }
 \seealso{

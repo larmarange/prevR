@@ -14,21 +14,21 @@
 \alias{prevR.colors.qgis.pal}
 \title{Continuous color palettes.}
 \usage{
-prevR.colors.blue(n)
+prevR.colors.blue(n = 10)
 
-prevR.colors.blue.inverse(n)
+prevR.colors.blue.inverse(n = 10)
 
-prevR.colors.gray(n)
+prevR.colors.gray(n = 10)
 
-prevR.colors.gray.inverse(n)
+prevR.colors.gray.inverse(n = 10)
 
-prevR.colors.green(n)
+prevR.colors.green(n = 10)
 
-prevR.colors.green.inverse(n)
+prevR.colors.green.inverse(n = 10)
 
-prevR.colors.red(n)
+prevR.colors.red(n = 10)
 
-prevR.colors.red.inverse(n)
+prevR.colors.red.inverse(n = 10)
 
 prevR.demo.pal(n, border = if (n < 32) "light gray" else NA, main = NULL)
 
@@ -52,24 +52,33 @@ prevR.colors.qgis.pal(file, at, pal = "red", inverse = FALSE)
 \value{
 \code{\link[=prevR.demo.pal]{prevR.demo.pal()}} plot the color palettes.
 
-\code{\link[=prevR.colors.qgis.pal]{prevR.colors.qgis.pal()}} export a color palette in a text file readable by Quantum GIS.
+\code{\link[=prevR.colors.qgis.pal]{prevR.colors.qgis.pal()}} export a color palette in a text file readable
+by Quantum GIS.
 
 The other functions return a list of colors coded in hexadecimal.
 }
 \description{
-Functions generating color palettes usable with \R graphical functions, in particular with
-\code{\link[sp:spplot]{sp::spplot()}}. These palettes are continuous, contrast being accentuated by darkening
-and lightening extreme values. \code{prevR.demo.pal} plot the available palettes.
-\code{prevR.colors.qgis.pal} export a palette in a text file readable by Quantum GIS,
-an open-source mapping software.
+Functions generating color palettes usable with \R graphical functions.
+These palettes are continuous, contrast being accentuated by darkening
+and lightening extreme values. \code{prevR.demo.pal} plot the available
+palettes. \code{prevR.colors.qgis.pal} export a palette in a text file
+readable by Quantum GIS, an open-source mapping software.
 }
 \details{
-\code{\link[=prevR.colors.red]{prevR.colors.red()}} produces a color gradation from white/yellow to red/dark red.\cr
-\code{\link[=prevR.colors.blue]{prevR.colors.blue()}} produces a color gradation from light blue to dark blue.\cr
-\code{\link[=prevR.colors.green]{prevR.colors.green()}} produces a color gradation from light green to dark green.\cr
-\code{\link[=prevR.colors.gray]{prevR.colors.gray()}} produces a color gradation from white/light gray to dark gray/black.\cr
+\code{\link[=prevR.colors.red]{prevR.colors.red()}} produces a color gradation from white/yellow
+to red/dark red.
 
-Functions with a suffix \emph{.inverse} produce the same color gradation, but from dark colors to light ones.
+\code{\link[=prevR.colors.blue]{prevR.colors.blue()}} produces a color gradation from light blue
+to dark blue.
+
+\code{\link[=prevR.colors.green]{prevR.colors.green()}} produces a color gradation from light green
+to dark green.
+
+\code{\link[=prevR.colors.gray]{prevR.colors.gray()}} produces a color gradation from white/light gray to
+dark gray/black.
+
+Functions with a suffix \emph{.inverse} produce the same color gradation,
+but from dark colors to light ones.
 }
 \note{
 To obtain the list of colors in RGB (Red/Green/Blue), use the function
@@ -83,12 +92,12 @@ prevR.colors.red(5)
 col2rgb(prevR.colors.red(5))
 
 \dontrun{
- prevR.colors.qgis.pal('palette.txt', seq(0,25,length.out=100), 'red')
+prevR.colors.qgis.pal("palette.txt", seq(0, 25, length.out = 100), "red")
 }
 
 }
 \seealso{
-Other color palettes are available in  \R. See for example
+Other color palettes are available in \R. See for example
 \code{\link[grDevices:palettes]{grDevices::rainbow()}} or the package \pkg{RColorBrewer}.
 }
 \keyword{color}

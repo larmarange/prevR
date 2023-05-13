@@ -14,7 +14,7 @@
   legend.location = "bottomright",
   factor.size = 0.2,
   new.window = FALSE,
-  axes = F,
+  axes = FALSE,
   ...
 )
 }
@@ -42,23 +42,28 @@
 }
 \description{
 Method \code{plot} for object of class \linkS4class{prevR}.
-Plot clusters, number of observations per cluster or number of positive cases per cluster.
+Plot clusters, number of observations per cluster or number of positive cases
+per cluster.
 }
 \details{
-Available values for \code{legend.location} are: \emph{"bottomright"}, \emph{"bottom"},
-\emph{"bottomleft"}, \emph{"left"}, \emph{"topleft"}, \emph{"top"}, \emph{"topright"},
-\emph{"right"} use \emph{"center"}.
+Available values for \code{legend.location} are: \emph{"bottomright"},
+\emph{"bottom"}, \emph{"bottomleft"}, \emph{"left"}, \emph{"topleft"},
+\emph{"top"}, \emph{"topright"}, \emph{"right"} use \emph{"center"}.
 
 Use \code{main} to define a title and \code{sub} for a subtitle
 (see \code{\link[graphics:title]{graphics::title()}}).
 }
 \examples{
-\dontshow{par(ask = TRUE)}
-plot(fdhs, type = "position", main="position", axes=TRUE)
-plot(fdhs, type = "c.type", main="c.type")
-plot(fdhs, type = "count", main="count", factor.size = 0.1)
-plot(fdhs, type = "flower", main="flower")
-\dontshow{par(ask = FALSE)}
+\dontshow{
+par(ask = TRUE)
+}
+plot(fdhs, type = "position", main = "position", axes = TRUE)
+plot(fdhs, type = "c.type", main = "c.type")
+plot(fdhs, type = "count", main = "count", factor.size = 0.1)
+plot(fdhs, type = "flower", main = "flower")
+\dontshow{
+par(ask = FALSE)
+}
 
 }
 \seealso{

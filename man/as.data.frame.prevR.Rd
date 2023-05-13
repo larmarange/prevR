@@ -10,22 +10,28 @@
 \arguments{
 \item{x}{object of class \code{\linkS4class{prevR}}.}
 
-\item{...}{not used, for compatibility with the generic method \code{\link[base:as.data.frame]{base::as.data.frame()}}.}
+\item{...}{not used, for compatibility with the generic method
+\code{\link[base:as.data.frame]{base::as.data.frame()}}.}
 
-\item{N}{integer or list of integers setting elements of \code{rings} to extract.}
+\item{N}{integer or list of integers setting elements of
+\code{rings} to extract.}
 
-\item{R}{integer or list of integers setting elements of \code{rings} to extract.}
+\item{R}{integer or list of integers setting elements of
+\code{rings} to extract.}
 
 \item{clusters.only}{return only the slot \code{clusters} of \code{x}?}
 }
 \value{
-If \code{clusters.only = TRUE}, the function will return only the slot \code{clusters} of \code{x}.
+If \code{clusters.only = TRUE}, the function will return only the
+slot \code{clusters} of \code{x}.
 
-Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be merged in a unique data frame.
-The columns of \code{rings} will be renamed adding a suffix like \emph{.N300.RInf}.
+Otherwise, slots \code{clusters} and \code{rings} of \code{x} will be
+merged in a unique data frame. The columns of \code{rings} will be renamed
+adding a suffix like \emph{.N300.RInf}.
 
-\code{N} and \code{R} define the elements of \code{rings} to extract. If not specified (\code{NULL}),
-all the elements of \code{rings} will be included.
+\code{N} and \code{R} define the elements of \code{rings} to extract.
+If not specified (\code{NULL}), all the elements of \code{rings} will
+be included.
 }
 \description{
 This function merges the slots \code{clusters} et \code{rings} of
@@ -35,11 +41,11 @@ a object of class \code{\linkS4class{prevR}}.
 str(fdhs)
 str(as.data.frame(fdhs))
 \dontrun{
- r.fdhs <- rings(fdhs, N=c(100,200,300))
- str(r.fdhs)
- str(as.data.frame(r.fdhs, clusters.only=TRUE))
- str(as.data.frame(r.fdhs))
- str(as.data.frame(r.fdhs, N=300))
+r.fdhs <- rings(fdhs, N = c(100, 200, 300))
+str(r.fdhs)
+str(as.data.frame(r.fdhs, clusters.only = TRUE))
+str(as.data.frame(r.fdhs))
+str(as.data.frame(r.fdhs, N = 300))
 }
 
 }
