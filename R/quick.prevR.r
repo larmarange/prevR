@@ -60,7 +60,7 @@ quick.prevR <- function(
   if (is.null(weighted)) { # If not precised, weighted data if available
     weighted <- "wn" %in% colnames(object@clusters)
   }
-  if (weighted & !("wn" %in% colnames(object@clusters))) {
+  if (weighted && !("wn" %in% colnames(object@clusters))) {
     stop("No weighted data found in object.")
   }
 
@@ -84,10 +84,10 @@ quick.prevR <- function(
     debug.level = if (progression) -1 else 0
   )
 
-  if ((plot.results | return.plot)) {
+  if ((plot.results || return.plot)) {
     prev.df <- as.data.frame(stars::st_rasterize(prev))
     radius.df <- as.data.frame(stars::st_rasterize(radius))
-    
+
     prev.df <- na.omit(prev.df)
     radius.df <- na.omit(radius.df)
 
@@ -126,7 +126,9 @@ quick.prevR <- function(
       ) +
       ggplot2::geom_raster() +
       ggplot2::scale_fill_gradientn(colours = prevR.colors.red(20)) +
-      ggplot2::stat_contour(ggplot2::aes(colour = ggplot2::after_stat(level), fill = NULL)) +
+      ggplot2::stat_contour(
+        ggplot2::aes(colour = ggplot2::after_stat(level), fill = NULL)
+      ) +
       ggplot2::scale_colour_continuous(low = "grey50", high = "grey50") +
       ggplot2::facet_wrap(~N) +
       ggplot2::coord_fixed() +
@@ -140,11 +142,11 @@ quick.prevR <- function(
 
   if (plot.results) print(p)
 
-  if (return.results & !return.plot) {
+  if (return.results && !return.plot) {
     return(list(prev = prev, radius = radius, tidy = r))
-  } else if (return.results & return.plot) {
+  } else if (return.results && return.plot) {
     return(list(prev = prev, radius = radius, tidy = r, plot = p))
-  } else if (!return.results & return.plot) {
+  } else if (!return.results && return.plot) {
     return(list(tidy = r, plot = p))
   }
 }

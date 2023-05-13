@@ -7,22 +7,27 @@
 #' @details \tabular{ll}{
 #' Package: \tab prevR\cr
 #' Type: \tab Package\cr
-#' Licence: \tab CeCILL-C - \url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
+#' Licence: \tab CeCILL-C -
+#'   \url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 #' Website: \tab \url{https://larmarange.github.io/prevR/}\cr
 #' }
 #'
-#' This package performs a methodological approach for spatial estimation of regional trends
-#' of a prevalence using data from surveys using a stratified two-stage sample design
-#' (as Demographic and Health Surveys). In these kind of surveys, positive and control cases
-#' are spatially positioned at the centre of their corresponding surveyed cluster.
+#' This package performs a methodological approach for spatial estimation of
+#' regional trends of a prevalence using data from surveys using a stratified
+#' two-stage sample design (as Demographic and Health Surveys). In these kind
+#' of surveys, positive and control cases are spatially positioned at the
+#' centre of their corresponding surveyed cluster.
 #'
-#' This package provides functions to estimate a prevalence surface using a kernel estimator
-#' with adaptative bandwidths of equal number of persons surveyed (a variant of the nearest
-#' neighbor technique) or with fixed bandwidths. The prevalence surface could also be calculated
-#' using a spatial interpolation (kriging or inverse distance weighting) after a moving average
-#' smoothing based on circles of equal number of observed persons or circles of equal radius.
+#' This package provides functions to estimate a prevalence surface using a
+#' kernel estimator with adaptative bandwidths of equal number of persons
+#' surveyed (a variant of the nearest neighbor technique) or with fixed
+#' bandwidths. The prevalence surface could also be calculated using a spatial
+#' interpolation (kriging or inverse distance weighting) after a moving average
+#' smoothing based on circles of equal number of observed persons or circles
+#' of equal radius.
 #'
-#' With the kernel estimator approach, it's also possible to estimate a surface of relative risks.
+#' With the kernel estimator approach, it's also possible to estimate a surface
+#' of relative risks.
 #'
 #' For a quick demo, enter \code{quick.prevR(fdhs)}.
 #'
@@ -32,8 +37,8 @@
 #'
 #' \emph{Datasets}\cr
 #' [fdhs] is a fictive dataset used for testing the package.\cr
-#' [TMWorldBorders] provides national borders of every countries in the World and
-#'   could be used to define the limits of the studied area.
+#' [TMWorldBorders] provides national borders of every countries in the World
+#'   and could be used to define the limits of the studied area.
 #'
 #' \emph{Creating objects}\cr
 #' \pkg{prevR} functions takes as input objects of class [prevR-class].\cr
@@ -100,25 +105,27 @@
 #' DOI: 10.4000/cybergeo.24606.
 #'
 #' @references
-#' Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level
-#' from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476,
-#' DOI: 10.1097/QAD.0000000000000480
+#' Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second
+#' subnational level from national population-based survey",
+#' \emph{AIDS}, n° 28, p. S469-S476, DOI: 10.1097/QAD.0000000000000480
 #'
-#' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
-#' "Methods for mapping regional trends of HIV prevalence from Demographic and
-#' Health Surveys (DHS)", \emph{Cybergeo: European Journal of Geography}, n° 558,
+#' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda
+#' Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from
+#' Demographic and Health Surveys (DHS)",
+#' \emph{Cybergeo: European Journal of Geography}, n° 558,
 #' \url{https://journals.openedition.org/cybergeo/24606},
 #' DOI: 10.4000/cybergeo.24606
 #'
-#' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure},
-#' PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes,
+#' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité
+#' d'une mesure}, PhD thesis in demography, directed by Benoît Ferry,
+#' université Paris Descartes,
 #' \url{https://tel.archives-ouvertes.fr/tel-00320283}.
 #'
-#' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda Nicolas and
-#' Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé
-#' à partir des coordonnées des zones d'enquête", \emph{Chaire Quételet,
-#' 29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve,
-#' Belgique.
+#' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda
+#' Nicolas and Ferry Benoît (2006), "Cartographier les données des enquêtes
+#' démographiques et de santé à partir des coordonnées des zones d'enquête",
+#' \emph{Chaire Quételet, 29 novembre au 1er décembre 2006}, Université
+#' Catholique de Louvain, Louvain-la-Neuve, Belgique.
 #' @examples
 #' \dontrun{
 #' par(ask = TRUE)
@@ -159,15 +166,19 @@
 #'
 #' # Prevalence surface for N=300
 #' prev.N300 <- kde(dhs, N = 300, nb.cells = 200)
-#' spplot(prev.N300, "k.wprev.N300.RInf",
-#'   cuts = 100, col.regions = prevR.colors.red(101),
+#' plot(
+#'   prev.N300["k.wprev.N300.RInf"],
+#'   pal = prevR.colors.red,
+#'   lty = 0,
 #'   main = "Regional trends of prevalence (N=300)"
 #' )
 #'
 #' # Smoothing ring radii surface (spatial interpolation by kriging)
 #' radius.N300 <- krige("r.radius", dhs, N = 300, nb.cells = 200)
-#' spplot(radius.N300,
-#'   cuts = 100, col.regions = prevR.colors.blue(101),
+#' plot(
+#'   radius.N300,
+#'   pal = prevR.colors.blue,
+#'   lty = 0,
 #'   main = "Radius of circle (N=300)"
 #' )
 #' par(ask = FALSE)
@@ -179,13 +190,14 @@ NULL
 
 #' Fictitious data generated by a DHS simulation.
 #'
-#' Data set generated by a Demographic and Health Survey (DHS) simulation on a fictitious
-#' country with a national prevalence of 10\%, 8000 having been surveyed,
-#' distributed in 401 clusters.
+#' Data set generated by a Demographic and Health Survey (DHS) simulation on a
+#' fictitious country with a national prevalence of 10\%, 8000 having been
+#' surveyed, distributed in 401 clusters.
 #' This dataset is composed of 3 objects:\itemize{
 #'   \item \code{fdhs.clusters}: data frame (one line per cluster).
 #'   \item \code{fdhs.boundary}: object of class
-#'     [sp::SpatialPolygons-class] corresponding to the borders of the fictitious country.
+#'     [sp::SpatialPolygons-class] corresponding to the borders of the
+#'     fictitious country.
 #'   \item \code{fdhs}: object of class [prevR-class]
 #'     returned by [as.prevR()] using the two previous objects.
 #' }
@@ -205,7 +217,8 @@ NULL
 
 #' Dataset "TM World Borders Dataset 0.3".
 #'
-#' This dataset provides boundaries of all countries in the world, in decimal degrees.
+#' This dataset provides boundaries of all countries in the world,
+#' in decimal degrees.
 #' Available variables are:\itemize{
 #'   \item "FIPS" FIPS 10-4 Country Code.
 #'   \item "ISO2" ISO 3166-1 Alpha-2 Country Code.
@@ -226,8 +239,9 @@ NULL
 #' Sean Gilles did some clean up and made some enhancements. The dataset is
 #' available under a \emph{Creative Commons Attribution-Share Alike License}
 #' (\url{https://creativecommons.org/licenses/by-sa/3.0/}).
-#' @note The boundaries, names designations used do not imply official endorsement or acceptance
-#' by the authors. Use this dataset with care, as several of the borders are disputed
+#' @note The boundaries, names designations used do not imply official
+#' endorsement or acceptance by the authors. Use this dataset with care,
+#' as several of the borders are disputed.
 #' @examples
 #' plot(TMWorldBorders)
 #' @name TMWorldBorders

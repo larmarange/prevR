@@ -33,7 +33,8 @@ Imports:
 Suggests:
     grDevices,
     knitr,
-    rmarkdown
+    rmarkdown,
+    terra
 Encoding: UTF-8
 VignetteBuilder: knitr
 RoxygenNote: 7.2.3

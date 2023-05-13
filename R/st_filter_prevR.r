@@ -23,13 +23,13 @@ st_filter_prevR <- function(x, y) {
   res <- try(sf::st_filter(x, y), silent = TRUE)
   if (!inherits(res, "try-error"))
     return(res)
-  
+
   y <- sf::st_as_s2(y, rebuild = TRUE)
   y <- sf::st_as_sf(y)
-  
+
   res <- try(sf::st_filter(x, y), silent = TRUE)
   if (!inherits(res, "try-error"))
     return(res)
-  
+
   x
 }
