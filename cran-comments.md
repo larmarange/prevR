@@ -11,6 +11,10 @@ cf. https://github.com/larmarange/prevR/actions
 
 0 errors | 0 warnings | 0 note
 
+## Fix
+
+CITATION file has been fixed
+
 ## revdepcheck results
 
 We checked 1 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
