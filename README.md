@@ -33,17 +33,3 @@ remotes::install_github("larmarange/prevR")
 ```
 
 Documentation of development version: <https://larmarange.github.io/prevR/dev/>
-
-
-## Updating PO files
-
-Run the following command:
-
-```r
-library(tools)
-update_pkg_po('.')
-```
-
-Note: you need to have `gettext-tools` on your computer. 
-
-See <http://stat.ethz.ch/R-manual/R-devel/library/tools/html/update_pkg_po.html>
