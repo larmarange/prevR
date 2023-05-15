@@ -9,7 +9,6 @@ Object of class \link[sp:SpatialPolygonsDataFrame-class]{sp::SpatialPolygonsData
 }
 \source{
 Provided by Bjorn Sandvik on
-\url{http://thematicmapping.org/downloads/world_borders.php}.
 The dataset was derived by Schuyler Erle from public domain sources.
 Sean Gilles did some clean up and made some enhancements. The dataset is
 available under a \emph{Creative Commons Attribution-Share Alike License}

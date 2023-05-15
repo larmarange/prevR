@@ -119,7 +119,7 @@
 #' Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité
 #' d'une mesure}, PhD thesis in demography, directed by Benoît Ferry,
 #' université Paris Descartes,
-#' \url{https://tel.archives-ouvertes.fr/tel-00320283}.
+#' \url{https://theses.hal.science/tel-00320283}.
 #'
 #' Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda
 #' Nicolas and Ferry Benoît (2006), "Cartographier les données des enquêtes
@@ -188,7 +188,7 @@
 #' @keywords package
 #' @importFrom grDevices col2rgb dev.new gray hsv
 #' @importFrom graphics legend points rect sunflowerplot text title
-#' @importFrom methods new show slot `slot<-` slotNames
+#' @importFrom methods new show slot `slot<-` slotNames as
 #' @importFrom stats na.omit optim quantile
 #' @importFrom utils alarm de edit menu select.list
 #' @importFrom utils setTxtProgressBar txtProgressBar write.table
@@ -240,7 +240,6 @@ NULL
 #' }
 #' @format Object of class [sp::SpatialPolygonsDataFrame-class].
 #' @source Provided by Bjorn Sandvik on
-#' \url{http://thematicmapping.org/downloads/world_borders.php}.
 #' The dataset was derived by Schuyler Erle from public domain sources.
 #' Sean Gilles did some clean up and made some enhancements. The dataset is
 #' available under a \emph{Creative Commons Attribution-Share Alike License}

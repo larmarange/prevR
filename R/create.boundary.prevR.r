@@ -84,7 +84,6 @@ create.boundary <- function(
   message(
     paste0(
       "Source: World Borders Dataset 0.3 (2008)\nProvided by Bjorn Sandvik, ",
-      "http://thematicmapping.org/downloads/world_borders.php\n",
       "The dataset was derived by Schuyler Erle from public domain sources.\n",
       "Sean Gilles did some clean up and made some enhancements.\n",
       "The dataset is available under a Creative Commons Attribution-Share ",

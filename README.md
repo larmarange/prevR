@@ -5,7 +5,7 @@
 [![R-CMD-check](https://github.com/larmarange/prevR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/larmarange/prevR/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/prevR)](https://cran.r-project.org/package=prevR) 
 [![Downloads](https://cranlogs.r-pkg.org/badges/prevR)](https://cran.r-project.org/package=prevR)
-[![DOI](https://www.zenodo.org/badge/6281387.svg)](https://www.zenodo.org/badge/latestdoi/6281387)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2671499.svg)](https://doi.org/10.5281/zenodo.2671499)
 <!-- badges: end -->
 
 This package performs spatial estimation of a prevalence surface
