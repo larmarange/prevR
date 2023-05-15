@@ -33,6 +33,7 @@ Suggests:
     grDevices,
     knitr,
     rmarkdown,
+    spelling,
     terra
 Encoding: UTF-8
 VignetteBuilder: knitr
