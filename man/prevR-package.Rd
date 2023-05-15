@@ -82,15 +82,6 @@ with adaptative bandwidths.\cr
 ordinary kriging.\cr
 \code{\link[=idw]{idw()}} executes a spatial interpolation using an inverse
 distance weighting (idw) technique.
-
-\emph{Results visualization and export}\cr
-Outputs of \code{\link[=kde]{kde()}}, \code{\link[=krige]{krige()}} and \code{\link[=idw]{idw()}} are objects of class
-\link[sp:SpatialPixelsDataFrame-class]{sp::SpatialPixelsDataFrame}.\cr
-Results could be plotted using the function \code{\link[sp:spplot]{sp::spplot()}}.\cr
-\pkg{prevR} provides several continuous color palettes (see \link{prevR.colors})
-compatible with \code{\link[sp:spplot]{sp::spplot()}}.\cr
-Calculated surfaces could be export using the function
-\code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 }
 \section{Acknowledgment}{
  \pkg{prevR} has been developed with funding from

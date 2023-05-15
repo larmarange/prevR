@@ -77,15 +77,6 @@
 #' [idw()] executes a spatial interpolation using an inverse
 #'   distance weighting (idw) technique.
 #'
-#' \emph{Results visualization and export}\cr
-#' Outputs of [kde()], [krige()] and [idw()] are objects of class
-#'   [sp::SpatialPixelsDataFrame-class].\cr
-#' Results could be plotted using the function [sp::spplot()].\cr
-#' \pkg{prevR} provides several continuous color palettes (see [prevR.colors])
-#'   compatible with [sp::spplot()].\cr
-#' Calculated surfaces could be export using the function
-#'   [maptools::writeAsciiGrid()].
-#'
 #' @author
 #' Joseph Larmarange \email{joseph.larmarange@@ird.fr}\cr
 #' IRD - CEPED (UMR 196 Université Paris Descartes Ined IRD)
