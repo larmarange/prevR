@@ -1,24 +1,15 @@
 ## Test environments
 
-* local R installation: R 4.2.2
-* mac OS (on github actions): R-release
-* windows (on github actions): R-release, R 3.6
-* ubuntu 18.04 (on github actions): R-devel, R-release, R-oldrel
+* local R installation: R 4.2.3 (Windows)
+* macos-latest (on github actions): R-release
+* windows-latest (on github actions): R-release
+* ubuntu-latest (on github actions): R-devel, R-release, R-oldrel-1
 
 cf. https://github.com/larmarange/prevR/actions
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 or 1 note
-
-* checking installed package size ... NOTE
-  installed size is  5.2Mb
-  sub-directories of 1Mb or more:
-    data   3.6Mb
-    
-  Due to a dataset who was always embed within prevR
-  to simplify use by end-users.
-
+0 errors | 0 warnings | 0 note
 
 ## revdepcheck results
 
