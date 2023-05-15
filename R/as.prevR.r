@@ -167,6 +167,7 @@ as.prevR <- function(data,
     sf::st_crs(boundary) <- projCRS
     attr(boundary, "valid") <- FALSE
   } else {
+    boundary <- as(boundary, "sf")
     if (!inherits(boundary, "sf")) {
       stop("the class of 'boundary' must be sf.", call. = FALSE)
     }
