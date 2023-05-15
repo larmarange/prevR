@@ -12,3 +12,5 @@ gps.dbf
 ^revdep$
 ^\.github$
 ^CRAN-SUBMISSION$
+.lintr
+LICENSE.md

@@ -14,7 +14,7 @@ is.prevR(object, slot = NULL)
 \item{slot}{"clusters", "rings","boundary" or "proj".}
 }
 \value{
-\code{TRUE} or \code{FALSE}.
+\code{TRUE} or \code{FALSE}
 }
 \description{
 Test if an object is of class prevR.
@@ -22,10 +22,10 @@ This function test if the class of an object is \linkS4class{prevR}.
 It could be used to test the slot \code{rings} or the slot \code{boundary}.
 }
 \details{
-Slots \code{rings} and \code{boundary} are always present in an object of class
-\linkS4class{prevR}, but \code{rings} could be \code{NULL} and
-\code{boundary} a \link[sp:SpatialPolygons-class]{sp::SpatialPolygons} with an
-attribute named \code{valid} with the value \code{FALSE} (when boundaries of the studied
+Slots \code{rings} and \code{boundary} are always present in an object of
+class \linkS4class{prevR}, but \code{rings} could be \code{NULL} and
+\code{boundary} a \link[sf:sf]{sf::sf} object with an attribute named \code{valid}
+with the value \code{FALSE} (when boundaries of the studied
 area have not been specified explicitly).
 \itemize{
 \item If \code{rings} is \code{NULL}, \code{is.prevR(object,"rings")} will return \code{FALSE}.
@@ -34,7 +34,8 @@ area have not been specified explicitly).
 }
 }
 \examples{
-col <- c(id = "cluster", 
+col <- c(
+  id = "cluster",
   x = "x",
   y = "y",
   n = "n",
@@ -43,14 +44,14 @@ col <- c(id = "cluster",
   wn = "weighted.n",
   wpos = "weighted.pos"
 )
-dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
+dhs <- as.prevR(fdhs.clusters, col, fdhs.boundary)
 
 is.prevR(dhs)
-is.prevR(dhs,"rings")
-is.prevR(dhs,"boundary")
+is.prevR(dhs, "rings")
+is.prevR(dhs, "boundary")
 
-dhs <- rings(dhs,N=300)
-is.prevR(dhs,"rings")
+dhs <- rings(dhs, N = 300)
+is.prevR(dhs, "rings")
 
 }
 \seealso{

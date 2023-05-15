@@ -1,89 +1,88 @@
 #' @exportMethod changeproj
 
-setGeneric("changeproj",
-    function(object,proj){ 
-        standardGeneric("changeproj") 
-    }
-)
-
-#' Convert map projection of a object of class prevR.
-#' 
-#' This function converts map projection (and/or datum) used by an object of 
-#' class [prevR-class] into another one.
-#' 
-#' @param object object of class [prevR-class].
-#' @param proj new map projection.
-#' 
-#' @details \code{proj} could be a character string corresponding to a 
-#' \emph{PROJ.4} projection (see \url{https://proj.org/} for more details) 
-#' or an object of class [sp::CRS-class].
-#' 
-#' \code{changeproj} transform the columns  "x" and "y" of the slot \code{clusters} of 
-#' \code{object} and convert \code{boundary} using the new map projection defined by \code{proj}.\cr
-#' If applicable, the slot \code{rings} will be recalculated.
-#' 
-#' @return Return \code{object} expressed in the projection \code{proj}.
-#' @seealso [rgdal::spTransform()], [prevR-class].
-#' 
-#' @examples 
-#' print(fdhs)
-#' plot(fdhs, axes=TRUE, main="Projection: longitude/latitude")
-#' 
-#' fdhs2 <- changeproj(fdhs,
-#'                    "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
-#' print(fdhs2)
-#' plot(fdhs2, axes=TRUE, main="Projection: UTM Zone 30")
-#' 
-#' @keywords manip spatial
-#' @aliases changeproj changeproj-methods
-setMethod("changeproj","prevR",
-  function(object, proj){
-  ###############################################################################################  
-  # cette fonction transforme un objet de classe prevR dans une autre projection definie par proj 
-  # Cette fonction modifie donc
-  #   Les colonnes x et y du slot clusters
-  #   Le slot boundary
-  # Pour faire cela on utilise la fonction spTransform du package rgdal
-  # proj peut etre une chaine de caractere ou un objet CRS
-  ###############################################################################################
-    if (!inherits(proj, "CRS"))
-      proj = CRS(proj)
-    
-    # cluster slot modification
-    clusters                = slot(object,"clusters")
-    coordinates(clusters)   = c("x", "y")
-    proj4string(clusters)   = slot(object,"proj")
-    clusters                = spTransform(clusters, proj)
-    xy                      = slot(clusters,"coords")
-    clusters                = slot(object,"clusters")
-    clusters[,c("x","y")]   = xy
-    slot(object,"clusters") = clusters
-    
-    # boundary slot modification
-    boundary                = slot(object,"boundary")
-    is.valid                = attr(boundary,"valid")
-    proj4string(boundary)   = slot(object,"proj")
-    boundary                = spTransform(boundary,proj)
-    attr(boundary,"valid")  = is.valid
-    
-    N = NULL
-    R = NULL
-    # On verifie si rings est vide
-    if(is.prevR(object,"rings")){
-      rings = slot(object,"rings")
-      N = sapply(rings,function(x) x$N)
-      R = sapply(rings,function(x) x$R)
-    }
-    
-    slot(object,"boundary") = boundary
-    slot(object,"proj")     = proj
-    slot(object,"rings")    = list()
-    
-    # On recalcule, le cas echeant le slot rings
-    if(!is.null(N) && !is.null(R))
-      object = rings(object,N=N,R=R)
-    
-    object
+setGeneric(
+  "changeproj",
+  function(object, proj) {
+    standardGeneric("changeproj")
   }
 )
 
+#' Convert map projection of a object of class prevR.
+#'
+#' This function converts map projection (and/or datum) used by an object of
+#' class [prevR-class] into another one.
+#'
+#' @param object object of class [prevR-class].
+#' @param proj new map projection. One of
+#'   (i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+#'   (numeric), or (iii) an object of class `crs`, see [sf::st_crs()].
+#'
+#' @details
+#' \code{changeproj()} transform the columns  "x" and "y" of the slot
+#' \code{clusters} of \code{object} and convert \code{boundary} using the new
+#' map projection defined by \code{proj}.
+#'
+#' If applicable, the slot \code{rings} will be recalculated.
+#'
+#' @return Return \code{object} expressed in the projection \code{proj}.
+#' @seealso [sf::st_transform()], [prevR-class]
+#' @importFrom sf st_transform st_coordinates st_as_sf
+#'
+#' @examples
+#' print(fdhs)
+#' plot(fdhs, axes = TRUE, main = "Projection: longitude/latitude")
+#'
+#' fdhs2 <- changeproj(
+#'   fdhs,
+#'   "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+#' )
+#' print(fdhs2)
+#' plot(fdhs2, axes = TRUE, main = "Projection: UTM Zone 30")
+#'
+#' @keywords manip spatial
+#' @aliases changeproj changeproj-methods
+setMethod(
+  "changeproj", "prevR",
+  function(object, proj) {
+    if (!inherits(proj, "crs")) {
+      proj <- sf::st_crs(proj)
+    }
+
+    # cluster slot modification
+    clusters <- slot(object, "clusters")
+    clusters_sf <- sf::st_as_sf(clusters, coords = c("x", "y"))
+    sf::st_crs(clusters_sf) <- object@proj
+    clusters_sf <- sf::st_transform(clusters_sf, proj)
+    coord <- sf::st_coordinates(clusters_sf)
+    clusters$x <- coord[, 1]
+    clusters$y <- coord[, 2]
+    slot(object, "clusters") <- clusters
+
+    # boundary slot modification
+    boundary <- slot(object, "boundary")
+    is.valid <- attr(boundary, "valid")
+    boundary <- sf::st_transform(boundary, proj)
+    attr(boundary, "valid") <- is.valid
+    slot(object, "boundary") <- boundary
+
+    slot(object, "proj") <- proj
+
+    N <- NULL
+    R <- NULL
+    # On verifie si rings est vide
+    if (is.prevR(object, "rings")) {
+      rings <- slot(object, "rings")
+      N <- sapply(rings, function(x) x$N)
+      R <- sapply(rings, function(x) x$R)
+    }
+
+    slot(object, "rings") <- list()
+
+    # On recalcule, le cas echeant le slot rings
+    if (!is.null(N) && !is.null(R)) {
+      object <- rings(object, N = N, R = R)
+    }
+
+    object
+  }
+)

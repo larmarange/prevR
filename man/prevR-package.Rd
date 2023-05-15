@@ -5,29 +5,35 @@
 \alias{prevR-package}
 \title{Estimating regional trends of a prevalence from a DHS.}
 \description{
-\pkg{prevR} allows spatial estimation of a prevalence surface or a relative risks surface,
-using data from a Demographic and Health Survey (DHS) or an analog survey.
+\pkg{prevR} allows spatial estimation of a prevalence surface or a relative
+risks surface, using data from a Demographic and Health Survey (DHS) or an
+analog survey.
 }
 \details{
 \tabular{ll}{
 Package: \tab prevR\cr
 Type: \tab Package\cr
-Licence: \tab CeCILL-C - \url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
+Licence: \tab CeCILL-C -
+\url{https://cecill.info/licences/Licence_CeCILL-C_V1-en.html}\cr
 Website: \tab \url{https://larmarange.github.io/prevR/}\cr
 }
 
-This package performs a methodological approach for spatial estimation of regional trends
-of a prevalence using data from surveys using a stratified two-stage sample design
-(as Demographic and Health Surveys). In these kind of surveys, positive and control cases
-are spatially positioned at the centre of their corresponding surveyed cluster.
+This package performs a methodological approach for spatial estimation of
+regional trends of a prevalence using data from surveys using a stratified
+two-stage sample design (as Demographic and Health Surveys). In these kind
+of surveys, positive and control cases are spatially positioned at the
+centre of their corresponding surveyed cluster.
 
-This package provides functions to estimate a prevalence surface using a kernel estimator
-with adaptative bandwidths of equal number of persons surveyed (a variant of the nearest
-neighbor technique) or with fixed bandwidths. The prevalence surface could also be calculated
-using a spatial interpolation (kriging or inverse distance weighting) after a moving average
-smoothing based on circles of equal number of observed persons or circles of equal radius.
+This package provides functions to estimate a prevalence surface using a
+kernel estimator with adaptative bandwidths of equal number of persons
+surveyed (a variant of the nearest neighbor technique) or with fixed
+bandwidths. The prevalence surface could also be calculated using a spatial
+interpolation (kriging or inverse distance weighting) after a moving average
+smoothing based on circles of equal number of observed persons or circles
+of equal radius.
 
-With the kernel estimator approach, it's also possible to estimate a surface of relative risks.
+With the kernel estimator approach, it's also possible to estimate a surface
+of relative risks.
 
 For a quick demo, enter \code{quick.prevR(fdhs)}.
 
@@ -37,8 +43,8 @@ The content of \pkg{prevR} can be broken up as follows:
 
 \emph{Datasets}\cr
 \link{fdhs} is a fictive dataset used for testing the package.\cr
-\link{TMWorldBorders} provides national borders of every countries in the World and
-could be used to define the limits of the studied area.
+\link{TMWorldBorders} provides national borders of every countries in the World
+and could be used to define the limits of the studied area.
 
 \emph{Creating objects}\cr
 \pkg{prevR} functions takes as input objects of class \linkS4class{prevR}.\cr
@@ -70,7 +76,8 @@ area in a text file, a dbf file or a shapefile.
 \code{\link[=rings]{rings()}} calculates rings of equal number of
 observations and/or equal radius.\cr
 \code{\link[=kde]{kde()}} calculates a prevalence surface or a relative
-risks surface using gaussian kernel density estimators (kde) with adaptative bandwidths.\cr
+risks surface using gaussian kernel density estimators (kde)
+with adaptative bandwidths.\cr
 \code{\link[=krige]{krige()}} executes a spatial interpolation using an
 ordinary kriging.\cr
 \code{\link[=idw]{idw()}} executes a spatial interpolation using an inverse
@@ -86,17 +93,20 @@ Calculated surfaces could be export using the function
 \code{\link[maptools:asciigrid]{maptools::writeAsciiGrid()}}.
 }
 \section{Acknowledgment}{
- \pkg{prevR} has been developed with funding from the French National Agency
-for Research on AIDS and Viral Hepatitis (ANRS - \url{http://www.anrs.fr}) and the French Research
-Institute for Sustainable Development (IRD - \url{https://www.ird.fr}), and technical support from  LYSIS
-(info@lysis-consultants.fr).
+ \pkg{prevR} has been developed with funding from
+the French National Agency for Research on AIDS and Viral Hepatitis
+(ANRS - \url{http://www.anrs.fr}) and the French Research Institute for
+Sustainable Development (IRD - \url{https://www.ird.fr}), and technical
+support from LYSIS (info@lysis-consultants.fr).
 }
 
 \section{Citation}{
  To cite \pkg{prevR}:\cr
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011) "Methods for
-mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)", \emph{Cybergeo:
-European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606},
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and
+Meda Nicolas (2011) "Methods for mapping regional trends of HIV prevalence
+from Demographic and Health Surveys (DHS)",
+\emph{Cybergeo: European Journal of Geography}, no 558,
+\url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606.
 }
 
@@ -104,72 +114,82 @@ DOI: 10.4000/cybergeo.24606.
 \dontrun{
 par(ask = TRUE)
 # Creating an object of class prevR
-col <- c(id = "cluster", 
-        x = "x",
-        y = "y",
-        n = "n",
-        pos = "pos",
-        c.type = "residence",
-        wn = "weighted.n",
-        wpos = "weighted.pos"
+col <- c(
+  id = "cluster",
+  x = "x",
+  y = "y",
+  n = "n",
+  pos = "pos",
+  c.type = "residence",
+  wn = "weighted.n",
+  wpos = "weighted.pos"
 )
-dhs <- as.prevR(fdhs.clusters,col, fdhs.boundary)
+dhs <- as.prevR(fdhs.clusters, col, fdhs.boundary)
 
 str(dhs)
 print(dhs)
 
-plot(dhs, main="Clusters position")
-plot(dhs, type="c.type", main="Clusters by residence")
-plot(dhs, type="count", main="Observations by cluster")
-plot(dhs, type="flower", main="Positive cases by cluster")
+plot(dhs, main = "Clusters position")
+plot(dhs, type = "c.type", main = "Clusters by residence")
+plot(dhs, type = "count", main = "Observations by cluster")
+plot(dhs, type = "flower", main = "Positive cases by cluster")
 
 # Changing coordinates projection
-plot(dhs,axes=TRUE)
-dhs <- changeproj(dhs,
-                 "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+plot(dhs, axes = TRUE)
+dhs <- changeproj(
+  dhs,
+  "+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+)
 print(dhs)
-plot(dhs, axes=TRUE)
+plot(dhs, axes = TRUE)
 
 # Calculating rings of equal number of observations for different values of N
-dhs <- rings(dhs,N=c(100,200,300,400,500))
+dhs <- rings(dhs, N = c(100, 200, 300, 400, 500))
 print(dhs)
 summary(dhs)
 
 # Prevalence surface for N=300
-prev.N300 <- kde(dhs, N=300, nb.cells=200)
-spplot(prev.N300, 'k.wprev.N300.RInf',
-      cuts=100, col.regions=prevR.colors.red(101),
-      main="Regional trends of prevalence (N=300)"
+prev.N300 <- kde(dhs, N = 300, nb.cells = 200)
+plot(
+  prev.N300["k.wprev.N300.RInf"],
+  pal = prevR.colors.red,
+  lty = 0,
+  main = "Regional trends of prevalence (N=300)"
 )
 
 # Smoothing ring radii surface (spatial interpolation by kriging)
-radius.N300 <- krige('r.radius', dhs, N=300, nb.cells=200)
-spplot(radius.N300, 
-      cuts=100, col.regions=prevR.colors.blue(101),
-      main="Radius of circle (N=300)"
+radius.N300 <- krige("r.radius", dhs, N = 300, nb.cells = 200)
+plot(
+  radius.N300,
+  pal = prevR.colors.blue,
+  lty = 0,
+  main = "Radius of circle (N=300)"
 )
 par(ask = FALSE)
 }
 }
 \references{
-Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second subnational level
-from national population-based survey", \emph{AIDS}, n° 28, p. S469-S476,
-DOI: 10.1097/QAD.0000000000000480
+Larmarange Joseph and Bendaud Victoria (2014) "HIV estimates at second
+subnational level from national population-based survey",
+\emph{AIDS}, n° 28, p. S469-S476, DOI: 10.1097/QAD.0000000000000480
 
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
-"Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
-\emph{Cybergeo: European Journal of Geography}, n° 558, \url{https://journals.openedition.org/cybergeo/24606},
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda
+Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from
+Demographic and Health Surveys (DHS)",
+\emph{Cybergeo: European Journal of Geography}, n° 558,
+\url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606
 
-Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité d'une mesure},
-PhD thesis in demography, directed by Benoît Ferry, université Paris Descartes,
-\url{https://tel.archives-ouvertes.fr/tel-00320283}.
+Larmarange Joseph (2007) \emph{Prévalences du VIH en Afrique : validité
+d'une mesure}, PhD thesis in demography, directed by Benoît Ferry,
+université Paris Descartes,
+\url{https://theses.hal.science/tel-00320283}.
 
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda Nicolas and
-Ferry Benoît (2006), "Cartographier les données des enquêtes démographiques et de santé
-à partir des coordonnées des zones d'enquête", \emph{Chaire Quételet,
-29 novembre au 1er décembre 2006}, Université Catholique de Louvain, Louvain-la-Neuve,
-Belgique.
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe Meda
+Nicolas and Ferry Benoît (2006), "Cartographier les données des enquêtes
+démographiques et de santé à partir des coordonnées des zones d'enquête",
+\emph{Chaire Quételet, 29 novembre au 1er décembre 2006}, Université
+Catholique de Louvain, Louvain-la-Neuve, Belgique.
 }
 \author{
 Joseph Larmarange \email{joseph.larmarange@ird.fr}\cr

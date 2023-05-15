@@ -25,15 +25,16 @@
 
 \item{element}{element to export: "clusters" or "boundary".}
 
-\item{format}{format: "dbf", "txt", csv", "csv2" or "shp" (unused if \code{element="boundary"}).}
+\item{format}{format: "dbf", "txt", csv", "csv2" or "shp"
+(unused if \code{element = "boundary"}).}
 
-\item{file}{file name without extension.}
+\item{file}{file name \strong{without} extension.}
 
-\item{N}{integer or list of integers setting elements of \code{rings} to export
-(unused if \code{element="boundary"}).}
+\item{N}{integer or list of integers setting elements of \code{rings}
+to export (unused if \code{element="boundary"}).}
 
-\item{R}{integer or list of integers setting elements of \code{rings} to export
-(unused if \code{element="boundary"}).}
+\item{R}{integer or list of integers setting elements of \code{rings}
+to export (unused if \code{element="boundary"}).}
 
 \item{clusters.only}{export only the slot \code{clusters} of \code{object}
 (unused if \code{element="boundary"})?}
@@ -41,14 +42,16 @@
 \item{ext}{coerce the extension of the export file
 (unused if \code{element="boundary"} or if \code{format="shp"}).}
 
-\item{sep}{coerce the field separator string (unused if \code{element="boundary"}
+\item{sep}{coerce the field separator string
+(unused if \code{element="boundary"}
 or if \code{format="shp"} or if \code{format="dbf"}).}
 
 \item{dec}{coerce the string to use for decimal point
-(unused if \code{element="boundary"} or if \code{format="shp"} or if \code{format="dbf"}).}
+(unused if \code{element="boundary"} or if \code{format="shp"}
+or if \code{format="dbf"}).}
 
-\item{\dots}{additional arguments transmitted to
-\code{\link[rgdal:rgdal-deprecated]{rgdal::writeOGR()}}, \code{\link[foreign:write.dbf]{foreign::write.dbf()}} or
+\item{...}{additional arguments transmitted to
+\link[sf:st_write]{sf::st_write}, \code{\link[foreign:write.dbf]{foreign::write.dbf()}} or
 \code{\link[utils:write.table]{utils::write.table()}}.}
 }
 \description{
@@ -56,43 +59,52 @@ This method could be used to export an object of class \linkS4class{prevR}
 in different formats (text, shapefile, dbase...)
 }
 \details{
-If \code{element="boundary"}, the slot \code{boundary} of \code{object}
-will be exported as a \emph{shapefile}.
+If \code{element="boundary"}, the slot \code{boundary} of
+\code{object} will be exported as a \emph{shapefile}.
 
-Otherwise, the slot \code{clusters}, merged with the slot \code{rings}, will be exporter.\cr
+Otherwise, the slot \code{clusters}, merged with the slot \code{rings},
+will be exported.
+
 See \code{\link[=as.data.frame]{as.data.frame()}} for details on the use of the parameters of \code{N},
 \code{R} et \code{clusters.only}.
 
 \code{format} specifies the export format of the data frame returned by
 \code{\link[=as.data.frame]{as.data.frame()}}: \tabular{ll}{
-"shp" \tab Shape File (require the package \pkg{rgdal})\cr
-"dbf" \tab DBASE format (extension: .dbf, require the package \pkg{foreign})\cr
-"txt" \tab tabulated text (extension: .txt)\cr
-"csv" \tab 'comma separated values' (extension: .csv)\cr
-"csv2" \tab CSV variant using a semicolon as field separator (extension: .csv)
+"shp" \tab Shape File\cr
+"dbf" \tab DBASE format\cr
+"txt" \tab tabulated text\cr
+"csv" \tab 'comma separated values'\cr
+"csv2" \tab CSV variant using a semicolon as field separator
 }
-\code{ext} could be used to coerce the extension of the output file, except for
-\emph{shapefile} export, which will write four different files (.shp, .shx, .dbf and .prj).
+\code{ext} could be used to coerce the extension of the output file,
+except for \emph{shapefile} export, which will write four different files
+(.shp, .shx, .dbf and .prj).
 
-The "txt" format uses by default a tabulation as field separator and a point "." for decimal point.
-The "csv" format uses a comma "," as field separator and a point "." as decimal point.\cr
-The "csv2" format is a variant using a semicolon ";" as field separator and a colon "," for decimal point,
-the Excel convention for CSV files in some Western European locales. \cr
-\code{sep} and \code{dec} could be used to coerce the field separator and the decimal point
-(together with the "txt" format).
+The "txt" format uses by default a tabulation as field separator and
+a point "." for decimal point.
+
+The "csv" format uses a comma "," as field separator and
+a point "." as decimal point.
+
+The "csv2" format is a variant using a semicolon ";" as field separator and
+a colon "," for decimal point,
+the Excel convention for CSV files in some Western European locales.
+
+\code{sep} and \code{dec} could be used to coerce the field separator and
+the decimal point (together with the "txt" format).
 }
 \examples{
-  \dontrun{
-    export(fdhs, element="boundary", file="area")
-    export(fdhs, element="clusters", format="shp", file="points")
-    
-    dhs <- rings(fdhs,N=c(100,300,500))
-    export(dhs, element="clusters", format="csv", N=300, file="points")
-  }
+\dontrun{
+export(fdhs, element = "boundary", file = "area")
+export(fdhs, element = "clusters", format = "shp", file = "points")
+
+dhs <- rings(fdhs, N = c(100, 300, 500))
+export(dhs, element = "clusters", format = "csv", N = 300, file = "points")
+}
 
 }
 \seealso{
-\link[maptools:maptools-deprecated]{maptools::writePolyShape}, \code{\link[maptools:maptools-deprecated]{maptools::writePointsShape()}},
+\code{\link[sf:st_write]{sf::st_write()}},
 \code{\link[foreign:write.dbf]{foreign::write.dbf()}}, \code{\link[utils:write.table]{utils::write.table()}}.
 }
 \keyword{manip}

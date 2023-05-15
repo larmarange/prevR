@@ -12,6 +12,7 @@ reference:
   desc:  Functions to create a prevR object and to import data
   contents:
   - '`as.prevR`'
+  - '`update_prevR`'
   - '`prevR-class`'
   - '`import.dhs`'
   - '`create.boundary`'
@@ -44,9 +45,8 @@ reference:
   contents:
   - '`prevR.colors`'
   - '`theme_prevR`'
-  - '`as.SpatialGrid,prevR-method`'
-  - '`NA.outside.SpatialPolygons`'
+  - '`make.grid.prevR`'
+  - '`st_filter_prevR`'
   - '`direct.label_prevR`'
-  - '`point.in.SpatialPolygons`'
   - '`TMWorldBorders`'
   - '`xyz2dataframe`'

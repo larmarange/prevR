@@ -23,9 +23,11 @@ Noptim(fdhs)
 
 }
 \references{
-Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda Nicolas (2011)
-"Methods for mapping regional trends of HIV prevalence from Demographic and Health Surveys (DHS)",
-\emph{Cybergeo: European Journal of Geography}, no 558, \url{https://journals.openedition.org/cybergeo/24606},
+Larmarange Joseph, Vallo Roselyne, Yaro Seydou, Msellati Philippe and Meda
+Nicolas (2011) "Methods for mapping regional trends of HIV prevalence from
+Demographic and Health Surveys (DHS)",
+\emph{Cybergeo: European Journal of Geography}, no 558,
+\url{https://journals.openedition.org/cybergeo/24606},
 DOI: 10.4000/cybergeo.24606.
 }
 \keyword{stat}

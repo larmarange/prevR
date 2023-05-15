@@ -22,9 +22,9 @@ shows a summary of the variables of the object.
 \examples{
 summary(fdhs)
 \dontrun{
- dhs <- rings(fdhs, N=c(100,300,500))
- summary(dhs)
- summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
+dhs <- rings(fdhs, N = c(100, 300, 500))
+summary(dhs)
+summary(dhs, c(0, 0.25, 0.5, 0.75, 1))
 }
 
 }

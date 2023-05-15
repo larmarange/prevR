@@ -8,14 +8,15 @@
 Object of class \link[sp:SpatialPolygonsDataFrame-class]{sp::SpatialPolygonsDataFrame}.
 }
 \source{
-Provided by Bjorn Sandvik on \url{http://thematicmapping.org/downloads/world_borders.php}.
-The dataset was derived by Schuyler Erle from public domain sources. Sean Gilles did some clean up
-and made some enhancements. The dataset is available under a
-\emph{Creative Commons Attribution-Share Alike License}
+Provided by Bjorn Sandvik on
+The dataset was derived by Schuyler Erle from public domain sources.
+Sean Gilles did some clean up and made some enhancements. The dataset is
+available under a \emph{Creative Commons Attribution-Share Alike License}
 (\url{https://creativecommons.org/licenses/by-sa/3.0/}).
 }
 \description{
-This dataset provides boundaries of all countries in the world, in decimal degrees.
+This dataset provides boundaries of all countries in the world,
+in decimal degrees.
 Available variables are:\itemize{
 \item "FIPS" FIPS 10-4 Country Code.
 \item "ISO2" ISO 3166-1 Alpha-2 Country Code.
@@ -31,11 +32,12 @@ Available variables are:\itemize{
 }
 }
 \note{
-The boundaries, names designations used do not imply official endorsement or acceptance
-by the authors. Use this dataset with care, as several of the borders are disputed
+The boundaries, names designations used do not imply official
+endorsement or acceptance by the authors. Use this dataset with care,
+as several of the borders are disputed.
 }
 \examples{
-plot(TMWorldBorders)
+plot(TMWorldBorders["NAME"])
 }
 \keyword{datasets}
 \keyword{spatial}
