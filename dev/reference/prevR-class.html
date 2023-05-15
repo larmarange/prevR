@@ -54,7 +54,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Objects of class prevR.</h1>
-    <small class="dont-index">Source: <a href="https://github.com/larmarange/prevR/blob/HEAD/R/setClass.prevR.r" class="external-link"><code>R/setClass.prevR.r</code></a></small>
+    <small class="dont-index">Source: <a href="https://github.com/larmarange/prevR/blob/HEAD/R/0_setClass_prevR.r" class="external-link"><code>R/0_setClass_prevR.r</code></a></small>
     <div class="hidden name"><code>prevR-class.Rd</code></div>
     </div>
 
@@ -74,37 +74,41 @@ Columns names are:</p><ul><li><p>"id" cluster ID.</p></li>
 <li><p>"y" latitude.</p></li>
 <li><p>"n" number of valid observations per cluster.</p></li>
 <li><p>"pos" number of positive cases per cluster.</p></li>
-<li><p>"prev" observed prevalence (in \<!-- %) in the cluster (pos/n). --></p></li>
+<li><p>"prev" observed prevalence (in %) in the cluster (pos/n).</p></li>
 <li><p>"wn" (optional) sum of weights of observations per cluster.</p></li>
 <li><p>"wpos" (optional) sum of weights of positive cases per cluster.</p></li>
-<li><p>"wprev" (optional) weighted observed prevalence (in \<!-- %) in the cluster (wpos/wn). --></p></li>
+<li><p>"wprev" (optional) weighted observed prevalence (in %)
+in the cluster (wpos/wn).</p></li>
 <li><p>"c.type" (optional) cluster type.</p></li>
 </ul></dd>
 
 
 <dt><code>boundary</code></dt>
-<dd><p>object of class <a href="https://rdrr.io/pkg/sp/man/SpatialPolygons-class.html" class="external-link">sp::SpatialPolygons</a>,
+<dd><p>object of class <a href="https://r-spatial.github.io/sf/reference/sf.html" class="external-link">sf::sf</a>,
 borders of the studied area.</p></dd>
 
 
 <dt><code>proj</code></dt>
-<dd><p>object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">sp::CRS</a>, map projection used.</p></dd>
+<dd><p>object of class <a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">sf::crs</a>, map projection used.</p></dd>
 
 
 <dt><code>rings</code></dt>
 <dd><p>list of results returned by <code><a href="rings-prevR-method.html">rings()</a></code>.
-Each entry is composed of 3 elements: <code>N</code>, minimum number of observations per ring;
-<code>R</code>, maximum radius of rings and <code>estimates</code>, a data frame with the following
+Each entry is composed of 3 elements: <code>N</code>, minimum number of
+observations per ring; <code>R</code>, maximum radius of rings and
+<code>estimates</code>, a data frame with the following
 variables:</p><ul><li><p>"id" cluster ID.</p></li>
 <li><p>"r.pos" number of positive cases inside the ring.</p></li>
 <li><p>"r.n" number of valid observations inside the ring.</p></li>
 <li><p>"r.prev" observed prevalence (in \<!-- %) inside the ring (r.pos/r.n). --></p></li>
-<li><p>"r.radius" ring radius (in kilometers if coordinates in decimal degrees,
-in the unit of the projection otherwise).</p></li>
+<li><p>"r.radius" ring radius (in kilometers if coordinates in
+decimal degrees, in the unit of the projection otherwise).</p></li>
 <li><p>"r.clusters" number of clusters located inside the ring.</p></li>
 <li><p>"r.wpos" (optional) sum of weights of positive cases inside the ring.</p></li>
-<li><p>"r.wn" (optional) sum of weights of valid observations inside the ring.</p></li>
-<li><p>"r.wprev" (optional) weighted observed prevalence (in \<!-- %) inside the ring (r.wpos/r.wn). --></p></li>
+<li><p>"r.wn" (optional) sum of weights of valid observations inside the
+ring.</p></li>
+<li><p>"r.wprev" (optional) weighted observed prevalence (in %) inside
+the ring (r.wpos/r.wn).</p></li>
 </ul><p>Note: the list <code>rings</code> is named, the name of each element is
 N<em>N_value</em>.R<em>R_value</em>, for example <em>N300.RInf</em>.</p></dd>
 
@@ -119,47 +123,52 @@ N<em>N_value</em>.R<em>R_value</em>, for example <em>N300.RInf</em>.</p></dd>
     <div id="methods">
     <h2>Methods</h2>
     <p></p><dl><dt>as.data.frame</dt>
-<dd><p><code>signature(x = "prevR")</code> converts an object of class prevR
-into a data frame.</p></dd>
+<dd><p><code>signature(x = "prevR")</code> converts an object of
+class prevR into a data frame.</p></dd>
 
 <dt>as.SpatialGrid</dt>
-<dd><p><code>signature(object = "prevR")</code> generates a spatial grid.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> generates a
+spatial grid.</p></dd>
 
 <dt>export</dt>
-<dd><p><code>signature(object = "prevR")</code> exports a prevR object as a shapefile,
-a dbase file or a text file.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> exports a prevR object as
+a shapefile, a dbase file or a text file.</p></dd>
 
 <dt>idw</dt>
-<dd><p><code>signature(formula = "ANY", locations = "prevR")</code> calculates a spatial
-interpolation using an inverse distance weighting.</p></dd>
+<dd><p><code>signature(formula = "ANY", locations = "prevR")</code>
+calculates a spatial interpolation using an inverse distance weighting.</p></dd>
 
 <dt>kde</dt>
-<dd><p><code>signature(object = "prevR")</code> estimates a prevalence surface using
-kernel density estimators.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> estimates a prevalence
+surface using kernel density estimators.</p></dd>
 
 <dt>krige</dt>
-<dd><p><code>signature(formula = "ANY", locations = "prevR")</code> calculates a
-spatial interpolation by kriging.</p></dd>
+<dd><p><code>signature(formula = "ANY", locations = "prevR")</code>
+calculates a spatial interpolation by kriging.</p></dd>
 
 <dt>plot</dt>
-<dd><p><code>signature(x = "prevR", y = "ANY")</code> plots data of a prevR object.</p></dd>
+<dd><p><code>signature(x = "prevR", y = "ANY")</code> plots data of a
+prevR object.</p></dd>
 
 <dt>print</dt>
-<dd><p><code>signature(x = "prevR")</code> shows a summary of a prevR object.</p></dd>
+<dd><p><code>signature(x = "prevR")</code> shows a summary of a prevR
+object.</p></dd>
 
 <dt>rings</dt>
-<dd><p><code>signature(object = "prevR")</code> calculates rings of equal number of
-observations and/or equal radius.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> calculates rings of equal
+number of observations and/or equal radius.</p></dd>
 
 <dt>show</dt>
-<dd><p><code>signature(object = "prevR")</code> shows a summary of a prevR object.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> shows a summary of a prevR
+object.</p></dd>
 
 <dt>summary</dt>
-<dd><p><code>signature(object = "prevR")</code> shows a summary of the variables
-of a prevR object.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> shows a summary of the
+variables of a prevR object.</p></dd>
 
 <dt>changeproj</dt>
-<dd><p><code>signature(object = "prevR")</code> changes the map projection used.</p></dd>
+<dd><p><code>signature(object = "prevR")</code> changes the map
+projection used.</p></dd>
 
 
 </dl></div>
@@ -171,24 +180,25 @@ of a prevR object.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/methods/RClassUtils.html" class="external-link">showClass</a></span><span class="op">(</span><span class="st">"prevR"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">showClass</span><span class="op">(</span><span class="st">"prevR"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Class "prevR" [package "prevR"]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slots:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Name:         clusters        boundary            proj           rings</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Class:      data.frame SpatialPolygons             CRS            list</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Name:    clusters   boundary       proj      rings</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Class: data.frame         sf        crs       list</span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, </span></span>
-<span class="r-in"><span>        x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
-<span class="r-in"><span>        y<span class="op">=</span><span class="st">"y"</span>,</span></span>
-<span class="r-in"><span>        n<span class="op">=</span><span class="st">"n"</span>,</span></span>
-<span class="r-in"><span>        pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
-<span class="r-in"><span>        c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
-<span class="r-in"><span>        wn<span class="op">=</span><span class="st">"weighted.n"</span>,</span></span>
-<span class="r-in"><span>        wpos<span class="op">=</span><span class="st">"weighted.pos"</span></span></span>
+<span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  id <span class="op">=</span> <span class="st">"cluster"</span>,</span></span>
+<span class="r-in"><span>  x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
+<span class="r-in"><span>  y <span class="op">=</span> <span class="st">"y"</span>,</span></span>
+<span class="r-in"><span>  n <span class="op">=</span> <span class="st">"n"</span>,</span></span>
+<span class="r-in"><span>  pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
+<span class="r-in"><span>  c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
+<span class="r-in"><span>  wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span></span>
+<span class="r-in"><span>  wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>, <span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Formal class 'prevR' [package "prevR"] with 4 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ clusters:'data.frame':	401 obs. of  10 variables:</span>
@@ -202,33 +212,18 @@ of a prevR object.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wpos  : num [1:401] 0 0 0 0 2.88 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ prev  : num [1:401] 0 0 0 0 14.3 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wprev : num [1:401] 0 0 0 0 14.3 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Formal class 'SpatialPolygons' [package "sp"] with 4 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ polygons   :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..$ :Formal class 'Polygons' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ Polygons :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. ..$ :Formal class 'Polygon' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ labpt  : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ area   : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ hole   : logi FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ ringDir: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ coords : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ plotOrder: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ labpt    : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ ID       : chr "P1"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ area     : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ plotOrder  : int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ bbox       : num [1:2, 1:2] -5.52 4.74 3.85 15.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..- attr(*, "dimnames")=List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "x" "y"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "min" "max"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "FALSE"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ valid  : logi TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Classes ‘sf’ and 'data.frame':	1 obs. of  1 variable:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ geometry:sfc_POLYGON of length 1; first list element: List of 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "class")= chr [1:3] "XY" "POLYGON" "sfg"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "sf_column")= chr "geometry"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "names")= chr(0) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "valid")= logi TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :List of 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ input: chr "+proj=longlat +datum=WGS84"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wkt  : chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "class")= chr "crs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ rings   : list()</span>
 <span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Object of class 'prevR'</span>
@@ -240,7 +235,7 @@ of a prevR object.</p></dd>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National prevalence: 10.12%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National weighted prevalence: 10.16%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84 +no_defs</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Coordinate range</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        min     max</span>
@@ -248,14 +243,13 @@ of a prevR object.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y  4.80326 14.1225</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Boundary coordinate range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         min       max</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> x -5.518916  3.851701</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> y  4.736723 15.082593</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      xmin      ymin      xmax      ymax </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -5.518916  4.736723  3.851701 15.082593 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span> <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>,N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">300</span>,<span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">300</span>, <span class="fl">500</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
@@ -271,7 +265,7 @@ of a prevR object.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

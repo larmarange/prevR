@@ -147,7 +147,16 @@ area</li>
 <span><span class="co">## </span></span>
 <span><span class="co">## </span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>, x <span class="op">=</span> <span class="st">"x"</span>, y <span class="op">=</span> <span class="st">"y"</span>, n <span class="op">=</span> <span class="st">"n"</span>, pos <span class="op">=</span> <span class="st">"pos"</span>, c.type <span class="op">=</span> <span class="st">"residence"</span>, wn <span class="op">=</span> <span class="st">"weighted.n"</span>, wpos <span class="op">=</span> <span class="st">"weighted.pos"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>  id <span class="op">=</span> <span class="st">"cluster"</span>,</span>
+<span>  x <span class="op">=</span> <span class="st">"x"</span>,</span>
+<span>  y <span class="op">=</span> <span class="st">"y"</span>,</span>
+<span>  n <span class="op">=</span> <span class="st">"n"</span>,</span>
+<span>  pos <span class="op">=</span> <span class="st">"pos"</span>,</span>
+<span>  c.type <span class="op">=</span> <span class="st">"residence"</span>,</span>
+<span>  wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span>
+<span>  wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span>
+<span><span class="op">)</span></span>
 <span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/as.prevR.html">as.prevR</a></span><span class="op">(</span><span class="va">fdhs.clusters</span>, <span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Formal class 'prevR' [package "prevR"] with 4 slots</span></span>
@@ -162,33 +171,18 @@ area</li>
 <span><span class="co">##   .. ..$ wpos  : num [1:401] 0 0 0 0 2.88 ...</span></span>
 <span><span class="co">##   .. ..$ prev  : num [1:401] 0 0 0 0 14.3 ...</span></span>
 <span><span class="co">##   .. ..$ wprev : num [1:401] 0 0 0 0 14.3 ...</span></span>
-<span><span class="co">##   ..@ boundary:Formal class 'SpatialPolygons' [package "sp"] with 4 slots</span></span>
-<span><span class="co">##   .. .. ..@ polygons   :List of 1</span></span>
-<span><span class="co">##   .. .. .. ..$ :Formal class 'Polygons' [package "sp"] with 5 slots</span></span>
-<span><span class="co">##   .. .. .. .. .. ..@ Polygons :List of 1</span></span>
-<span><span class="co">##   .. .. .. .. .. .. ..$ :Formal class 'Polygon' [package "sp"] with 5 slots</span></span>
-<span><span class="co">##   .. .. .. .. .. .. .. .. ..@ labpt  : num [1:2] -0.794 10.172</span></span>
-<span><span class="co">##   .. .. .. .. .. .. .. .. ..@ area   : num 51.9</span></span>
-<span><span class="co">##   .. .. .. .. .. .. .. .. ..@ hole   : logi FALSE</span></span>
-<span><span class="co">##   .. .. .. .. .. .. .. .. ..@ ringDir: int 1</span></span>
-<span><span class="co">##   .. .. .. .. .. .. .. .. ..@ coords : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span></span>
-<span><span class="co">##   .. .. .. .. .. ..@ plotOrder: int 1</span></span>
-<span><span class="co">##   .. .. .. .. .. ..@ labpt    : num [1:2] -0.794 10.172</span></span>
-<span><span class="co">##   .. .. .. .. .. ..@ ID       : chr "P1"</span></span>
-<span><span class="co">##   .. .. .. .. .. ..@ area     : num 51.9</span></span>
-<span><span class="co">##   .. .. ..@ plotOrder  : int 1</span></span>
-<span><span class="co">##   .. .. ..@ bbox       : num [1:2, 1:2] -5.52 4.74 3.85 15.08</span></span>
-<span><span class="co">##   .. .. .. ..- attr(*, "dimnames")=List of 2</span></span>
-<span><span class="co">##   .. .. .. .. ..$ : chr [1:2] "x" "y"</span></span>
-<span><span class="co">##   .. .. .. .. ..$ : chr [1:2] "min" "max"</span></span>
-<span><span class="co">##   .. .. ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span></span>
-<span><span class="co">##   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span></span>
-<span><span class="co">##   .. .. .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span></span>
-<span><span class="co">##   .. .. ..$ comment: chr "FALSE"</span></span>
-<span><span class="co">##   .. .. ..$ valid  : logi TRUE</span></span>
-<span><span class="co">##   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot</span></span>
-<span><span class="co">##   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span></span>
-<span><span class="co">##   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span></span>
+<span><span class="co">##   ..@ boundary:Classes 'sf' and 'data.frame':    1 obs. of  1 variable:</span></span>
+<span><span class="co">##   .. ..$ geometry:sfc_POLYGON of length 1; first list element: List of 1</span></span>
+<span><span class="co">##   .. .. ..$ : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span></span>
+<span><span class="co">##   .. .. ..- attr(*, "class")= chr [1:3] "XY" "POLYGON" "sfg"</span></span>
+<span><span class="co">##   .. ..- attr(*, "sf_column")= chr "geometry"</span></span>
+<span><span class="co">##   .. ..- attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: </span></span>
+<span><span class="co">##   .. .. ..- attr(*, "names")= chr(0) </span></span>
+<span><span class="co">##   .. ..- attr(*, "valid")= logi TRUE</span></span>
+<span><span class="co">##   ..@ proj    :List of 2</span></span>
+<span><span class="co">##   .. ..$ input: chr "+proj=longlat +datum=WGS84"</span></span>
+<span><span class="co">##   .. ..$ wkt  : chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span></span>
+<span><span class="co">##   .. ..- attr(*, "class")= chr "crs"</span></span>
 <span><span class="co">##   ..@ rings   : list()</span></span></code></pre>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></code></pre></div>
@@ -201,7 +195,7 @@ area</li>
 <span><span class="co">## National prevalence: 10.12%</span></span></code></pre>
 <pre><code><span><span class="co">## National weighted prevalence: 10.16%</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Projection used: +proj=longlat +datum=WGS84 +no_defs</span></span></code></pre>
+<span><span class="co">## Projection used: +proj=longlat +datum=WGS84</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Coordinate range</span></span></code></pre>
 <pre><code><span><span class="co">##        min     max</span></span>
@@ -209,9 +203,8 @@ area</li>
 <span><span class="co">## y  4.80326 14.1225</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Boundary coordinate range</span></span></code></pre>
-<pre><code><span><span class="co">##         min       max</span></span>
-<span><span class="co">## x -5.518916  3.851701</span></span>
-<span><span class="co">## y  4.736723 15.082593</span></span></code></pre>
+<pre><code><span><span class="co">##      xmin      ymin      xmax      ymax </span></span>
+<span><span class="co">## -5.518916  4.736723  3.851701 15.082593</span></span></code></pre>
 <p>An interactive helper function <code><a href="../reference/import.dhs.html">import.dhs()</a></code> could be
 used to compute statistics per cluster and to generate the
 <strong>prevR</strong> object for those who downloaded individual files
@@ -244,7 +237,10 @@ used to compute statistics per cluster and to generate the
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, axes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-5-1.png" width="576"></p>
 <div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/changeproj-prevR-method.html">changeproj</a></span><span class="op">(</span><span class="va">dhs</span>, <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/changeproj-prevR-method.html">changeproj</a></span><span class="op">(</span></span>
+<span>  <span class="va">dhs</span>,</span>
+<span>  <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span></span>
+<span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Object of class 'prevR'</span></span></code></pre>
 <pre><code><span><span class="co">## Number of clusters: 401</span></span></code></pre>
@@ -255,7 +251,7 @@ used to compute statistics per cluster and to generate the
 <span><span class="co">## National prevalence: 10.12%</span></span></code></pre>
 <pre><code><span><span class="co">## National weighted prevalence: 10.16%</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Projection used: +proj=utm +zone=30 +datum=WGS84 +units=m +no_defs</span></span></code></pre>
+<span><span class="co">## Projection used: +proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Coordinate range</span></span></code></pre>
 <pre><code><span><span class="co">##        min     max</span></span>
@@ -263,9 +259,8 @@ used to compute statistics per cluster and to generate the
 <span><span class="co">## y 531003.3 1562155</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Boundary coordinate range</span></span></code></pre>
-<pre><code><span><span class="co">##        min     max</span></span>
-<span><span class="co">## x 224228.1 1251165</span></span>
-<span><span class="co">## y 523628.1 1669034</span></span></code></pre>
+<pre><code><span><span class="co">##      xmin      ymin      xmax      ymax </span></span>
+<span><span class="co">##  224228.1  523628.1 1251165.0 1669034.2</span></span></code></pre>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">dhs</span>, axes <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-5-2.png" width="576"></p>
@@ -296,7 +291,15 @@ generated and rings radii will be added as a contour plot</li>
 <p>Several values of <strong>N</strong> could be specified, and several
 options allows you to return detailed results.</p>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/quick.prevR.html">quick.prevR</a></span><span class="op">(</span><span class="va">fdhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span><span class="op">)</span>, return.results <span class="op">=</span> <span class="cn">TRUE</span>, return.plot <span class="op">=</span> <span class="cn">TRUE</span>, plot.results <span class="op">=</span> <span class="cn">FALSE</span>, progression <span class="op">=</span> <span class="cn">FALSE</span>, nb.cells <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/quick.prevR.html">quick.prevR</a></span><span class="op">(</span></span>
+<span>  <span class="va">fdhs</span>,</span>
+<span>  N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span><span class="op">)</span>,</span>
+<span>  return.results <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  return.plot <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  plot.results <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  progression <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  nb.cells <span class="op">=</span> <span class="fl">50</span></span>
+<span><span class="op">)</span></span>
 <span><span class="va">res</span><span class="op">$</span><span class="va">plot</span></span></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-9-1.png" width="768"></p>
 </div>
@@ -316,7 +319,7 @@ options allows you to return detailed results.</p>
 <span><span class="co">## National prevalence: 10.12%</span></span></code></pre>
 <pre><code><span><span class="co">## National weighted prevalence: 10.16%</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
-<span><span class="co">## Projection used: +proj=longlat +datum=WGS84 +no_defs</span></span></code></pre>
+<span><span class="co">## Projection used: +proj=longlat +datum=WGS84</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Coordinate range</span></span></code></pre>
 <pre><code><span><span class="co">##        min     max</span></span>
@@ -324,9 +327,8 @@ options allows you to return detailed results.</p>
 <span><span class="co">## y  4.80326 14.1225</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Boundary coordinate range</span></span></code></pre>
-<pre><code><span><span class="co">##         min       max</span></span>
-<span><span class="co">## x -5.518916  3.851701</span></span>
-<span><span class="co">## y  4.736723 15.082593</span></span></code></pre>
+<pre><code><span><span class="co">##      xmin      ymin      xmax      ymax </span></span>
+<span><span class="co">## -5.518916  4.736723  3.851701 15.082593</span></span></code></pre>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">## Available (N,R) couples in the slot 'rings':</span></span></code></pre>
 <pre><code><span><span class="co">##    N   R</span></span>
@@ -444,28 +446,34 @@ options allows you to return detailed results.</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Prevalence surface for N=300</span></span>
 <span><span class="va">prev.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/kde-prevR-method.html">kde</a></span><span class="op">(</span><span class="va">dhs</span>, N <span class="op">=</span> <span class="fl">300</span>, nb.cells <span class="op">=</span> <span class="fl">200</span>, progression <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/edzer/sp/" class="external-link">sp</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">prev.N300</span>, <span class="st">"k.wprev.N300.RInf"</span>, cuts <span class="op">=</span> <span class="fl">100</span>, col.regions <span class="op">=</span> <span class="fu"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>, main <span class="op">=</span> <span class="st">"Regional trends of prevalence (N=300)"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/plot-prevR-missing-method.html">plot</a></span><span class="op">(</span></span>
+<span>  <span class="va">prev.N300</span><span class="op">[</span><span class="st">"k.wprev.N300.RInf"</span><span class="op">]</span>,</span>
+<span>  pal <span class="op">=</span> <span class="va">prevR.colors.red</span>,</span>
+<span>  lty <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  main <span class="op">=</span> <span class="st">"Regional trends of prevalence (N=300)"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-1.png" width="576"></p>
 <div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># with ggplot2</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">prev.N300</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">k.wprev.N300.RInf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"transparent"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradientn</a></span><span class="op">(</span>colours <span class="op">=</span> <span class="fu"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Prevalence (%)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="../reference/theme_prevR.html">theme_prevR_light</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-2.png" width="576"></p>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Surface of rings' radius</span></span>
 <span><span class="va">radius.N300</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/krige-ANY-prevR-method.html">krige</a></span><span class="op">(</span><span class="st">"r.radius"</span>, <span class="va">dhs</span>, N <span class="op">=</span> <span class="fl">300</span>, nb.cells <span class="op">=</span> <span class="fl">200</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [using ordinary kriging]</span></span></code></pre>
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot</a></span><span class="op">(</span><span class="va">radius.N300</span>, cuts <span class="op">=</span> <span class="fl">100</span>, col.regions <span class="op">=</span> <span class="fu"><a href="../reference/prevR.colors.html">prevR.colors.blue</a></span><span class="op">(</span><span class="fl">101</span><span class="op">)</span>, main <span class="op">=</span> <span class="st">"Radius of circle (N=300)"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-2.png" width="576"></p>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># ggplot2 graph</span></span>
-<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/as.data.frame.prevR.html">as.data.frame</a></span><span class="op">(</span><span class="va">prev.N300</span><span class="op">)</span></span>
-<span><span class="va">res</span> <span class="op">&lt;-</span> <span class="va">res</span><span class="op">[</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">res</span><span class="op">$</span><span class="va">k.wprev.N300.RInf</span><span class="op">)</span>, <span class="op">]</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">res</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">x</span>, y <span class="op">=</span> <span class="va">y</span>, fill <span class="op">=</span> <span class="va">k.wprev.N300.RInf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html" class="external-link">geom_raster</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradientn</a></span><span class="op">(</span>colours<span class="op">=</span><span class="fu"><a href="../reference/prevR.colors.html">prevR.colors.red</a></span><span class="op">(</span><span class="fl">20</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_fixed.html" class="external-link">coord_fixed</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="../reference/theme_prevR.html">theme_prevR_light</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"Prevalence (%)"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot-prevR-missing-method.html">plot</a></span><span class="op">(</span></span>
+<span>  <span class="va">radius.N300</span>,</span>
+<span>  pal <span class="op">=</span> <span class="va">prevR.colors.blue</span>,</span>
+<span>  lty <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  main <span class="op">=</span> <span class="st">"Radius of circle (N=300)"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 <p><img src="intro_prevR_files/figure-html/unnamed-chunk-10-3.png" width="576"></p>
 </div>
 <div class="section level2">
@@ -554,12 +562,13 @@ distance weighting (idw) technique.</li>
 <li>Outputs of <code><a href="../reference/kde-prevR-method.html">kde()</a></code>, <code><a href="../reference/krige-ANY-prevR-method.html">krige()</a></code> and
 <code><a href="../reference/krige-ANY-prevR-method.html">idw()</a></code> are objects of class
 <code>SpatialPixelsDataFrame</code> (<strong>sp</strong> package).</li>
-<li>Results could be plotted using the function <code><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot()</a></code>
+<li>Results could be plotted using the function <code>spplot()</code>
 from <strong>sp</strong>.</li>
 <li>prevR provides several continuous color palettes (see
-<code>prevR.colors</code>) compatible with <code><a href="https://rdrr.io/pkg/sp/man/spplot.html" class="external-link">spplot()</a></code>.</li>
+<code>prevR.colors</code>) compatible with <code>spplot()</code>.</li>
 <li>Calculated surfaces could be export using the function
-<code>writeAsciiGrid()</code> from <strong>maptools</strong>.</li>
+<code>writeRaster()</code> from <strong>terra</strong> (see examples in
+the documentation of <code><a href="../reference/kde-prevR-method.html">kde()</a></code> and <code><a href="../reference/krige-ANY-prevR-method.html">krige()</a></code>.</li>
 </ul>
 </div>
 </div>
@@ -582,7 +591,7 @@ from <strong>sp</strong>.</li>
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer>

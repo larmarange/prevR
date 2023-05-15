@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://larmarange.github.io/prevR/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>https://larmarange.github.io/prevR/articles/index.html</loc>
   </url>
   <url>
@@ -16,16 +19,10 @@
     <loc>https://larmarange.github.io/prevR/news/index.html</loc>
   </url>
   <url>
-    <loc>https://larmarange.github.io/prevR/reference/NA.outside.SpatialPolygons.html</loc>
-  </url>
-  <url>
     <loc>https://larmarange.github.io/prevR/reference/Noptim.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/prevR/reference/TMWorldBorders.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/reference/as.SpatialGrid.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/prevR/reference/as.data.frame.prevR.html</loc>
@@ -64,10 +61,10 @@
     <loc>https://larmarange.github.io/prevR/reference/krige-ANY-prevR-method.html</loc>
   </url>
   <url>
-    <loc>https://larmarange.github.io/prevR/reference/plot-prevR-missing-method.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/make.grid.prevR.html</loc>
   </url>
   <url>
-    <loc>https://larmarange.github.io/prevR/reference/point.in.SpatialPolygons.html</loc>
+    <loc>https://larmarange.github.io/prevR/reference/plot-prevR-missing-method.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/prevR/reference/prevR-class.html</loc>
@@ -91,10 +88,16 @@
     <loc>https://larmarange.github.io/prevR/reference/show-prevR-method.html</loc>
   </url>
   <url>
+    <loc>https://larmarange.github.io/prevR/reference/st_filter_prevR.html</loc>
+  </url>
+  <url>
     <loc>https://larmarange.github.io/prevR/reference/summary-prevR-method.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/prevR/reference/theme_prevR.html</loc>
+  </url>
+  <url>
+    <loc>https://larmarange.github.io/prevR/reference/update_prevR.html</loc>
   </url>
   <url>
     <loc>https://larmarange.github.io/prevR/reference/xyz2dataframe.html</loc>
