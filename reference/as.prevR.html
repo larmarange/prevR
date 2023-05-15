@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prevR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">5.0.0</span>
       </span>
     </div>
 
@@ -85,13 +85,14 @@
 
 
 <dt>boundary</dt>
-<dd><p>object of class <code><a href="https://rdrr.io/pkg/sp/man/SpatialPolygons-class.html" class="external-link">sp::SpatialPolygons</a></code>
-defining the studied area.</p></dd>
+<dd><p>object of class <a href="https://r-spatial.github.io/sf/reference/sf.html" class="external-link">sf::sf</a> defining the studied area.</p></dd>
 
 
 <dt>proj</dt>
 <dd><p>projection of clusters coordinates used in <code>data</code>
-(longitude and latitude in decimal degrees by default).</p></dd>
+(longitude and latitude in decimal degrees by default). One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class <code>crs</code>, see <code><a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">sf::st_crs()</a></code>.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -105,15 +106,11 @@ defining the studied area.</p></dd>
     <div id="details">
     <h2>Details</h2>
     <p>Only "x", "y" "n" and "pos" are required in <code>col</code>.
-If "id" is not specified, a numerical identifier will be automatically created.</p>
-<p><code>proj</code> defines projection used by <code>data</code>. It could be a character string
-corresponding to a <em>PROJ.4</em> projection (see <a href="https://proj.org/" class="external-link">https://proj.org/</a>
-for more details) or an object of class <code><a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">sp::CRS</a></code>.<br>
-If the projection of <code>boundary</code> is defined in  a slot called <code>proj4string</code>,
-<code>boundary</code> will be projected according to <code>proj</code>. If the slot <code>proj4string</code>
-is missing, <code>boundary</code> will be considered to be already in the same projection as <code>proj</code>.</p>
-<p>If <code>boundary</code> is not defined (<code>NULL</code>), a considered  corresponding to minimal
-and maximal coordinates of <code>data</code> will be used.<br><code>boundary</code> could be the result of the function <code><a href="create.boundary.html">create.boundary()</a></code>.</p>
+If "id" is not specified, a numerical identifier will be automatically
+created.</p>
+<p>If <code>boundary</code> is not defined (<code>NULL</code>), a rectangle corresponding to minimal
+and maximal coordinates of <code>data</code> will be used.</p>
+<p><code>boundary</code> could be the result of the function <code><a href="create.boundary.html">create.boundary()</a></code>.</p>
 <p>It's not possible to change projection of <code>data</code> with <code>as.prevR()</code>.
 Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead.</p>
     </div>
@@ -125,18 +122,19 @@ Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"cluster"</span>,</span></span>
-<span class="r-in"><span>          x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
-<span class="r-in"><span>          y <span class="op">=</span> <span class="st">"y"</span>,</span></span>
-<span class="r-in"><span>          n <span class="op">=</span> <span class="st">"n"</span>,</span></span>
-<span class="r-in"><span>          pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
-<span class="r-in"><span>          c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
-<span class="r-in"><span>          wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span></span>
-<span class="r-in"><span>          wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span></span>
-<span class="r-in"><span> <span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu">as.prevR</span><span class="op">(</span><span class="va">fdhs.clusters</span>,<span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
-<span class="r-in"><span> </span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">col</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  id <span class="op">=</span> <span class="st">"cluster"</span>,</span></span>
+<span class="r-in"><span>  x <span class="op">=</span> <span class="st">"x"</span>,</span></span>
+<span class="r-in"><span>  y <span class="op">=</span> <span class="st">"y"</span>,</span></span>
+<span class="r-in"><span>  n <span class="op">=</span> <span class="st">"n"</span>,</span></span>
+<span class="r-in"><span>  pos <span class="op">=</span> <span class="st">"pos"</span>,</span></span>
+<span class="r-in"><span>  c.type <span class="op">=</span> <span class="st">"residence"</span>,</span></span>
+<span class="r-in"><span>  wn <span class="op">=</span> <span class="st">"weighted.n"</span>,</span></span>
+<span class="r-in"><span>  wpos <span class="op">=</span> <span class="st">"weighted.pos"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">dhs</span> <span class="op">&lt;-</span> <span class="fu">as.prevR</span><span class="op">(</span><span class="va">fdhs.clusters</span>, <span class="va">col</span>, <span class="va">fdhs.boundary</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Formal class 'prevR' [package "prevR"] with 4 slots</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ clusters:'data.frame':	401 obs. of  10 variables:</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ id    : int [1:401] 1 10 100 101 102 103 104 105 106 107 ...</span>
@@ -149,35 +147,20 @@ Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wpos  : num [1:401] 0 0 0 0 2.88 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ prev  : num [1:401] 0 0 0 0 14.3 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wprev : num [1:401] 0 0 0 0 14.3 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Formal class 'SpatialPolygons' [package "sp"] with 4 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ polygons   :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..$ :Formal class 'Polygons' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ Polygons :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. ..$ :Formal class 'Polygon' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ labpt  : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ area   : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ hole   : logi FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ ringDir: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ coords : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ plotOrder: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ labpt    : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ ID       : chr "P1"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ area     : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ plotOrder  : int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ bbox       : num [1:2, 1:2] -5.52 4.74 3.85 15.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..- attr(*, "dimnames")=List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "x" "y"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "min" "max"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "FALSE"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ valid  : logi TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Classes ‘sf’ and 'data.frame':	1 obs. of  1 variable:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ geometry:sfc_POLYGON of length 1; first list element: List of 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "class")= chr [1:3] "XY" "POLYGON" "sfg"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "sf_column")= chr "geometry"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "names")= chr(0) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "valid")= logi TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :List of 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ input: chr "+proj=longlat +datum=WGS84"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wkt  : chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "class")= chr "crs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ rings   : list()</span>
-<span class="r-in"><span> <span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">dhs</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Object of class 'prevR'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Number of clusters: 401</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Number of observations: 8000</span>
@@ -187,7 +170,7 @@ Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National prevalence: 10.12%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National weighted prevalence: 10.16%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84 +no_defs</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Coordinate range</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        min     max</span>
@@ -195,9 +178,8 @@ Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead
 <span class="r-out co"><span class="r-pr">#&gt;</span> y  4.80326 14.1225</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Boundary coordinate range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         min       max</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> x -5.518916  3.851701</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> y  4.736723 15.082593</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      xmin      ymin      xmax      ymax </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -5.518916  4.736723  3.851701 15.082593 </span>
 </code></pre></div>
     </div>
   </div>
@@ -212,7 +194,7 @@ Use <code><a href="changeproj-prevR-method.html">changeproj()</a></code> instead
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

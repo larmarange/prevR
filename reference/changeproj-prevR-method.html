@@ -18,7 +18,7 @@ class prevR into another one."><!-- mathjax --><script src="https://cdnjs.cloudf
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prevR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">5.0.0</span>
       </span>
     </div>
 
@@ -76,7 +76,9 @@ class <a href="prevR-class.html">prevR</a> into another one.</p>
 
 
 <dt>proj</dt>
-<dd><p>new map projection.</p></dd>
+<dd><p>new map projection. One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class <code>crs</code>, see <code><a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">sf::st_crs()</a></code>.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -87,16 +89,14 @@ class <a href="prevR-class.html">prevR</a> into another one.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
-    <p><code>proj</code> could be a character string corresponding to a
-<em>PROJ.4</em> projection (see <a href="https://proj.org/" class="external-link">https://proj.org/</a> for more details)
-or an object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">sp::CRS</a>.</p>
-<p><code>changeproj</code> transform the columns  "x" and "y" of the slot <code>clusters</code> of
-<code>object</code> and convert <code>boundary</code> using the new map projection defined by <code>proj</code>.<br>
-If applicable, the slot <code>rings</code> will be recalculated.</p>
+    <p><code>changeproj()</code> transform the columns  "x" and "y" of the slot
+<code>clusters</code> of <code>object</code> and convert <code>boundary</code> using the new
+map projection defined by <code>proj</code>.</p>
+<p>If applicable, the slot <code>rings</code> will be recalculated.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
-    <div class="dont-index"><p><code><a href="http://rgdal.r-forge.r-project.org/reference/spTransform-methods.html" class="external-link">rgdal::spTransform()</a></code>, <a href="prevR-class.html">prevR</a>.</p></div>
+    <div class="dont-index"><p><code><a href="https://r-spatial.github.io/sf/reference/st_transform.html" class="external-link">sf::st_transform()</a></code>, <a href="prevR-class.html">prevR</a></p></div>
     </div>
 
     <div id="ref-examples">
@@ -111,7 +111,7 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National prevalence: 10.12%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National weighted prevalence: 10.16%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84 +no_defs</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=longlat +datum=WGS84</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Coordinate range</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        min     max</span>
@@ -119,14 +119,15 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y  4.80326 14.1225</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Boundary coordinate range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         min       max</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> x -5.518916  3.851701</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> y  4.736723 15.082593</span>
-<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">fdhs</span>, axes<span class="op">=</span><span class="cn">TRUE</span>, main<span class="op">=</span><span class="st">"Projection: longitude/latitude"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      xmin      ymin      xmax      ymax </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -5.518916  4.736723  3.851701 15.082593 </span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">fdhs</span>, axes <span class="op">=</span> <span class="cn">TRUE</span>, main <span class="op">=</span> <span class="st">"Projection: longitude/latitude"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="changeproj-prevR-method-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">fdhs2</span> <span class="op">&lt;-</span> <span class="fu">changeproj</span><span class="op">(</span><span class="va">fdhs</span>,</span></span>
-<span class="r-in"><span>                   <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">fdhs2</span> <span class="op">&lt;-</span> <span class="fu">changeproj</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">fdhs</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="print-prevR-method.html">print</a></span><span class="op">(</span><span class="va">fdhs2</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Object of class 'prevR'</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Number of clusters: 401</span>
@@ -137,7 +138,7 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National prevalence: 10.12%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> National weighted prevalence: 10.16%</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=utm +zone=30 +datum=WGS84 +units=m +no_defs</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Projection used: +proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Coordinate range</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        min     max</span>
@@ -145,10 +146,9 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> y 531003.3 1562155</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Boundary coordinate range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>        min     max</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> x 224228.1 1251165</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> y 523628.1 1669034</span>
-<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">fdhs2</span>, axes<span class="op">=</span><span class="cn">TRUE</span>, main<span class="op">=</span><span class="st">"Projection: UTM Zone 30"</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      xmin      ymin      xmax      ymax </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  224228.1  523628.1 1251165.0 1669034.2 </span>
+<span class="r-in"><span><span class="fu"><a href="plot-prevR-missing-method.html">plot</a></span><span class="op">(</span><span class="va">fdhs2</span>, axes <span class="op">=</span> <span class="cn">TRUE</span>, main <span class="op">=</span> <span class="st">"Projection: UTM Zone 30"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="changeproj-prevR-method-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -165,7 +165,7 @@ If applicable, the slot <code>rings</code> will be recalculated.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

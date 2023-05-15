@@ -18,7 +18,7 @@ a object of class prevR."><!-- mathjax --><script src="https://cdnjs.cloudflare.
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prevR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">5.0.0</span>
       </span>
     </div>
 
@@ -76,15 +76,18 @@ a object of class <code><a href="prevR-class.html">prevR</a></code>.</p>
 
 
 <dt>...</dt>
-<dd><p>not used, for compatibility with the generic method <code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">base::as.data.frame()</a></code>.</p></dd>
+<dd><p>not used, for compatibility with the generic method
+<code><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">base::as.data.frame()</a></code>.</p></dd>
 
 
 <dt>N</dt>
-<dd><p>integer or list of integers setting elements of <code>rings</code> to extract.</p></dd>
+<dd><p>integer or list of integers setting elements of
+<code>rings</code> to extract.</p></dd>
 
 
 <dt>R</dt>
-<dd><p>integer or list of integers setting elements of <code>rings</code> to extract.</p></dd>
+<dd><p>integer or list of integers setting elements of
+<code>rings</code> to extract.</p></dd>
 
 
 <dt>clusters.only</dt>
@@ -95,15 +98,18 @@ a object of class <code><a href="prevR-class.html">prevR</a></code>.</p>
     <h2>Value</h2>
     
 
-<p>If <code>clusters.only = TRUE</code>, the function will return only the slot <code>clusters</code> of <code>x</code>.</p>
+<p>If <code>clusters.only = TRUE</code>, the function will return only the
+slot <code>clusters</code> of <code>x</code>.</p>
 
 
-<p>Otherwise, slots <code>clusters</code> and <code>rings</code> of <code>x</code> will be merged in a unique data frame.
-The columns of <code>rings</code> will be renamed adding a suffix like <em>.N300.RInf</em>.</p>
+<p>Otherwise, slots <code>clusters</code> and <code>rings</code> of <code>x</code> will be
+merged in a unique data frame. The columns of <code>rings</code> will be renamed
+adding a suffix like <em>.N300.RInf</em>.</p>
 
 
-<p><code>N</code> and <code>R</code> define the elements of <code>rings</code> to extract. If not specified (<code>NULL</code>),
-all the elements of <code>rings</code> will be included.</p>
+<p><code>N</code> and <code>R</code> define the elements of <code>rings</code> to extract.
+If not specified (<code>NULL</code>), all the elements of <code>rings</code> will
+be included.</p>
     </div>
     <div id="see-also">
     <h2>See also</h2>
@@ -125,33 +131,18 @@ all the elements of <code>rings</code> will be included.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wpos  : num [1:401] 0 0 0 0 2.88 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ prev  : num [1:401] 0 0 0 0 14.3 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wprev : num [1:401] 0 0 0 0 14.3 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Formal class 'SpatialPolygons' [package "sp"] with 4 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ polygons   :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..$ :Formal class 'Polygons' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ Polygons :List of 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. ..$ :Formal class 'Polygon' [package "sp"] with 5 slots</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ labpt  : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ area   : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ hole   : logi FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ ringDir: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. .. .. .. ..@ coords : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ plotOrder: int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ labpt    : num [1:2] -0.794 10.172</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ ID       : chr "P1"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. .. ..@ area     : num 51.9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ plotOrder  : int 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ bbox       : num [1:2, 1:2] -5.52 4.74 3.85 15.08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. ..- attr(*, "dimnames")=List of 2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "x" "y"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ : chr [1:2] "min" "max"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ proj4string:Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "FALSE"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ valid  : logi TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :Formal class 'CRS' [package "sp"] with 1 slot</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..@ projargs: chr "+proj=longlat +datum=WGS84 +no_defs"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ comment: chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ boundary:Classes ‘sf’ and 'data.frame':	1 obs. of  1 variable:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ geometry:sfc_POLYGON of length 1; first list element: List of 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..$ : num [1:4056, 1:2] 1.28 1.25 1.23 1.22 1.22 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "class")= chr [1:3] "XY" "POLYGON" "sfg"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "sf_column")= chr "geometry"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "agr")= Factor w/ 3 levels "constant","aggregate",..: </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. .. ..- attr(*, "names")= chr(0) </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "valid")= logi TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ proj    :List of 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ input: chr "+proj=longlat +datum=WGS84"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..$ wkt  : chr "GEOGCRS[\"unknown\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.25722"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   .. ..- attr(*, "class")= chr "crs"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   ..@ rings   : list()</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">fdhs</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 'data.frame':	401 obs. of  10 variables:</span>
@@ -166,11 +157,11 @@ all the elements of <code>rings</code> will be included.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ prev  : num  0 0 0 0 14.3 ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  $ wprev : num  0 0 0 0 14.3 ...</span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span> <span class="va">r.fdhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>, N<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>,<span class="fl">200</span>,<span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">r.fdhs</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span>, clusters.only<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-in"><span> <span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span>, N<span class="op">=</span><span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">r.fdhs</span> <span class="op">&lt;-</span> <span class="fu"><a href="rings-prevR-method.html">rings</a></span><span class="op">(</span><span class="va">fdhs</span>, N <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">200</span>, <span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">r.fdhs</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span>, clusters.only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="fu">as.data.frame</span><span class="op">(</span><span class="va">r.fdhs</span>, N <span class="op">=</span> <span class="fl">300</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
@@ -187,7 +178,7 @@ all the elements of <code>rings</code> will be included.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

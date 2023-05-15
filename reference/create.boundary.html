@@ -19,7 +19,7 @@ sp::SpatialPolygons."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">prevR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">4.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">5.0.0</span>
       </span>
     </div>
 
@@ -69,7 +69,7 @@ can be selected and will be returned as an object of class
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create.boundary</span><span class="op">(</span></span>
 <span>  countries <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  multiple <span class="op">=</span> <span class="cn">F</span>,</span>
+<span>  multiple <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  proj <span class="op">=</span> <span class="st">"+proj=longlat +datum=WGS84"</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -77,17 +77,21 @@ can be selected and will be returned as an object of class
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>countries</dt>
-<dd><p>a vector of character string corresponding to the name of the countries
-you want to extract from the dataset. If <code>NULL</code>, a dialogue box will be appear in order to select
-the desired country.</p></dd>
+<dd><p>a vector of character string corresponding to the name of
+the countries you want to extract from the dataset. If <code>NULL</code>,
+a dialogue box will be appear in order to select the desired country.</p></dd>
 
 
 <dt>multiple</dt>
-<dd><p>should the dialog box allow multiple selection (unused if <code>countries</code> is specified)?</p></dd>
+<dd><p>should the dialog box allow multiple selection
+(unused if <code>countries</code> is specified)?</p></dd>
 
 
 <dt>proj</dt>
-<dd><p>map projection to use for the result (longitude and latitude in decimal degrees by default).</p></dd>
+<dd><p>projection of clusters coordinates used in <code>data</code>
+(longitude and latitude in decimal degrees by default). One of
+(i) character: a string accepted by GDAL, (ii) integer, a valid EPSG value
+(numeric), or (iii) an object of class <code>crs</code>, see <code><a href="https://r-spatial.github.io/sf/reference/st_crs.html" class="external-link">sf::st_crs()</a></code>.</p></dd>
 
 </dl></div>
     <div id="value">
@@ -95,12 +99,6 @@ the desired country.</p></dd>
     
 
 <p>Object of class <a href="https://rdrr.io/pkg/sp/man/SpatialPolygons-class.html" class="external-link">sp::SpatialPolygons</a>.</p>
-    </div>
-    <div id="details">
-    <h2>Details</h2>
-    <p><code>proj</code> could be a character string corresponding to a <em>PROJ.4</em>
-projection (see <a href="https://proj.org/" class="external-link">https://proj.org/</a> for more details)
-or an object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class="external-link">sp::CRS</a>.</p>
     </div>
     <div id="note">
     <h2>Note</h2>
@@ -116,21 +114,22 @@ or an object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class=
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span><span class="va">boundary</span> <span class="op">&lt;-</span> <span class="fu">create.boundary</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span><span class="co"># \dontshow{</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span><span class="va">boundary</span> <span class="op">&lt;-</span> <span class="fu">create.boundary</span><span class="op">(</span><span class="st">"Burkina Faso"</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Source: World Borders Dataset 0.3 (2008)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset was derived by Schuyler Erle from public domain sources.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, The dataset was derived by Schuyler Erle from public domain sources.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Sean Gilles did some clean up and made some enhancements.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset is available under a Creative Commons Attribution-Share Alike License.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> https://creativecommons.org/licenses/by-sa/3.0/</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The boundaries, names designations used do not imply official endorsement or acceptance by the authors.</span>
 <span class="r-plt img"><img src="create.boundary-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="va">boundary</span> <span class="op">&lt;-</span> <span class="fu">create.boundary</span><span class="op">(</span><span class="st">"Burkina Faso"</span>,</span></span>
-<span class="r-in"><span> proj<span class="op">=</span><span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  proj <span class="op">=</span> <span class="st">"+proj=utm +zone=30 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Source: World Borders Dataset 0.3 (2008)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset was derived by Schuyler Erle from public domain sources.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, The dataset was derived by Schuyler Erle from public domain sources.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Sean Gilles did some clean up and made some enhancements.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset is available under a Creative Commons Attribution-Share Alike License.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> https://creativecommons.org/licenses/by-sa/3.0/</span>
@@ -138,14 +137,15 @@ or an object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class=
 <span class="r-plt img"><img src="create.boundary-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="va">boundary</span> <span class="op">&lt;-</span> <span class="fu">create.boundary</span><span class="op">(</span>countries <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Burkina Faso"</span>, <span class="st">"Ghana"</span>, <span class="st">"Benin"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Source: World Borders Dataset 0.3 (2008)</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, http://thematicmapping.org/downloads/world_borders.php</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset was derived by Schuyler Erle from public domain sources.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Provided by Bjorn Sandvik, The dataset was derived by Schuyler Erle from public domain sources.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Sean Gilles did some clean up and made some enhancements.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The dataset is available under a Creative Commons Attribution-Share Alike License.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> https://creativecommons.org/licenses/by-sa/3.0/</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> The boundaries, names designations used do not imply official endorsement or acceptance by the authors.</span>
 <span class="r-plt img"><img src="create.boundary-3.png" alt="" width="700" height="433"></span>
+<span class="r-in"><span><span class="co"># \dontshow{</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>ask <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
@@ -161,7 +161,7 @@ or an object of class <a href="https://rdrr.io/pkg/sp/man/CRS-class.html" class=
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
