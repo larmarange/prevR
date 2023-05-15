@@ -7,7 +7,7 @@
 #' @param object a `prevR` object
 #' @return a `prevR` object
 #' @export
-update.prevR <- function(object) {
+update_prevR <- function(object) {
   if (!inherits(object, "prevR"))
     stop("'object' should be of class 'prevR'.")
   

@@ -12,7 +12,7 @@ reference:
   desc:  Functions to create a prevR object and to import data
   contents:
   - '`as.prevR`'
-  - '`update.prevR`'
+  - '`update_prevR`'
   - '`prevR-class`'
   - '`import.dhs`'
   - '`create.boundary`'
