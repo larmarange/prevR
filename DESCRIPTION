@@ -1,7 +1,7 @@
 Package: prevR
 Type: Package
 Title: Estimating Regional Trends of a Prevalence from a DHS and Similar Surveys
-Version: 5.0.0
+Version: 5.0.0.9000
 Maintainer: Joseph Larmarange <joseph.larmarange@ird.fr>
 Authors@R: c(
   person("Joseph", "Larmarange", email = "joseph.larmarange@ird.fr", role = c("aut", "cre"), comment = c(ORCID = "0000-0001-7097-700X"))
