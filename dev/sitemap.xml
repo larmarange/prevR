@@ -1,105 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/articles/intro_prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/index.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/Noptim.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/TMWorldBorders.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/as.data.frame.prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/as.prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/changeproj-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/create.boundary.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/direct.label_prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/export-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/fdhs.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/import.dhs.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/is.prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/kde-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/krige-ANY-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/make.grid.prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/plot-prevR-missing-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/prevR-class.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/prevR-package.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/prevR.colors.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/print-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/quick.prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/rings-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/show-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/st_filter_prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/summary-prevR-method.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/theme_prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/update_prevR.html</loc>
-  </url>
-  <url>
-    <loc>https://larmarange.github.io/prevR/dev/reference/xyz2dataframe.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://larmarange.github.io/prevR/dev/LICENSE.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/articles/index.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/articles/intro_prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/authors.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/index.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/news/index.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/Noptim.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/TMWorldBorders.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/as.data.frame.prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/as.prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/changeproj-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/create.boundary.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/direct.label_prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/export-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/fdhs.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/import.dhs.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/index.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/is.prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/kde-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/krige-ANY-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/make.grid.prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/plot-prevR-missing-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/prevR-class.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/prevR-package.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/prevR.colors.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/print-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/quick.prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/rings-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/show-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/st_filter_prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/summary-prevR-method.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/theme_prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/update_prevR.html</loc></url>
+<url><loc>https://larmarange.github.io/prevR/dev/reference/xyz2dataframe.html</loc></url>
 </urlset>
+
